@@ -21,7 +21,7 @@
  <link rel="shortcut icon" type="image/png" href="images/logo-icon.png">
  <link rel="apple-touch-icon" href="images/logo-icon.png">
 <meta name="description" content="ANKER Caravan – Wohnwagen mit Vertrauen. Beratung, Besichtigung und Anfrage rund um Caravan und Wohnwagen." />
- <meta name="keywords" content="Wohnwagen, Caravan, Caravan, Wohnwagen kaufen, Camping, Reise, Wohnwagen Beratung, Caravan Zubehör" />
+ <meta name="keywords" content="Wohnwagen, Caravan, Caravan, Wohnwagen kaufen, Camping, Reise, Wohnwagen Beratung, Caravan Beratung" />
  <!-- Font closer to the provided reference screenshot -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8863,7 +8863,7 @@
   <div class="section-head">
    <div>
    <p class="section-kicker">Sortiment</p>
-   <h2>Caravans & Zubehör</h2>
+   <h2>Caravans</h2>
    </div>
   </div>
 
@@ -8962,7 +8962,7 @@
   <div>
    <p class="section-kicker">Beratung</p>
    <h2>Welcher Wohnwagen passt zu Ihnen?</h2>
-   <p style="color: var(--muted); font-size: 18px; margin: 18px 0 24px;">Senden Sie uns eine kurze Anfragebeschreibung. Wir prüfen, welche Systeme geeignet sind, welche Zubehörteile benötigt werden und wie die Besichtigung geplant werden kann.</p>
+   <p style="color: var(--muted); font-size: 18px; margin: 18px 0 24px;">Senden Sie uns eine kurze Anfragebeschreibung. Wir prüfen, welche Systeme geeignet sind, welche Ausstattung sinnvoll ist und wie die Besichtigung geplant werden kann.</p>
    <div class="benefits" style="grid-template-columns: 1fr 1fr; margin-top: 26px;">
    <article class="benefit">
     <figure class="beratung-thumb">
@@ -9109,7 +9109,7 @@
     <select id="interest" name="Interesse">
     <option>Wohnwagen / Caravan</option>
     <option>Gebrauchte Wohnwagen</option>
-    <option>Zubehör & Ausstattung</option>
+    <option>Ausstattung & Beratung</option>
     <option>Beratung allgemein</option>
     </select>
    </div>
@@ -9140,7 +9140,7 @@
     <small class="logo-tagline">CARAVAN</small>
    </span>
    </div>
-   <p>Wohnwagen, Caravan-Beratung und Zubehör.</p>
+   <p>Wohnwagen, Caravan-Beratung und Service.</p>
    <p class="footer-contact">
    <a href="tel:+4915141270366">+49 1514 1270366</a>
    <span>Deutschland</span>
@@ -9150,7 +9150,7 @@
    <h4>Wohnwagen</h4>
    <a href="#produkte">Wohnwagen</a>
    <a href="#produkte">Caravans</a>
-   <a href="#produkte">Zubehör</a>
+   <a href="#produkte">Auswahl</a>
    <a href="#beratung">Beratung</a>
   </div>
   <div>
@@ -10481,6 +10481,765 @@ header.site-header.is-scrolled .menu .nav-moving-line {
   justify-content: center !important;
   padding: 13px 14px !important;
   font-size: 13px !important;
+ }
+}
+</style>
+
+
+<style>
+/* ============================================================
+   MOBILE FULL PAGE POLISH - ANKER Caravan
+   تحسين شامل للجوال: هيدر، هيرو، كروت، فورم، جاليري، وفوتر
+   ============================================================ */
+html,
+body {
+ max-width: 100% !important;
+ overflow-x: hidden !important;
+}
+
+img,
+svg,
+video,
+canvas {
+ max-width: 100% !important;
+}
+
+section[id] {
+ scroll-margin-top: 92px;
+}
+
+@media (max-width: 1080px) {
+ body.menu-open {
+  overflow: hidden !important;
+  touch-action: none;
+ }
+
+ header.site-header,
+ header.site-header.is-scrolled {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255,255,255,.97) !important;
+  border-bottom: 1px solid rgba(157,133,114,.18) !important;
+  box-shadow: 0 10px 28px rgba(8,26,57,.10) !important;
+ }
+
+ header.site-header .container.nav,
+ header.site-header.is-scrolled .container.nav {
+  width: min(100% - 22px, var(--max)) !important;
+  height: 70px !important;
+  min-height: 70px !important;
+  padding: 0 !important;
+  gap: 12px !important;
+ }
+
+ header.site-header .logo,
+ header.site-header.is-scrolled .logo {
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: calc(100vw - 88px) !important;
+  height: 70px !important;
+  min-height: 70px !important;
+  gap: 8px !important;
+  overflow: hidden !important;
+ }
+
+ header.site-header .logo-round,
+ header.site-header .logo-round img,
+ header.site-header.is-scrolled .logo-round,
+ header.site-header.is-scrolled .logo-round img {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  flex-basis: 48px !important;
+ }
+
+ header.site-header .logo-title,
+ header.site-header.is-scrolled .logo-title {
+  font-size: 25px !important;
+  line-height: .88 !important;
+  letter-spacing: -.045em !important;
+ }
+
+ header.site-header .logo-caravan,
+ header.site-header.is-scrolled .logo-caravan {
+  font-size: 7px !important;
+  letter-spacing: .22em !important;
+  padding-left: .22em !important;
+ }
+
+ header.site-header .logo-subline > span,
+ header.site-header.is-scrolled .logo-subline > span {
+  width: 12px !important;
+  flex-basis: 12px !important;
+ }
+
+ header.site-header .nav-actions,
+ header.site-header.is-scrolled .nav-actions {
+  display: none !important;
+ }
+
+ header.site-header .mobile-toggle,
+ header.site-header.is-scrolled .mobile-toggle {
+  display: grid !important;
+  place-items: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  flex: 0 0 44px !important;
+  border-radius: 15px !important;
+  background: #081a39 !important;
+  border: 1px solid rgba(157,133,114,.32) !important;
+  box-shadow: 0 10px 24px rgba(8,26,57,.18) !important;
+ }
+
+ header.site-header .mobile-toggle span,
+ header.site-header.is-scrolled .mobile-toggle span {
+  background: #fff !important;
+  width: 19px !important;
+  height: 2px !important;
+  border-radius: 999px !important;
+ }
+
+ header.site-header .menu,
+ header.site-header.is-scrolled .menu {
+  display: none !important;
+  position: fixed !important;
+  top: 78px !important;
+  left: 12px !important;
+  right: 12px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: calc(100svh - 96px) !important;
+  overflow-y: auto !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  border-radius: 22px !important;
+  background: rgba(255,255,255,.985) !important;
+  border: 1px solid rgba(157,133,114,.22) !important;
+  box-shadow: 0 22px 60px rgba(8,26,57,.22) !important;
+  gap: 6px !important;
+ }
+
+ header.site-header .menu.open,
+ header.site-header.is-scrolled .menu.open {
+  display: grid !important;
+ }
+
+ header.site-header .menu.open a,
+ header.site-header .menu a,
+ header.site-header.is-scrolled .menu.open a,
+ header.site-header.is-scrolled .menu a {
+  width: 100% !important;
+  min-width: 0 !important;
+  justify-content: flex-start !important;
+  padding: 15px 16px !important;
+  border-radius: 16px !important;
+  color: #081a39 !important;
+  background: rgba(8,26,57,.035) !important;
+  font-size: 13px !important;
+  letter-spacing: .06em !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+ }
+
+ header.site-header .menu a:hover,
+ header.site-header .menu a:focus-visible,
+ header.site-header .menu a.nav-active,
+ header.site-header.is-scrolled .menu a:hover,
+ header.site-header.is-scrolled .menu a:focus-visible,
+ header.site-header.is-scrolled .menu a.nav-active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #081a39, #16345f) !important;
+  transform: none !important;
+ }
+}
+
+@media (max-width: 760px) {
+ :root {
+  --radius: 18px;
+ }
+
+ .container {
+  width: min(100% - 24px, var(--max)) !important;
+ }
+
+ body {
+  font-size: 15.5px !important;
+  line-height: 1.58 !important;
+ }
+
+ section {
+  padding: 58px 0 !important;
+ }
+
+ .section-head {
+  display: block !important;
+  margin-bottom: 24px !important;
+ }
+
+ .section-kicker {
+  font-size: 12px !important;
+  letter-spacing: .11em !important;
+  margin-bottom: 8px !important;
+ }
+
+ h2 {
+  font-size: clamp(28px, 8vw, 37px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.04em !important;
+ }
+
+ h3 {
+  font-size: 20px !important;
+  line-height: 1.22 !important;
+ }
+
+ .section-head p:not(.section-kicker) {
+  max-width: none !important;
+  margin-top: 12px !important;
+  font-size: 15.5px !important;
+ }
+
+ .btn,
+ button,
+ input,
+ textarea,
+ select,
+ a.btn {
+  -webkit-tap-highlight-color: transparent;
+ }
+
+ .hero-kaiser .hero-slider {
+  min-height: 100svh !important;
+ }
+
+ .hero-kaiser .hero-slide-inner {
+  min-height: 100svh !important;
+  padding: 108px 0 88px !important;
+  align-items: center !important;
+ }
+
+ .hero-kaiser .hero-bg {
+  background-position: center center !important;
+ }
+
+ .hero-kaiser .hero-slide::before {
+  display: block !important;
+  opacity: 1 !important;
+  background: linear-gradient(90deg,
+   rgba(8,26,57,.82) 0%,
+   rgba(8,26,57,.66) 56%,
+   rgba(8,26,57,.25) 100%) !important;
+ }
+
+ .hero-kaiser .hero-copy {
+  width: min(100%, 560px) !important;
+  max-width: 100% !important;
+ }
+
+ .hero-kaiser .kaiser-pretitle {
+  font-size: clamp(16px, 4.4vw, 20px) !important;
+  margin-bottom: 10px !important;
+ }
+
+ .hero-kaiser h1 {
+  font-size: clamp(39px, 11.8vw, 58px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.055em !important;
+ }
+
+ .hero-kaiser .kaiser-subtitle {
+  max-width: 92% !important;
+  font-size: clamp(18px, 5.1vw, 23px) !important;
+  line-height: 1.22 !important;
+  margin-top: 14px !important;
+ }
+
+ .hero-kaiser .hero-actions {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+  width: min(100%, 330px) !important;
+  margin-top: 26px !important;
+ }
+
+ .hero-kaiser .hero-actions .btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 50px !important;
+  padding: 14px 18px !important;
+  border-radius: 999px !important;
+  font-size: 14px !important;
+ }
+
+ .hero-kaiser .hero-controls {
+  bottom: 18px !important;
+  align-items: center !important;
+ }
+
+ .hero-kaiser .hero-dot {
+  width: 32px !important;
+  height: 4px !important;
+ }
+
+ .hero-kaiser .hero-arrow {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  font-size: 20px !important;
+ }
+
+ #produkte.dark-section {
+  padding-top: 62px !important;
+  padding-bottom: 62px !important;
+ }
+
+ .sortiment-product-preview {
+  margin-top: 22px !important;
+ }
+
+ .sortiment-product-grid,
+ .product-grid,
+ .benefits,
+ .steps,
+ .footer-grid,
+ .form-grid,
+ .about-wrap,
+ .contact-wrap,
+ .split {
+  grid-template-columns: 1fr !important;
+ }
+
+ .sortiment-product-grid {
+  gap: 18px !important;
+ }
+
+ .sortiment-product-card {
+  border-radius: 22px !important;
+  box-shadow: 0 18px 46px rgba(0,0,0,.20) !important;
+  transform: none !important;
+ }
+
+ .sortiment-product-card:hover {
+  transform: translateY(-2px) !important;
+ }
+
+ .sortiment-product-image {
+  height: clamp(210px, 56vw, 286px) !important;
+ }
+
+ .sortiment-product-body {
+  padding: 18px 18px 20px !important;
+ }
+
+ .sortiment-product-body p {
+  font-size: 15px !important;
+ }
+
+ .sortiment-product-more {
+  font-size: 13px !important;
+ }
+
+ .sortiment-product-action {
+  margin-top: 22px !important;
+ }
+
+ .sortiment-product-action::before {
+  width: calc(100% - 12px) !important;
+  height: 64px !important;
+ }
+
+ .sortiment-overview-btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 56px !important;
+  padding: 14px 16px 14px 20px !important;
+  gap: 9px !important;
+  font-size: 14px !important;
+  letter-spacing: .005em !important;
+ }
+
+ .sortiment-overview-btn::after {
+  width: 30px !important;
+  height: 30px !important;
+  background-size: 19px 19px !important;
+ }
+
+ .benefits {
+  gap: 14px !important;
+ }
+
+ .benefit,
+ .step,
+ .about-copy,
+ .about-partner-card,
+ .contact-card,
+ form {
+  border-radius: 22px !important;
+  padding: 20px !important;
+ }
+
+ .benefit-thumb,
+ #beratung .beratung-thumb {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  flex-basis: 58px !important;
+  border-radius: 18px !important;
+  margin-bottom: 14px !important;
+ }
+
+ #beratung .split {
+  gap: 26px !important;
+ }
+
+ .image-panel {
+  min-height: 330px !important;
+  border-radius: 24px !important;
+ }
+
+ .image-panel img {
+  object-position: center center !important;
+ }
+
+ .callout {
+  left: 14px !important;
+  right: 14px !important;
+  bottom: 14px !important;
+  width: auto !important;
+  padding: 16px !important;
+  border-radius: 18px !important;
+ }
+
+ .callout strong {
+  font-size: 18px !important;
+ }
+
+ .callout span {
+  font-size: 14px !important;
+ }
+
+ #beratung .benefits[style],
+ #beratung .benefits {
+  grid-template-columns: 1fr !important;
+  margin-top: 18px !important;
+ }
+
+ #beratung p[style] {
+  font-size: 16px !important;
+  margin: 14px 0 18px !important;
+ }
+
+ .steps {
+  gap: 14px !important;
+ }
+
+ .step::before {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 16px !important;
+  margin-bottom: 14px !important;
+ }
+
+ .gallery {
+  grid-template-columns: 1fr !important;
+  grid-auto-rows: 235px !important;
+  gap: 14px !important;
+ }
+
+ .gallery-item,
+ .gallery-item.big {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  border-radius: 22px !important;
+ }
+
+ .gallery-label {
+  left: 12px !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  padding: 12px 13px !important;
+  border-radius: 16px !important;
+  font-size: 15px !important;
+ }
+
+ .gallery-label span {
+  font-size: 12px !important;
+ }
+
+ .about-wrap {
+  gap: 16px !important;
+ }
+
+ .about-copy .about-lead {
+  font-size: 16px !important;
+  margin-top: 14px !important;
+ }
+
+ .about-highlights {
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  margin-top: 20px !important;
+ }
+
+ .about-highlight {
+  padding: 17px !important;
+  border-radius: 18px !important;
+ }
+
+ .about-highlight strong {
+  font-size: 28px !important;
+ }
+
+ .about-partner-card img {
+  width: min(88%, 310px) !important;
+  border-radius: 18px !important;
+ }
+
+ .contact-wrap {
+  gap: 16px !important;
+ }
+
+ .contact-card p[style] {
+  font-size: 15px !important;
+ }
+
+ .contact-list {
+  gap: 10px !important;
+  margin-top: 20px !important;
+ }
+
+ .contact-list a,
+ .contact-list div {
+  padding: 13px !important;
+  border-radius: 16px !important;
+  word-break: break-word !important;
+ }
+
+ input,
+ textarea,
+ select {
+  min-height: 50px !important;
+  border-radius: 14px !important;
+  padding: 13px 14px !important;
+  font-size: 16px !important;
+ }
+
+ textarea {
+  min-height: 132px !important;
+ }
+
+ form .btn[type="submit"] {
+  width: 100% !important;
+  min-height: 52px !important;
+ }
+
+ .form-help {
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+ }
+
+ footer {
+  padding: 34px 0 !important;
+ }
+
+ footer .footer-grid {
+  gap: 22px !important;
+ }
+
+ footer .logo {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  justify-content: flex-start !important;
+ }
+
+ footer .logo img.logo-mark {
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  object-fit: contain !important;
+ }
+
+ footer h4 {
+  margin-bottom: 10px !important;
+ }
+
+ .legal-note {
+  margin-top: 20px !important;
+  padding-top: 16px !important;
+ }
+
+ .cookie-consent {
+  padding: 10px !important;
+ }
+
+ .cookie-consent-card {
+  width: calc(100vw - 20px) !important;
+  max-height: calc(100svh - 20px) !important;
+  overflow-y: auto !important;
+  border-radius: 22px !important;
+ }
+
+ .cookie-consent-inner {
+  padding: 18px !important;
+ }
+
+ .cookie-actions,
+ .cookie-save-row {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+ }
+
+ .cookie-actions button,
+ .cookie-save-row button {
+  width: 100% !important;
+  min-height: 46px !important;
+ }
+}
+
+@media (max-width: 420px) {
+ .container {
+  width: min(100% - 18px, var(--max)) !important;
+ }
+
+ header.site-header .container.nav,
+ header.site-header.is-scrolled .container.nav {
+  width: min(100% - 18px, var(--max)) !important;
+  height: 64px !important;
+  min-height: 64px !important;
+ }
+
+ header.site-header .logo,
+ header.site-header.is-scrolled .logo {
+  height: 64px !important;
+  min-height: 64px !important;
+  max-width: calc(100vw - 76px) !important;
+ }
+
+ header.site-header .logo-round,
+ header.site-header .logo-round img,
+ header.site-header.is-scrolled .logo-round,
+ header.site-header.is-scrolled .logo-round img {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  flex-basis: 42px !important;
+ }
+
+ header.site-header .logo-title,
+ header.site-header.is-scrolled .logo-title {
+  font-size: 22px !important;
+ }
+
+ header.site-header .logo-caravan,
+ header.site-header.is-scrolled .logo-caravan {
+  font-size: 6.2px !important;
+ }
+
+ header.site-header .mobile-toggle,
+ header.site-header.is-scrolled .mobile-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  flex-basis: 40px !important;
+ }
+
+ header.site-header .menu,
+ header.site-header.is-scrolled .menu {
+  top: 72px !important;
+  left: 9px !important;
+  right: 9px !important;
+ }
+
+ .hero-kaiser .hero-slide-inner {
+  padding-top: 94px !important;
+  padding-bottom: 76px !important;
+ }
+
+ .hero-kaiser h1 {
+  font-size: clamp(35px, 12vw, 48px) !important;
+ }
+
+ .hero-kaiser .kaiser-subtitle {
+  font-size: 17px !important;
+  max-width: 100% !important;
+ }
+
+ .hero-kaiser .hero-actions {
+  width: 100% !important;
+ }
+
+ .sortiment-product-image {
+  height: 205px !important;
+ }
+
+ .gallery {
+  grid-auto-rows: 215px !important;
+ }
+
+ .benefit,
+ .step,
+ .about-copy,
+ .about-partner-card,
+ .contact-card,
+ form {
+  padding: 18px !important;
+ }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ *,
+ *::before,
+ *::after {
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+ }
+}
+</style>
+
+
+<style>
+/* Mobile final check fixes: no side overflow + cleaner hero height */
+@media (max-width: 1080px) {
+ header.site-header .menu,
+ header.site-header.is-scrolled .menu {
+  left: 12px !important;
+  right: auto !important;
+  width: calc(100vw - 24px) !important;
+  max-width: calc(100vw - 24px) !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  grid-template-columns: 1fr !important;
+  box-sizing: border-box !important;
+ }
+}
+
+@media (max-width: 760px) {
+ .hero-kaiser .hero-slider,
+ .hero-kaiser .hero-slide-inner {
+  min-height: clamp(620px, 100svh, 720px) !important;
+ }
+}
+
+@media (max-width: 420px) {
+ header.site-header .menu,
+ header.site-header.is-scrolled .menu {
+  left: 9px !important;
+  right: auto !important;
+  width: calc(100vw - 18px) !important;
+  max-width: calc(100vw - 18px) !important;
+ }
+ .hero-kaiser .hero-slider,
+ .hero-kaiser .hero-slide-inner {
+  min-height: clamp(590px, 100svh, 670px) !important;
  }
 }
 </style>
