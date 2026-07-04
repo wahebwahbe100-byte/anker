@@ -9489,5 +9489,815 @@
 })();
 </script>
 
+
+
+<style>
+/* ============================================================
+   FINAL ANKER NAVBAR + MOVING UNDERLINE
+   شريط متحرك احترافي تحت كلمات القائمة، بألوان ANKER نفسها.
+   ============================================================ */
+:root {
+  --anker-nav-blue: #081a39;
+  --anker-nav-blue-soft: rgba(8, 26, 57, .08);
+  --anker-nav-sand: #9d8572;
+  --anker-nav-sand-soft: rgba(157, 133, 114, .16);
+  --anker-nav-white: rgba(255,255,255,.975);
+}
+
+header.site-header,
+header.site-header.is-scrolled {
+  background: linear-gradient(180deg, rgba(255,255,255,.99), rgba(255,255,255,.955)) !important;
+  border-bottom: 1px solid rgba(157,133,114,.24) !important;
+  box-shadow: 0 14px 34px rgba(8,26,57,.10) !important;
+}
+
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(20px, 2.4vw, 42px) !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu a {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 46px !important;
+    padding: 15px 0 19px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--anker-nav-blue) !important;
+    font-family: Montserrat, Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+    letter-spacing: .018em !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+    transition: color .22s ease, transform .22s ease !important;
+  }
+
+  header.site-header .menu a:hover,
+  header.site-header .menu a:focus-visible,
+  header.site-header .menu a.nav-active,
+  header.site-header.is-scrolled .menu a:hover,
+  header.site-header.is-scrolled .menu a:focus-visible,
+  header.site-header.is-scrolled .menu a.nav-active {
+    color: var(--anker-nav-sand) !important;
+    background: transparent !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Disable old per-link pseudo underlines so only one smooth bar moves. */
+  header.site-header .menu a::before,
+  header.site-header .menu a::after,
+  header.site-header.is-scrolled .menu a::before,
+  header.site-header.is-scrolled .menu a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  header.site-header .menu .nav-moving-line,
+  header.site-header.is-scrolled .menu .nav-moving-line {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 0;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #081a39 0%, #9d8572 55%, #d8c2ad 100%);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.55),
+      0 0 10px rgba(157,133,114,.75),
+      0 0 22px rgba(8,26,57,.34),
+      0 8px 18px rgba(8,26,57,.18);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(0,0,0);
+    transition:
+      transform .34s cubic-bezier(.22,.8,.25,1),
+      width .34s cubic-bezier(.22,.8,.25,1),
+      opacity .18s ease;
+  }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .menu .nav-moving-line,
+  header.site-header.is-scrolled .menu .nav-moving-line {
+    display: none !important;
+  }
+
+  header.site-header .menu.open a,
+  header.site-header.is-scrolled .menu.open a {
+    position: relative !important;
+    color: var(--anker-nav-blue) !important;
+    border-radius: 14px !important;
+    transition: background .22s ease, color .22s ease, transform .22s ease !important;
+  }
+
+  header.site-header .menu.open a:hover,
+  header.site-header .menu.open a.nav-active,
+  header.site-header.is-scrolled .menu.open a:hover,
+  header.site-header.is-scrolled .menu.open a.nav-active {
+    color: var(--anker-nav-sand) !important;
+    background: linear-gradient(90deg, var(--anker-nav-blue-soft), var(--anker-nav-sand-soft)) !important;
+    transform: translateX(3px) !important;
+  }
+
+  header.site-header .menu.open a.nav-active,
+  header.site-header.is-scrolled .menu.open a.nav-active {
+    border-left: 4px solid var(--anker-nav-sand) !important;
+    padding-left: 14px !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initAnkerMovingMenu() {
+    const header = document.querySelector('header.site-header');
+    const menu = document.querySelector('header.site-header .menu');
+    if (!header || !menu) return;
+
+    let indicator = menu.querySelector('.nav-moving-line');
+    if (!indicator) {
+      indicator = document.createElement('span');
+      indicator.className = 'nav-moving-line';
+      indicator.setAttribute('aria-hidden', 'true');
+      menu.appendChild(indicator);
+    }
+
+    const links = Array.from(menu.querySelectorAll('a[href^="#"]'));
+    const sections = links
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    function setActiveById(id) {
+      links.forEach((link) => {
+        link.classList.toggle('nav-active', link.getAttribute('href') === '#' + id);
+      });
+    }
+
+    function updateActiveLink() {
+      if (!sections.length) return;
+      const marker = header.offsetHeight + 90;
+      let currentId = sections[0].id;
+
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= marker) {
+          currentId = section.id;
+        }
+      });
+
+      if (currentId) setActiveById(currentId);
+    }
+
+    function activeLink() {
+      return menu.querySelector('a.nav-active') || links[0] || null;
+    }
+
+    function moveIndicator(target) {
+      if (!target || window.innerWidth <= 1080) return;
+      const menuRect = menu.getBoundingClientRect();
+      const linkRect = target.getBoundingClientRect();
+
+      // Place the glowing line directly under the word, not at the bottom of the navbar.
+      const gap = 5;
+      const lineWidth = Math.max(34, Math.round(linkRect.width));
+      const x = Math.round(linkRect.left - menuRect.left + (linkRect.width - lineWidth) / 2);
+      const y = Math.round(linkRect.bottom - menuRect.top + gap);
+
+      indicator.style.width = lineWidth + 'px';
+      indicator.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+      indicator.style.opacity = '1';
+    }
+
+    function refreshIndicator() {
+      updateActiveLink();
+      requestAnimationFrame(() => moveIndicator(activeLink()));
+    }
+
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', () => moveIndicator(link));
+      link.addEventListener('focus', () => moveIndicator(link));
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('href').slice(1);
+        if (id) setActiveById(id);
+        requestAnimationFrame(() => moveIndicator(link));
+      });
+    });
+
+    menu.addEventListener('mouseleave', () => moveIndicator(activeLink()));
+    window.addEventListener('load', refreshIndicator);
+    window.addEventListener('resize', refreshIndicator);
+    window.addEventListener('scroll', refreshIndicator, { passive: true });
+
+    const observer = new MutationObserver(() => moveIndicator(activeLink()));
+    links.forEach((link) => observer.observe(link, { attributes: true, attributeFilter: ['class'] }));
+
+    refreshIndicator();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnkerMovingMenu);
+  } else {
+    initAnkerMovingMenu();
+  }
+})();
+</script>
+
+
+<style>
+/* ============================================================
+   ANKER NAVBAR - SHORT TO LONG UNDERLINE LIKE FIRST WEBSITE
+   الخط يبدأ قصيرًا في المنتصف ثم يتمدد تحت الكلمة نفسها.
+   ============================================================ */
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    gap: clamp(20px, 2.4vw, 38px) !important;
+    overflow: visible !important;
+  }
+
+  /* Hide the previous moving indicator completely. */
+  header.site-header .menu .nav-moving-line,
+  header.site-header.is-scrolled .menu .nav-moving-line {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu a {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    padding: 12px 0 13px !important;
+    color: var(--anker-nav-blue, #081a39) !important;
+    overflow: visible !important;
+    transition: color .22s ease, transform .22s ease !important;
+  }
+
+  header.site-header .menu a:hover,
+  header.site-header .menu a:focus-visible,
+  header.site-header .menu a.nav-active,
+  header.site-header.is-scrolled .menu a:hover,
+  header.site-header.is-scrolled .menu a:focus-visible,
+  header.site-header.is-scrolled .menu a.nav-active {
+    color: var(--anker-nav-sand, #9d8572) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Short glowing seed line before hover/active. */
+  header.site-header .menu a::before,
+  header.site-header.is-scrolled .menu a::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 4px !important;
+    width: 18px !important;
+    height: 3px !important;
+    display: block !important;
+    border-radius: 999px !important;
+    background: linear-gradient(90deg, #081a39 0%, #9d8572 64%, #d8c2ad 100%) !important;
+    opacity: 0 !important;
+    transform: translateX(-50%) scaleX(.72) !important;
+    transform-origin: center !important;
+    box-shadow:
+      0 0 7px rgba(157,133,114,.72),
+      0 0 14px rgba(8,26,57,.26) !important;
+    transition:
+      width .30s cubic-bezier(.22,.8,.25,1),
+      opacity .18s ease,
+      transform .30s cubic-bezier(.22,.8,.25,1),
+      box-shadow .30s ease !important;
+    pointer-events: none !important;
+  }
+
+  /* Main small-to-full animation: same idea as first website. */
+  header.site-header .menu a:hover::before,
+  header.site-header .menu a:focus-visible::before,
+  header.site-header .menu a.nav-active::before,
+  header.site-header.is-scrolled .menu a:hover::before,
+  header.site-header.is-scrolled .menu a:focus-visible::before,
+  header.site-header.is-scrolled .menu a.nav-active::before {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: translateX(-50%) scaleX(1) !important;
+    box-shadow:
+      0 0 9px rgba(157,133,114,.82),
+      0 0 20px rgba(8,26,57,.34),
+      0 7px 16px rgba(8,26,57,.16) !important;
+  }
+
+  /* Remove any second underline from older CSS. */
+  header.site-header .menu a::after,
+  header.site-header.is-scrolled .menu a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .menu .nav-moving-line,
+  header.site-header.is-scrolled .menu .nav-moving-line {
+    display: none !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* ============================================================
+   FINAL FIX: underline below the text, short-to-long animation
+   - Uses ::after only, placed outside the text box.
+   - Disables older ::before underline so nothing appears above words.
+   ============================================================ */
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu a {
+    position: relative !important;
+    display: inline-block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    line-height: 1.15 !important;
+    padding: 8px 0 9px !important;
+    overflow: visible !important;
+    vertical-align: middle !important;
+  }
+
+  /* Kill the previous pseudo-line that could sit inside/above the text. */
+  header.site-header .menu a::before,
+  header.site-header.is-scrolled .menu a::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* The real underline: always BELOW the word. */
+  header.site-header .menu a::after,
+  header.site-header.is-scrolled .menu a::after,
+  header.site-header .menu .nav-products-link::after,
+  header.site-header.is-scrolled .menu .nav-products-link::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: -5px !important;
+    width: 18px !important;
+    height: 3px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(90deg, #081a39 0%, #9d8572 68%, #d8c2ad 100%) !important;
+    opacity: 0 !important;
+    transform: translateX(-50%) scaleX(.65) !important;
+    transform-origin: center !important;
+    box-shadow:
+      0 0 8px rgba(157,133,114,.78),
+      0 0 18px rgba(8,26,57,.28) !important;
+    transition:
+      width .30s cubic-bezier(.22,.8,.25,1),
+      opacity .18s ease,
+      transform .30s cubic-bezier(.22,.8,.25,1),
+      box-shadow .30s ease !important;
+    pointer-events: none !important;
+  }
+
+  header.site-header .menu a:hover::after,
+  header.site-header .menu a:focus-visible::after,
+  header.site-header .menu a.nav-active::after,
+  header.site-header .menu .nav-products-link:hover::after,
+  header.site-header .menu .nav-products-link:focus-visible::after,
+  header.site-header .menu .nav-products-link.nav-active::after,
+  header.site-header.is-scrolled .menu a:hover::after,
+  header.site-header.is-scrolled .menu a:focus-visible::after,
+  header.site-header.is-scrolled .menu a.nav-active::after,
+  header.site-header.is-scrolled .menu .nav-products-link:hover::after,
+  header.site-header.is-scrolled .menu .nav-products-link:focus-visible::after,
+  header.site-header.is-scrolled .menu .nav-products-link.nav-active::after {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: translateX(-50%) scaleX(1) !important;
+    box-shadow:
+      0 0 10px rgba(157,133,114,.90),
+      0 0 22px rgba(8,26,57,.38),
+      0 8px 16px rgba(8,26,57,.16) !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* ============================================================
+   FINAL FIX - ANKER MENU UNDERLINE
+   - Menu labels restored: STARTSEITE / WOHNWAGEN / ÜBER UNS / SERVICE / KONTAKT
+   - A short line is visible under every word before hover.
+   - On hover/active it grows from short to full word width.
+   - The line is anchored under the text, not above it.
+   ============================================================ */
+header.site-header .menu .nav-moving-line,
+header.site-header.is-scrolled .menu .nav-moving-line {
+  display: none !important;
+}
+
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(20px, 2.25vw, 34px) !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu a {
+    position: relative !important;
+    display: inline-block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 0 9px !important;
+    margin: 0 !important;
+    line-height: 1.05 !important;
+    overflow: visible !important;
+    color: #081a39 !important;
+    font-family: Montserrat, Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 850 !important;
+    letter-spacing: .075em !important;
+    text-transform: uppercase !important;
+    transform: none !important;
+    transition: color .22s ease, transform .22s ease !important;
+  }
+
+  header.site-header .menu a:hover,
+  header.site-header .menu a:focus-visible,
+  header.site-header .menu a.nav-active,
+  header.site-header.is-scrolled .menu a:hover,
+  header.site-header.is-scrolled .menu a:focus-visible,
+  header.site-header.is-scrolled .menu a.nav-active {
+    color: #9d8572 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  header.site-header .menu a::before,
+  header.site-header.is-scrolled .menu a::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  header.site-header .menu a::after,
+  header.site-header.is-scrolled .menu a::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 0 !important;
+    display: block !important;
+    width: 18px !important;
+    height: 3px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(90deg, #081a39 0%, #9d8572 70%, #d8c2ad 100%) !important;
+    opacity: .72 !important;
+    transform: translateX(-50%) scaleX(.82) !important;
+    transform-origin: center !important;
+    box-shadow:
+      0 0 6px rgba(157, 133, 114, .58),
+      0 0 13px rgba(8, 26, 57, .18) !important;
+    pointer-events: none !important;
+    transition:
+      width .30s cubic-bezier(.22,.8,.25,1),
+      opacity .20s ease,
+      transform .30s cubic-bezier(.22,.8,.25,1),
+      box-shadow .30s ease !important;
+  }
+
+  header.site-header .menu a:hover::after,
+  header.site-header .menu a:focus-visible::after,
+  header.site-header .menu a.nav-active::after,
+  header.site-header.is-scrolled .menu a:hover::after,
+  header.site-header.is-scrolled .menu a:focus-visible::after,
+  header.site-header.is-scrolled .menu a.nav-active::after {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: translateX(-50%) scaleX(1) !important;
+    box-shadow:
+      0 0 8px rgba(157, 133, 114, .82),
+      0 0 19px rgba(8, 26, 57, .32),
+      0 6px 14px rgba(8, 26, 57, .14) !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    overflow: visible !important;
+  }
+
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu a {
+    position: relative !important;
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+  }
+
+  header.site-header .menu a::before,
+  header.site-header .menu a::after,
+  header.site-header.is-scrolled .menu a::before,
+  header.site-header.is-scrolled .menu a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* ============================================================
+   REAL VISIBLE MENU LINE FIX - ANKER
+   هذا الإصلاح يستخدم عنصر span حقيقي داخل كل رابط بدل ::before/::after
+   حتى يظهر الخط دائمًا تحت الكلام ولا يتأثر بأي كود قديم.
+   ============================================================ */
+:root {
+  --anker-line-blue: #081a39;
+  --anker-line-sand: #9d8572;
+  --anker-line-light: #d8c2ad;
+}
+
+header.site-header .menu .nav-moving-line,
+header.site-header.is-scrolled .menu .nav-moving-line {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+header.site-header .menu,
+header.site-header.is-scrolled .menu {
+  overflow: visible !important;
+}
+
+header.site-header .menu a,
+header.site-header.is-scrolled .menu a {
+  position: relative !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: auto !important;
+  min-width: max-content !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 9px 0 2px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  line-height: 1 !important;
+  color: var(--anker-line-blue) !important;
+  font-family: Montserrat, Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 850 !important;
+  letter-spacing: .075em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  transform: none !important;
+  transition: color .22s ease, transform .22s ease !important;
+}
+
+header.site-header .menu a::before,
+header.site-header .menu a::after,
+header.site-header.is-scrolled .menu a::before,
+header.site-header.is-scrolled .menu a::after,
+header.site-header .menu .nav-products-link::before,
+header.site-header .menu .nav-products-link::after,
+header.site-header.is-scrolled .menu .nav-products-link::before,
+header.site-header.is-scrolled .menu .nav-products-link::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+header.site-header .menu a .nav-label,
+header.site-header.is-scrolled .menu a .nav-label {
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+header.site-header .menu a .nav-line,
+header.site-header.is-scrolled .menu a .nav-line {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 18px !important;
+  height: 3px !important;
+  min-height: 3px !important;
+  border-radius: 999px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: linear-gradient(90deg, var(--anker-line-blue) 0%, var(--anker-line-sand) 68%, var(--anker-line-light) 100%) !important;
+  opacity: .9 !important;
+  transform: scaleX(1) !important;
+  transform-origin: center !important;
+  box-shadow:
+    0 0 6px rgba(157, 133, 114, .62),
+    0 0 13px rgba(8, 26, 57, .20) !important;
+  transition:
+    width .30s cubic-bezier(.22,.8,.25,1),
+    opacity .20s ease,
+    box-shadow .30s ease,
+    transform .30s cubic-bezier(.22,.8,.25,1) !important;
+  pointer-events: none !important;
+}
+
+header.site-header .menu a:hover,
+header.site-header .menu a:focus-visible,
+header.site-header .menu a.nav-active,
+header.site-header.is-scrolled .menu a:hover,
+header.site-header.is-scrolled .menu a:focus-visible,
+header.site-header.is-scrolled .menu a.nav-active {
+  color: var(--anker-line-sand) !important;
+  transform: translateY(-1px) !important;
+}
+
+header.site-header .menu a:hover .nav-line,
+header.site-header .menu a:focus-visible .nav-line,
+header.site-header .menu a.nav-active .nav-line,
+header.site-header.is-scrolled .menu a:hover .nav-line,
+header.site-header.is-scrolled .menu a:focus-visible .nav-line,
+header.site-header.is-scrolled .menu a.nav-active .nav-line {
+  width: 100% !important;
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+  box-shadow:
+    0 0 9px rgba(157, 133, 114, .90),
+    0 0 21px rgba(8, 26, 57, .36),
+    0 7px 15px rgba(8, 26, 57, .14) !important;
+}
+
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(22px, 2.35vw, 36px) !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .menu.open a,
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu.open a,
+  header.site-header.is-scrolled .menu a {
+    align-items: flex-start !important;
+    gap: 7px !important;
+    padding: 13px 14px !important;
+    font-size: 13px !important;
+  }
+
+  header.site-header .menu a .nav-line,
+  header.site-header.is-scrolled .menu a .nav-line {
+    width: 18px !important;
+  }
+
+  header.site-header .menu a:hover .nav-line,
+  header.site-header .menu a:focus-visible .nav-line,
+  header.site-header .menu a.nav-active .nav-line,
+  header.site-header.is-scrolled .menu a:hover .nav-line,
+  header.site-header.is-scrolled .menu a:focus-visible .nav-line,
+  header.site-header.is-scrolled .menu a.nav-active .nav-line {
+    width: 72px !important;
+  }
+}
+</style>
+
+
+<style>
+/* FINAL FIX: menu text + no underline/line at all */
+header.site-header .menu,
+header.site-header.is-scrolled .menu {
+  overflow: visible !important;
+}
+
+header.site-header .menu a,
+header.site-header.is-scrolled .menu a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: max-content !important;
+  padding: 9px 0 !important;
+  margin: 0 !important;
+  color: #081a39 !important;
+  font-family: Montserrat, Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 850 !important;
+  letter-spacing: .075em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: color .22s ease, transform .22s ease !important;
+}
+
+header.site-header .menu a:hover,
+header.site-header .menu a:focus-visible,
+header.site-header .menu a.nav-active,
+header.site-header.is-scrolled .menu a:hover,
+header.site-header.is-scrolled .menu a:focus-visible,
+header.site-header.is-scrolled .menu a.nav-active {
+  color: #9d8572 !important;
+  transform: translateY(-1px) !important;
+}
+
+header.site-header .menu a::before,
+header.site-header .menu a::after,
+header.site-header.is-scrolled .menu a::before,
+header.site-header.is-scrolled .menu a::after,
+header.site-header .menu .nav-products-link::before,
+header.site-header .menu .nav-products-link::after,
+header.site-header.is-scrolled .menu .nav-products-link::before,
+header.site-header.is-scrolled .menu .nav-products-link::after,
+header.site-header .menu .nav-line,
+header.site-header.is-scrolled .menu .nav-line,
+header.site-header .menu .nav-moving-line,
+header.site-header.is-scrolled .menu .nav-moving-line {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 1081px) {
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(22px, 2.35vw, 36px) !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .menu.open a,
+  header.site-header .menu a,
+  header.site-header.is-scrolled .menu.open a,
+  header.site-header.is-scrolled .menu a {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 13px 14px !important;
+    font-size: 13px !important;
+  }
+}
+</style>
+
 </body>
 </html>
