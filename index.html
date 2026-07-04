@@ -7206,6 +7206,243 @@
       }
     }
 
+
+
+    /* ============================================================
+       USER REQUEST: make ANKER / CARAVAN / BERLIN a little smaller
+       Keeps the same centered lockup and folded header behavior.
+       ============================================================ */
+    header.site-header .logo-title {
+      font-size: 44px !important;
+      letter-spacing: .165em !important;
+    }
+
+    header.site-header .logo-caravan {
+      font-size: 14px !important;
+      letter-spacing: .36em !important;
+      padding-left: .36em !important;
+    }
+
+    header.site-header .logo-berlin {
+      font-size: 13px !important;
+      letter-spacing: .42em !important;
+      padding-left: .42em !important;
+      margin-top: 9px !important;
+    }
+
+    header.site-header.is-scrolled .logo-title {
+      font-size: 33px !important;
+      letter-spacing: .15em !important;
+      padding-left: .15em !important;
+    }
+
+    @media (max-width: 1080px) {
+      header.site-header .logo-title {
+        font-size: 37px !important;
+        letter-spacing: .15em !important;
+      }
+      header.site-header .logo-caravan {
+        font-size: 12px !important;
+        letter-spacing: .31em !important;
+        padding-left: .31em !important;
+      }
+      header.site-header .logo-berlin {
+        font-size: 11px !important;
+        letter-spacing: .33em !important;
+        padding-left: .33em !important;
+        margin-top: 7px !important;
+      }
+      header.site-header.is-scrolled .logo-title {
+        font-size: 23px !important;
+        letter-spacing: .12em !important;
+        padding-left: .12em !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header.site-header .logo-title {
+        font-size: 31px !important;
+        letter-spacing: .12em !important;
+      }
+      header.site-header .logo-caravan {
+        font-size: 9px !important;
+        letter-spacing: .22em !important;
+        padding-left: .22em !important;
+      }
+      header.site-header .logo-berlin {
+        font-size: 9px !important;
+        letter-spacing: .23em !important;
+        padding-left: .23em !important;
+        margin-top: 5px !important;
+      }
+      header.site-header.is-scrolled .logo-title {
+        font-size: 20px !important;
+        letter-spacing: .10em !important;
+        padding-left: .10em !important;
+      }
+    }
+
+  
+
+    /* ============================================================
+       FINAL USER TWEAK: smaller ANKER / CARAVAN / BERLIN + slightly bigger logo
+       ============================================================ */
+    header.site-header:not(.is-scrolled) .logo-round {
+      width: 108px !important;
+      height: 108px !important;
+      flex: 0 0 108px !important;
+      flex-basis: 108px !important;
+    }
+
+    header.site-header.is-scrolled .logo-round {
+      width: 100px !important;
+      height: 100px !important;
+      flex: 0 0 100px !important;
+      flex-basis: 100px !important;
+    }
+
+    header.site-header .logo-title {
+      font-size: 39px !important;
+      letter-spacing: .155em !important;
+      padding-left: .155em !important;
+    }
+
+    header.site-header .logo-caravan {
+      font-size: 12px !important;
+      letter-spacing: .32em !important;
+      padding-left: .32em !important;
+    }
+
+    header.site-header .logo-berlin {
+      font-size: 11px !important;
+      letter-spacing: .36em !important;
+      padding-left: .36em !important;
+      margin-top: 7px !important;
+    }
+
+    header.site-header.is-scrolled .logo-title {
+      font-size: 28px !important;
+      letter-spacing: .13em !important;
+      padding-left: .13em !important;
+    }
+
+    header.site-header.is-scrolled .logo-caravan {
+      font-size: 9.5px !important;
+      letter-spacing: .25em !important;
+      padding-left: .25em !important;
+    }
+
+    header.site-header.is-scrolled .logo-berlin {
+      font-size: 9px !important;
+      letter-spacing: .28em !important;
+      padding-left: .28em !important;
+      margin-top: 5px !important;
+    }
+
+    @media (max-width: 1560px) and (min-width: 1081px) {
+      header.site-header:not(.is-scrolled) .logo-round {
+        width: 102px !important;
+        height: 102px !important;
+        flex-basis: 102px !important;
+      }
+      header.site-header.is-scrolled .logo-round {
+        width: 94px !important;
+        height: 94px !important;
+        flex-basis: 94px !important;
+      }
+      header.site-header .logo-title {
+        font-size: 38px !important;
+        letter-spacing: .15em !important;
+        padding-left: .15em !important;
+      }
+    }
+
+    @media (max-width: 1380px) and (min-width: 1081px) {
+      header.site-header:not(.is-scrolled) .logo-round {
+        width: 94px !important;
+        height: 94px !important;
+        flex-basis: 94px !important;
+      }
+      header.site-header.is-scrolled .logo-round {
+        width: 88px !important;
+        height: 88px !important;
+        flex-basis: 88px !important;
+      }
+      header.site-header .logo-title {
+        font-size: 36px !important;
+        letter-spacing: .14em !important;
+        padding-left: .14em !important;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      header.site-header:not(.is-scrolled) .logo-round {
+        width: 66px !important;
+        height: 66px !important;
+        flex-basis: 66px !important;
+      }
+      header.site-header.is-scrolled .logo-round {
+        width: 56px !important;
+        height: 56px !important;
+        flex-basis: 56px !important;
+      }
+      header.site-header .logo-title {
+        font-size: 32px !important;
+        letter-spacing: .125em !important;
+        padding-left: .125em !important;
+      }
+      header.site-header .logo-caravan {
+        font-size: 10px !important;
+        letter-spacing: .25em !important;
+        padding-left: .25em !important;
+      }
+      header.site-header .logo-berlin {
+        font-size: 9.5px !important;
+        letter-spacing: .27em !important;
+        padding-left: .27em !important;
+        margin-top: 5px !important;
+      }
+      header.site-header.is-scrolled .logo-title {
+        font-size: 20px !important;
+        letter-spacing: .10em !important;
+        padding-left: .10em !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header.site-header:not(.is-scrolled) .logo-round {
+        width: 50px !important;
+        height: 50px !important;
+        flex-basis: 50px !important;
+      }
+      header.site-header.is-scrolled .logo-round {
+        width: 42px !important;
+        height: 42px !important;
+        flex-basis: 42px !important;
+      }
+      header.site-header .logo-title {
+        font-size: 27px !important;
+        letter-spacing: .105em !important;
+        padding-left: .105em !important;
+      }
+      header.site-header .logo-caravan {
+        font-size: 8px !important;
+        letter-spacing: .18em !important;
+        padding-left: .18em !important;
+      }
+      header.site-header .logo-berlin {
+        font-size: 8px !important;
+        letter-spacing: .19em !important;
+        padding-left: .19em !important;
+        margin-top: 4px !important;
+      }
+      header.site-header.is-scrolled .logo-title {
+        font-size: 17px !important;
+        letter-spacing: .085em !important;
+        padding-left: .085em !important;
+      }
+    }
+
   </style>
 </head>
 <body>
