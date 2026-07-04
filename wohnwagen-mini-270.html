@@ -46,8 +46,8 @@
   .header-inner{
     max-width:1200px;
     margin:auto;
-    min-height:92px;
-    padding:14px 22px;
+    min-height:76px;
+    padding:10px 22px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -55,7 +55,7 @@
   }
 
   .logo img{
-    width:190px;
+    width:130px;
     height:auto;
   }
 
@@ -149,6 +149,10 @@
     z-index:2;
   }
 
+  .slide:not(.active){
+    pointer-events:none;
+  }
+
   .slide img,
   .slide video{
     width:100%;
@@ -159,6 +163,11 @@
   .slide video{
     display:block;
     background:#101827;
+    cursor:pointer;
+  }
+
+  .video-slide.active{
+    z-index:3;
   }
 
   .thumbs{
@@ -366,8 +375,8 @@
     .slider{height:320px}
     .thumb{height:66px}
     .features-grid,.package-grid{grid-template-columns:1fr}
-    .header-inner{min-height:82px}
-    .logo img{width:145px}
+    .header-inner{min-height:68px}
+    .logo img{width:112px}
   }
 
   @media (max-width: 640px){
@@ -379,7 +388,7 @@
     .feature-item{font-size:16px}
     .section-title h2{font-size:28px}
     .header-inner{gap:12px}
-    .logo img{width:145px}
+    .logo img{width:102px}
     .back{padding:10px 14px;font-size:14px}
   }
 
@@ -514,8 +523,8 @@
         <div class="slide"><img src="images/mini-270-2.jpeg" alt="Wohnwagen Mini 270 Bild 2"></div>
         <div class="slide"><img src="images/mini-270-3.jpeg" alt="Wohnwagen Mini 270 Bild 3"></div>
         <div class="slide"><img src="images/mini-270-4.jpeg" alt="Wohnwagen Mini 270 Bild 4"></div>
-        <div class="slide">
-          <video controls muted playsinline preload="metadata" poster="images/mini-270-1.jpeg">
+        <div class="slide video-slide">
+          <video controls playsinline preload="metadata" poster="images/mini-270-1.jpeg">
             <source src="videos/mini-270.mp4" type="video/mp4">
             Ihr Browser unterstützt dieses Videoformat nicht.
           </video>
@@ -526,7 +535,7 @@
         <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/mini-270-2.jpeg" alt="Wohnwagen Mini 270 Vorschau 2"></button>
         <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/mini-270-3.jpeg" alt="Wohnwagen Mini 270 Vorschau 3"></button>
         <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/mini-270-4.jpeg" alt="Wohnwagen Mini 270 Vorschau 4"></button>
-        <button class="thumb thumb-video" type="button" aria-label="Video anzeigen"><img src="images/mini-270-1.jpeg" alt="Wohnwagen Mini 270 Video Vorschau"></button>
+        <button class="thumb thumb-video" type="button" aria-label="Video anzeigen"><video muted playsinline preload="metadata" poster="images/mini-270-1.jpeg"><source src="videos/mini-270.mp4" type="video/mp4"></video></button>
       </div>
     </div>
   </div>
@@ -660,19 +669,6 @@
   });
 
 
-  document.querySelectorAll('#miniSlider video').forEach((video) => {
-    video.muted = true;
-    video.defaultMuted = true;
-    video.volume = 0;
-
-    video.addEventListener('volumechange', () => {
-      if (!video.muted || video.volume !== 0) {
-        video.muted = true;
-        video.volume = 0;
-      }
-    });
-  });
-
   const slides = document.querySelectorAll('#miniSlider .slide');
   const thumbs = document.querySelectorAll('#miniThumbs .thumb');
   const slider = document.querySelector('#miniSlider');
@@ -680,24 +676,34 @@
   let autoSlideTimer;
   let resumeTimer;
 
-  function pauseAutoSlide(){
+  function stopAutoSlide(){
     if (autoSlideTimer) clearInterval(autoSlideTimer);
     if (resumeTimer) clearTimeout(resumeTimer);
-
     autoSlideTimer = null;
+    resumeTimer = null;
+  }
+
+  function pauseAutoSlide(){
+    stopAutoSlide();
+
+    const activeVideo = slides[index]?.querySelector('video');
+    if (activeVideo) return;
+
     resumeTimer = setTimeout(() => {
-      const activeVideo = slides[index]?.querySelector('video');
-      if (!activeVideo || activeVideo.paused || activeVideo.ended) {
-        startAutoSlide();
-      }
+      startAutoSlide();
     }, 10000);
   }
 
   thumbs.forEach((thumb, thumbIndex) => {
     thumb.addEventListener('click', () => {
-      pauseAutoSlide();
+      stopAutoSlide();
       index = thumbIndex;
       showSlide(index);
+
+      const selectedVideo = slides[index]?.querySelector('video');
+      if (!selectedVideo) {
+        pauseAutoSlide();
+      }
     });
   });
 
@@ -708,12 +714,10 @@
   slides.forEach((slide) => {
     const video = slide.querySelector('video');
     if (video) {
-      video.addEventListener('play', () => {
-        if (autoSlideTimer) clearInterval(autoSlideTimer);
-        if (resumeTimer) clearTimeout(resumeTimer);
-        autoSlideTimer = null;
+      video.addEventListener('play', stopAutoSlide);
+      video.addEventListener('pause', () => {
+        if (slides[index]?.contains(video) && !video.ended) return;
       });
-
       video.addEventListener('ended', () => {
         pauseAutoSlide();
       });
@@ -722,10 +726,12 @@
 
   function showSlide(i){
     slides.forEach((slide, sIndex) => {
-      slide.classList.toggle('active', sIndex === i);
-      if (sIndex !== i) {
-        const video = slide.querySelector('video');
-        if (video) video.pause();
+      const isActive = sIndex === i;
+      slide.classList.toggle('active', isActive);
+
+      const video = slide.querySelector('video');
+      if (video && !isActive) {
+        video.pause();
       }
     });
     thumbs.forEach((thumb, tIndex) => {
@@ -737,7 +743,7 @@
     if (autoSlideTimer) clearInterval(autoSlideTimer);
     autoSlideTimer = setInterval(() => {
       const activeVideo = slides[index]?.querySelector('video');
-      if (activeVideo && !activeVideo.paused && !activeVideo.ended) return;
+      if (activeVideo) return;
 
       index = (index + 1) % slides.length;
       showSlide(index);
