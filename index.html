@@ -5496,6 +5496,39 @@
       }
     }
 
+  
+
+    /* ============================================================
+       FINAL FIX: remove the extra logo frame in the website
+       يحذف الإطار الخارجي المضاف حول اللوجو داخل الموقع.
+       ============================================================ */
+    header.site-header .logo-round,
+    header.site-header.is-scrolled .logo-round {
+      background: transparent !important;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      overflow: hidden !important;
+      border-radius: 999px !important;
+    }
+
+    header.site-header .logo-round img,
+    header.site-header.is-scrolled .logo-round img {
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      transform: scale(1.13) !important;
+    }
+
+    footer .logo-mark,
+    footer .logo img.logo-mark {
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
   </style>
 </head>
 <body>
