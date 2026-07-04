@@ -11258,5 +11258,118 @@ section[id] {
 }
 </style>
 
+
+
+<style>
+/* ============================================================
+   FINAL FIX: mobile display for slide 3 + Caravans card 3
+   ============================================================ */
+@media (max-width: 760px) {
+  /* Hero slide 3: keep the third offer readable on phones */
+  .hero-kaiser .hero-slide.slide-3 .hero-bg {
+    background-position: center center !important;
+  }
+
+  .hero-kaiser .hero-slide.slide-3 .hero-copy {
+    width: 100% !important;
+    max-width: 560px !important;
+  }
+
+  .hero-kaiser .hero-slide.slide-3 h1 {
+    max-width: 10ch !important;
+    font-size: clamp(36px, 11vw, 54px) !important;
+    line-height: .98 !important;
+  }
+
+  .hero-kaiser .hero-slide.slide-3 .kaiser-subtitle {
+    max-width: 100% !important;
+    font-size: clamp(16px, 4.6vw, 20px) !important;
+    line-height: 1.32 !important;
+  }
+
+  .hero-kaiser .hero-slide.slide-3 .hero-actions {
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+
+  /* Caravans section: make all 3 cards, especially card 3, fit cleanly on phones */
+  #produkte .sortiment-product-preview {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #produkte .sortiment-product-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  #produkte .sortiment-product-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+  }
+
+  #produkte .sortiment-product-image {
+    width: 100% !important;
+    height: clamp(198px, 54vw, 265px) !important;
+  }
+
+  #produkte .sortiment-product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img {
+    object-position: center center !important;
+  }
+
+  #produkte .sortiment-product-body {
+    min-width: 0 !important;
+    padding: 18px 18px 20px !important;
+  }
+
+  #produkte .sortiment-product-body h3,
+  #produkte .sortiment-product-body p,
+  #produkte .sortiment-product-more {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+  }
+
+  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-body p {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-kaiser .hero-slide.slide-3 h1 {
+    max-width: 11ch !important;
+    font-size: clamp(33px, 11.4vw, 45px) !important;
+  }
+
+  .hero-kaiser .hero-slide.slide-3 .kaiser-subtitle {
+    font-size: 16px !important;
+  }
+
+  #produkte .sortiment-product-image {
+    height: clamp(190px, 53vw, 220px) !important;
+  }
+
+  #produkte .sortiment-product-body {
+    padding: 17px !important;
+  }
+}
+</style>
+
 </body>
 </html>
