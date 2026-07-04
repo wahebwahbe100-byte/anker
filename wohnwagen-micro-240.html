@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wohnwagen Micro 240 – ANKER Caravan</title>
+<meta name="description" content="Wohnwagen Micro 240 – kompaktes Micro-Modell für kurze Reisen und flexible Stellplätze.">
+
+<style>
+  :root{
+    --warm-white:#fffdf9;
+    --beige:#f7f2e8;
+    --sand:#e9ddc8;
+    --brand:#081a39;
+    --brand-soft:#10264f;
+    --brand-dark:#9d8572;
+    --text:#151922;
+    --muted:#5f6673;
+    --line:rgba(8,26,57,.12);
+    --shadow:0 18px 44px rgba(8,26,57,.13);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(157,133,114,.13), transparent 34%),
+      linear-gradient(180deg,#ffffff 0%,#f7f2e8 100%);
+    color:var(--text);
+    line-height:1.8;
+  }
+
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 8px 26px rgba(8,26,57,.06);
+  }
+
+  .header-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:92px;
+    padding:14px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+
+  .logo img{
+    width:230px;
+    height:auto;
+  }
+
+  .back{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:999px;
+    background:var(--brand);
+    color:#fff;
+    font-weight:800;
+    box-shadow:0 10px 24px rgba(8,26,57,.2);
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+
+  .back:hover{
+    transform:translateY(-2px);
+    background:var(--brand-dark);
+    box-shadow:0 14px 28px rgba(8,26,57,.24);
+  }
+
+  .hero{
+    padding:42px 18px 28px;
+  }
+
+  .hero-wrap{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:30px;
+    align-items:center;
+  }
+
+  .hero-text{
+    padding:12px 4px;
+  }
+
+  .badge{
+    display:inline-block;
+    margin-bottom:14px;
+    background:rgba(157,133,114,.12);
+    color:var(--brand-dark);
+    border:1px solid rgba(157,133,114,.22);
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:800;
+    font-size:14px;
+  }
+
+  h1{
+    color:var(--brand);
+    font-size:50px;
+    line-height:1.08;
+    margin-bottom:16px;
+  }
+
+  .hero-text p{
+    font-size:20px;
+    color:var(--muted);
+    max-width:660px;
+  }
+
+  .slider-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 22px 50px rgba(8,26,57,.15);
+  }
+
+  .slider{
+    position:relative;
+    height:430px;
+    overflow:hidden;
+    background:#eef0f3;
+  }
+
+  .slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transform:scale(1.015);
+    transition:opacity .45s ease, transform 1.2s ease;
+  }
+
+  .slide.active{
+    opacity:1;
+    transform:scale(1);
+    z-index:2;
+  }
+
+  .slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .thumbs{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:10px;
+    padding:14px;
+    background:#fff;
+    border-top:1px solid rgba(8,26,57,.08);
+  }
+
+  .thumb{
+    position:relative;
+    height:74px;
+    border:2px solid transparent;
+    border-radius:14px;
+    overflow:hidden;
+    background:#eef0f3;
+    cursor:pointer;
+    padding:0;
+    box-shadow:0 8px 18px rgba(8,26,57,.08);
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .thumb.active{
+    border-color:var(--brand);
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(8,26,57,.16);
+  }
+
+  .content{
+    max-width:1040px;
+    margin:0 auto;
+    padding:20px 18px 48px;
+  }
+
+  .box{
+    background:linear-gradient(180deg,#fffdf9 0%,#f7f2e8 100%);
+    border:1px solid rgba(8,26,57,.12);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+    padding:34px 28px;
+    margin-bottom:26px;
+  }
+
+  .box p{
+    font-size:18px;
+    margin-bottom:16px;
+    color:#4f5663;
+  }
+
+  .box p:last-child{margin-bottom:0}
+
+  .section-title{
+    text-align:center;
+    margin-bottom:22px;
+  }
+
+  .section-title h2{
+    color:var(--brand);
+    font-size:36px;
+    margin-bottom:8px;
+  }
+
+  .section-title p{
+    color:var(--muted);
+    font-size:18px;
+  }
+
+  .features-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:18px;
+    margin-top:22px;
+  }
+
+  .feature-item{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:20px;
+    padding:18px;
+    box-shadow:0 8px 18px rgba(8,26,57,.06);
+    color:#4f5663;
+    font-size:17px;
+  }
+
+  .feature-item strong{color:var(--brand)}
+
+
+  .package-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:18px;
+    margin-top:22px;
+  }
+
+  .package-card{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 10px 22px rgba(8,26,57,.07);
+  }
+
+  .package-card h3{
+    color:var(--brand);
+    font-size:24px;
+    margin-bottom:12px;
+    line-height:1.2;
+  }
+
+  .package-card p{
+    margin:0 0 12px;
+    color:#4f5663;
+    font-size:16px;
+  }
+
+  .package-card ul{
+    margin:0;
+    padding-left:20px;
+    color:#4f5663;
+    font-size:16px;
+    line-height:1.75;
+  }
+
+  .package-card li{margin-bottom:5px}
+
+  .cta{
+    text-align:center;
+  }
+
+  .cta a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    background:var(--brand);
+    color:#fff;
+    font-weight:800;
+    box-shadow:0 14px 30px rgba(8,26,57,.18);
+  }
+
+  footer{
+    background:var(--brand);
+    color:rgba(255,255,255,.78);
+    padding:28px 18px;
+  }
+
+  .footer-inner{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    font-size:16px;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom{
+    opacity:0;
+    transition:opacity .38s ease, transform .38s ease;
+    will-change:opacity, transform;
+  }
+
+  .reveal{transform:translateY(14px)}
+  .reveal-left{transform:translateX(-14px)}
+  .reveal-right{transform:translateX(14px)}
+  .reveal-zoom{transform:translateY(12px) scale(.985)}
+  .show{opacity:1;transform:none}
+
+  .delay-1{transition-delay:.04s}
+  .delay-2{transition-delay:.08s}
+  .delay-3{transition-delay:.12s}
+  .delay-4{transition-delay:.16s}
+
+  @media (max-width: 900px){
+    .hero-wrap{grid-template-columns:1fr}
+    h1{font-size:38px}
+    .slider{height:320px}
+    .thumb{height:66px}
+    .features-grid,.package-grid{grid-template-columns:1fr}
+    .header-inner{min-height:82px}
+    .logo img{width:190px}
+  }
+
+  @media (max-width: 640px){
+    .hero{padding-top:24px}
+    h1{font-size:31px}
+    .hero-text p,.box p,.section-title p{font-size:17px}
+    .slider{height:250px}
+    .thumbs{grid-template-columns:repeat(4, 72px); overflow-x:auto; justify-content:start}
+    .thumb{height:58px}
+    .box{padding:24px 18px}
+    .feature-item{font-size:16px}
+    .section-title h2{font-size:28px}
+    .header-inner{gap:12px}
+    .logo img{width:165px}
+    .back{padding:10px 14px;font-size:14px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo reveal-left">
+      <img src="images/logo.png" alt="ANKER Caravan">
+    </a>
+    <a href="index.html#produkte" class="back reveal-right">⬅ Zurück</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="hero-text reveal-left">
+      <div class="badge">Kompakter Wohnwagen</div>
+      <h1>Wohnwagen Micro 240</h1>
+      <p>
+        Ein besonders wendiges Micro-Modell mit kompakter Bauweise, flexiblen Schlafmöglichkeiten und praktischer Ausstattung für kurze Reisen und unkomplizierte Touren.
+      </p>
+    </div>
+
+    <div class="slider-card reveal-right">
+      <div class="slider" id="microSlider">
+        <div class="slide active"><img src="images/micro-240-1.jpeg" alt="Wohnwagen Micro 240 Bild 1"></div>
+        <div class="slide"><img src="images/micro-240-2.jpeg" alt="Wohnwagen Micro 240 Bild 2"></div>
+        <div class="slide"><img src="images/micro-240-3.jpeg" alt="Wohnwagen Micro 240 Bild 3"></div>
+        <div class="slide"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Bild 4"></div>
+      </div>
+      <div class="thumbs" id="microThumbs" aria-label="Micro 240 Galerie Vorschau">
+        <button class="thumb active" type="button" aria-label="Bild 1 anzeigen"><img src="images/micro-240-1.jpeg" alt="Wohnwagen Micro 240 Vorschau 1"></button>
+        <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/micro-240-2.jpeg" alt="Wohnwagen Micro 240 Vorschau 2"></button>
+        <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/micro-240-3.jpeg" alt="Wohnwagen Micro 240 Vorschau 3"></button>
+        <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Vorschau 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="box reveal">
+    <div class="section-title">
+      <h2>Technische Daten</h2>
+      <p>Wohnwagen Micro 240</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-item"><strong>Rahmen:</strong> Stahl feuerverzinkt</div>
+      <div class="feature-item"><strong>Länge:</strong> 2,40 m</div>
+      <div class="feature-item"><strong>Breite:</strong> 2,00 m</div>
+      <div class="feature-item"><strong>Höhe:</strong> 2,00 m</div>
+      <div class="feature-item"><strong>Stehhöhe:</strong> 1,90 m</div>
+      <div class="feature-item"><strong>Länge mit Deichsel:</strong> 3,90 m</div>
+      <div class="feature-item"><strong>Leergewicht:</strong> 440 kg, variiert je nach Paket</div>
+      <div class="feature-item"><strong>Zulässiges Gesamtgewicht:</strong> 750 kg</div>
+      <div class="feature-item"><strong>Stützlast:</strong> 75–100 kg, je nach Paket</div>
+      <div class="feature-item"><strong>Bettfläche:</strong> umbaubare Sitzecke zum Bett, 130 × 194 cm</div>
+    </div>
+  </div>
+
+  <div class="box reveal-zoom">
+    <div class="section-title">
+      <h2>Ausstattungspakete</h2>
+      <p>Alle Details zum Modell Micro 240</p>
+    </div>
+
+    <div class="package-grid">
+      <div class="package-card">
+        <h3>Standard Paket</h3>
+        <ul>
+          <li>Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos</li>
+          <li>Front-Stauraumbox und Heckstoßfänger aus Fiberglas</li>
+          <li>ALKO-Drehstabachse ungebremst, gebremst optional</li>
+          <li>ALKO-Kupplung ungebremst, gebremst optional</li>
+          <li>4 ALKO-Stützfüße</li>
+          <li>Maßgefertigte Möbel in moderner Optik</li>
+          <li>LED-Signalleuchten</li>
+          <li>Innen- und Außenbeleuchtung</li>
+          <li>220-Volt-Stromanschluss inklusive Kabel</li>
+          <li>Chromspüle mit Wasserhahn</li>
+          <li>12-Volt-Wasserpumpe</li>
+          <li>55-Liter-Frischwassertank mit Außenbefüllung</li>
+          <li>Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen</li>
+          <li>Importierte Toilette</li>
+          <li>2-flammiger / Elektroeinbaukocher inklusive Druckregler</li>
+          <li>Teppiche, Läufer und Platzsets</li>
+        </ul>
+      </div>
+
+      <div class="package-card">
+        <h3>Voll Paket</h3>
+        <p>Zusätzlich zur Standardausstattung:</p>
+        <ul>
+          <li>Solaranlage</li>
+          <li>12-Volt-Kühlschrank, 50 Liter</li>
+          <li>Auflaufbremse, AL-KO</li>
+          <li>Gebremste Achse, AL-KO</li>
+          <li>Markise</li>
+          <li>Dieselheizung</li>
+          <li>Spezialisolierung Maxel 100</li>
+        </ul>
+      </div>
+
+      <div class="package-card">
+        <h3>Premium Paket</h3>
+        <p>Zusätzlich zum Standard und Voll Paket:</p>
+        <ul>
+          <li>Gasbackofen</li>
+          <li>Fernseher</li>
+          <li>Dachverkleidung</li>
+          <li>Klimaanlage</li>
+          <li>12-Volt-Kühlschrank, 138 Liter</li>
+        </ul>
+      </div>
+
+      <div class="package-card">
+        <h3>Ultra Paket</h3>
+        <p>Zusätzlich zum Standard, Voll und Premium Paket:</p>
+        <ul>
+          <li>Wechselrichter</li>
+          <li>Lithium-Batterie</li>
+          <li>Kassettentoilette</li>
+          <li>Warmwasseraufbereiter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="box cta reveal">
+    <div class="section-title">
+      <h2>Anfrage</h2>
+      <p>Bei Interesse können Sie uns direkt kontaktieren.</p>
+    </div>
+    <a href="index.html#kontakt">Kontakt aufnehmen</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    © ANKER Caravan
+  </div>
+</footer>
+
+<script>
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.14 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom').forEach((el, index) => {
+    el.classList.add(`delay-${Math.min(index + 1, 4)}`);
+    revealObserver.observe(el);
+  });
+
+  window.addEventListener('load', () => {
+    const firstView = document.querySelectorAll('header .logo, .back, .hero-wrap > *');
+    firstView.forEach((el, index) => {
+      setTimeout(() => el.classList.add('show'), 40 * index);
+    });
+  });
+
+  const slides = document.querySelectorAll('#microSlider .slide');
+  const thumbs = document.querySelectorAll('#microThumbs .thumb');
+  const slider = document.querySelector('#microSlider');
+  let index = 0;
+  let autoSlideTimer;
+  let resumeTimer;
+
+  function pauseAutoSlide(){
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+    if (resumeTimer) clearTimeout(resumeTimer);
+
+    autoSlideTimer = null;
+    resumeTimer = setTimeout(() => {
+      startAutoSlide();
+    }, 10000);
+  }
+
+  thumbs.forEach((thumb, thumbIndex) => {
+    thumb.addEventListener('click', () => {
+      pauseAutoSlide();
+      index = thumbIndex;
+      showSlide(index);
+    });
+  });
+
+  if (slider) {
+    slider.addEventListener('click', pauseAutoSlide);
+  }
+
+  function showSlide(i){
+    slides.forEach((slide, sIndex) => {
+      slide.classList.toggle('active', sIndex === i);
+    });
+    thumbs.forEach((thumb, tIndex) => {
+      thumb.classList.toggle('active', tIndex === i);
+    });
+  }
+
+  function startAutoSlide(){
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 3000);
+  }
+
+  startAutoSlide();
+</script>
+</body>
+</html>
