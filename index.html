@@ -8583,7 +8583,153 @@
   }
  }
 
-</style>
+
+
+  /* ============================================================
+    CTA BUTTON: Zur Wohnwagen-Übersicht
+    تأثير ثابت وناعم بدون مشاكل اهتزاز أو تغطية الصورة
+    ضع الصورة داخل مجلد images بهذا الاسم:
+    images/wohnwagen-button-icon.png
+    ============================================================ */
+  .sortiment-product-action {
+   position: relative;
+   display: flex;
+   justify-content: center;
+  }
+
+  .sortiment-product-action::before {
+   content: "";
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: min(390px, 82vw);
+   height: 76px;
+   transform: translate(-50%, -50%);
+   border-radius: 999px;
+   background: radial-gradient(circle, rgba(157,133,114,.24), rgba(8,26,57,.12) 52%, transparent 76%);
+   pointer-events: none;
+   opacity: .8;
+   transition: opacity .28s ease;
+  }
+
+  .sortiment-product-action:hover::before {
+   opacity: 1;
+  }
+
+  .sortiment-overview-btn {
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 12px !important;
+   min-width: 325px !important;
+   padding: 17px 26px 17px 34px !important;
+   border-radius: 999px !important;
+   background: linear-gradient(135deg, #081a39 0%, #133263 52%, #9d8572 100%) !important;
+   background-size: 170% 100% !important;
+   background-position: left center !important;
+   color: #fff !important;
+   border: 1px solid rgba(255,255,255,.20) !important;
+   box-shadow:
+    0 16px 34px rgba(8,26,57,.34),
+    0 0 0 6px rgba(157,133,114,.10),
+    inset 0 1px 0 rgba(255,255,255,.18) !important;
+   font-weight: 950 !important;
+   letter-spacing: .01em;
+   text-align: center;
+   transform: translateY(0);
+   will-change: transform;
+   transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    background-position .32s ease !important;
+  }
+
+  .sortiment-overview-btn::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.16) 45%, transparent 62%);
+   transform: translateX(-115%);
+   pointer-events: none;
+   transition: transform .46s ease;
+  }
+
+  .sortiment-overview-btn::after {
+   content: "";
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   flex: 0 0 auto;
+   width: 34px;
+   height: 34px;
+   margin-left: 2px;
+   border-radius: 50%;
+   background-color: rgba(255,255,255,.18);
+   background-image: url("images/wohnwagen-button-icon.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 22px 22px;
+   border: 1px solid rgba(255,255,255,.22);
+   box-shadow: inset 0 1px 0 rgba(255,255,255,.20);
+   pointer-events: none;
+   transition: transform .24s ease, background-color .24s ease, box-shadow .24s ease;
+  }
+
+  .sortiment-overview-btn:hover {
+   transform: translateY(-3px) !important;
+   background-position: right center !important;
+   box-shadow:
+    0 22px 46px rgba(8,26,57,.42),
+    0 0 0 8px rgba(157,133,114,.13),
+    inset 0 1px 0 rgba(255,255,255,.24) !important;
+  }
+
+  .sortiment-overview-btn:hover::before {
+   transform: translateX(115%);
+  }
+
+  .sortiment-overview-btn:hover::after {
+   transform: translateX(4px) scale(1.04);
+   background-color: rgba(255,255,255,.27);
+   box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    0 7px 16px rgba(0,0,0,.14);
+  }
+
+  .sortiment-overview-btn:active {
+   transform: translateY(0) scale(.99) !important;
+   box-shadow:
+    0 12px 28px rgba(8,26,57,.32),
+    0 0 0 5px rgba(157,133,114,.10),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
+  }
+
+  .sortiment-overview-btn:focus-visible {
+   outline: 3px solid rgba(157,133,114,.75);
+   outline-offset: 4px;
+  }
+
+  @media (max-width: 680px) {
+   .sortiment-product-action {
+    width: 100%;
+   }
+   .sortiment-overview-btn {
+    min-width: 100% !important;
+    padding: 16px 20px 16px 24px !important;
+    gap: 10px !important;
+   }
+   .sortiment-overview-btn::after {
+    width: 32px;
+    height: 32px;
+    background-size: 20px 20px;
+   }
+  }
+
+ </style>
 </head>
 <body>
  <div class="topbar">
@@ -8737,7 +8883,7 @@
    </div>
 
    <div class="sortiment-product-action">
-   <a class="btn btn-primary" href="produkte.html#bilder">Zur Wohnwagen-Übersicht</a>
+   <a class="btn btn-primary sortiment-overview-btn" href="produkte.html#bilder" aria-label="Zur Wohnwagen-Übersicht wechseln">Zur Wohnwagen-Übersicht</a>
    </div>
   </div>
   </div>
