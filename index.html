@@ -7916,7 +7916,143 @@
    }
   }
 
- </style>
+ 
+
+  /* ============================================================
+    LOGO ENLARGE OVERRIDE
+    Make the header logo noticeably bigger while keeping the shrink effect.
+    ============================================================ */
+  header .container.nav {
+   min-height: 98px !important;
+  }
+
+  header .logo {
+   height: 98px !important;
+   gap: 12px !important;
+  }
+
+  header .logo img.logo-mark,
+  header .logo .logo-mark {
+   width: 260px !important;
+   height: 90px !important;
+   flex-basis: 260px !important;
+  }
+
+  header.is-scrolled .container.nav {
+   min-height: 74px !important;
+  }
+
+  header.is-scrolled .logo {
+   height: 74px !important;
+   gap: 8px !important;
+  }
+
+  header.is-scrolled .logo img.logo-mark,
+  header.is-scrolled .logo .logo-mark {
+   width: 162px !important;
+   height: 56px !important;
+   flex-basis: 162px !important;
+  }
+
+  @media (max-width: 1180px) {
+   header .container.nav {
+    min-height: 92px !important;
+   }
+
+   header .logo {
+    height: 92px !important;
+   }
+
+   header .logo img.logo-mark,
+   header .logo .logo-mark {
+    width: 220px !important;
+    height: 78px !important;
+    flex-basis: 220px !important;
+   }
+
+   header.is-scrolled .container.nav {
+    min-height: 70px !important;
+   }
+
+   header.is-scrolled .logo {
+    height: 70px !important;
+   }
+
+   header.is-scrolled .logo img.logo-mark,
+   header.is-scrolled .logo .logo-mark {
+    width: 146px !important;
+    height: 52px !important;
+    flex-basis: 146px !important;
+   }
+  }
+
+  @media (max-width: 980px) {
+   header .container.nav {
+    min-height: 86px !important;
+   }
+
+   header .logo {
+    height: 86px !important;
+   }
+
+   header .logo img.logo-mark,
+   header .logo .logo-mark {
+    width: 205px !important;
+    height: 72px !important;
+    flex-basis: 205px !important;
+   }
+
+   header.is-scrolled .container.nav {
+    min-height: 66px !important;
+   }
+
+   header.is-scrolled .logo {
+    height: 66px !important;
+   }
+
+   header.is-scrolled .logo img.logo-mark,
+   header.is-scrolled .logo .logo-mark {
+    width: 132px !important;
+    height: 46px !important;
+    flex-basis: 132px !important;
+   }
+  }
+
+  @media (max-width: 560px) {
+   header .container.nav {
+    min-height: 78px !important;
+   }
+
+   header .logo {
+    height: 78px !important;
+    gap: 10px !important;
+   }
+
+   header .logo img.logo-mark,
+   header .logo .logo-mark {
+    width: 175px !important;
+    height: 62px !important;
+    flex-basis: 175px !important;
+   }
+
+   header.is-scrolled .container.nav {
+    min-height: 60px !important;
+   }
+
+   header.is-scrolled .logo {
+    height: 60px !important;
+    gap: 6px !important;
+   }
+
+   header.is-scrolled .logo img.logo-mark,
+   header.is-scrolled .logo .logo-mark {
+    width: 102px !important;
+    height: 36px !important;
+    flex-basis: 102px !important;
+   }
+  }
+
+</style>
 </head>
 <body>
  <div class="topbar">
