@@ -5075,6 +5075,427 @@
       }
     }
 
+
+
+    /* ============================================================
+       ANKER FINAL ROUND HEADER — تصميم الشريط مثل الصورة المطلوبة
+       دائري لوجو + وورد مارك + روابط وسط + زر كحلي
+       ============================================================ */
+    :root {
+      --anker-navy: #061b3b;
+      --anker-navy-2: #0b2a56;
+      --anker-sand: #a88d73;
+      --anker-sand-light: #d7c6b6;
+      --anker-cream: #fbfaf7;
+      --anker-ink: #081a39;
+    }
+
+    body {
+      padding-top: 0 !important;
+      background: var(--anker-cream) !important;
+    }
+
+    header.site-header,
+    header.site-header.is-scrolled {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9999 !important;
+      background: rgba(255,255,255,.985) !important;
+      border-bottom: 1px solid rgba(168,141,115,.25) !important;
+      box-shadow: 0 10px 30px rgba(6,27,59,.08) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: none !important;
+    }
+
+    header.site-header .container.nav,
+    header.site-header.is-scrolled .container.nav {
+      width: min(1440px, calc(100% - 72px)) !important;
+      min-height: 116px !important;
+      height: 116px !important;
+      display: grid !important;
+      grid-template-columns: minmax(330px, auto) 1fr minmax(190px, auto) !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: clamp(18px, 2.5vw, 42px) !important;
+      padding: 0 !important;
+    }
+
+    header.site-header .logo,
+    header.site-header.is-scrolled .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 16px !important;
+      height: 116px !important;
+      min-width: 0 !important;
+      width: auto !important;
+      max-width: max-content !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+      text-decoration: none !important;
+      color: var(--anker-navy) !important;
+    }
+
+    header.site-header .logo-round,
+    header.site-header.is-scrolled .logo-round {
+      width: 92px !important;
+      height: 92px !important;
+      flex: 0 0 92px !important;
+      display: grid !important;
+      place-items: center !important;
+      border-radius: 999px !important;
+      overflow: hidden !important;
+      background: #fff !important;
+      border: 2px solid rgba(168,141,115,.45) !important;
+      box-shadow: 0 12px 26px rgba(6,27,59,.12) !important;
+    }
+
+    header.site-header .logo-round img,
+    header.site-header.is-scrolled .logo-round img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+      border-radius: 999px !important;
+      transform: scale(1.02) !important;
+    }
+
+    header.site-header .logo-wordmark,
+    header.site-header.is-scrolled .logo-wordmark {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      transform: none !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+    }
+
+    header.site-header .logo-title,
+    header.site-header.is-scrolled .logo-title {
+      display: block !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 38px !important;
+      font-weight: 800 !important;
+      line-height: .88 !important;
+      letter-spacing: .16em !important;
+      color: var(--anker-navy) !important;
+      text-transform: uppercase !important;
+    }
+
+    header.site-header .logo-sub,
+    header.site-header.is-scrolled .logo-sub {
+      display: block !important;
+      margin-left: 3px !important;
+      font-size: 12px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      letter-spacing: .34em !important;
+      color: var(--anker-sand) !important;
+      text-transform: uppercase !important;
+    }
+
+    header.site-header .menu,
+    header.site-header.is-scrolled .menu {
+      justify-self: center !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: clamp(22px, 3vw, 48px) !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: var(--anker-navy) !important;
+      font-size: 14px !important;
+      font-weight: 950 !important;
+      letter-spacing: .08em !important;
+      text-transform: uppercase !important;
+    }
+
+    header.site-header .menu a,
+    header.site-header.is-scrolled .menu a {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 14px 0 !important;
+      color: var(--anker-navy) !important;
+      line-height: 1 !important;
+      text-decoration: none !important;
+      transition: color .2s ease !important;
+    }
+
+    header.site-header .menu a::after,
+    header.site-header.is-scrolled .menu a::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 2px !important;
+      height: 2px !important;
+      transform: scaleX(0) !important;
+      transform-origin: center !important;
+      border-radius: 99px !important;
+      background: var(--anker-sand) !important;
+      transition: transform .22s ease !important;
+    }
+
+    header.site-header .menu a:hover,
+    header.site-header .menu a.nav-active,
+    header.site-header.is-scrolled .menu a:hover,
+    header.site-header.is-scrolled .menu a.nav-active {
+      color: var(--anker-sand) !important;
+    }
+
+    header.site-header .menu a:hover::after,
+    header.site-header .menu a.nav-active::after,
+    header.site-header.is-scrolled .menu a:hover::after,
+    header.site-header.is-scrolled .menu a.nav-active::after {
+      transform: scaleX(1) !important;
+    }
+
+    header.site-header .nav-actions,
+    header.site-header.is-scrolled .nav-actions {
+      justify-self: end !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 0 !important;
+    }
+
+    header.site-header .header-contact,
+    header.site-header.is-scrolled .header-contact {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 11px !important;
+      min-height: 52px !important;
+      padding: 0 28px !important;
+      border-radius: 999px !important;
+      background: linear-gradient(135deg, var(--anker-navy), var(--anker-navy-2)) !important;
+      color: #fff !important;
+      border: 0 !important;
+      box-shadow: 0 16px 34px rgba(6,27,59,.18) !important;
+      font-size: 14px !important;
+      font-weight: 950 !important;
+      letter-spacing: .06em !important;
+      text-transform: uppercase !important;
+    }
+
+    header.site-header .header-contact:hover,
+    header.site-header.is-scrolled .header-contact:hover {
+      background: linear-gradient(135deg, var(--anker-sand), #bda48e) !important;
+      color: var(--anker-navy) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    header.site-header .btn-icon,
+    header.site-header.is-scrolled .btn-icon {
+      width: 22px !important;
+      height: 22px !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255,255,255,.55) !important;
+      font-size: 12px !important;
+      line-height: 1 !important;
+    }
+
+    header.site-header .mobile-toggle,
+    header.site-header.is-scrolled .mobile-toggle {
+      display: none !important;
+      width: 48px !important;
+      height: 48px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(6,27,59,.14) !important;
+      background: #fff !important;
+      box-shadow: 0 10px 24px rgba(6,27,59,.08) !important;
+      cursor: pointer !important;
+    }
+
+    header.site-header .mobile-toggle span,
+    header.site-header.is-scrolled .mobile-toggle span {
+      display: block !important;
+      width: 21px !important;
+      height: 2px !important;
+      background: var(--anker-navy) !important;
+      margin: 5px auto !important;
+      border-radius: 99px !important;
+    }
+
+    .hero-kaiser .hero-slide-inner {
+      padding-top: 162px !important;
+    }
+
+    @media (max-width: 1180px) {
+      header.site-header .container.nav,
+      header.site-header.is-scrolled .container.nav {
+        width: min(1180px, calc(100% - 36px)) !important;
+        grid-template-columns: auto 1fr auto !important;
+        gap: 22px !important;
+      }
+
+      header.site-header .menu,
+      header.site-header.is-scrolled .menu {
+        gap: 20px !important;
+        font-size: 13px !important;
+      }
+
+      header.site-header .logo-title,
+      header.site-header.is-scrolled .logo-title {
+        font-size: 34px !important;
+      }
+
+      header.site-header .logo-sub,
+      header.site-header.is-scrolled .logo-sub {
+        font-size: 10px !important;
+        letter-spacing: .28em !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      header.site-header .container.nav,
+      header.site-header.is-scrolled .container.nav {
+        width: calc(100% - 32px) !important;
+        height: 92px !important;
+        min-height: 92px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 16px !important;
+      }
+
+      header.site-header .logo,
+      header.site-header.is-scrolled .logo {
+        height: 92px !important;
+        gap: 12px !important;
+      }
+
+      header.site-header .logo-round,
+      header.site-header.is-scrolled .logo-round {
+        width: 70px !important;
+        height: 70px !important;
+        flex-basis: 70px !important;
+      }
+
+      header.site-header .logo-title,
+      header.site-header.is-scrolled .logo-title {
+        font-size: 30px !important;
+      }
+
+      header.site-header .logo-sub,
+      header.site-header.is-scrolled .logo-sub {
+        font-size: 9px !important;
+        letter-spacing: .24em !important;
+      }
+
+      header.site-header .nav-actions,
+      header.site-header.is-scrolled .nav-actions {
+        display: none !important;
+      }
+
+      header.site-header .mobile-toggle,
+      header.site-header.is-scrolled .mobile-toggle {
+        display: block !important;
+        flex: 0 0 48px !important;
+      }
+
+      header.site-header .menu,
+      header.site-header.is-scrolled .menu {
+        display: none !important;
+      }
+
+      header.site-header .menu.open,
+      header.site-header.is-scrolled .menu.open {
+        display: flex !important;
+        position: fixed !important;
+        top: 92px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        padding: 10px 16px 18px !important;
+        background: #fff !important;
+        border-top: 1px solid rgba(168,141,115,.18) !important;
+        border-bottom: 1px solid rgba(168,141,115,.18) !important;
+        box-shadow: 0 18px 34px rgba(6,27,59,.10) !important;
+      }
+
+      header.site-header .menu.open a,
+      header.site-header.is-scrolled .menu.open a {
+        justify-content: flex-start !important;
+        padding: 17px 14px !important;
+        border-radius: 14px !important;
+      }
+
+      header.site-header .menu.open a:hover,
+      header.site-header.is-scrolled .menu.open a:hover {
+        background: rgba(168,141,115,.08) !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 128px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header.site-header .container.nav,
+      header.site-header.is-scrolled .container.nav {
+        width: calc(100% - 22px) !important;
+        height: 78px !important;
+        min-height: 78px !important;
+      }
+
+      header.site-header .logo,
+      header.site-header.is-scrolled .logo {
+        height: 78px !important;
+        gap: 9px !important;
+      }
+
+      header.site-header .logo-round,
+      header.site-header.is-scrolled .logo-round {
+        width: 56px !important;
+        height: 56px !important;
+        flex-basis: 56px !important;
+        border-width: 1px !important;
+      }
+
+      header.site-header .logo-title,
+      header.site-header.is-scrolled .logo-title {
+        font-size: 24px !important;
+        letter-spacing: .12em !important;
+      }
+
+      header.site-header .logo-sub,
+      header.site-header.is-scrolled .logo-sub {
+        font-size: 7.2px !important;
+        letter-spacing: .18em !important;
+      }
+
+      header.site-header .mobile-toggle,
+      header.site-header.is-scrolled .mobile-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        flex-basis: 44px !important;
+      }
+
+      header.site-header .menu.open,
+      header.site-header.is-scrolled .menu.open {
+        top: 78px !important;
+      }
+
+      .hero-kaiser .hero-slide-inner {
+        padding-top: 110px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -5088,28 +5509,26 @@
     </div>
   </div>
 
-  <header>
+  <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="index.html" aria-label="ANKER Caravan Berlin Startseite">
-        <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+      <a class="logo" href="#start" aria-label="ANKER Caravan Berlin Startseite">
+        <span class="logo-round" aria-hidden="true">
+          <img src="images/logo-icon.png" alt="">
+        </span>
         <span class="logo-wordmark">
-          <span class="logo-text">ANKER</span>
-          <small class="logo-tagline">CARAVAN · BERLIN</small>
+          <span class="logo-title">ANKER</span>
+          <small class="logo-sub">CARAVAN · BERLIN</small>
         </span>
       </a>
-      <nav class="menu" id="menu">
-        <a href="#start" class="nav-active">Start</a>
-        <a href="#produkte">Wohnwagen</a>
-        <a href="#vorteile">Vorteile</a>
-        <a href="#beratung">Beratung</a>
-        <a href="#ablauf">Ablauf</a>
-        <a href="#referenzen">Ideen</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
+      <nav class="menu" id="menu" aria-label="Hauptmenü">
+        <a href="#start" class="nav-active">STARTSEITE</a>
+        <a href="#produkte">WOHNWAGEN</a>
+        <a href="#ueber-uns">ÜBER UNS</a>
+        <a href="#beratung">SERVICE</a>
+        <a href="#kontakt">KONTAKT</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-soft" href="tel:+4915141270366">Anrufen</a>
-        <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
+        <a class="btn header-contact" href="#kontakt"><span class="btn-icon" aria-hidden="true">✉</span> KONTAKTIEREN</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
         <span></span><span></span><span></span>
