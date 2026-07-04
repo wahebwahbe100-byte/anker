@@ -8587,40 +8587,39 @@
 
   /* ============================================================
     CTA BUTTON: Zur Wohnwagen-Übersicht
-    واضح أكثر + تأثير hover ناعم + صورة صغيرة بدل السهم
+    تأثير أنعم وهادئ بدون اهتزاز أو حركة قوية
     ضع الصورة داخل مجلد images بهذا الاسم:
     images/wohnwagen-button-icon.png
     ============================================================ */
   .sortiment-product-action {
    position: relative;
+   display: flex;
+   justify-content: center;
   }
 
   .sortiment-product-action::before {
    content: "";
    position: absolute;
-   inset: 50% auto auto 50%;
-   width: min(440px, 88vw);
-   height: 98px;
+   left: 50%;
+   top: 50%;
+   width: min(380px, 82vw);
+   height: 72px;
    transform: translate(-50%, -50%);
    border-radius: 999px;
-   background:
-    radial-gradient(circle, rgba(157,133,114,.34), rgba(8,26,57,.18) 46%, transparent 73%);
-   filter: blur(3px);
+   background: radial-gradient(circle, rgba(157,133,114,.16), rgba(8,26,57,.08) 56%, transparent 78%);
    pointer-events: none;
-   opacity: .95;
-   transition: opacity .35s ease, transform .35s ease;
+   opacity: .62;
+   transition: opacity .55s ease;
   }
 
   .sortiment-product-action:hover::before {
-   opacity: 1;
-   transform: translate(-50%, -50%) scale(1.08);
+   opacity: .82;
   }
 
   .sortiment-overview-btn {
    position: relative;
    z-index: 1;
    overflow: hidden;
-   isolation: isolate;
    display: inline-flex !important;
    align-items: center !important;
    justify-content: center !important;
@@ -8628,31 +8627,36 @@
    min-width: 325px !important;
    padding: 17px 26px 17px 34px !important;
    border-radius: 999px !important;
-   background: linear-gradient(135deg, #081a39 0%, #133263 56%, #9d8572 100%) !important;
+   background: linear-gradient(135deg, #081a39 0%, #16345f 55%, #9d8572 100%) !important;
+   background-size: 145% 100% !important;
+   background-position: left center !important;
    color: #fff !important;
-   border: 1px solid rgba(255,255,255,.22) !important;
+   border: 1px solid rgba(255,255,255,.18) !important;
    box-shadow:
-    0 18px 42px rgba(8,26,57,.40),
-    0 0 0 7px rgba(157,133,114,.12),
-    inset 0 1px 0 rgba(255,255,255,.22) !important;
+    0 13px 28px rgba(8,26,57,.28),
+    0 0 0 5px rgba(157,133,114,.075),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
    font-weight: 950 !important;
    letter-spacing: .01em;
    text-align: center;
-   transform: translateZ(0);
-   transition: transform .30s ease, box-shadow .30s ease, background .30s ease, letter-spacing .30s ease !important;
+   transform: translateY(0);
+   will-change: transform;
+   transition:
+    transform .48s cubic-bezier(.22, 1, .36, 1),
+    box-shadow .48s ease,
+    background-position .70s ease,
+    border-color .48s ease !important;
   }
 
   .sortiment-overview-btn::before {
    content: "";
    position: absolute;
-   top: -95%;
-   left: -48%;
-   width: 44%;
-   height: 290%;
-   transform: rotate(24deg) translateX(-150%);
-   background: linear-gradient(90deg, transparent, rgba(255,255,255,.46), transparent);
-   transition: transform .78s ease;
-   z-index: -1;
+   inset: 0;
+   border-radius: inherit;
+   background: linear-gradient(110deg, transparent 8%, rgba(255,255,255,.085) 48%, transparent 66%);
+   transform: translateX(-125%);
+   pointer-events: none;
+   transition: transform .95s cubic-bezier(.22, 1, .36, 1);
   }
 
   .sortiment-overview-btn::after {
@@ -8665,48 +8669,73 @@
    height: 34px;
    margin-left: 2px;
    border-radius: 50%;
-   background-color: rgba(255,255,255,.18);
+   background-color: rgba(255,255,255,.16);
    background-image: url("images/wohnwagen-button-icon.png");
    background-repeat: no-repeat;
    background-position: center;
    background-size: 22px 22px;
-   border: 1px solid rgba(255,255,255,.22);
-   box-shadow: inset 0 1px 0 rgba(255,255,255,.20);
-   transition: transform .30s ease, background-color .30s ease, box-shadow .30s ease;
+   border: 1px solid rgba(255,255,255,.20);
+   box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+   pointer-events: none;
+   transition:
+    transform .52s cubic-bezier(.22, 1, .36, 1),
+    background-color .52s ease,
+    box-shadow .52s ease;
   }
 
   .sortiment-overview-btn:hover {
-   transform: translateY(-5px) scale(1.028) !important;
-   letter-spacing: .02em;
-   background: linear-gradient(135deg, #0b244d 0%, #173b73 50%, #b69a84 100%) !important;
+   transform: translateY(-1.5px) !important;
+   background-position: right center !important;
+   border-color: rgba(255,255,255,.24) !important;
    box-shadow:
-    0 28px 64px rgba(8,26,57,.50),
-    0 0 0 10px rgba(157,133,114,.16),
-    inset 0 1px 0 rgba(255,255,255,.28) !important;
+    0 17px 36px rgba(8,26,57,.34),
+    0 0 0 6px rgba(157,133,114,.10),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
   }
 
   .sortiment-overview-btn:hover::before {
-   transform: rotate(24deg) translateX(545%);
+   transform: translateX(125%);
   }
 
   .sortiment-overview-btn:hover::after {
-   transform: translateX(6px) rotate(-6deg) scale(1.09);
-   background-color: rgba(255,255,255,.28);
+   transform: translateX(2px) scale(1.02);
+   background-color: rgba(255,255,255,.22);
    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.28),
-    0 8px 18px rgba(0,0,0,.16);
+    inset 0 1px 0 rgba(255,255,255,.22),
+    0 5px 12px rgba(0,0,0,.10);
   }
 
   .sortiment-overview-btn:active {
-   transform: translateY(-1px) scale(.99) !important;
+   transform: translateY(0) scale(.997) !important;
+   box-shadow:
+    0 10px 24px rgba(8,26,57,.28),
+    0 0 0 4px rgba(157,133,114,.075),
+    inset 0 1px 0 rgba(255,255,255,.15) !important;
   }
 
   .sortiment-overview-btn:focus-visible {
-   outline: 3px solid rgba(157,133,114,.75);
+   outline: 3px solid rgba(157,133,114,.65);
    outline-offset: 4px;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+   .sortiment-product-action::before,
+   .sortiment-overview-btn,
+   .sortiment-overview-btn::before,
+   .sortiment-overview-btn::after {
+    transition: none !important;
+   }
+   .sortiment-overview-btn:hover,
+   .sortiment-overview-btn:hover::after,
+   .sortiment-overview-btn:active {
+    transform: none !important;
+   }
+  }
+
   @media (max-width: 680px) {
+   .sortiment-product-action {
+    width: 100%;
+   }
    .sortiment-overview-btn {
     min-width: 100% !important;
     padding: 16px 20px 16px 24px !important;
