@@ -8149,6 +8149,211 @@
    }
   }
 
+
+
+  /* ============================================================
+     FINAL LOGO ALIGNMENT BY CHATGPT
+     يجعل كلمة CARAVAN في مكانها المناسب تحت ANKER ويقلل طول الشريط.
+     ============================================================ */
+  header.site-header {
+   background: rgba(255,255,255,.98) !important;
+  }
+
+  header.site-header .container.nav,
+  header.site-header.is-scrolled .container.nav {
+   height: 96px !important;
+   min-height: 96px !important;
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
+   align-items: center !important;
+   grid-template-columns: minmax(330px, auto) 1fr minmax(220px, auto) !important;
+  }
+
+  header.site-header .logo,
+  header.site-header.is-scrolled .logo {
+   height: 96px !important;
+   min-height: 96px !important;
+   gap: 16px !important;
+   display: flex !important;
+   align-items: center !important;
+  }
+
+  header.site-header .logo-round,
+  header.site-header.is-scrolled .logo-round {
+   display: inline-flex !important;
+   width: 76px !important;
+   height: 76px !important;
+   min-width: 76px !important;
+   flex: 0 0 76px !important;
+   align-items: center !important;
+   justify-content: center !important;
+  }
+
+  header.site-header .logo-round img,
+  header.site-header.is-scrolled .logo-round img {
+   width: 76px !important;
+   height: 76px !important;
+   object-fit: contain !important;
+  }
+
+  header.site-header .logo-wordmark,
+  header.site-header.is-scrolled .logo-wordmark {
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   justify-content: center !important;
+   line-height: 1 !important;
+   min-width: 150px !important;
+   transform: translateY(1px) !important;
+  }
+
+  header.site-header .logo-title,
+  header.site-header.is-scrolled .logo-title {
+   display: block !important;
+   font-size: 38px !important;
+   line-height: .88 !important;
+   letter-spacing: .17em !important;
+   padding-left: .17em !important;
+   color: #081a39 !important;
+   text-align: center !important;
+   font-family: Cinzel, Georgia, serif !important;
+   font-weight: 800 !important;
+  }
+
+  header.site-header .logo-subline,
+  header.site-header.is-scrolled .logo-subline {
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 10px !important;
+   width: 100% !important;
+   margin-top: 9px !important;
+  }
+
+  header.site-header .logo-caravan,
+  header.site-header.is-scrolled .logo-caravan {
+   display: inline-block !important;
+   font-size: 11px !important;
+   line-height: 1 !important;
+   letter-spacing: .34em !important;
+   padding-left: .34em !important;
+   color: #9d8572 !important;
+   font-family: Montserrat, Arial, sans-serif !important;
+   font-weight: 900 !important;
+   text-align: center !important;
+  }
+
+  header.site-header .logo-subline > span,
+  header.site-header.is-scrolled .logo-subline > span {
+   width: 22px !important;
+   height: 1px !important;
+   flex: 0 0 22px !important;
+   background: #c4b5a8 !important;
+   border-radius: 999px !important;
+  }
+
+  header.site-header .logo-subline > span::before,
+  header.site-header .logo-subline > span::after,
+  header.site-header.is-scrolled .logo-subline > span::before,
+  header.site-header.is-scrolled .logo-subline > span::after {
+   display: none !important;
+   content: none !important;
+  }
+
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu,
+  header.site-header .nav-actions,
+  header.site-header.is-scrolled .nav-actions {
+   height: 96px !important;
+   min-height: 96px !important;
+   align-items: center !important;
+  }
+
+  .hero-kaiser .hero-slide-inner {
+   padding-top: 118px !important;
+  }
+
+  @media (max-width: 1080px) {
+   header.site-header .container.nav,
+   header.site-header.is-scrolled .container.nav {
+    height: 84px !important;
+    min-height: 84px !important;
+    grid-template-columns: 1fr auto !important;
+   }
+
+   header.site-header .logo,
+   header.site-header.is-scrolled .logo {
+    height: 84px !important;
+    min-height: 84px !important;
+    gap: 12px !important;
+   }
+
+   header.site-header .logo-round,
+   header.site-header.is-scrolled .logo-round,
+   header.site-header .logo-round img,
+   header.site-header.is-scrolled .logo-round img {
+    width: 62px !important;
+    height: 62px !important;
+    min-width: 62px !important;
+    flex-basis: 62px !important;
+   }
+
+   header.site-header .logo-title,
+   header.site-header.is-scrolled .logo-title {
+    font-size: 30px !important;
+    letter-spacing: .14em !important;
+    padding-left: .14em !important;
+   }
+
+   header.site-header .logo-caravan,
+   header.site-header.is-scrolled .logo-caravan {
+    font-size: 9px !important;
+    letter-spacing: .28em !important;
+    padding-left: .28em !important;
+   }
+
+   header.site-header .logo-subline,
+   header.site-header.is-scrolled .logo-subline {
+    margin-top: 7px !important;
+    gap: 7px !important;
+   }
+
+   header.site-header .logo-subline > span,
+   header.site-header.is-scrolled .logo-subline > span {
+    width: 15px !important;
+    flex-basis: 15px !important;
+   }
+  }
+
+  @media (max-width: 560px) {
+   header.site-header .container.nav,
+   header.site-header.is-scrolled .container.nav {
+    height: 78px !important;
+    min-height: 78px !important;
+   }
+
+   header.site-header .logo-round,
+   header.site-header.is-scrolled .logo-round,
+   header.site-header .logo-round img,
+   header.site-header.is-scrolled .logo-round img {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex-basis: 56px !important;
+   }
+
+   header.site-header .logo-title,
+   header.site-header.is-scrolled .logo-title {
+    font-size: 25px !important;
+   }
+
+   header.site-header .logo-caravan,
+   header.site-header.is-scrolled .logo-caravan {
+    font-size: 8px !important;
+   }
+  }
+  /* END FINAL LOGO ALIGNMENT BY CHATGPT */
+
 </style>
 </head>
 <body>
