@@ -542,57 +542,75 @@
   }
 
 
-  /* Collapsing fixed header on scroll */
+  /* Correct folding header on scroll */
   header,
-  .header-inner,
-  .logo img,
-  .back{
-    transition:min-height .22s ease, padding .22s ease, width .22s ease, font-size .22s ease, box-shadow .22s ease, background .22s ease !important;
+  header .header-inner,
+  header .logo img,
+  header .back{
+    transition:
+      min-height .26s ease,
+      padding .26s ease,
+      width .26s ease,
+      font-size .26s ease,
+      transform .26s ease,
+      box-shadow .26s ease,
+      background .26s ease !important;
   }
 
-  header.is-scrolled{
+  header.header-folded{
+    transform:translateY(-10px) !important;
     background:rgba(255,255,255,.985) !important;
-    box-shadow:0 8px 22px rgba(8,26,57,.10) !important;
+    box-shadow:0 8px 22px rgba(8,26,57,.12) !important;
   }
 
-  header.is-scrolled .header-inner{
-    min-height:58px !important;
-    padding-top:6px !important;
-    padding-bottom:6px !important;
+  header.header-folded .header-inner{
+    min-height:50px !important;
+    padding-top:4px !important;
+    padding-bottom:4px !important;
   }
 
-  header.is-scrolled .logo img{
-    width:70px !important;
+  header.header-folded .logo img{
+    width:58px !important;
   }
 
-  header.is-scrolled .back{
-    padding:8px 13px !important;
-    font-size:13px !important;
+  header.header-folded .back{
+    padding:7px 12px !important;
+    font-size:12px !important;
   }
 
   @media (max-width: 900px){
-    header.is-scrolled .header-inner{
-      min-height:54px !important;
+    header.header-folded{
+      transform:translateY(-8px) !important;
     }
 
-    header.is-scrolled .logo img{
-      width:60px !important;
+    header.header-folded .header-inner{
+      min-height:48px !important;
+      padding-top:4px !important;
+      padding-bottom:4px !important;
+    }
+
+    header.header-folded .logo img{
+      width:54px !important;
     }
   }
 
   @media (max-width: 640px){
-    header.is-scrolled .header-inner{
-      min-height:50px !important;
-      padding-top:5px !important;
-      padding-bottom:5px !important;
+    header.header-folded{
+      transform:translateY(-7px) !important;
     }
 
-    header.is-scrolled .logo img{
-      width:54px !important;
+    header.header-folded .header-inner{
+      min-height:46px !important;
+      padding-top:3px !important;
+      padding-bottom:3px !important;
     }
 
-    header.is-scrolled .back{
-      padding:7px 11px !important;
+    header.header-folded .logo img{
+      width:50px !important;
+    }
+
+    header.header-folded .back{
+      padding:6px 10px !important;
       font-size:12px !important;
     }
   }
@@ -847,14 +865,15 @@
 
   const pageHeader = document.querySelector('header');
 
-  function updateHeaderOnScroll(){
+  function updateFoldingHeader(){
     if (!pageHeader) return;
-    pageHeader.classList.toggle('is-scrolled', window.scrollY > 24);
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    pageHeader.classList.toggle('header-folded', scrollTop > 35);
   }
 
-  window.addEventListener('scroll', updateHeaderOnScroll, { passive:true });
-  window.addEventListener('load', updateHeaderOnScroll);
-  updateHeaderOnScroll();
+  window.addEventListener('scroll', updateFoldingHeader, { passive:true });
+  window.addEventListener('load', updateFoldingHeader);
+  updateFoldingHeader();
 
 </script>
 </body>
