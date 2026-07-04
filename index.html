@@ -1761,13 +1761,13 @@
 
   .logo {
    gap: 0 !important;
-   min-width: 218px;
-   height: 62px;
+   min-width: 252px;
+   height: 68px;
   }
 
   .logo-mark {
-   width: 218px !important;
-   height: 58px !important;
+   width: 252px !important;
+   height: 68px !important;
    border-radius: 0 !important;
    background: url("images/logo.png") left center / contain no-repeat !important;
    box-shadow: none !important;
@@ -1914,15 +1914,15 @@
   }
 
   footer .logo-mark {
-   width: 210px !important;
-   height: 56px !important;
+   width: 240px !important;
+   height: 64px !important;
    display: block;
    margin-bottom: 12px;
   }
 
   @media (max-width: 760px) {
-   .logo { min-width: 174px; height: 54px; }
-   .logo-mark { width: 174px !important; height: 48px !important; }
+   .logo { min-width: 205px; height: 58px; }
+   .logo-mark { width: 205px !important; height: 56px !important; }
    .hero-kaiser::after {
     width: 72vw;
     right: 14px;
@@ -8049,6 +8049,103 @@
     width: 102px !important;
     height: 36px !important;
     flex-basis: 102px !important;
+   }
+  }
+
+
+  /* ============================================================
+    USER REQUEST FINAL FIX: bigger header logo image
+    يكبّر صورة اللوجو الدائرية في الهيدر بوضوح.
+    ============================================================ */
+  header.site-header .container.nav {
+   min-height: 118px !important;
+  }
+
+  header.site-header .logo {
+   height: 118px !important;
+   min-height: 118px !important;
+   gap: 14px !important;
+  }
+
+  header.site-header .logo-round,
+  header.site-header:not(.is-scrolled) .logo-round {
+   width: 92px !important;
+   height: 92px !important;
+   min-width: 92px !important;
+   flex: 0 0 92px !important;
+   flex-basis: 92px !important;
+  }
+
+  header.site-header .logo-round img,
+  header.site-header:not(.is-scrolled) .logo-round img {
+   width: 92px !important;
+   height: 92px !important;
+   max-width: none !important;
+   object-fit: contain !important;
+  }
+
+  header.site-header .logo-title {
+   font-size: 34px !important;
+  }
+
+  header.site-header .logo-caravan {
+   font-size: 9.5px !important;
+  }
+
+  header.site-header.is-scrolled .container.nav {
+   min-height: 88px !important;
+  }
+
+  header.site-header.is-scrolled .logo {
+   height: 88px !important;
+   min-height: 88px !important;
+  }
+
+  header.site-header.is-scrolled .logo-round {
+   width: 72px !important;
+   height: 72px !important;
+   min-width: 72px !important;
+   flex: 0 0 72px !important;
+   flex-basis: 72px !important;
+  }
+
+  header.site-header.is-scrolled .logo-round img {
+   width: 72px !important;
+   height: 72px !important;
+   max-width: none !important;
+  }
+
+  @media (max-width: 1080px) {
+   header.site-header .container.nav { min-height: 96px !important; }
+   header.site-header .logo { height: 96px !important; min-height: 96px !important; }
+   header.site-header .logo-round,
+   header.site-header:not(.is-scrolled) .logo-round {
+    width: 78px !important;
+    height: 78px !important;
+    min-width: 78px !important;
+    flex-basis: 78px !important;
+   }
+   header.site-header .logo-round img,
+   header.site-header:not(.is-scrolled) .logo-round img {
+    width: 78px !important;
+    height: 78px !important;
+   }
+  }
+
+  @media (max-width: 620px) {
+   header.site-header .container.nav { min-height: 84px !important; }
+   header.site-header .logo { height: 84px !important; min-height: 84px !important; gap: 8px !important; }
+   header.site-header .logo-round,
+   header.site-header:not(.is-scrolled) .logo-round {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    flex-basis: 64px !important;
+   }
+   header.site-header .logo-round img,
+   header.site-header:not(.is-scrolled) .logo-round img {
+    width: 64px !important;
+    height: 64px !important;
    }
   }
 
