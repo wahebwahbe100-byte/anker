@@ -351,8 +351,6 @@
     h1{font-size:31px}
     .hero-text p,.box p,.section-title p{font-size:17px}
     .slider{height:250px}
-    .thumbs{grid-template-columns:repeat(5, 72px); overflow-x:auto; justify-content:start}
-    .thumb{height:58px}
     .box{padding:24px 18px}
     .feature-item{font-size:16px}
     .section-title h2{font-size:28px}
@@ -360,13 +358,117 @@
     .logo img{width:165px}
     .back{padding:10px 14px;font-size:14px}
   }
+
+  /* Mobile gallery fix */
+  .slider{
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+    min-height: 360px;
+  }
+
+  .slide{
+    background:#eef0f3;
+  }
+
+  .slide img,
+  .slide video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#eef0f3;
+  }
+
+  .slide.active{
+    pointer-events:auto;
+  }
+
+  .thumbs{
+    display:grid;
+    grid-template-columns:repeat(var(--thumb-count, 4), minmax(0, 1fr));
+    gap:10px;
+    padding:12px;
+    background:#fff;
+    border-top:1px solid rgba(8,26,57,.08);
+  }
+
+  .thumb{
+    width:100%;
+    height:78px;
+    border-radius:14px;
+  }
+
+  .thumb img,
+  .thumb video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  @media (max-width: 900px){
+    .slider{
+      min-height:0;
+      aspect-ratio: 4 / 3;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 86px) !important;
+      overflow-x:auto;
+      justify-content:start;
+      gap:9px;
+      padding:10px;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+    }
+
+    .thumb{
+      height:64px !important;
+      flex:0 0 auto;
+    }
+  }
+
+  @media (max-width: 640px){
+    .slider{
+      aspect-ratio: 1 / 1;
+      border-radius:0;
+    }
+
+    .slider-card{
+      border-radius:22px;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 78px) !important;
+      gap:8px;
+      padding:9px;
+    }
+
+    .thumb{
+      height:58px !important;
+      border-radius:12px;
+    }
+  }
+
+  @media (max-width: 420px){
+    .slider{
+      aspect-ratio: 4 / 5;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 70px) !important;
+    }
+
+    .thumb{
+      height:54px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo reveal-left">
-      <img src="images/logo.png" alt="ANKER Caravan">
+      <img src="images/logo-icon.png" alt="ANKER Caravan">
     </a>
     <a href="index.html#produkte" class="back reveal-right">⬅ Zurück</a>
   </div>
@@ -390,7 +492,7 @@
         <div class="slide"><img src="images/eco-350-4.jpeg" alt="Wohnwagen Eco 350 Bild 4"></div>
         <div class="slide"><img src="images/eco-350-5.jpeg" alt="Wohnwagen Eco 350 Bild 5"></div>
       </div>
-      <div class="thumbs" id="ecoThumbs" aria-label="Eco 350 Galerie Vorschau">
+      <div class="thumbs" id="ecoThumbs" aria-label="Eco 350 Galerie Vorschau" style="--thumb-count:5">
         <button class="thumb active" type="button" aria-label="Bild 1 anzeigen"><img src="images/eco-350-1.jpeg" alt="Wohnwagen Eco 350 Vorschau 1"></button>
         <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/eco-350-2.jpeg" alt="Wohnwagen Eco 350 Vorschau 2"></button>
         <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/eco-350-3.jpeg" alt="Wohnwagen Eco 350 Vorschau 3"></button>
