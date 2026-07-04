@@ -3361,7 +3361,7 @@
   }
 
  
-/* PNG thumbnail names: small but clear images */
+/* GIF thumbnails: small but clear animated icons */
 #vorteile .benefit-thumb img {
  image-rendering: auto !important;
  filter: none !important;
@@ -3461,6 +3461,27 @@
    font-size: 15px;
    line-height: 1.58;
    font-weight: 650;
+  }
+
+
+  .sortiment-product-specs {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin: 4px 0 2px;
+   padding: 0;
+   list-style: none;
+  }
+
+  .sortiment-product-specs li {
+   border-radius: 999px;
+   padding: 7px 10px;
+   background: #f3f4f6;
+   border: 1px solid #e5e7eb;
+   color: #374151;
+   font-size: 12px;
+   font-weight: 850;
+   line-height: 1;
   }
 
   .sortiment-product-more {
@@ -8683,33 +8704,39 @@
 
     <div class="sortiment-product-preview" aria-label="Bilder aus der Produktübersicht">
      <div class="sortiment-product-grid">
-      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Wohnwagen und Caravans ansehen">
+      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Eco 350 Wohnwagen 4 Personen Caravan Mini Camper mit Stockbett 830 bis 1500 kg autark ansehen">
        <div class="sortiment-product-image">
-        <img src="images/bild-01.webp" alt="Wohnwagen und Caravans für Urlaub und Reisen" loading="lazy">
+        <img src="images/bild-01.webp" alt="Eco 350 Wohnwagen 4 Personen Caravan Mini Camper mit Stockbett 830 bis 1500 kg und autarker Ausstattung" loading="lazy">
        </div>
        <div class="sortiment-product-body">
-        <h3>Wohnwagen &amp; Caravans</h3>
-        <p>Ausgewählte Wohnwagen für entspannte Reisen – gepflegt, komfortabel und passend zu Ihrem Bedarf.</p>
+        <h3>Eco 350</h3>
+        <p>Wohnwagen 4 Personen Caravan Mini Camper mit Stockbett, 830–1500 kg und autarker Ausstattung. Der Eco 350 ist kompakt, familienfreundlich und ideal für flexible Reisen – mit gemütlichen Schlafplätzen, praktischem Stauraum und mehr Unabhängigkeit unterwegs.</p>
+        <ul class="sortiment-product-specs" aria-label="Eco 350 Details">
+         <li>Wohnwagen 4 Personen</li>
+         <li>Caravan Mini Camper</li>
+         <li>Stockbett</li>
+         <li>830–1500 kg</li>
+        </ul>
         <span class="sortiment-product-more">Mehr erfahren →</span>
        </div>
       </a>
-      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Familien- & Reise-Caravans ansehen">
+      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Micro 240 Caravan ansehen">
        <div class="sortiment-product-image">
-        <img src="images/bild-02.webp" alt="Familien- und Reise-Caravans mit komfortabler Ausstattung" loading="lazy">
+        <img src="images/bild-02.webp" alt="Micro 240 kleiner und wendiger Caravan für flexible Reisen" loading="lazy">
        </div>
        <div class="sortiment-product-body">
-        <h3>Familien- & Reise-Caravans</h3>
-        <p>Flexible Modelle für Paare, Familien und Wochenendtrips – passend nach Größe, Schlafplätzen und Ausstattung.</p>
+        <h3>Micro 240</h3>
+        <p>Ein besonders wendiges Micro-Modell für kurze Reisen und flexible Stellplätze – minimalistisch, gemütlich und schnell startklar.</p>
         <span class="sortiment-product-more">Mehr erfahren →</span>
        </div>
       </a>
-      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Caravan Zubehör und Ausstattung ansehen">
+      <a class="sortiment-product-card" href="produkte.html#bilder" aria-label="Wohnwagen Mini 270 ansehen">
        <div class="sortiment-product-image">
-        <img src="images/bild-03.webp" alt="Zubehör und Ausstattung für Wohnwagen und Caravan-Reisen" loading="lazy">
+        <img src="images/bild-03.webp" alt="Wohnwagen Mini 270 Camper Caravan kompakt" loading="lazy">
        </div>
        <div class="sortiment-product-body">
-        <h3>Zubehör &amp; Ausstattung</h3>
-        <p>Vorzelt, Mover, Fahrradträger und weitere Ausstattung sorgen für mehr Komfort auf jeder Reise.</p>
+        <h3>Wohnwagen Mini 270</h3>
+        <p>Wohnwagen Mini 270 – ein kompakter Camper Caravan für alle, die flexibel und unkompliziert reisen möchten. Ideal für Wochenendtrips, kleine Stellplätze und spontane Touren mit gemütlichem Komfort.</p>
         <span class="sortiment-product-more">Mehr erfahren →</span>
        </div>
       </a>
@@ -8734,29 +8761,29 @@
     </div>
     <div class="benefits">
      <article class="benefit">
-      <figure class="benefit-thumb">
-       <img src="images/vorteil-1.png" alt="Vertrauensvolle Beratung rund um Wohnwagen" loading="lazy">
+      <figure class="benefit-thumb" aria-label="Vertrauensvolle Beratung">
+       <img src="images/vorteil-1.gif" alt="" loading="lazy">
       </figure>
       <h3>Vertrauensvolle Beratung</h3>
       <p>Persönliche Einschätzung, klare Informationen und transparente Antworten vor Ihrer Entscheidung.</p>
      </article>
      <article class="benefit">
-      <figure class="benefit-thumb">
-       <img src="images/vorteil-2.png" alt="Komfortable Caravan-Auswahl" loading="lazy">
+      <figure class="benefit-thumb" aria-label="Komfortable Auswahl">
+       <img src="images/vorteil-2.gif" alt="" loading="lazy">
       </figure>
       <h3>Komfortable Auswahl</h3>
       <p>Verschiedene Grundrisse, Schlafplätze und Ausstattungen für entspannte Reisen.</p>
      </article>
      <article class="benefit">
-      <figure class="benefit-thumb">
-       <img src="images/vorteil-3.png" alt="Startklarer Caravan für Reisen" loading="lazy">
+      <figure class="benefit-thumb" aria-label="Startklar für die Reise">
+       <img src="images/vorteil-3.gif" alt="" loading="lazy">
       </figure>
       <h3>Startklar für die Reise</h3>
       <p>Wir achten auf Ausstattung, Zustand und Details, damit Sie sicher und gut vorbereitet starten.</p>
      </article>
      <article class="benefit">
-      <figure class="benefit-thumb">
-       <img src="images/vorteil-4.png" alt="Individuelle Anfrage für Wohnwagen" loading="lazy">
+      <figure class="benefit-thumb" aria-label="Individuelle Anfrage">
+       <img src="images/vorteil-4.gif" alt="" loading="lazy">
       </figure>
       <h3>Individuelle Anfrage</h3>
       <p>Ihre Wünsche werden individuell geprüft – passend zu Reiseplänen, Budget und Ausstattung.</p>
