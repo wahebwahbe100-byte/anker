@@ -9053,7 +9053,18 @@
  <div class="container nav">
   <a class="logo" href="#start" aria-label="ANKER Caravan Startseite">
   <span class="logo-round" aria-hidden="true">
-   <img src="images/logo-icon.png" alt="">
+   <!--
+    Mobile logo images:
+    قبل الطي/التصغير على الجوال: images/logo-mobile-before.png
+    بعد الطي/التصغير على الجوال: images/logo-mobile-after.png
+    Desktop fallback: images/logo-icon.png
+   -->
+   <img id="siteHeaderLogoImage"
+        src="images/logo-icon.png"
+        data-logo-desktop="images/logo-icon.png"
+        data-logo-mobile-before="images/logo-mobile-before.png"
+        data-logo-mobile-after="images/logo-mobile-after.png"
+        alt="">
   </span>
   <span class="logo-wordmark">
    <span class="logo-title">ANKER</span>
@@ -13816,6 +13827,58 @@ footer .logo-round img {
   }
 }
 </style>
+
+
+
+<script id="chatgpt-mobile-before-after-logo-script">
+/* ============================================================
+   MOBILE BEFORE/AFTER SCROLL LOGO SWITCH
+   المطلوب: اسم صورة مختلف قبل الطي/التصغير وبعد الطي/التصغير.
+   - قبل الطي على الجوال: images/logo-mobile-before.png
+   - بعد الطي على الجوال: images/logo-mobile-after.png
+   - سطح المكتب يبقى: images/logo-icon.png
+   ============================================================ */
+(function () {
+  const header = document.querySelector('header.site-header');
+  const logoImg = document.querySelector('header.site-header .logo-round img');
+  if (!header || !logoImg) return;
+
+  const desktopLogo = logoImg.getAttribute('data-logo-desktop') || 'images/logo-icon.png';
+  const mobileBeforeLogo = logoImg.getAttribute('data-logo-mobile-before') || desktopLogo;
+  const mobileAfterLogo = logoImg.getAttribute('data-logo-mobile-after') || mobileBeforeLogo;
+  const mobileQuery = window.matchMedia('(max-width: 760px)');
+
+  function wantedLogo() {
+    if (!mobileQuery.matches) return desktopLogo;
+    return header.classList.contains('is-scrolled') ? mobileAfterLogo : mobileBeforeLogo;
+  }
+
+  function setLogo() {
+    const nextLogo = wantedLogo();
+    if (logoImg.getAttribute('src') !== nextLogo) {
+      logoImg.setAttribute('src', nextLogo);
+    }
+  }
+
+  /* إذا لم تكن الصورة الجديدة موجودة في مجلد images، يرجع للوجو القديم بدل ظهور صورة مكسورة. */
+  logoImg.addEventListener('error', function () {
+    if (logoImg.getAttribute('src') !== desktopLogo) {
+      logoImg.setAttribute('src', desktopLogo);
+    }
+  });
+
+  setLogo();
+  window.addEventListener('scroll', setLogo, { passive: true });
+  window.addEventListener('resize', setLogo, { passive: true });
+
+  if (window.MutationObserver) {
+    new MutationObserver(setLogo).observe(header, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
