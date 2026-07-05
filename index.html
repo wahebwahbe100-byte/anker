@@ -9057,7 +9057,7 @@
  </div>
  </div>
 
- <header class="site-header">
+ <header class="site-header notranslate" translate="no">
  <div class="container nav">
   <a class="logo" href="#start" aria-label="ANKER Caravan Startseite">
   <span class="logo-round" aria-hidden="true">
@@ -14735,6 +14735,148 @@ footer .footer-grid > div:first-child .logo .logo-tagline {
   }
 }
 </style>
+
+
+
+<style id="chatgpt-logo-bigger-and-translate-navbar-lock">
+/* ============================================================
+   USER REQUEST ONLY:
+   1) Slightly bigger logo image at the beginning before the header folds.
+   2) Keep the navbar fixed and visible if the page is translated.
+   ============================================================ */
+
+/* Bigger logo only before the bar/header is folded on scroll */
+body header.site-header:not(.is-scrolled) .logo-round,
+body header.site-header:not(.is-scrolled) .logo-round img {
+  width: 92px !important;
+  height: 92px !important;
+  min-width: 92px !important;
+  flex: 0 0 92px !important;
+  flex-basis: 92px !important;
+}
+
+@media (max-width: 1080px) {
+  body header.site-header:not(.is-scrolled) .logo-round,
+  body header.site-header:not(.is-scrolled) .logo-round img {
+    width: 74px !important;
+    height: 74px !important;
+    min-width: 74px !important;
+    flex-basis: 74px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  body header.site-header:not(.is-scrolled) .logo-round,
+  body header.site-header:not(.is-scrolled) .logo-round img {
+    width: 62px !important;
+    height: 62px !important;
+    min-width: 62px !important;
+    flex-basis: 62px !important;
+  }
+}
+
+/* Google Translate / browser translate protection: do not let the translation bar push or hide the navbar */
+html.translated-ltr,
+html.translated-rtl,
+html.translated-ltr body,
+html.translated-rtl body,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body > .skiptranslate,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  width: 0 !important;
+  border: 0 !important;
+  pointer-events: none !important;
+}
+
+body header.site-header,
+html.translated-ltr body header.site-header,
+html.translated-rtl body header.site-header,
+body.translated-ltr header.site-header,
+body.translated-rtl header.site-header {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2147483000 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  translate: none !important;
+}
+
+body header.site-header .container.nav,
+html.translated-ltr body header.site-header .container.nav,
+html.translated-rtl body header.site-header .container.nav {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+</style>
+
+<script id="chatgpt-translate-navbar-lock-script">
+/* Keeps the fixed navbar at the top if Google Translate injects a top banner/style. */
+(function () {
+  const header = document.querySelector('header.site-header');
+  if (!header) return;
+
+  header.setAttribute('translate', 'no');
+  header.classList.add('notranslate');
+
+  function setImportant(el, prop, value) {
+    if (el.style.getPropertyValue(prop) !== value || el.style.getPropertyPriority(prop) !== 'important') {
+      el.style.setProperty(prop, value, 'important');
+    }
+  }
+
+  function lockNavbarAfterTranslate() {
+    setImportant(document.documentElement, 'margin-top', '0px');
+    setImportant(document.body, 'top', '0px');
+    setImportant(document.body, 'margin-top', '0px');
+    setImportant(document.body, 'padding-top', '0px');
+    setImportant(header, 'display', 'block');
+    setImportant(header, 'position', 'fixed');
+    setImportant(header, 'top', '0px');
+    setImportant(header, 'left', '0px');
+    setImportant(header, 'right', '0px');
+    setImportant(header, 'z-index', '2147483000');
+    setImportant(header, 'visibility', 'visible');
+    setImportant(header, 'opacity', '1');
+    setImportant(header, 'transform', 'none');
+  }
+
+  lockNavbarAfterTranslate();
+  window.addEventListener('load', lockNavbarAfterTranslate, { passive: true });
+  window.addEventListener('resize', lockNavbarAfterTranslate, { passive: true });
+  window.addEventListener('scroll', lockNavbarAfterTranslate, { passive: true });
+
+  if (window.MutationObserver) {
+    new MutationObserver(lockNavbarAfterTranslate).observe(document.documentElement, {
+      attributes: true,
+      childList: true,
+      subtree: true
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
