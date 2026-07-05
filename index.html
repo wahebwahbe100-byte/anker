@@ -9677,6 +9677,97 @@
 }
 </style>
 
+
+
+<style id="team-mobile-same-pc-size-final">
+/* FINAL OVERRIDE — Unser Team: make the two team photos on mobile use the same card/photo size as desktop.
+   Because a phone screen cannot fit two full desktop-size cards side by side,
+   the cards are stacked one below the other on mobile. */
+@media (max-width: 760px) {
+  #team.team-section {
+    overflow-x: hidden !important;
+    padding: 48px 0 !important;
+  }
+
+  #team > .container {
+    width: min(var(--max), calc(100% - 24px)) !important;
+    max-width: var(--max) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #team .team-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    align-items: start !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #team .team-card {
+    width: 360px !important;
+    max-width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 12px 12px 30px !important;
+    border-radius: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  #team .team-photo {
+    width: 100% !important;
+    height: 328px !important;
+    min-height: 328px !important;
+    aspect-ratio: auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+  }
+
+  #team .team-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  #team .team-body {
+    padding: 24px 18px 0 !important;
+    min-height: 98px !important;
+  }
+
+  #team .team-body h3 {
+    max-width: 360px !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    font-size: clamp(18px, 1.55vw, 21px) !important;
+    line-height: 1.42 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+
+  #team .team-body p {
+    max-width: 330px !important;
+    min-height: 0 !important;
+    margin: 14px auto 0 !important;
+    font-size: clamp(15px, 1.25vw, 17px) !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+}
+</style>
+
 </head>
 <body>
  <div class="topbar">
