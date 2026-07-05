@@ -15050,5 +15050,27 @@ html.translated-rtl body header.site-header .container.nav {
 }
 </style>
 
+
+
+<style id="chatgpt-phone-scrolled-logo-text-gap-final">
+/* PHONE ONLY — عند طي الهيدر/السكرول:
+   إبعاد نص ANKER / CARAVAN قليلًا عن صورة اللوجو فقط */
+@media (max-width: 760px) {
+  body header.site-header.is-scrolled .logo-wordmark,
+  body.menu-open header.site-header.is-scrolled .logo-wordmark {
+    left: 88px !important;
+    max-width: calc(100vw - 160px) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body header.site-header.is-scrolled .logo-wordmark,
+  body.menu-open header.site-header.is-scrolled .logo-wordmark {
+    left: 78px !important;
+    max-width: calc(100vw - 136px) !important;
+  }
+}
+</style>
+
 </body>
 </html>
