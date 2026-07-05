@@ -304,6 +304,29 @@
     box-shadow:0 14px 30px rgba(8,26,57,.18);
   }
 
+
+  /* Grundriss section */
+  .grundriss-image-wrap{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:22px;
+    padding:14px;
+    box-shadow:0 10px 22px rgba(8,26,57,.07);
+    overflow:hidden;
+  }
+
+  .grundriss-image-wrap img{
+    width:100%;
+    height:auto;
+    border-radius:16px;
+    object-fit:contain;
+  }
+
+  @media (max-width: 640px){
+    .grundriss-image-wrap{padding:8px;border-radius:16px}
+    .grundriss-image-wrap img{border-radius:12px}
+  }
+
   footer{
     background:var(--brand);
     color:rgba(255,255,255,.78);
@@ -682,6 +705,18 @@
 </section>
 
 <section class="content">
+
+  <div class="box reveal-zoom grundriss-section">
+    <div class="section-title">
+      <h2>Grundriss</h2>
+      <p>Layout-Plan des Wohnwagen Micro 240</p>
+    </div>
+
+    <div class="grundriss-image-wrap">
+      <img src="images/grundriss-micro-240.png" alt="Grundriss Wohnwagen Micro 240">
+    </div>
+  </div>
+
   <div class="box reveal">
     <div class="section-title">
       <h2>Technische Daten</h2>
