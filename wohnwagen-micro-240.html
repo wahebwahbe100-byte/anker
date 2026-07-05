@@ -149,6 +149,14 @@
     z-index:2;
   }
 
+  .slide:not(.active){
+    pointer-events:none;
+  }
+
+  .video-slide.active{
+    z-index:3;
+  }
+
   .slide img{
     width:100%;
     height:100%;
@@ -682,8 +690,8 @@
         <div class="slide"><img src="images/micro-240-2.jpeg" alt="Wohnwagen Micro 240 Bild 2"></div>
         <div class="slide"><img src="images/micro-240-3.jpeg" alt="Wohnwagen Micro 240 Bild 3"></div>
         <div class="slide"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Bild 4"></div>
-        <div class="slide">
-          <video controls preload="metadata" playsinline>
+        <div class="slide video-slide">
+          <video controls preload="metadata" playsinline poster="images/micro-240-1.jpeg">
             <source src="videos/micro-240-video.mp4" type="video/mp4">
             Ihr Browser unterstützt dieses Video nicht.
           </video>
@@ -696,7 +704,7 @@
         <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Vorschau 4"></button>
         <button class="thumb video-thumb" type="button" aria-label="Video anzeigen">
           <video muted preload="metadata" playsinline>
-            <source src="videos/micro-240-video.mp4">
+            <source src="videos/micro-240-video.mp4" type="video/mp4">
           </video>
         </button>
       </div>
@@ -844,16 +852,23 @@
   const slides = document.querySelectorAll('#microSlider .slide');
   const thumbs = document.querySelectorAll('#microThumbs .thumb');
   const slider = document.querySelector('#microSlider');
-  const videos = document.querySelectorAll('#microSlider video');
   let index = 0;
   let autoSlideTimer;
   let resumeTimer;
 
-  function pauseAutoSlide(){
+  function stopAutoSlide(){
     if (autoSlideTimer) clearInterval(autoSlideTimer);
     if (resumeTimer) clearTimeout(resumeTimer);
-
     autoSlideTimer = null;
+    resumeTimer = null;
+  }
+
+  function pauseAutoSlide(){
+    stopAutoSlide();
+
+    const activeVideo = slides[index]?.querySelector('video');
+    if (activeVideo) return;
+
     resumeTimer = setTimeout(() => {
       startAutoSlide();
     }, 10000);
@@ -861,9 +876,14 @@
 
   thumbs.forEach((thumb, thumbIndex) => {
     thumb.addEventListener('click', () => {
-      pauseAutoSlide();
+      stopAutoSlide();
       index = thumbIndex;
       showSlide(index);
+
+      const selectedVideo = slides[index]?.querySelector('video');
+      if (!selectedVideo) {
+        pauseAutoSlide();
+      }
     });
   });
 
@@ -871,16 +891,25 @@
     slider.addEventListener('click', pauseAutoSlide);
   }
 
+  slides.forEach((slide) => {
+    const video = slide.querySelector('video');
+    if (video) {
+      video.addEventListener('play', stopAutoSlide);
+      video.addEventListener('ended', () => {
+        pauseAutoSlide();
+      });
+    }
+  });
+
   function showSlide(i){
     slides.forEach((slide, sIndex) => {
       const isActive = sIndex === i;
       slide.classList.toggle('active', isActive);
 
-      if (!isActive) {
-        slide.querySelectorAll('video').forEach((video) => {
-          video.pause();
-          video.currentTime = 0;
-        });
+      const video = slide.querySelector('video');
+      if (video && !isActive) {
+        video.pause();
+        video.currentTime = 0;
       }
     });
     thumbs.forEach((thumb, tIndex) => {
@@ -888,13 +917,12 @@
     });
   }
 
-  videos.forEach((video) => {
-    video.addEventListener('play', pauseAutoSlide);
-  });
-
   function startAutoSlide(){
     if (autoSlideTimer) clearInterval(autoSlideTimer);
     autoSlideTimer = setInterval(() => {
+      const activeVideo = slides[index]?.querySelector('video');
+      if (activeVideo) return;
+
       index = (index + 1) % slides.length;
       showSlide(index);
     }, 3000);
