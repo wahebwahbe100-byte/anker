@@ -616,163 +616,629 @@
   }
 
 
-  /* Eco 350 floor plan section */
-  .floorplan-box{
-    overflow:hidden;
-    padding:0;
+  /* Living Area Details section: text first, photos after */
+  .eco-living-showcase{
+    width:min(1180px, calc(100% - 36px));
+    margin:0 auto;
+    padding:64px 0;
+    font-family:Inter, "Helvetica Neue", Arial, sans-serif;
   }
 
-  .floorplan-head{
-    padding:34px 28px 18px;
+  .eco-living-intro,
+  .eco-living-board{
+    --eco-bg:#e4eaea;
+    --eco-black:#050505;
+    --eco-yellow:#ffca13;
+    --eco-border:2px solid var(--eco-black);
+    width:min(100%,1145px);
+    margin:0 auto;
+    background:var(--eco-bg);
+    color:var(--eco-black);
+    box-shadow:0 24px 56px rgba(7,20,38,.12);
   }
 
-  .floorplan-shell{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:22px;
-    align-items:stretch;
-    padding:0 24px 26px;
-  }
-
-  .floorplan-media{
+  .eco-living-intro{
     position:relative;
-    background:#fff;
-    border:1px solid rgba(8,26,57,.10);
-    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 12px 28px rgba(8,26,57,.08);
+    border-radius:30px;
+    padding:clamp(28px,4.2vw,48px) clamp(18px,4.2vw,56px);
+    margin-bottom:22px;
   }
 
-  .floorplan-media img{
+  .eco-living-title{
+    margin:0 0 24px;
+    font-size:clamp(38px,4.15vw,52px);
+    line-height:.94;
+    letter-spacing:-.055em;
+    font-weight:400;
+    color:var(--eco-black);
+  }
+
+  .eco-living-copy-card{
+    width:min(760px,100%);
+    min-height:128px;
+    display:grid;
+    place-items:center;
+    padding:16px 22px;
+    border:var(--eco-border);
+    border-radius:27px;
+    background:var(--eco-yellow);
+    text-align:center;
+    font-size:16px;
+    line-height:1.53;
+    position:relative;
+    z-index:2;
+  }
+
+  .eco-living-copy-card p{
+    margin:0;
+  }
+
+  .eco-living-board{
+    position:relative;
+    aspect-ratio:1145 / 633;
+    height:auto;
+    overflow:hidden;
+  }
+
+  .eco-living-glow{
+    position:absolute;
+    left:0;
+    bottom:24%;
+    width:10%;
+    aspect-ratio:1 / 1;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,202,19,.88) 0 8%, rgba(255,202,19,.48) 26%, rgba(255,202,19,.18) 52%, rgba(255,202,19,0) 74%);
+    filter:blur(2px);
+    z-index:2;
+    pointer-events:none;
+  }
+
+  .eco-living-photo{
+    position:absolute;
+    overflow:hidden;
+    border:var(--eco-border);
+    border-radius:clamp(12px,2.25vw,26px);
+    background:#d5d9d9;
+    z-index:3;
+  }
+
+  .eco-living-photo img{
     width:100%;
     height:100%;
-    min-height:360px;
-    object-fit:contain;
-    background:#eef0f3;
+    object-fit:cover;
+    display:block;
   }
 
-  .floorplan-badge{
-    position:absolute;
-    left:16px;
-    top:16px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:8px 13px;
-    border-radius:999px;
-    background:rgba(255,255,255,.92);
-    color:var(--brand);
-    border:1px solid rgba(8,26,57,.12);
-    font-weight:800;
-    box-shadow:0 8px 18px rgba(8,26,57,.10);
+  .eco-living-hero-photo{
+    left:1.14%;
+    top:3.95%;
+    width:75.45%;
+    height:49.29%;
+    border-radius:clamp(12px,2.45vw,28px);
+    z-index:1;
   }
 
-  .floorplan-info{
-    background:#fff;
-    border:1px solid rgba(8,26,57,.10);
-    border-radius:24px;
-    padding:24px;
-    box-shadow:0 12px 28px rgba(8,26,57,.07);
+  .eco-living-right-photo{
+    left:78.42%;
+    top:3.95%;
+    width:20.44%;
+    height:90.84%;
+    border-radius:clamp(12px,2.45vw,28px);
   }
 
-  .floorplan-info h3{
-    color:var(--brand);
-    font-size:26px;
-    line-height:1.2;
-    margin-bottom:12px;
+  .eco-living-photo-1{left:1.14%;top:55.92%;width:25.8%;height:38.86%}
+  .eco-living-photo-2{left:28.35%;top:55.92%;width:22.8%;height:38.86%}
+  .eco-living-photo-3{left:52.55%;top:55.92%;width:11.85%;height:38.86%}
+  .eco-living-photo-4{left:65.8%;top:55.92%;width:11.24%;height:38.86%}
+
+  .eco-living-showcase.show .eco-living-intro,
+  .eco-living-showcase.show .eco-living-photo{
+    animation:ecoLivingEnter .58s cubic-bezier(.2,.8,.2,1) both;
   }
 
-  .floorplan-info p{
-    color:#4f5663;
-    font-size:17px;
-    line-height:1.75;
-    margin-bottom:16px;
+  .eco-living-showcase.show .eco-living-intro{animation-delay:.02s}
+  .eco-living-showcase.show .eco-living-hero-photo{animation-delay:.10s}
+  .eco-living-showcase.show .eco-living-right-photo{animation-delay:.14s}
+  .eco-living-showcase.show .eco-living-photo-1{animation-delay:.18s}
+  .eco-living-showcase.show .eco-living-photo-2{animation-delay:.22s}
+  .eco-living-showcase.show .eco-living-photo-3{animation-delay:.26s}
+  .eco-living-showcase.show .eco-living-photo-4{animation-delay:.30s}
+
+  @keyframes ecoLivingEnter{
+    from{opacity:0;transform:translateY(18px) scale(.985)}
+    to{opacity:1;transform:translateY(0) scale(1)}
   }
 
-  .floorplan-list{
-    display:grid;
-    gap:10px;
-    margin:18px 0 20px;
-  }
-
-  .floorplan-chip{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    padding:11px 12px;
-    border-radius:16px;
-    background:linear-gradient(180deg,#fffdf9 0%,#f7f2e8 100%);
-    border:1px solid rgba(8,26,57,.08);
-    color:#4f5663;
-    font-size:16px;
-    line-height:1.45;
-  }
-
-  .floorplan-chip span{
-    width:9px;
-    height:9px;
-    margin-top:8px;
-    border-radius:50%;
-    background:var(--brand-dark);
-    flex:0 0 auto;
-  }
-
-  .floorplan-chip strong{
-    color:var(--brand);
-  }
-
-  .floorplan-action{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px 18px;
-    border-radius:999px;
-    background:var(--brand);
-    color:#fff;
-    font-weight:800;
-    box-shadow:0 12px 24px rgba(8,26,57,.16);
-    transition:transform .25s ease, background .25s ease;
-  }
-
-  .floorplan-action:hover{
-    transform:translateY(-2px);
-    background:var(--brand-dark);
-  }
-
-  @media (max-width: 900px){
-    .floorplan-shell{
-      grid-template-columns:1fr;
-      padding:0 18px 22px;
+  @media (max-width:900px){
+    .eco-living-showcase{
+      width:min(100% - 24px,1180px);
+      padding:46px 0;
     }
 
-    .floorplan-media img{
+    .eco-living-intro,
+    .eco-living-board{
+      width:100%;
+      border-radius:24px;
+    }
+  }
+
+  @media (max-width:640px){
+    .eco-living-showcase{
+      width:calc(100% - 18px);
+      padding:34px 0;
+    }
+
+    .eco-living-intro{
+      border-radius:18px;
+      padding:24px 18px;
+      margin-bottom:16px;
+      box-shadow:0 16px 34px rgba(7,20,38,.12);
+    }
+
+    .eco-living-board{
+      aspect-ratio:4 / 5;
+      border-radius:18px;
+      box-shadow:0 16px 34px rgba(7,20,38,.12);
+    }
+
+    .eco-living-title{
+      font-size:clamp(34px,12vw,52px);
+      margin-bottom:18px;
+    }
+
+    .eco-living-copy-card{
+      width:100%;
       min-height:0;
+      padding:14px 16px;
+      border-width:1.5px;
+      border-radius:18px;
+      font-size:clamp(13px,3.85vw,16px);
+      line-height:1.48;
+    }
+
+    .eco-living-photo{
+      border-width:1.5px;
+    }
+
+    .eco-living-hero-photo{left:3.5%;top:3.5%;width:61%;height:35%}
+    .eco-living-right-photo{left:67%;top:3.5%;width:29.5%;height:59%}
+    .eco-living-photo-1{left:3.5%;top:41%;width:29%;height:26%}
+    .eco-living-photo-2{left:35%;top:41%;width:29%;height:26%}
+    .eco-living-photo-3{left:3.5%;top:70%;width:29%;height:26.5%}
+    .eco-living-photo-4{left:35%;top:70%;width:61.5%;height:26.5%}
+  }
+
+
+  /* Under section: Simple Living / Maximum Comfort */
+  .eco-simple-living{
+    width:min(1180px, calc(100% - 36px));
+    margin:0 auto;
+    padding:0 0 64px;
+  }
+
+  .eco-simple-living-board{
+    --simple-bg:#e4eaea;
+    --simple-black:#050505;
+    --simple-yellow:#ffca13;
+    position:relative;
+    width:min(100%,1177px);
+    height:631px;
+    margin:auto;
+    overflow:hidden;
+    background:var(--simple-bg);
+    color:var(--simple-black);
+    font-family:Inter, "Helvetica Neue", Arial, sans-serif;
+    box-shadow:0 24px 56px rgba(7,20,38,.10);
+  }
+
+  .eco-simple-living-photo{
+    position:absolute;
+    left:47px;
+    top:56px;
+    width:532px;
+    height:540px;
+    overflow:hidden;
+    border:2px solid var(--simple-black);
+    border-radius:25px;
+    background:#d5d9d9;
+    z-index:2;
+  }
+
+  .eco-simple-living-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .eco-simple-living-copy{
+    position:absolute;
+    left:628px;
+    top:489px;
+    z-index:3;
+  }
+
+  .eco-simple-living-copy h2{
+    margin:0;
+    color:var(--simple-black);
+    font-size:clamp(46px,5.1vw,56px);
+    line-height:.91;
+    letter-spacing:-.065em;
+    font-weight:400;
+  }
+
+  .eco-simple-living-glow{
+    position:absolute;
+    left:1000px;
+    top:250px;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,202,19,.94) 0 7%, rgba(255,202,19,.62) 22%, rgba(255,202,19,.26) 44%, rgba(255,202,19,.08) 62%, rgba(255,202,19,0) 76%);
+    filter:blur(3px);
+    pointer-events:none;
+    z-index:1;
+  }
+
+  @media (max-width:900px){
+    .eco-simple-living{width:min(100% - 24px,1180px);padding:0 0 46px}
+    .eco-simple-living-board{
+      height:auto;
+      padding:28px 14px 36px;
+      border-radius:24px;
+      display:grid;
+      gap:24px;
+      overflow:hidden;
+    }
+    .eco-simple-living-photo,
+    .eco-simple-living-copy,
+    .eco-simple-living-glow{
+      position:static;
+      width:100%;
+      height:auto;
+    }
+    .eco-simple-living-photo{aspect-ratio:532/540;max-height:620px}
+    .eco-simple-living-copy{padding:12px 4px 0}
+    .eco-simple-living-copy h2{font-size:clamp(38px,10vw,52px)}
+    .eco-simple-living-glow{
+      display:block;
+      width:110px;
+      height:110px;
+      margin:0 0 -84px auto;
     }
   }
 
-  @media (max-width: 640px){
-    .floorplan-head{
-      padding:26px 18px 12px;
+
+  /* German layout plan section */
+  .eco-layout-plan-section{
+    width:min(1180px, calc(100% - 36px));
+    margin:0 auto;
+    padding:0 0 64px;
+  }
+
+  .eco-layout-plan-board{
+    --lp-bg:#e4eaea;
+    --lp-black:#050505;
+    --lp-yellow:#ffca13;
+    --lp-dark:#665000;
+    --lp-soft:#ffe16b;
+    position:relative;
+    width:min(100%,1185px);
+    aspect-ratio:1185 / 646;
+    margin:auto;
+    overflow:hidden;
+    background:var(--lp-bg);
+    color:var(--lp-black);
+    font-family:Inter, "Helvetica Neue", Arial, sans-serif;
+    box-shadow:0 24px 56px rgba(7,20,38,.10);
+  }
+
+  .eco-layout-plan-board::after{
+    content:"";
+    position:absolute;
+    right:-8%;
+    top:14%;
+    width:34%;
+    height:58%;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,202,19,.92) 0 8%, rgba(255,202,19,.58) 24%, rgba(255,202,19,.22) 48%, rgba(255,202,19,.08) 66%, rgba(255,202,19,0) 82%);
+    filter:blur(6px);
+    pointer-events:none;
+    z-index:1;
+  }
+
+  .eco-layout-plan-title{
+    position:absolute;
+    left:5.2%;
+    top:6.6%;
+    margin:0;
+    color:var(--lp-black);
+    font-size:clamp(46px,7.5vw,88px);
+    line-height:.94;
+    letter-spacing:-.065em;
+    font-weight:900;
+    z-index:5;
+  }
+
+  .eco-plan-drawing{
+    position:absolute;
+    left:14.7%;
+    top:24.7%;
+    width:71.8%;
+    height:64.7%;
+    z-index:4;
+  }
+
+  .eco-plan-room{
+    position:absolute;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--lp-black);
+    font-weight:900;
+    font-size:clamp(10px,1.9vw,22px);
+    line-height:1.12;
+    border:1px solid rgba(0,0,0,.18);
+  }
+
+  .eco-plan-room.dark{background:var(--lp-dark);color:#fff}
+  .eco-plan-room.yellow{background:var(--lp-yellow)}
+  .eco-plan-room.soft{background:var(--lp-soft)}
+
+  .eco-plan-seating-top{left:0;top:0;width:41.7%;height:28.8%}
+  .eco-plan-kitchen{left:41.9%;top:0;width:22%;height:28.8%}
+  .eco-plan-table{left:0;top:31.8%;width:37.6%;height:35.7%;border-radius:0 26px 26px 0}
+  .eco-plan-seating-bottom{left:0;top:70.6%;width:41.7%;height:29.4%}
+  .eco-plan-fridge{left:41.9%;top:70.6%;width:12.2%;height:29.4%;font-size:clamp(9px,1.45vw,16px)}
+  .eco-plan-sink{left:54.1%;top:63.5%;width:12.4%;height:36.5%;border-radius:26px 0 0 0}
+  .eco-plan-shower{left:66.5%;top:63.5%;width:19.3%;height:36.5%;font-size:clamp(10px,1.75vw,20px)}
+  .eco-plan-bunk{left:85.9%;top:0;width:14.1%;height:100%;font-size:clamp(12px,1.9vw,22px)}
+
+  .eco-plan-exterior-door{
+    position:absolute;
+    left:66.2%;
+    top:-7.4%;
+    font-size:clamp(10px,1.85vw,20px);
+    font-weight:900;
+    z-index:8;
+  }
+
+  .eco-plan-front,
+  .eco-plan-back{
+    position:absolute;
+    font-weight:900;
+    font-size:clamp(10px,1.75vw,20px);
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    z-index:6;
+  }
+
+  .eco-plan-front{left:-5.1%;top:43.5%;transform:rotate(180deg)}
+  .eco-plan-back{right:-4.3%;top:44.5%}
+
+  .eco-plan-exterior-swing{
+    position:absolute;
+    left:65.5%;
+    top:-34%;
+    width:17%;
+    height:68%;
+    border-radius:100% 0 0 0;
+    background:rgba(211,180,92,.36);
+    border-right:2px solid rgba(211,180,92,.35);
+    z-index:2;
+  }
+
+  .eco-plan-inner-door{
+    position:absolute;
+    left:76.4%;
+    top:51.5%;
+    width:10.4%;
+    height:28%;
+    border-radius:100% 0 0 0;
+    background:rgba(211,180,92,.36);
+    z-index:3;
+  }
+
+  .eco-plan-inner-door-label{
+    position:absolute;
+    left:76.2%;
+    top:51.2%;
+    font-size:clamp(10px,1.6vw,20px);
+    font-weight:900;
+    z-index:8;
+  }
+
+  .eco-plan-dim,
+  .eco-plan-dim-v{
+    position:absolute;
+    color:#050505;
+    font-size:clamp(7px,1.25vw,13px);
+    line-height:1;
+    font-weight:900;
+    z-index:9;
+    pointer-events:none;
+  }
+
+  .eco-plan-dim::before,
+  .eco-plan-dim::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:6px;
+    height:6px;
+    border-left:1px solid rgba(0,0,0,.7);
+    border-bottom:1px solid rgba(0,0,0,.7);
+  }
+
+  .eco-plan-dim::before{left:0;transform:translate(-1px,-50%) rotate(45deg)}
+  .eco-plan-dim::after{right:0;transform:translate(1px,-50%) rotate(-135deg)}
+
+  .eco-plan-dim span{
+    position:absolute;
+    left:50%;
+    top:-.85em;
+    transform:translateX(-50%);
+    white-space:nowrap;
+  }
+
+  .eco-plan-dim .line{
+    display:block;
+    width:100%;
+    border-top:1px solid rgba(0,0,0,.65);
+  }
+
+  .eco-plan-dim-v::before,
+  .eco-plan-dim-v::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    width:6px;
+    height:6px;
+    border-left:1px solid rgba(0,0,0,.7);
+    border-bottom:1px solid rgba(0,0,0,.7);
+  }
+
+  .eco-plan-dim-v::before{top:0;transform:translate(-50%,-1px) rotate(135deg)}
+  .eco-plan-dim-v::after{bottom:0;transform:translate(-50%,1px) rotate(-45deg)}
+
+  .eco-plan-dim-v span{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-90deg);
+    white-space:nowrap;
+  }
+
+  .eco-plan-dim-v .line{
+    display:block;
+    height:100%;
+    border-left:1px solid rgba(0,0,0,.65);
+  }
+
+  .dim-seat-top{left:.8%;top:27.5%;width:40%;}
+  .dim-seat-top-h{left:40.9%;top:1.5%;height:25%;}
+  .dim-kitchen{left:42.2%;top:2.2%;width:21.2%;}
+  .dim-exterior{left:65.4%;top:3.8%;width:16.9%;}
+  .dim-bunk-top{left:87.2%;top:2.3%;width:11.5%;}
+  .dim-table-w{left:.9%;top:65.8%;width:34.2%;}
+  .dim-table-h{left:34.7%;top:34%;height:30.8%;}
+  .dim-seat-bottom{left:.8%;bottom:1.2%;width:40%;}
+  .dim-fridge{left:42.4%;bottom:1.2%;width:11.4%;}
+  .dim-sink{left:54.9%;bottom:1.2%;width:10.8%;}
+  .dim-shower{left:66.8%;bottom:1.2%;width:18.5%;}
+  .dim-shower-h{left:84.8%;top:64.8%;height:33.4%;}
+  .dim-front{left:-1.5%;top:0;height:100%;}
+
+  @media (max-width:900px){
+    .eco-layout-plan-section{width:min(100% - 24px,1180px);padding:0 0 46px}
+    .eco-layout-plan-board{border-radius:24px}
+  }
+
+  @media (max-width:640px){
+    .eco-layout-plan-title{font-size:clamp(32px,12vw,54px);top:6%}
+    .eco-plan-drawing{left:6.5%;top:28%;width:87%;height:58%}
+    .eco-plan-front{left:-4.5%}
+    .eco-plan-back{right:-4.8%}
+    .eco-plan-room{font-size:clamp(7px,2.2vw,13px)}
+    .eco-plan-exterior-door,
+    .eco-plan-inner-door-label{font-size:clamp(7px,2.2vw,12px)}
+    .eco-plan-dim,
+    .eco-plan-dim-v{font-size:clamp(5px,1.8vw,9px)}
+  }
+
+
+
+  /* Photo display fix: balanced cells so images do not become too narrow/cropped */
+  .eco-living-board{
+    aspect-ratio:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:24px !important;
+    display:grid !important;
+    grid-template-columns:repeat(4, minmax(0, 1fr)) minmax(190px, .95fr) !important;
+    grid-template-rows:minmax(260px, 320px) minmax(210px, 250px) !important;
+    gap:14px !important;
+    overflow:hidden !important;
+  }
+
+  .eco-living-photo,
+  .eco-living-hero-photo,
+  .eco-living-right-photo,
+  .eco-living-photo-1,
+  .eco-living-photo-2,
+  .eco-living-photo-3,
+  .eco-living-photo-4{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+    width:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    border-radius:22px !important;
+    z-index:3 !important;
+  }
+
+  .eco-living-hero-photo{grid-column:1 / 5 !important;grid-row:1 / 2 !important;}
+  .eco-living-right-photo{grid-column:5 / 6 !important;grid-row:1 / 3 !important;}
+  .eco-living-photo-1{grid-column:1 / 2 !important;grid-row:2 / 3 !important;}
+  .eco-living-photo-2{grid-column:2 / 3 !important;grid-row:2 / 3 !important;}
+  .eco-living-photo-3{grid-column:3 / 4 !important;grid-row:2 / 3 !important;}
+  .eco-living-photo-4{grid-column:4 / 5 !important;grid-row:2 / 3 !important;}
+
+  .eco-living-photo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+
+  @media (max-width:900px){
+    .eco-living-board{
+      padding:16px !important;
+      grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+      grid-template-rows:260px 220px 170px !important;
+      gap:12px !important;
+      border-radius:24px !important;
     }
 
-    .floorplan-shell{
-      padding:0 14px 18px;
-      gap:16px;
+    .eco-living-hero-photo{grid-column:1 / 5 !important;grid-row:1 / 2 !important;}
+    .eco-living-right-photo{grid-column:1 / 3 !important;grid-row:2 / 3 !important;}
+    .eco-living-photo-1{grid-column:3 / 5 !important;grid-row:2 / 3 !important;}
+    .eco-living-photo-2{grid-column:1 / 2 !important;grid-row:3 / 4 !important;}
+    .eco-living-photo-3{grid-column:2 / 3 !important;grid-row:3 / 4 !important;}
+    .eco-living-photo-4{grid-column:3 / 5 !important;grid-row:3 / 4 !important;}
+  }
+
+  @media (max-width:640px){
+    .eco-living-board{
+      padding:10px !important;
+      grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+      grid-template-rows:auto !important;
+      gap:10px !important;
+      border-radius:18px !important;
     }
 
-    .floorplan-info{
-      padding:18px;
+    .eco-living-photo,
+    .eco-living-hero-photo,
+    .eco-living-right-photo,
+    .eco-living-photo-1,
+    .eco-living-photo-2,
+    .eco-living-photo-3,
+    .eco-living-photo-4{
+      grid-column:auto !important;
+      grid-row:auto !important;
+      aspect-ratio:1 / 1 !important;
+      border-radius:16px !important;
     }
 
-    .floorplan-info h3{
-      font-size:22px;
-    }
-
-    .floorplan-badge{
-      left:10px;
-      top:10px;
-      padding:6px 10px;
-      font-size:13px;
+    .eco-living-hero-photo,
+    .eco-living-right-photo{
+      grid-column:1 / 3 !important;
+      aspect-ratio:16 / 10 !important;
     }
   }
 
@@ -828,6 +1294,95 @@
   </div>
 </section>
 
+
+  <!--
+    Bilder für diesen Bereich:
+    Lege deine eigenen Fotos in den Ordner "350" neben diese HTML-Datei.
+    Verwendete Dateinamen:
+    - wohnbereich-details-01.jpg
+    - wohnbereich-details-02.jpg
+    - wohnbereich-details-03.jpg
+    - wohnbereich-details-04.jpg
+    - wohnbereich-details-05.jpg
+    - wohnbereich-details-06.jpg
+    - simple-living-01.jpg
+    Die obere bewegliche Galerie/Slider wurde nicht geändert.
+  -->
+
+  <section class="eco-living-showcase reveal" aria-label="Wohnbereich Details">
+    <div class="eco-living-intro">
+      <h2 class="eco-living-title">Wohnbereich<br>Details</h2>
+
+      <article class="eco-living-copy-card">
+        <p>Das Eco 350 Modell verbindet umweltfreundliches Design mit intelligenter Technik für nachhaltige Reisen. Energieeffiziente Ausstattung, funktionale Raumnutzung und ergonomische Details sorgen für Komfort und ein gutes Gefühl unterwegs.</p>
+      </article>
+    </div>
+
+    <div class="eco-living-board" aria-label="Wohnbereich Bilder">
+      <span class="eco-living-glow" aria-hidden="true"></span>
+
+      <figure class="eco-living-photo eco-living-hero-photo"><img src="350/wohnbereich-details-01.jpg" alt="Eco 350 caravan exterior beside a lake"></figure>
+      <figure class="eco-living-photo eco-living-right-photo"><img src="350/wohnbereich-details-02.jpg" alt="Eco 350 living area interior"></figure>
+      <figure class="eco-living-photo eco-living-photo-1"><img src="350/wohnbereich-details-03.jpg" alt="Eco 350 table and kitchen area"></figure>
+      <figure class="eco-living-photo eco-living-photo-2"><img src="350/wohnbereich-details-04.jpg" alt="Eco 350 bunk bed area"></figure>
+      <figure class="eco-living-photo eco-living-photo-3"><img src="350/wohnbereich-details-05.jpg" alt="Eco 350 exterior kitchen drawer"></figure>
+      <figure class="eco-living-photo eco-living-photo-4"><img src="350/wohnbereich-details-06.jpg" alt="Eco 350 compact seating detail"></figure>
+    </div>
+  </section>
+
+
+  <section class="eco-simple-living reveal" aria-labelledby="eco-simple-living-title">
+    <div class="eco-simple-living-board">
+      <figure class="eco-simple-living-photo">
+        <img src="350/simple-living-01.jpg" alt="Eco 350 Wohnbereich mit Tisch und kompakter Küche">
+      </figure>
+      <span class="eco-simple-living-glow" aria-hidden="true"></span>
+      <div class="eco-simple-living-copy">
+        <h2 id="eco-simple-living-title">Simple Living,<br>Maximum Comfort.</h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="eco-layout-plan-section reveal" aria-labelledby="eco-layout-plan-title">
+    <div class="eco-layout-plan-board">
+      <h2 class="eco-layout-plan-title" id="eco-layout-plan-title">Grundrissplan</h2>
+      <div class="eco-plan-drawing" aria-label="Grundrissplan Eco 350">
+        <span class="eco-plan-exterior-swing" aria-hidden="true"></span>
+        <span class="eco-plan-inner-door" aria-hidden="true"></span>
+        <span class="eco-plan-exterior-door">Außentür</span>
+        <span class="eco-plan-inner-door-label">Tür</span>
+        <span class="eco-plan-front">Vorne</span>
+        <span class="eco-plan-back">Hinten</span>
+
+        <div class="eco-plan-room dark eco-plan-seating-top">Sitzbereich</div>
+        <div class="eco-plan-room yellow eco-plan-kitchen">Küche</div>
+        <div class="eco-plan-room yellow eco-plan-table">Tisch</div>
+        <div class="eco-plan-room dark eco-plan-seating-bottom">Sitzbereich</div>
+        <div class="eco-plan-room yellow eco-plan-fridge">Kühlschrank</div>
+        <div class="eco-plan-room soft eco-plan-sink">Spüle</div>
+        <div class="eco-plan-room soft eco-plan-shower">Dusche &amp; WC</div>
+        <div class="eco-plan-room dark eco-plan-bunk">Stockbett</div>
+
+        <div class="eco-plan-dim dim-seat-top"><span>130 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim-v dim-seat-top-h"><span>55 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-kitchen"><span>87 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-exterior"><span>55 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-bunk-top"><span>60 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-table-w"><span>120 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim-v dim-table-h"><span>80 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-seat-bottom"><span>130 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-fridge"><span>50 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-sink"><span>30 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim dim-shower"><span>80 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim-v dim-shower-h"><span>70 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim-v dim-front"><span>200 cm</span><i class="line"></i></div>
+        <div class="eco-plan-dim" style="left:0;bottom:-6.2%;width:100%"><span>350 cm</span><i class="line"></i></div>
+      </div>
+    </div>
+  </section>
+
+
 <section class="content">
   <div class="box reveal">
     <div class="section-title">
@@ -849,40 +1404,6 @@
       <div class="feature-item"><strong>Stockbett:</strong> Bettflächen 60 × 194 cm</div>
     </div>
   </div>
-
-
-
-  <div class="box floorplan-box reveal-zoom" id="grundriss">
-    <div class="section-title floorplan-head">
-      <h2>Grundriss</h2>
-      <p>Innenaufteilung des Wohnwagen Eco 350 auf einen Blick</p>
-    </div>
-
-    <div class="floorplan-shell">
-      <a class="floorplan-media" href="images/eco-350-grundriss.jpg" target="_blank" aria-label="Grundriss Eco 350 in groß öffnen">
-        <span class="floorplan-badge">Eco 350 Layout Plan</span>
-        <img src="images/eco-350-grundriss.jpg" alt="Grundriss Wohnwagen Eco 350 mit Sitzbereich, Küche, Bad und Stockbett" loading="lazy">
-      </a>
-
-      <div class="floorplan-info">
-        <h3>Praktische Raumaufteilung auf 3,50 m</h3>
-        <p>
-          Der Grundriss zeigt die kompakte Innenaufteilung mit Sitzgruppe, Tisch, Küche, Kühlschrank,
-          Waschbecken, Dusche/WC, Außentür und Stockbett im Heck.
-        </p>
-
-        <div class="floorplan-list" aria-label="Grundriss Details">
-          <div class="floorplan-chip"><span></span><div><strong>Sitzbereich & Tisch:</strong> Sitzgruppe mit umbaubarem Hauptbett.</div></div>
-          <div class="floorplan-chip"><span></span><div><strong>Küche:</strong> Küchenblock mit Kühlschrank und Spülbereich.</div></div>
-          <div class="floorplan-chip"><span></span><div><strong>Bad:</strong> Dusche, WC und Waschbecken platzsparend integriert.</div></div>
-          <div class="floorplan-chip"><span></span><div><strong>Stockbett:</strong> Heckbereich mit zusätzlichem Schlafplatz.</div></div>
-        </div>
-
-        <a class="floorplan-action" href="images/eco-350-grundriss.jpg" target="_blank">Grundriss vergrößern</a>
-      </div>
-    </div>
-  </div>
-
 
   <div class="box reveal-zoom">
     <div class="section-title">
