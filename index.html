@@ -10285,6 +10285,8 @@
     <span>Kontaktmöglichkeiten und Anfrageformular für Ihren passenden Wohnwagen.</span>
    </span>
    </div>
+
+   <div class="cookie-option">
    <span class="cookie-feature-icon" aria-hidden="true">✓</span>
    <span>
     <strong>Technisch notwendig</strong>
@@ -15927,6 +15929,127 @@ html.translated-rtl body header.site-header .container.nav {
   body header.site-header:not(.is-scrolled) .container.nav > button.mobile-toggle span,
   body.menu-open header.site-header:not(.is-scrolled) .container.nav > button.mobile-toggle span {
     width: 16px !important;
+  }
+}
+</style>
+
+
+
+<style id="chatgpt-cookie-mobile-center-fix">
+/* MOBILE COOKIE NOTICE FIX
+   يجعل إشعار الكوكيز في الجوال يظهر بالمنتصف وبعرض صحيح، وليس ملتصقًا باليمين. */
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .cookie-consent {
+    position: fixed !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    width: min(430px, calc(100vw - 24px)) !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    z-index: 5000 !important;
+    pointer-events: none !important;
+  }
+
+  .cookie-consent-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: calc(100dvh - 24px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 22px !important;
+    box-shadow: 0 18px 46px rgba(8, 26, 57, .26) !important;
+    pointer-events: auto !important;
+  }
+
+  .cookie-consent-inner {
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+
+  .cookie-consent-top {
+    grid-template-columns: 42px 1fr !important;
+    gap: 11px !important;
+    align-items: flex-start !important;
+  }
+
+  .cookie-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    border-radius: 15px !important;
+  }
+
+  .cookie-icon svg {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .cookie-consent h2 {
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+  }
+
+  .cookie-consent p {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cookie-feature-list,
+  .cookie-options {
+    gap: 7px !important;
+  }
+
+  .cookie-feature-list .cookie-option,
+  .cookie-option {
+    grid-template-columns: 28px 1fr !important;
+    padding: 9px !important;
+    gap: 8px !important;
+  }
+
+  .cookie-actions,
+  .cookie-actions.cookie-actions-single,
+  .cookie-save-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    width: 100% !important;
+  }
+
+  .cookie-actions button,
+  .cookie-save-row button {
+    width: 100% !important;
+    min-height: 46px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .cookie-consent {
+    width: calc(100vw - 18px) !important;
+    max-width: calc(100vw - 18px) !important;
+    bottom: max(9px, env(safe-area-inset-bottom)) !important;
+  }
+
+  .cookie-consent-inner {
+    padding: 14px !important;
+  }
+
+  .cookie-consent-top {
+    grid-template-columns: 38px 1fr !important;
+  }
+
+  .cookie-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
   }
 }
 </style>
