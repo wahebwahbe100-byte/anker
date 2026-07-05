@@ -11658,5 +11658,170 @@ section[id] {
 }
 </style>
 
+
+
+<style id="mobile-sortiment-caravan-cards-final">
+/* ============================================================
+   MOBILE FINAL: clean display for the 3 Sortiment / Caravans cards
+   تحسين عرض صور وبطاقات Caravans على الهواتف بدون قصّ أو خروج عن الشاشة
+   ============================================================ */
+@media (max-width: 760px) {
+  #produkte.dark-section {
+    padding-top: 54px !important;
+    padding-bottom: 56px !important;
+    overflow-x: hidden !important;
+  }
+
+  #produkte .container {
+    width: min(100% - 24px, var(--max)) !important;
+  }
+
+  #produkte .section-head {
+    margin-bottom: 18px !important;
+    text-align: left !important;
+  }
+
+  #produkte .section-kicker {
+    margin-bottom: 6px !important;
+    font-size: 12px !important;
+    letter-spacing: .14em !important;
+  }
+
+  #produkte h2 {
+    font-size: clamp(32px, 9vw, 42px) !important;
+    line-height: 1 !important;
+  }
+
+  #produkte .sortiment-product-preview {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px !important;
+    overflow: visible !important;
+  }
+
+  #produkte .sortiment-product-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #produkte .sortiment-product-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, .08) !important;
+    border: 1px solid rgba(255, 255, 255, .24) !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, .18) !important;
+    transform: none !important;
+  }
+
+  #produkte .sortiment-product-card:hover {
+    transform: none !important;
+  }
+
+  #produkte .sortiment-product-image {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 10px !important;
+    display: grid !important;
+    place-items: center !important;
+    background:
+      radial-gradient(circle at 72% 15%, rgba(157, 133, 114, .16), transparent 38%),
+      linear-gradient(135deg, #ffffff, #eee8e2) !important;
+  }
+
+  #produkte .sortiment-product-image::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  #produkte .sortiment-product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  #produkte .sortiment-product-card:hover img {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  #produkte .sortiment-product-body {
+    min-height: auto !important;
+    padding: 18px 18px 20px !important;
+    gap: 9px !important;
+    background: rgba(8, 26, 57, .86) !important;
+    border-top: 1px solid rgba(255, 255, 255, .18) !important;
+  }
+
+  #produkte .sortiment-product-body h3 {
+    font-size: clamp(20px, 5.5vw, 23px) !important;
+    line-height: 1.16 !important;
+    letter-spacing: -.02em !important;
+    color: #fff !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #produkte .sortiment-product-body p {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+    color: rgba(255, 255, 255, .84) !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
+  }
+
+  #produkte .sortiment-product-more {
+    width: 100% !important;
+    margin-top: 10px !important;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #produkte .container {
+    width: calc(100% - 20px) !important;
+  }
+
+  #produkte .sortiment-product-grid {
+    gap: 15px !important;
+  }
+
+  #produkte .sortiment-product-card {
+    border-radius: 20px !important;
+  }
+
+  #produkte .sortiment-product-image {
+    aspect-ratio: 1.18 / 1 !important;
+    padding: 8px !important;
+  }
+
+  #produkte .sortiment-product-body {
+    padding: 16px !important;
+  }
+
+  #produkte .sortiment-product-body p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+}
+</style>
+
 </body>
 </html>
