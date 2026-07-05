@@ -405,6 +405,21 @@
     object-fit:cover;
   }
 
+  .thumb.video-thumb::after{
+    content:"▶";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(8,26,57,.28);
+    color:#fff;
+    font-size:24px;
+    line-height:1;
+    text-shadow:0 2px 8px rgba(0,0,0,.35);
+    pointer-events:none;
+  }
+
   @media (max-width: 900px){
     .slider{
       min-height:0;
@@ -644,12 +659,23 @@
         <div class="slide"><img src="images/micro-240-2.jpeg" alt="Wohnwagen Micro 240 Bild 2"></div>
         <div class="slide"><img src="images/micro-240-3.jpeg" alt="Wohnwagen Micro 240 Bild 3"></div>
         <div class="slide"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Bild 4"></div>
+        <div class="slide">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/micro-240-video.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Video nicht.
+          </video>
+        </div>
       </div>
-      <div class="thumbs" id="microThumbs" aria-label="Micro 240 Galerie Vorschau" style="--thumb-count:4">
+      <div class="thumbs" id="microThumbs" aria-label="Micro 240 Galerie Vorschau" style="--thumb-count:5">
         <button class="thumb active" type="button" aria-label="Bild 1 anzeigen"><img src="images/micro-240-1.jpeg" alt="Wohnwagen Micro 240 Vorschau 1"></button>
         <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/micro-240-2.jpeg" alt="Wohnwagen Micro 240 Vorschau 2"></button>
         <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/micro-240-3.jpeg" alt="Wohnwagen Micro 240 Vorschau 3"></button>
         <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/micro-240-4.jpeg" alt="Wohnwagen Micro 240 Vorschau 4"></button>
+        <button class="thumb video-thumb" type="button" aria-label="Video anzeigen">
+          <video muted preload="metadata" playsinline>
+            <source src="videos/micro-240-video.mp4" type="video/mp4">
+          </video>
+        </button>
       </div>
     </div>
   </div>
@@ -783,6 +809,7 @@
   const slides = document.querySelectorAll('#microSlider .slide');
   const thumbs = document.querySelectorAll('#microThumbs .thumb');
   const slider = document.querySelector('#microSlider');
+  const videos = document.querySelectorAll('#microSlider video');
   let index = 0;
   let autoSlideTimer;
   let resumeTimer;
@@ -811,12 +838,24 @@
 
   function showSlide(i){
     slides.forEach((slide, sIndex) => {
-      slide.classList.toggle('active', sIndex === i);
+      const isActive = sIndex === i;
+      slide.classList.toggle('active', isActive);
+
+      if (!isActive) {
+        slide.querySelectorAll('video').forEach((video) => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
     });
     thumbs.forEach((thumb, tIndex) => {
       thumb.classList.toggle('active', tIndex === i);
     });
   }
+
+  videos.forEach((video) => {
+    video.addEventListener('play', pauseAutoSlide);
+  });
 
   function startAutoSlide(){
     if (autoSlideTimer) clearInterval(autoSlideTimer);
