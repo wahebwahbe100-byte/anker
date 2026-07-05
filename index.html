@@ -13830,6 +13830,167 @@ footer .logo-round img {
 
 
 
+
+
+<style id="chatgpt-mobile-folded-wordmark-final">
+/* ============================================================
+   MOBILE ONLY FIX — folded/shrunk header logo text
+   المطلوب: بعد طي/تصغير الهيدر على الجوال تظهر كلمة
+   ANKER CARAVAN بشكل واضح ومناسب بجانب اللوجو فقط على الجوال.
+   ============================================================ */
+@media (max-width: 760px) {
+  body header.site-header.is-scrolled .container.nav,
+  body header.site-header.is-scrolled .logo {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+  }
+
+  body header.site-header.is-scrolled .logo {
+    position: relative !important;
+    width: calc(100% - 48px) !important;
+    max-width: calc(100% - 48px) !important;
+    overflow: visible !important;
+  }
+
+  body header.site-header.is-scrolled .logo-round {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    flex: 0 0 50px !important;
+    flex-basis: 50px !important;
+  }
+
+  body header.site-header.is-scrolled .logo-round img {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  body header.site-header.is-scrolled .logo-wordmark {
+    position: absolute !important;
+    left: 60px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 116px !important;
+    max-width: calc(100vw - 132px) !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  body header.site-header.is-scrolled .logo-title {
+    display: block !important;
+    margin: 0 !important;
+    padding-left: .075em !important;
+    color: #081a39 !important;
+    font-family: Cinzel, Georgia, serif !important;
+    font-size: clamp(20px, 6vw, 24px) !important;
+    font-weight: 850 !important;
+    line-height: .92 !important;
+    letter-spacing: .075em !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  body header.site-header.is-scrolled .logo-subline {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    min-height: 9px !important;
+    margin-top: 3px !important;
+    gap: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+
+  body header.site-header.is-scrolled .logo-subline > span {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    flex: 0 0 0 !important;
+  }
+
+  body header.site-header.is-scrolled .logo-caravan {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding-left: .18em !important;
+    color: #9d8572 !important;
+    font-family: Montserrat, Arial, sans-serif !important;
+    font-size: clamp(8px, 2.25vw, 9.2px) !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: .18em !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body header.site-header.is-scrolled .mobile-toggle {
+    right: 0 !important;
+  }
+
+  body header.site-header.is-scrolled .menu,
+  body header.site-header.is-scrolled .menu.open {
+    top: 70px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body header.site-header.is-scrolled .container.nav,
+  body header.site-header.is-scrolled .logo {
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+  }
+
+  body header.site-header.is-scrolled .logo-round,
+  body header.site-header.is-scrolled .logo-round img {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    flex-basis: 44px !important;
+  }
+
+  body header.site-header.is-scrolled .logo-wordmark {
+    left: 52px !important;
+    min-width: 104px !important;
+    max-width: calc(100vw - 110px) !important;
+  }
+
+  body header.site-header.is-scrolled .logo-title {
+    font-size: clamp(18px, 5.4vw, 21px) !important;
+    letter-spacing: .062em !important;
+    padding-left: .062em !important;
+  }
+
+  body header.site-header.is-scrolled .logo-caravan {
+    font-size: clamp(7.2px, 2vw, 8px) !important;
+    letter-spacing: .14em !important;
+    padding-left: .14em !important;
+  }
+
+  body header.site-header.is-scrolled .menu,
+  body header.site-header.is-scrolled .menu.open {
+    top: 64px !important;
+  }
+}
+</style>
+
 <script id="chatgpt-mobile-before-after-logo-script">
 /* ============================================================
    MOBILE BEFORE/AFTER SCROLL LOGO SWITCH
