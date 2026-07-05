@@ -12607,5 +12607,248 @@ section[id] {
 
 </style>
 
+
+
+<style id="mobile-logo-bar-wordmark-polish-final">
+/* ============================================================
+   MOBILE ONLY — polished logo bar + ANKER/CARAVAN wordmark
+   تحسين شريط اللوجو وكلمة اللوجو في الهواتف فقط
+   ============================================================ */
+@media (max-width: 760px) {
+  header.site-header,
+  header.site-header.is-scrolled {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(255,255,255,.985) !important;
+    border-bottom: 1px solid rgba(157,133,114,.18) !important;
+    box-shadow: 0 10px 26px rgba(8,26,57,.10) !important;
+  }
+
+  header.site-header .container.nav,
+  header.site-header.is-scrolled .container.nav {
+    width: calc(100% - 20px) !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    max-height: 74px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .logo,
+  header.site-header.is-scrolled .logo {
+    width: auto !important;
+    max-width: calc(100vw - 76px) !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+  }
+
+  header.site-header .logo-round,
+  header.site-header .logo-round img,
+  header.site-header:not(.is-scrolled) .logo-round,
+  header.site-header:not(.is-scrolled) .logo-round img,
+  header.site-header.is-scrolled .logo-round,
+  header.site-header.is-scrolled .logo-round img {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    flex: 0 0 50px !important;
+    flex-basis: 50px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  header.site-header .logo-round {
+    display: grid !important;
+    place-items: center !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+  }
+
+  header.site-header .logo-wordmark,
+  header.site-header.is-scrolled .logo-wordmark {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 116px !important;
+    max-width: calc(100vw - 150px) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    transform: translateY(1px) !important;
+  }
+
+  header.site-header .logo-title,
+  header.site-header:not(.is-scrolled) .logo-title,
+  header.site-header.is-scrolled .logo-title {
+    display: block !important;
+    margin: 0 !important;
+    padding-left: .10em !important;
+    color: #081a39 !important;
+    font-family: Cinzel, Georgia, serif !important;
+    font-size: clamp(22px, 7.2vw, 28px) !important;
+    font-weight: 850 !important;
+    line-height: .88 !important;
+    letter-spacing: .10em !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-shadow: none !important;
+  }
+
+  header.site-header .logo-subline,
+  header.site-header.is-scrolled .logo-subline {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    width: 100% !important;
+    margin-top: 5px !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .logo-subline > span,
+  header.site-header.is-scrolled .logo-subline > span {
+    display: block !important;
+    width: 12px !important;
+    min-width: 12px !important;
+    flex: 0 0 12px !important;
+    height: 1px !important;
+    background: #c4b5a8 !important;
+    opacity: 1 !important;
+  }
+
+  header.site-header .logo-caravan,
+  header.site-header.is-scrolled .logo-caravan {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding-left: .22em !important;
+    color: #9d8572 !important;
+    font-family: Montserrat, Arial, sans-serif !important;
+    font-size: clamp(6.5px, 2vw, 8px) !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: .22em !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .mobile-toggle,
+  header.site-header.is-scrolled .mobile-toggle {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    flex: 0 0 42px !important;
+    border-radius: 14px !important;
+  }
+
+  header.site-header .menu.open,
+  header.site-header.is-scrolled .menu.open {
+    top: 82px !important;
+  }
+
+  .hero-kaiser .hero-slide-inner {
+    padding-top: 104px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  header.site-header .container.nav,
+  header.site-header.is-scrolled .container.nav {
+    width: calc(100% - 16px) !important;
+    height: 66px !important;
+    min-height: 66px !important;
+    max-height: 66px !important;
+  }
+
+  header.site-header .logo,
+  header.site-header.is-scrolled .logo {
+    height: 66px !important;
+    min-height: 66px !important;
+    max-width: calc(100vw - 68px) !important;
+    gap: 6px !important;
+  }
+
+  header.site-header .logo-round,
+  header.site-header .logo-round img,
+  header.site-header:not(.is-scrolled) .logo-round,
+  header.site-header:not(.is-scrolled) .logo-round img,
+  header.site-header.is-scrolled .logo-round,
+  header.site-header.is-scrolled .logo-round img {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    flex-basis: 42px !important;
+  }
+
+  header.site-header .logo-wordmark,
+  header.site-header.is-scrolled .logo-wordmark {
+    min-width: 104px !important;
+    max-width: calc(100vw - 128px) !important;
+  }
+
+  header.site-header .logo-title,
+  header.site-header:not(.is-scrolled) .logo-title,
+  header.site-header.is-scrolled .logo-title {
+    font-size: clamp(20px, 6.6vw, 23px) !important;
+    letter-spacing: .075em !important;
+    padding-left: .075em !important;
+  }
+
+  header.site-header .logo-subline,
+  header.site-header.is-scrolled .logo-subline {
+    gap: 4px !important;
+    margin-top: 4px !important;
+  }
+
+  header.site-header .logo-subline > span,
+  header.site-header.is-scrolled .logo-subline > span {
+    width: 8px !important;
+    min-width: 8px !important;
+    flex-basis: 8px !important;
+  }
+
+  header.site-header .logo-caravan,
+  header.site-header.is-scrolled .logo-caravan {
+    font-size: 6px !important;
+    letter-spacing: .16em !important;
+    padding-left: .16em !important;
+  }
+
+  header.site-header .mobile-toggle,
+  header.site-header.is-scrolled .mobile-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    flex-basis: 38px !important;
+  }
+
+  header.site-header .menu.open,
+  header.site-header.is-scrolled .menu.open {
+    top: 74px !important;
+  }
+
+  .hero-kaiser .hero-slide-inner {
+    padding-top: 94px !important;
+  }
+}
+</style>
+
 </body>
 </html>
