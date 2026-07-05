@@ -8793,7 +8793,35 @@
   }
  }
 
- </style>
+ 
+
+ /* ============================================================
+  FINAL FIX — ÜBER UNS BACKGROUND IMAGE NAME
+  صورة خلفية قسم Über uns الآن باسم: images/über.png
+  ============================================================ */
+ .about-showcase-image-panel {
+  background:
+   linear-gradient(90deg,
+    rgba(251,244,233,.98) 0%,
+    rgba(251,244,233,.90) 38%,
+    rgba(251,244,233,.58) 68%,
+    rgba(251,244,233,.28) 100%),
+   linear-gradient(to bottom, rgba(251,244,233,.18), rgba(251,244,233,.34)),
+   url("images/über.png") center center / cover no-repeat !important;
+ }
+
+ @media (max-width: 680px) {
+  .about-showcase-image-panel {
+   background:
+    linear-gradient(90deg,
+     rgba(251,244,233,.98) 0%,
+     rgba(251,244,233,.93) 62%,
+     rgba(251,244,233,.74) 100%),
+    url("images/über.png") center center / cover no-repeat !important;
+  }
+ }
+
+</style>
 </head>
 <body>
  <div class="topbar">
@@ -8822,10 +8850,10 @@
   <a href="#produkte">WOHNWAGEN</a>
   <a href="#beratung">SERVICE</a>
   <a href="#ueber-uns">ÜBER UNS</a>
-  <a href="#kontakt">KONTAKT</a>
+  <a href="kontakt.html">KONTAKT</a>
   </nav>
   <div class="nav-actions">
-  <a class="btn header-contact" href="#kontakt"><span class="btn-icon" aria-hidden="true">✉</span> KONTAKTIEREN</a>
+  <a class="btn header-contact" href="kontakt.html"><span class="btn-icon" aria-hidden="true">✉</span> KONTAKTIEREN</a>
   </div>
   <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
   <span></span><span></span><span></span>
@@ -8873,7 +8901,7 @@
     <h1>Ihr passender Caravan</h1>
     <p class="kaiser-subtitle">Ausstattung, Zustand und Budget gemeinsam abgestimmt</p>
     <div class="hero-actions">
-    <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
+    <a class="btn btn-primary" href="kontakt.html">Anfrage senden</a>
     <a class="btn btn-outline" href="produkte.html">Wohnwagen ansehen</a>
     </div>
    </div>
@@ -8888,7 +8916,7 @@
     <h1>Reisen beginnt mit Vertrauen</h1>
     <p class="kaiser-subtitle">Senden Sie uns Ihre Anfrage – wir melden uns mit passenden Optionen</p>
     <div class="hero-actions">
-    <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+    <a class="btn btn-primary" href="kontakt.html">Kontakt aufnehmen</a>
     <a class="btn btn-outline" href="produkte.html">Zu den Wohnwagen</a>
     </div>
    </div>
@@ -9101,79 +9129,32 @@
  
 
 
- <section id="ueber-uns" class="about-section">
-  <div class="container about-wrap">
-  <div class="about-copy">
-   <p class="section-kicker">Über uns</p>
-   <h2>Wohnwagen mit Vertrauen.</h2>
-   <p class="about-lead">ANKER Caravan begleitet Sie bei der Auswahl eines passenden Wohnwagens – persönlich, transparent und zuverlässig.</p>
-   <p class="about-lead">Wir verbinden Erfahrung, klare Beratung und sorgfältig ausgewählte Caravans mit <strong>einem vertrauensvollen Service</strong>.</p>
-   <div class="about-highlights" aria-label="Über uns Highlights">
-   <div class="about-highlight">
-    <strong></strong>
-    <span>Beratung</span>
-   </div>
-   <div class="about-highlight">
-    <strong>ANKER</strong>
-    <span>Wohnwagen mit Vertrauen</span>
+ <section id="ueber-uns" class="about-section about-showcase-section">
+  <div class="container">
+  <div class="about-showcase-card">
+   <div class="about-showcase-image-panel">
+   <div class="about-showcase-content">
+    <p class="about-showcase-kicker">Über <span class="about-logo-wordmark"><span class="about-logo-title-color">ANKER</span> <span class="about-logo-caravan-color">Caravan</span></span></p>
+    <h2>Wohnwagen mit Vertrauen.</h2>
+    <p><span class="about-logo-wordmark"><span class="about-logo-title-color">ANKER</span> <span class="about-logo-caravan-color">Caravan</span></span> steht für ehrliche Beratung, gepflegte Wohnwagen und einen transparenten Ablauf – von der ersten Anfrage bis zur Besichtigung.</p>
+    <p>Wir nehmen uns Zeit für Ihre Wünsche, erklären Ausstattung und Möglichkeiten klar verständlich und begleiten Sie zuverlässig bei der Auswahl.</p>
+    <p class="about-showcase-promise">Persönlich. Transparent. Verlässlich.</p>
+    <div class="about-showcase-signature"><span class="about-logo-wordmark"><span class="about-logo-title-color">ANKER</span> <span class="about-logo-caravan-color">Caravan</span></span></div>
    </div>
    </div>
+   <aside class="about-showcase-contact" aria-label="Kontakt zu ANKER Caravan">
+   <h3>Kontakt</h3>
+   <a class="about-contact-row" href="tel:+4915141270366">
+    <span aria-hidden="true">☎</span>
+    <strong>+49 1514 1270366</strong>
+   </a>
+   <a class="about-contact-row" href="mailto:info@anker-caravan.de">
+    <span aria-hidden="true">✉</span>
+    <strong>info@anker-caravan.de</strong>
+   </a>
+   <a class="about-contact-button" href="kontakt.html">Jetzt kontaktieren <span aria-hidden="true">→</span></a>
+   </aside>
   </div>
-  <div class="about-partner-card">
-   <span class="about-label">Unser Anspruch</span>
-   <img src="images/logo.png" alt="ANKER Caravan Logo" loading="lazy">
-   <p class="about-partner-note">Klare Beratung, gepflegte Fahrzeuge und zuverlässige Begleitung bis zu Ihrer Entscheidung.</p>
-  </div>
-  </div>
- </section>
-
- <section id="kontakt" class="dark-section">
-  <div class="container contact-wrap">
-  <div class="contact-card">
-   <p class="section-kicker">Kontakt</p>
-   <h2>Caravan anfragen</h2>
-   <p style="color: var(--muted); margin-top: 14px;">Schreiben Sie kurz, welchen Wohnwagen Sie suchen und welche Ausstattung Ihnen wichtig ist.</p>
-   <div class="contact-list">
-   <a href="tel:+4915141270366"><span>☎</span><span>+49 1514 1270366<br><small>Telefon</small></span></a>
-   <a href="mailto:info@anker-caravan.de"><span>✉</span><span>info@anker-caravan.de<br><small>E-Mail</small></span></a>
-   <div><span>⌖</span><span>Deutschland<br><small>Adresse</small></span></div>
-   </div>
-  </div>
-  <form id="inquiryForm" data-mailto-email="info@anker-caravan.de">
-   <div class="form-grid">
-   <div class="field">
-    <label for="name">Name</label>
-    <input id="name" name="Name" type="text" placeholder="Ihr Name" required>
-   </div>
-   <div class="field">
-    <label for="phone">Telefon</label>
-    <input id="phone" name="Telefon" type="tel" placeholder="Telefonnummer">
-   </div>
-   <div class="field">
-    <label for="email">E-Mail</label>
-    <input id="email" name="Email" type="email" placeholder="E-Mail-Adresse" required>
-   </div>
-   <div class="field">
-    <label for="interest">Interesse</label>
-    <select id="interest" name="Interesse">
-    <option>Wohnwagen / Caravan</option>
-    <option>Gebrauchte Wohnwagen</option>
-    <option>Ausstattung & Beratung</option>
-    <option>Beratung allgemein</option>
-    </select>
-   </div>
-   <div class="field full">
-    <label for="product">Gewünschter Wohnwagen</label>
-    <input id="product" name="Produkt" type="text" placeholder="z. B. 2–4 Schlafplätze, Vorzelt, Mover, Budget">
-   </div>
-   <div class="field full">
-    <label for="message">Anfragebeschreibung</label>
-    <textarea id="message" name="Nachricht" placeholder="Bitte Budget, gewünschte Größe, Personenanzahl, Besichtigungstermin und Besonderheiten beschreiben."></textarea>
-   </div>
-   </div>
-   <button class="btn btn-primary" type="submit" style="margin-top: 18px;">Anfrage vorbereiten</button>
-   <p class="form-help">Hinweis: Für eine echte Website sollte das Formular später mit einem Server, WordPress-Plugin oder Formularanbieter verbunden werden.</p>
-  </form>
   </div>
  </section>
  </main>
@@ -9209,7 +9190,7 @@
    <a href="#ablauf">Ablauf</a>
    <a href="#referenzen">Ideen</a>
    <a href="#ueber-uns">Über uns</a>
-   <a href="#kontakt">Kontakt</a>
+   <a href="kontakt.html">Kontakt</a>
   </div>
   <div>
    <h4>Rechtliches</h4>
@@ -9473,14 +9454,16 @@
   heroTimer = setInterval(nextHeroSlide, 6000);
  }
 
- heroDots.forEach((dot, i) => dot.addEventListener('click', () => {
-  showHeroSlide(i);
+ if (heroSlides.length && heroDots.length && heroPrev && heroNext) {
+  heroDots.forEach((dot, i) => dot.addEventListener('click', () => {
+   showHeroSlide(i);
+   resetHeroTimer();
+  }));
+  heroPrev.addEventListener('click', () => { showHeroSlide(heroIndex - 1); resetHeroTimer(); });
+  heroNext.addEventListener('click', () => { showHeroSlide(heroIndex + 1); resetHeroTimer(); });
+  showHeroSlide(0);
   resetHeroTimer();
- }));
- heroPrev.addEventListener('click', () => { showHeroSlide(heroIndex - 1); resetHeroTimer(); });
- heroNext.addEventListener('click', () => { showHeroSlide(heroIndex + 1); resetHeroTimer(); });
- showHeroSlide(0);
- resetHeroTimer();
+ }
 
  function initHeroTransparentImageLoader() {
   const hero = document.querySelector('.hero-kaiser');
@@ -9858,6 +9841,28 @@ header.site-header.is-scrolled {
   padding-left: 14px !important;
  }
 }
+
+ /* ============================================================
+  FINAL FIX — NORMAL ANKER Caravan WORDMARK IN ÜBER UNS
+  جعل كلمة ANKER Caravan عادية وواضحة بدل الخط اليدوي
+  ============================================================ */
+ .about-showcase-signature {
+  font-family: "Montserrat", Inter, Arial, sans-serif !important;
+  font-size: clamp(18px, 1.9vw, 25px) !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  letter-spacing: .01em !important;
+  color: #a76a16 !important;
+  text-transform: none !important;
+ }
+
+ @media (max-width: 680px) {
+  .about-showcase-signature {
+   font-size: 18px !important;
+   margin-top: 8px !important;
+  }
+ }
+
 </style>
 
 <script>
@@ -11821,6 +11826,570 @@ section[id] {
     line-height: 1.5 !important;
   }
 }
+
+
+ /* ============================================================
+  ÜBER UNS SHOWCASE — design inspired by the reference card
+  ============================================================ */
+ .about-showcase-section {
+  padding: 84px 0 !important;
+  background:
+   radial-gradient(circle at 13% 4%, rgba(157,133,114,.12), transparent 34%),
+   linear-gradient(180deg, #fbf5ea 0%, #f1e2cc 100%) !important;
+ }
+
+ .about-showcase-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  min-height: 362px;
+  overflow: hidden;
+  border: 1px solid rgba(157,133,114,.32);
+  border-radius: 6px;
+  background: #fbf4e9;
+  box-shadow: 0 28px 70px rgba(82, 55, 25, .16);
+ }
+
+ .about-showcase-image-panel {
+  position: relative;
+  min-height: 362px;
+  background:
+   linear-gradient(90deg,
+    rgba(251,244,233,.98) 0%,
+    rgba(251,244,233,.90) 38%,
+    rgba(251,244,233,.58) 68%,
+    rgba(251,244,233,.28) 100%),
+   linear-gradient(to bottom, rgba(251,244,233,.18), rgba(251,244,233,.34)),
+   url("images/über.png") center center / cover no-repeat;
+ }
+
+ .about-showcase-content {
+  position: relative;
+  z-index: 1;
+  max-width: 660px;
+  padding: 46px 48px 38px;
+ }
+
+ .about-showcase-kicker,
+ .about-showcase-contact h3 {
+  margin: 0 0 18px;
+  color: #3a2615;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(24px, 2.25vw, 30px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+ }
+
+ .about-showcase-content h2 {
+  margin: 0 0 14px;
+  color: #3a2615;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: .01em;
+ }
+
+ .about-showcase-content p {
+  max-width: 570px;
+  margin: 0 0 12px;
+  color: #392b20;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 500;
+ }
+
+ .about-showcase-content .about-showcase-promise {
+  margin-top: 6px;
+  font-weight: 800;
+  color: #2f2117;
+ }
+
+ .about-showcase-signature {
+  margin-top: 18px;
+  color: #a76a16;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1;
+ }
+
+ .about-showcase-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 42px;
+  background: #fbf4e9;
+  border-left: 1px solid rgba(157,133,114,.32);
+ }
+
+ .about-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 14px;
+  color: #3a2a1d;
+  font-size: 16px;
+  line-height: 1.3;
+ }
+
+ .about-contact-row span {
+  width: 18px;
+  flex: 0 0 18px;
+  color: #3a2a1d;
+  font-size: 16px;
+  text-align: center;
+ }
+
+ .about-contact-row strong {
+  font-weight: 650;
+ }
+
+ .about-contact-button {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 15px 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #bd801b, #925d09);
+  color: #fff !important;
+  font-weight: 900;
+  box-shadow: 0 16px 34px rgba(146,93,9,.24);
+  transition: transform .2s ease, box-shadow .2s ease;
+ }
+
+ .about-contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(146,93,9,.30);
+ }
+
+ @media (max-width: 980px) {
+  .about-showcase-card {
+   grid-template-columns: 1fr;
+  }
+
+  .about-showcase-contact {
+   border-left: 0;
+   border-top: 1px solid rgba(157,133,114,.32);
+   padding: 34px 36px;
+  }
+ }
+
+ @media (max-width: 680px) {
+  .about-showcase-section {
+   padding: 62px 0 !important;
+  }
+
+  .about-showcase-card {
+   border-radius: 18px;
+   min-height: 0;
+  }
+
+  .about-showcase-image-panel {
+   min-height: 0;
+   background:
+    linear-gradient(90deg,
+     rgba(251,244,233,.98) 0%,
+     rgba(251,244,233,.93) 62%,
+     rgba(251,244,233,.74) 100%),
+    url("images/über.png") center center / cover no-repeat;
+  }
+
+  .about-showcase-content {
+   padding: 30px 24px 28px;
+  }
+
+  .about-showcase-kicker,
+  .about-showcase-contact h3 {
+   font-size: 23px;
+   margin-bottom: 16px;
+  }
+
+  .about-showcase-content h2 {
+   font-size: 30px;
+  }
+
+  .about-showcase-content p {
+   font-size: 15px;
+  }
+
+  .about-showcase-signature {
+   font-size: 38px;
+  }
+
+  .about-showcase-contact {
+   padding: 28px 24px 30px;
+  }
+
+  .about-contact-button {
+   width: 100%;
+   padding: 15px 20px;
+  }
+ }
+
+
+ /* ============================================================
+  FINAL FIX — COMPACT ÜBER UNS CARD
+  تصغير جدول / كرت Über uns بالكامل على الديسكتوب والموبايل
+  ============================================================ */
+ .about-showcase-section {
+  padding: 42px 0 !important;
+ }
+
+ .about-showcase-section .container {
+  width: min(1280px, calc(100% - 96px)) !important;
+ }
+
+ .about-showcase-card {
+  max-width: 1280px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  grid-template-columns: minmax(0, 1fr) 330px !important;
+  min-height: 350px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 20px 52px rgba(82, 55, 25, .13) !important;
+ }
+
+ .about-showcase-image-panel {
+  min-height: 350px !important;
+ }
+
+ .about-showcase-content {
+  max-width: 610px !important;
+  padding: 38px 44px 32px !important;
+ }
+
+ .about-showcase-kicker,
+ .about-showcase-contact h3 {
+  font-size: clamp(21px, 1.75vw, 26px) !important;
+  margin-bottom: 14px !important;
+  line-height: 1.12 !important;
+ }
+
+ .about-showcase-content h2 {
+  font-size: clamp(34px, 3.05vw, 48px) !important;
+  line-height: 1.04 !important;
+  margin-bottom: 14px !important;
+ }
+
+ .about-showcase-content p {
+  max-width: 560px !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+  margin-bottom: 10px !important;
+ }
+
+ .about-showcase-content .about-showcase-promise {
+  margin-top: 4px !important;
+ }
+
+ .about-showcase-signature {
+  margin-top: 14px !important;
+  font-size: clamp(36px, 3.45vw, 50px) !important;
+ }
+
+ .about-showcase-contact {
+  padding: 34px 36px !important;
+ }
+
+ .about-contact-row {
+  gap: 12px !important;
+  margin-bottom: 12px !important;
+  font-size: 15.5px !important;
+ }
+
+ .about-contact-button {
+  margin-top: 12px !important;
+  padding: 13px 26px !important;
+  font-size: 15.5px !important;
+  border-radius: 7px !important;
+ }
+
+ @media (max-width: 980px) {
+  .about-showcase-section .container {
+   width: min(720px, calc(100% - 36px)) !important;
+  }
+
+  .about-showcase-card {
+   grid-template-columns: 1fr !important;
+   min-height: 0 !important;
+  }
+
+  .about-showcase-image-panel {
+   min-height: 0 !important;
+  }
+
+  .about-showcase-contact {
+   padding: 26px 32px 30px !important;
+  }
+ }
+
+ @media (max-width: 680px) {
+  .about-showcase-section {
+   padding: 36px 0 !important;
+  }
+
+  .about-showcase-section .container {
+   width: calc(100% - 28px) !important;
+  }
+
+  .about-showcase-card {
+   border-radius: 14px !important;
+  }
+
+  .about-showcase-content {
+   padding: 24px 20px 22px !important;
+  }
+
+  .about-showcase-kicker,
+  .about-showcase-contact h3 {
+   font-size: 20px !important;
+   margin-bottom: 12px !important;
+  }
+
+  .about-showcase-content h2 {
+   font-size: 31px !important;
+   line-height: 1.06 !important;
+  }
+
+  .about-showcase-content p {
+   font-size: 14.5px !important;
+   line-height: 1.55 !important;
+  }
+
+  .about-showcase-signature {
+   font-size: 34px !important;
+   margin-top: 12px !important;
+  }
+
+  .about-showcase-contact {
+   padding: 22px 20px 24px !important;
+  }
+
+  .about-contact-row {
+   font-size: 14.5px !important;
+  }
+
+  .about-contact-button {
+   width: 100% !important;
+   padding: 13px 18px !important;
+  }
+ }
+
+
+ /* ============================================================
+  FINAL EXTRA COMPACT — ÜBER UNS smaller card
+  تصغير إضافي لكرت / جدول Über uns بالكامل
+  ============================================================ */
+ .about-showcase-section {
+  padding: 26px 0 !important;
+ }
+
+ .about-showcase-section .container {
+  width: min(980px, calc(100% - 120px)) !important;
+ }
+
+ .about-showcase-card {
+  max-width: 980px !important;
+  grid-template-columns: minmax(0, 1fr) 255px !important;
+  min-height: 252px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 14px 36px rgba(82, 55, 25, .11) !important;
+ }
+
+ .about-showcase-image-panel {
+  min-height: 252px !important;
+ }
+
+ .about-showcase-content {
+  max-width: 500px !important;
+  padding: 26px 34px 23px !important;
+ }
+
+ .about-showcase-kicker,
+ .about-showcase-contact h3 {
+  font-size: clamp(17px, 1.35vw, 21px) !important;
+  margin-bottom: 10px !important;
+  line-height: 1.1 !important;
+  letter-spacing: .05em !important;
+ }
+
+ .about-showcase-content h2 {
+  font-size: clamp(27px, 2.35vw, 36px) !important;
+  line-height: 1.02 !important;
+  margin-bottom: 10px !important;
+  letter-spacing: -.02em !important;
+ }
+
+ .about-showcase-content p {
+  max-width: 470px !important;
+  font-size: 13.5px !important;
+  line-height: 1.46 !important;
+  margin-bottom: 7px !important;
+ }
+
+ .about-showcase-content .about-showcase-promise {
+  margin-top: 2px !important;
+ }
+
+ .about-showcase-signature {
+  margin-top: 8px !important;
+  font-size: clamp(27px, 2.75vw, 38px) !important;
+  line-height: .95 !important;
+ }
+
+ .about-showcase-contact {
+  padding: 26px 26px !important;
+ }
+
+ .about-contact-row {
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+  font-size: 13.5px !important;
+  line-height: 1.25 !important;
+ }
+
+ .about-contact-row span {
+  width: 15px !important;
+  flex-basis: 15px !important;
+  font-size: 13.5px !important;
+ }
+
+ .about-contact-button {
+  margin-top: 8px !important;
+  padding: 10px 19px !important;
+  font-size: 13.5px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 24px rgba(146,93,9,.18) !important;
+ }
+
+ @media (max-width: 980px) {
+  .about-showcase-section .container {
+   width: min(620px, calc(100% - 44px)) !important;
+  }
+
+  .about-showcase-card {
+   grid-template-columns: 1fr !important;
+   min-height: 0 !important;
+  }
+
+  .about-showcase-image-panel {
+   min-height: 0 !important;
+  }
+
+  .about-showcase-content {
+   max-width: none !important;
+   padding: 24px 28px 22px !important;
+  }
+
+  .about-showcase-contact {
+   padding: 22px 28px 24px !important;
+  }
+ }
+
+ @media (max-width: 680px) {
+  .about-showcase-section {
+   padding: 22px 0 !important;
+  }
+
+  .about-showcase-section .container {
+   width: calc(100% - 24px) !important;
+  }
+
+  .about-showcase-card {
+   border-radius: 12px !important;
+  }
+
+  .about-showcase-content {
+   padding: 18px 17px 16px !important;
+  }
+
+  .about-showcase-kicker,
+  .about-showcase-contact h3 {
+   font-size: 17px !important;
+   margin-bottom: 9px !important;
+  }
+
+  .about-showcase-content h2 {
+   font-size: 25px !important;
+   margin-bottom: 9px !important;
+  }
+
+  .about-showcase-content p {
+   font-size: 13px !important;
+   line-height: 1.42 !important;
+   margin-bottom: 7px !important;
+  }
+
+  .about-showcase-signature {
+   font-size: 27px !important;
+   margin-top: 7px !important;
+  }
+
+  .about-showcase-contact {
+   padding: 17px 17px 18px !important;
+  }
+
+  .about-contact-row {
+   font-size: 13px !important;
+   margin-bottom: 8px !important;
+  }
+
+  .about-contact-button {
+   width: 100% !important;
+   padding: 10px 16px !important;
+   font-size: 13px !important;
+  }
+ }
+
+
+ /* ============================================================
+  FINAL FIX — ÜBER UNS: ANKER Caravan same colors as logo text
+  ============================================================ */
+ #ueber-uns .about-logo-wordmark {
+  white-space: nowrap !important;
+ }
+
+ #ueber-uns .about-logo-title-color {
+  color: #081a39 !important;
+ }
+
+ #ueber-uns .about-logo-caravan-color {
+  color: #9d8572 !important;
+ }
+
+ #ueber-uns .about-showcase-signature {
+  color: inherit !important;
+ }
+
+
+ /* ============================================================
+  FINAL FIX — ÜBER UNS: contact button same color as header KONTAKTIEREN
+  ============================================================ */
+ #ueber-uns .about-contact-button {
+  background: linear-gradient(135deg, var(--ref-navy), var(--ref-navy-2)) !important;
+  color: #fff !important;
+  box-shadow: 0 16px 34px rgba(6, 27, 59, .22) !important;
+ }
+
+ #ueber-uns .about-contact-button:hover {
+  background: linear-gradient(135deg, var(--ref-navy-2), var(--ref-navy)) !important;
+  color: #fff !important;
+  box-shadow: 0 20px 40px rgba(6, 27, 59, .26) !important;
+ }
+
+
+
+ /* ============================================================
+  FINAL FIX — ÜBER UNS BACKGROUND SAME AS ABLAUF
+  ============================================================ */
+ #ueber-uns.about-showcase-section,
+ .about-showcase-section {
+  background: var(--light) !important;
+ }
+
 </style>
 
 </body>
