@@ -10203,7 +10203,10 @@ body.kontakt-body .legal-note {
   <a href="kontakt.html" class="nav-active">KONTAKT</a>
   </nav>
   <div class="nav-actions">
-  <a class="btn header-contact" href="kontakt.html"><span class="btn-icon" aria-hidden="true">✉</span> KONTAKTIEREN</a>
+  <a class="btn header-contact" href="kontakt.html"><span class="btn-icon svg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
+  <path d="m22 7-10 7L2 7"/>
+</svg></span> KONTAKTIEREN</a>
   </div>
   <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
   <span></span><span></span><span></span>
@@ -10226,11 +10229,16 @@ body.kontakt-body .legal-note {
 
           <div class="kontakt-pill-list" aria-label="Direkte Kontaktdaten">
             <a class="kontakt-pill" href="tel:+4915141270366">
-              <span class="kontakt-pill-icon" aria-hidden="true">✆</span>
+              <span class="kontakt-pill-icon svg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.61a2 2 0 0 1-.45 2.11L8.09 9.64a16 16 0 0 0 6.27 6.27l1.2-1.2a2 2 0 0 1 2.11-.45c.84.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92Z"/>
+</svg></span>
               <strong>+49 1514 1270366</strong>
             </a>
             <a class="kontakt-pill" href="mailto:info@anker-caravan.de">
-              <span class="kontakt-pill-icon" aria-hidden="true">✉</span>
+              <span class="kontakt-pill-icon svg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
+  <path d="m22 7-10 7L2 7"/>
+</svg></span>
               <strong>info@anker-caravan.de</strong>
             </a>
           </div>
@@ -14391,6 +14399,46 @@ body.kontakt-body footer .logo .logo-wordmark {
   justify-content: center !important;
   gap: 0 !important;
 }
+
+
+/* ============================================================
+   FINAL CONTACT SVG ICONS FIX
+   Replaces text emoji icons in phone/email/contact button with
+   clean inline SVG icons that scale crisply on all screens.
+   ============================================================ */
+body.kontakt-body .svg-icon,
+body.kontakt-body .kontakt-pill-icon.svg-icon,
+body.kontakt-body header.site-header .btn-icon.svg-icon,
+body.kontakt-body header.site-header.is-scrolled .btn-icon.svg-icon {
+  display: inline-grid !important;
+  place-items: center !important;
+  flex: 0 0 auto !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+}
+
+body.kontakt-body .svg-icon svg {
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 2 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+body.kontakt-body .kontakt-pill-icon.svg-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+body.kontakt-body header.site-header .btn-icon.svg-icon svg,
+body.kontakt-body header.site-header.is-scrolled .btn-icon.svg-icon svg {
+  width: 13px !important;
+  height: 13px !important;
+}
+
 </style>
 
 <script id="kontakt-logo-before-after-sync">
