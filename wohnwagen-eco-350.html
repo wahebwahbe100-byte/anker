@@ -1244,11 +1244,16 @@
 
 
 
-  /* Desktop only: fix first Wohnbereich image so the caravan photo is not cropped badly */
+  /* Desktop only: show the first Wohnbereich image completely without cropping */
   @media (min-width:901px){
+    .eco-living-hero-photo{
+      background:#e4eaea !important;
+    }
+
     .eco-living-hero-photo img{
-      object-fit:cover !important;
-      object-position:center bottom !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+      background:#e4eaea !important;
     }
   }
 
