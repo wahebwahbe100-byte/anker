@@ -14345,5 +14345,85 @@ footer .footer-grid > div:first-child .logo .logo-tagline {
 }
 </style>
 
+
+
+<style id="desktop-header-collapse-smooth-only">
+/* ============================================================
+   DESKTOP ONLY: smooth folded header transition.
+   يجعل انطواء شريط الحاسوب سلسًا فقط دون تغيير الشكل النهائي.
+   ============================================================ */
+@media (min-width: 761px) {
+  body header.site-header,
+  body header.site-header .container.nav,
+  body header.site-header .logo,
+  body header.site-header .logo-round,
+  body header.site-header .logo-round img,
+  body header.site-header .logo-wordmark,
+  body header.site-header .logo-title,
+  body header.site-header .logo-subline,
+  body header.site-header .logo-subline > span,
+  body header.site-header .logo-caravan,
+  body header.site-header .logo-berlin,
+  body header.site-header .menu,
+  body header.site-header .nav-actions,
+  body header.site-header .header-contact,
+  body header.site-header .btn-icon {
+    transition-property: height, min-height, max-height, width, min-width, flex-basis, gap, padding, margin, opacity, visibility, transform, font-size, letter-spacing, line-height, background-color, box-shadow, border-color !important;
+    transition-duration: .46s !important;
+    transition-timing-function: cubic-bezier(.22, .61, .36, 1) !important;
+  }
+
+  body header.site-header .logo-round,
+  body header.site-header .logo-round img,
+  body header.site-header .logo-wordmark,
+  body header.site-header .logo-title,
+  body header.site-header .logo-subline,
+  body header.site-header .logo-caravan,
+  body header.site-header .menu,
+  body header.site-header .nav-actions,
+  body header.site-header .header-contact,
+  body header.site-header .btn-icon {
+    will-change: height, width, opacity, transform, font-size, letter-spacing;
+  }
+
+  body header.site-header:not(.is-scrolled) .logo-subline {
+    display: flex !important;
+    max-height: 28px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: hidden !important;
+  }
+
+  body header.site-header:not(.is-scrolled) .logo-caravan {
+    display: inline-block !important;
+    max-height: 22px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: hidden !important;
+  }
+
+  body header.site-header.is-scrolled .logo-subline {
+    display: flex !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body header.site-header.is-scrolled .logo-caravan {
+    display: inline-block !important;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+}
+</style>
+
 </body>
 </html>
