@@ -640,15 +640,28 @@
     <div class="slider-card reveal-right">
       <div class="slider" id="ecoSlider">
         <div class="slide active"><img src="images/eco-350-1.jpeg" alt="Wohnwagen Eco 350 Bild 1"></div>
-        <div class="slide"><img src="images/eco-350-2.jpeg" alt="Wohnwagen Eco 350 Bild 3"></div>
-        <div class="slide"><img src="images/eco-350-4.jpeg" alt="Wohnwagen Eco 350 Bild 4"></div>
-        <div class="slide"><img src="images/eco-350-5.jpeg" alt="Wohnwagen Eco 350 Bild 5"></div>
+        <div class="slide"><img src="images/eco-350-2.jpeg" alt="Wohnwagen Eco 350 Bild 2"></div>
+        <div class="slide"><img src="images/eco-350-4.jpeg" alt="Wohnwagen Eco 350 Bild 3"></div>
+        <div class="slide"><img src="images/eco-350-5.jpeg" alt="Wohnwagen Eco 350 Bild 4"></div>
+        <div class="slide"><img src="images/eco-350-6.jpeg" alt="Wohnwagen Eco 350 Zusatzbild"></div>
+        <div class="slide">
+          <video controls muted playsinline preload="metadata" poster="images/eco-350-video-poster.jpeg" aria-label="Wohnwagen Eco 350 Video">
+            <source src="videos/eco-350-video.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Videoformat nicht.
+          </video>
+        </div>
       </div>
-      <div class="thumbs" id="ecoThumbs" aria-label="Eco 350 Galerie Vorschau" style="--thumb-count:5">
+      <div class="thumbs" id="ecoThumbs" aria-label="Eco 350 Galerie Vorschau" style="--thumb-count:6">
         <button class="thumb active" type="button" aria-label="Bild 1 anzeigen"><img src="images/eco-350-1.jpeg" alt="Wohnwagen Eco 350 Vorschau 1"></button>
-        <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/eco-350-3.jpeg" alt="Wohnwagen Eco 350 Vorschau 3"></button>
-        <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/eco-350-4.jpeg" alt="Wohnwagen Eco 350 Vorschau 4"></button>
-        <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/eco-350-5.jpeg" alt="Wohnwagen Eco 350 Vorschau 5"></button>
+        <button class="thumb" type="button" aria-label="Bild 2 anzeigen"><img src="images/eco-350-2.jpeg" alt="Wohnwagen Eco 350 Vorschau 2"></button>
+        <button class="thumb" type="button" aria-label="Bild 3 anzeigen"><img src="images/eco-350-4.jpeg" alt="Wohnwagen Eco 350 Vorschau 3"></button>
+        <button class="thumb" type="button" aria-label="Bild 4 anzeigen"><img src="images/eco-350-5.jpeg" alt="Wohnwagen Eco 350 Vorschau 4"></button>
+        <button class="thumb" type="button" aria-label="Zusatzbild anzeigen"><img src="images/eco-350-6.jpeg" alt="Wohnwagen Eco 350 Zusatzbild Vorschau"></button>
+        <button class="thumb" type="button" aria-label="Video anzeigen">
+          <video muted playsinline preload="metadata" poster="images/eco-350-video-poster.jpeg">
+            <source src="videos/eco-350-video.mp4" type="video/mp4">
+          </video>
+        </button>
       </div>
     </div>
   </div>
@@ -844,12 +857,26 @@
 
   function showSlide(i){
     slides.forEach((slide, sIndex) => {
-      slide.classList.toggle('active', sIndex === i);
+      const isActive = sIndex === i;
+      slide.classList.toggle('active', isActive);
+
+      const video = slide.querySelector('video');
+      if (video && !isActive) {
+        video.pause();
+      }
     });
+
     thumbs.forEach((thumb, tIndex) => {
       thumb.classList.toggle('active', tIndex === i);
     });
   }
+
+  document.querySelectorAll('#ecoSlider video').forEach((video) => {
+    video.addEventListener('play', pauseAutoSlide);
+    video.addEventListener('ended', () => {
+      startAutoSlide();
+    });
+  });
 
   function startAutoSlide(){
     if (autoSlideTimer) clearInterval(autoSlideTimer);
