@@ -9037,6 +9037,14 @@
 }
 </style>
 
+
+<style id="sortiment-anchor-link-fix">
+  /* Anchor target for buttons that should scroll to Sortiment / Caravans on the same page */
+  #produkte {
+    scroll-margin-top: 88px;
+  }
+</style>
+
 </head>
 <body>
  <div class="topbar">
@@ -9045,7 +9053,7 @@
   <span><strong>Wohnwagen</strong> mit Vertrauen</span>
   <span>Beratung · Besichtigung · Anfrage</span>
   </div>
-  <div><a href="produkte.html" style="font-weight:800;color:#fff;">Caravans ansehen →</a></div>
+  <div><a href="#produkte" style="font-weight:800;color:#fff;">Caravans ansehen →</a></div>
  </div>
  </div>
 
@@ -9113,7 +9121,7 @@
     <h1>Wohnwagen mit Vertrauen</h1>
     <p class="kaiser-subtitle">für Reisen, Freiheit und komfortable Auszeiten</p>
     <div class="hero-actions">
-    <a class="btn btn-primary" href="produkte.html">Wohnwagen ansehen</a>
+    <a class="btn btn-primary" href="#produkte">Wohnwagen ansehen</a>
     </div>
    </div>
    </div>
@@ -9128,7 +9136,7 @@
     <p class="kaiser-subtitle">Ausstattung, Zustand und Budget gemeinsam abgestimmt</p>
     <div class="hero-actions">
     <a class="btn btn-primary" href="kontakt.html">Anfrage senden</a>
-    <a class="btn btn-outline" href="produkte.html">Wohnwagen ansehen</a>
+    <a class="btn btn-outline" href="#produkte">Wohnwagen ansehen</a>
     </div>
    </div>
    </div>
@@ -9143,7 +9151,7 @@
     <p class="kaiser-subtitle">Senden Sie uns Ihre Anfrage – wir melden uns mit passenden Optionen</p>
     <div class="hero-actions">
     <a class="btn btn-primary" href="kontakt.html">Kontakt aufnehmen</a>
-    <a class="btn btn-outline" href="produkte.html">Zu den Wohnwagen</a>
+    <a class="btn btn-outline" href="#produkte">Zu den Wohnwagen</a>
     </div>
    </div>
    </div>
@@ -14040,6 +14048,54 @@ footer .logo-round img {
   }
 })();
 </script>
+
+
+
+<style id="mobile-caravans-no-white-edge-final">
+/* ============================================================
+   MOBILE: remove white edge around Caravans card images
+   يزيل البياض/الحافة حول صور بطاقات Caravans في الجوال
+   ============================================================ */
+@media (max-width: 760px) {
+  #produkte .sortiment-product-image {
+    padding: 0 !important;
+    background: transparent !important;
+    line-height: 0 !important;
+    display: block !important;
+    place-items: initial !important;
+    overflow: hidden !important;
+  }
+
+  #produkte .sortiment-product-image::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  #produkte .sortiment-product-card img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: scale(1.01) !important;
+    background: transparent !important;
+  }
+
+  #produkte .sortiment-product-card:hover img {
+    transform: scale(1.01) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #produkte .sortiment-product-image {
+    padding: 0 !important;
+  }
+}
+</style>
 
 </body>
 </html>
