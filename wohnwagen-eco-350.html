@@ -1244,15 +1244,20 @@
 
 
 
-  /* Desktop only: show the first Wohnbereich image completely without cropping */
+  /* Desktop only: first Wohnbereich image fills the frame so left/right side gaps do not show */
   @media (min-width:901px){
     .eco-living-hero-photo{
       background:#e4eaea !important;
+      overflow:hidden !important;
     }
 
     .eco-living-hero-photo img{
-      object-fit:contain !important;
+      object-fit:cover !important;
       object-position:center center !important;
+      width:100% !important;
+      height:100% !important;
+      transform:scale(1.025) !important;
+      transform-origin:center center !important;
       background:#e4eaea !important;
     }
   }
