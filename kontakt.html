@@ -10234,18 +10234,22 @@ body.kontakt-body .legal-note {
 </svg></span>
               <strong>+49 1525 5935516</strong>
             </a>
-            <a class="kontakt-pill" href="mailto:ankercaravanberlin@web.de">
+            <a class="kontakt-pill" href="mailto:jdjr868@gmail.com">
               <span class="kontakt-pill-icon svg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
   <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
   <path d="m22 7-10 7L2 7"/>
 </svg></span>
-              <strong>ankercaravanberlin@web.de</strong>
+              <strong>jdjr868@gmail.com</strong>
             </a>
           </div>
         </div>
 
         <div class="kontakt-form-panel" aria-label="Kontaktformular">
-          <form id="inquiryForm" data-mailto-email="ankercaravanberlin@web.de">
+          <form id="inquiryForm" action="https://formsubmit.co/jdjr868@gmail.com" method="POST" data-mailto-email="jdjr868@gmail.com">
+            <input type="hidden" name="_subject" value="Neue Anfrage ANKER Caravan">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <h2>Schreiben Sie uns</h2>
             <div class="km-form-grid">
               <div class="km-field">
@@ -10254,7 +10258,7 @@ body.kontakt-body .legal-note {
               </div>
               <div class="km-field">
                 <label for="email">E-Mail Adresse</label>
-                <input id="email" name="Email" type="email" placeholder="E-Mail Adresse" required>
+                <input id="email" name="email" type="email" placeholder="E-Mail Adresse" required>
               </div>
               <div class="km-field">
                 <label for="phone">Telefonnummer</label>
@@ -10285,8 +10289,10 @@ body.kontakt-body .legal-note {
               <span>Ich bin damit einverstanden, dass diese Daten zum Zwecke der Kontaktaufnahme gespeichert und verarbeitet werden. Mir ist bekannt, dass ich meine Einwilligung jederzeit widerrufen kann.</span>
             </label>
 
-            <p class="kontakt-note">* Bitte füllen Sie alle erforderlichen Felder aus. Ihre Anfrage wird direkt per E-Mail gesendet.</p>
+            <p class="kontakt-note">* Bitte füllen Sie alle erforderlichen Felder aus. Ihre Anfrage wird direkt an jdjr868@gmail.com gesendet.</p>
             <button class="kontakt-submit" type="submit">Anfrage senden <span aria-hidden="true">➜</span></button>
+            <p id="formSuccessMessage" class="form-success-message" role="status" aria-live="polite" hidden>شكراً، تم إرسال طلبك بنجاح.</p>
+            <p id="formErrorMessage" class="form-error-message" role="alert" aria-live="assertive" hidden>تعذر إرسال الطلب الآن. يرجى المحاولة مرة أخرى أو مراسلتنا مباشرة على jdjr868@gmail.com.</p>
           </form>
         </div>
       </div>
@@ -10631,38 +10637,8 @@ body.kontakt-body .legal-note {
  </script>
 
 
-<script>
-(function(){
- document.querySelectorAll('form[data-mailto-email]').forEach(function(form){
- form.addEventListener('submit', function(e){
-  e.preventDefault();
 
-  var email = form.getAttribute('data-mailto-email') || 'ankercaravanberlin@web.de';
-  var pageTitle = (document.title || 'ANKER Caravan Anfrage')
-  .replace(/\s*\|\s*ANKER Caravan\s*/i, '')
-  .trim();
 
-  var subject = 'Anfrage ANKER Caravan' + (pageTitle ? ' - ' + pageTitle : '');
-  var lines = [];
-
-  form.querySelectorAll('input, textarea, select').forEach(function(el){
-  var type = (el.getAttribute('type') || '').toLowerCase();
-  if (['submit','button','reset','file','hidden'].indexOf(type) !== -1) return;
-  if ((type === 'checkbox' || type === 'radio') && !el.checked) return;
-
-  var name = el.getAttribute('name') || el.getAttribute('id') || 'Feld';
-  var value = (el.value || '').trim();
-  lines.push(name + ': ' + value);
-  });
-
-  window.location.href =
-  'mailto:' + email +
-  '?subject=' + encodeURIComponent(subject) +
-  '&body=' + encodeURIComponent(lines.join('\n'));
- });
- });
-})();
-</script>
 
 
 
@@ -14298,6 +14274,59 @@ body.kontakt-body header.site-header.is-scrolled .btn-icon.svg-icon svg {
       attributeFilter: ['class']
     });
   }
+})();
+</script>
+
+
+<script id="kontakt-form-ajax-success-message">
+(function () {
+  const form = document.getElementById('inquiryForm');
+  const successMessage = document.getElementById('formSuccessMessage');
+  const errorMessage = document.getElementById('formErrorMessage');
+  if (!form || !successMessage || !errorMessage) return;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonHtml = submitButton ? submitButton.innerHTML : '';
+
+  function showMessage(element) {
+    element.hidden = false;
+    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    successMessage.hidden = true;
+    errorMessage.hidden = true;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'جاري الإرسال...';
+    }
+
+    const formData = new FormData(form);
+    const action = form.getAttribute('action') || '';
+    const ajaxAction = action.includes('/ajax/') ? action : action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+
+    fetch(ajaxAction, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (!response.ok) throw new Error('Form submission failed');
+      form.reset();
+      showMessage(successMessage);
+    })
+    .catch(function () {
+      showMessage(errorMessage);
+    })
+    .finally(function () {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHtml;
+      }
+    });
+  });
 })();
 </script>
 
