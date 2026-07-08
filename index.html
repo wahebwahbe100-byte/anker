@@ -1,97 +1,227 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-DE">
 <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="icon" type="image/png" href="images/logo-icon.png">
- <link rel="shortcut icon" type="image/png" href="images/logo-icon.png">
- <link rel="apple-touch-icon" href="images/logo-icon.png">
-<meta name="description" content="ANKER Caravan – Wohnwagen mit Vertrauen. Beratung, Fahrzeugcheck und Anfrage rund um Caravan und Wohnwagen." />
- <meta name="keywords" content="Wohnwagen, Caravan, Caravan, Wohnwagen kaufen, Camping, Reise, Wohnwagen Beratung, Caravan Beratung" />
- <!-- Font closer to the provided reference screenshot -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/logo.png">
+ <title>ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung</title>
+ <meta name="description" content="Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden." />
+ <meta name="keywords" content="Wohnwagen kaufen, Caravan kaufen, Wohnwagen Beratung, Caravan Beratung, Wohnwagen Fahrzeugcheck, Camping Wohnwagen, ANKER Caravan, Wohnwagen Deutschland, Micro 240, Mini 270, Eco 350" />
+ <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+ <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+ <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+ <meta name="author" content="ANKER Caravan" />
+ <meta name="publisher" content="ANKER Caravan" />
+ <meta name="application-name" content="ANKER Caravan" />
+ <meta name="theme-color" content="#081a39" />
+ <meta name="format-detection" content="telephone=yes" />
+ <meta name="referrer" content="strict-origin-when-cross-origin" />
+ <link rel="canonical" href="https://anker-caravan.de/" />
+ <link rel="alternate" hreflang="de-DE" href="https://anker-caravan.de/" />
+ <link rel="alternate" hreflang="x-default" href="https://anker-caravan.de/" />
 
- <!-- Hero images preload: images appear as fast and clear as possible -->
- <link rel="preload" as="image" href="images/hero-1.jpg">
- <link rel="preload" as="image" href="images/hero-2.jpg">
- <link rel="preload" as="image" href="images/hero-3.jpg">
- <!-- Mobile hero images: used only on phones/tablets -->
- <link rel="preload" as="image" href="images/mobilehero-1.png" media="(max-width: 760px)">
- <link rel="preload" as="image" href="images/mobilehero-2.png" media="(max-width: 760px)">
- <link rel="preload" as="image" href="images/mobilehero-3.png" media="(max-width: 760px)">
- <!-- SEO optimized metadata: visible page text unchanged -->
- <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
- <meta name="author" content="ANKER Caravan">
- <meta name="publisher" content="ANKER Caravan">
- <meta name="theme-color" content="#081a39">
- <meta name="format-detection" content="telephone=yes">
- <link rel="canonical" href="https://anker-caravan.de/">
- <meta property="og:locale" content="de_DE">
- <meta property="og:type" content="website">
- <meta property="og:site_name" content="ANKER Caravan">
- <meta property="og:title" content="ANKER Caravan | Wohnwagen mit Vertrauen">
- <meta property="og:description" content="ANKER Caravan – Wohnwagen mit Vertrauen. Beratung, Fahrzeugcheck und Anfrage rund um Caravan und Wohnwagen.">
- <meta property="og:url" content="https://anker-caravan.de/">
- <meta property="og:image" content="https://anker-caravan.de/images/logo-icon.png">
- <meta property="og:image:alt" content="ANKER Caravan Logo">
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="ANKER Caravan | Wohnwagen mit Vertrauen">
- <meta name="twitter:description" content="ANKER Caravan – Wohnwagen mit Vertrauen. Beratung, Fahrzeugcheck und Anfrage rund um Caravan und Wohnwagen.">
- <meta name="twitter:image" content="https://anker-caravan.de/images/logo-icon.png">
+ <link rel="icon" type="image/png" href="images/logo-icon.png" />
+ <link rel="shortcut icon" type="image/png" href="images/logo-icon.png" />
+ <link rel="apple-touch-icon" href="images/logo-icon.png" />
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+ <link rel="preload" as="image" href="images/logo.png" fetchpriority="high" />
+ <link rel="preload" as="image" href="images/logo-mobile-before.png" fetchpriority="high" />
+ <link rel="preload" as="image" href="images/hero-1.jpg" fetchpriority="high" />
+ <link rel="preload" as="image" href="images/hero-2.jpg" />
+ <link rel="preload" as="image" href="images/hero-3.jpg" />
+ <link rel="preload" as="image" href="images/mobilehero-1.png" media="(max-width: 760px)" />
+ <link rel="preload" as="image" href="images/mobilehero-2.png" media="(max-width: 760px)" />
+ <link rel="preload" as="image" href="images/mobilehero-3.png" media="(max-width: 760px)" />
+
+ <meta property="og:locale" content="de_DE" />
+ <meta property="og:type" content="website" />
+ <meta property="og:site_name" content="ANKER Caravan" />
+ <meta property="og:title" content="ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung" />
+ <meta property="og:description" content="Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden." />
+ <meta property="og:url" content="https://anker-caravan.de/" />
+ <meta property="og:image" content="https://anker-caravan.de/images/logo-icon.png" />
+ <meta property="og:image:secure_url" content="https://anker-caravan.de/images/logo-icon.png" />
+ <meta property="og:image:alt" content="ANKER Caravan Logo" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:title" content="ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung" />
+ <meta name="twitter:description" content="Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden." />
+ <meta name="twitter:image" content="https://anker-caravan.de/images/logo-icon.png" />
+
  <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@graph": [
- {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "ANKER Caravan",
-  "url": "https://anker-caravan.de/",
-  "logo": "https://anker-caravan.de/images/logo-icon.png"
- },
- {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "ANKER Caravan | Wohnwagen mit Vertrauen",
-  "url": "https://anker-caravan.de/",
-  "description": "ANKER Caravan – Wohnwagen mit Vertrauen. Beratung, Fahrzeugcheck und Anfrage rund um Caravan und Wohnwagen.",
-  "inLanguage": "de-DE",
-  "isPartOf": {
-  "@type": "WebSite",
-  "name": "ANKER Caravan",
-  "url": "https://anker-caravan.de/"
-  },
-  "publisher": {
-  "@type": "Organization",
-  "name": "ANKER Caravan",
-  "url": "https://anker-caravan.de/",
-  "logo": {
-   "@type": "ImageObject",
-   "url": "https://anker-caravan.de/images/logo-icon.png"
-  }
-  }
- },
- {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-  {
-   "@type": "ListItem",
-   "position": 1,
-   "name": "Start",
-   "item": "https://anker-caravan.de/"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://anker-caravan.de/#organization",
+      "name": "ANKER Caravan",
+      "url": "https://anker-caravan.de/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://anker-caravan.de/#logo",
+        "url": "https://anker-caravan.de/images/logo-icon.png",
+        "caption": "ANKER Caravan Logo"
+      },
+      "image": "https://anker-caravan.de/images/logo-icon.png",
+      "email": "ankercaravanberlin@web.de",
+      "telephone": "+4915255935516",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+4915255935516",
+        "email": "ankercaravanberlin@web.de",
+        "contactType": "Kundenservice",
+        "areaServed": "DE",
+        "availableLanguage": [
+          "de"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "AutoDealer"
+      ],
+      "@id": "https://anker-caravan.de/#localbusiness",
+      "name": "ANKER Caravan",
+      "url": "https://anker-caravan.de/",
+      "image": "https://anker-caravan.de/images/logo-icon.png",
+      "logo": "https://anker-caravan.de/images/logo-icon.png",
+      "email": "ankercaravanberlin@web.de",
+      "telephone": "+4915255935516",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Deutschland"
+      },
+      "priceRange": "$$",
+      "description": "Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden.",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://anker-caravan.de/#website",
+      "name": "ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung",
+      "url": "https://anker-caravan.de/",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://anker-caravan.de/#organization"
+      },
+      "description": "Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://anker-caravan.de/#webpage",
+      "url": "https://anker-caravan.de/",
+      "name": "ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung",
+      "isPartOf": {
+        "@id": "https://anker-caravan.de/#website"
+      },
+      "about": {
+        "@id": "https://anker-caravan.de/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://anker-caravan.de/images/logo-icon.png"
+      },
+      "description": "Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden.",
+      "inLanguage": "de-DE",
+      "mainEntity": {
+        "@id": "https://anker-caravan.de/#offer-catalog"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://anker-caravan.de/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://anker-caravan.de/"
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://anker-caravan.de/#offer-catalog",
+      "name": "ANKER Caravan Wohnwagen Sortiment",
+      "url": "https://anker-caravan.de/#produkte",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "url": "https://anker-caravan.de/wohnwagen-micro-240.html",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Wohnwagen Micro 240",
+            "category": "Wohnwagen",
+            "description": "Wendiger Wohnwagen für Wochenendtrips, kleine Stellplätze und spontane Touren."
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://anker-caravan.de/wohnwagen-mini-270.html",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Wohnwagen Mini 270",
+            "category": "Wohnwagen",
+            "description": "Kompakter Camper Caravan mit flexiblen Schlafplätzen und praktischer Ausstattung."
+          }
+        },
+        {
+          "@type": "Offer",
+          "url": "https://anker-caravan.de/wohnwagen-eco-350.html",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Wohnwagen Eco 350",
+            "category": "Wohnwagen",
+            "description": "Familienfreundlicher Caravan mit mehr Platz und Ausstattung für komfortables Camping."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://anker-caravan.de/#caravan-list",
+      "name": "Caravan Modelle",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://anker-caravan.de/wohnwagen-micro-240.html",
+          "name": "Wohnwagen Micro 240"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://anker-caravan.de/wohnwagen-mini-270.html",
+          "name": "Wohnwagen Mini 270"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://anker-caravan.de/wohnwagen-eco-350.html",
+          "name": "Wohnwagen Eco 350"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://anker-caravan.de/#beratung",
+      "name": "Caravan-Beratung und Fahrzeugcheck",
+      "provider": {
+        "@id": "https://anker-caravan.de/#organization"
+      },
+      "areaServed": "DE",
+      "serviceType": "Wohnwagen Beratung",
+      "description": "Persönliche Beratung, Modellprüfung und Fahrzeugcheck für passende Wohnwagen und Caravan-Anfragen."
+    }
   ]
- }
- ]
 }
  </script>
 
- <title>ANKER Caravan | Wohnwagen mit Vertrauen</title>
- <style>
+<style>
  :root {
   --bg: #0f1115;
   --bg-soft: #171a21;
@@ -9819,12 +9949,7 @@
     بعد الطي/التصغير على الجوال: images/logo-mobile-after.png
     Desktop fallback: images/logo-icon.png
    -->
-   <img id="siteHeaderLogoImage"
-        src="images/logo-mobile-before.png"
-        data-logo-desktop="images/logo-mobile-before.png"
-        data-logo-mobile-before="images/logo-mobile-before.png"
-        data-logo-mobile-after="images/logo-mobile-after.png"
-        alt="">
+   <img alt="ANKER Caravan Logo" data-logo-desktop="images/logo-mobile-before.png" data-logo-mobile-after="images/logo-mobile-after.png" data-logo-mobile-before="images/logo-mobile-before.png" decoding="async" fetchpriority="high" id="siteHeaderLogoImage" src="images/logo-mobile-before.png"/>
   </span>
   <span class="logo-wordmark">
    <span class="logo-title">ANKER</span>
@@ -9937,7 +10062,7 @@
       <div class="sortiment-product-grid">
         <a class="sortiment-product-card" href="wohnwagen-micro-240.html" aria-label="Wohnwagen Micro 240 ansehen">
           <div class="sortiment-product-image">
-            <img src="images/bild-01.png" alt="Wohnwagen Micro 240" loading="lazy">
+            <img alt="Wohnwagen Micro 240 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-01.png"/>
           </div>
           <div class="sortiment-product-body">
             <h3>Wohnwagen Micro 240</h3>
@@ -9948,7 +10073,7 @@
 
         <a class="sortiment-product-card" href="wohnwagen-mini-270.html" aria-label="Wohnwagen Mini 270 ansehen">
           <div class="sortiment-product-image">
-            <img src="images/bild-02.png" alt="Wohnwagen Mini 270" loading="lazy">
+            <img alt="Wohnwagen Mini 270 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-02.png"/>
           </div>
           <div class="sortiment-product-body">
             <h3>Wohnwagen Mini 270</h3>
@@ -9959,7 +10084,7 @@
 
         <a class="sortiment-product-card" href="wohnwagen-eco-350.html" aria-label="Wohnwagen Eco 350 ansehen">
           <div class="sortiment-product-image">
-            <img src="images/bild-03.png" alt="Wohnwagen Eco 350" loading="lazy">
+            <img alt="Wohnwagen Eco 350 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-03.png"/>
           </div>
           <div class="sortiment-product-body">
             <h3>Wohnwagen Eco 350</h3>
@@ -9985,28 +10110,28 @@
   <div class="benefits">
    <article class="benefit">
    <figure class="benefit-thumb" aria-label="Vertrauensvolle Beratung">
-    <img src="images/vorteil-1.gif" alt="" loading="lazy">
+    <img alt="Vertrauensvolle Wohnwagen-Beratung bei ANKER Caravan" decoding="async" loading="lazy" src="images/vorteil-1.gif"/>
    </figure>
    <h3>Vertrauensvolle Beratung</h3>
    <p>Persönliche Einschätzung, klare Informationen und transparente Antworten vor Ihrer Entscheidung.</p>
    </article>
    <article class="benefit">
    <figure class="benefit-thumb" aria-label="Komfortable Auswahl">
-    <img src="images/vorteil-2.gif" alt="" loading="lazy">
+    <img alt="Komfortable Caravan-Auswahl für entspannte Reisen" decoding="async" loading="lazy" src="images/vorteil-2.gif"/>
    </figure>
    <h3>Komfortable Auswahl</h3>
    <p>Verschiedene Grundrisse, Schlafplätze und Ausstattungen für entspannte Reisen.</p>
    </article>
    <article class="benefit">
    <figure class="benefit-thumb" aria-label="Startklar für die Reise">
-    <img src="images/vorteil-3.gif" alt="" loading="lazy">
+    <img alt="Startklarer Wohnwagen für sichere Reisen" decoding="async" loading="lazy" src="images/vorteil-3.gif"/>
    </figure>
    <h3>Startklar für die Reise</h3>
    <p>Wir achten auf Ausstattung, Zustand und Details, damit Sie sicher und gut vorbereitet starten.</p>
    </article>
    <article class="benefit">
    <figure class="benefit-thumb" aria-label="Individuelle Anfrage">
-    <img src="images/vorteil-4.gif" alt="" loading="lazy">
+    <img alt="Individuelle Caravan-Anfrage und Beratung" decoding="async" loading="lazy" src="images/vorteil-4.gif"/>
    </figure>
    <h3>Individuelle Anfrage</h3>
    <p>Ihre Wünsche werden individuell geprüft – passend zu Reiseplänen, Budget und Ausstattung.</p>
@@ -10017,7 +10142,7 @@
  <section id="beratung">
   <div class="container split">
   <div class="image-panel">
-   <img src="images/anfrage-betonsteine.png" alt="Wohnwagen-Beratung mit Anfrageunterlagen und Planung" loading="lazy">
+   <img alt="Wohnwagen-Beratung mit Anfrageunterlagen und Planung" decoding="async" loading="lazy" src="images/anfrage-betonsteine.png"/>
    <div class="callout">
    <strong>Alles für Ihre Anfrage</strong>
    <span>Modellwunsch, Budget, Schlafplätze, Ausstattung und Fahrzeugcheck-Termin.</span>
@@ -10030,28 +10155,28 @@
    <div class="benefits" style="grid-template-columns: 1fr 1fr; margin-top: 26px;">
    <article class="benefit">
     <figure class="beratung-thumb">
-    <img src="images/beratung-1.png" alt="Beratung zu Reiseart und Personenanzahl" loading="lazy">
+    <img alt="Beratung zu Reiseart und Personenanzahl" decoding="async" loading="lazy" src="images/beratung-1.png"/>
     </figure>
     <h3>Reiseart & Personen</h3>
     <p>Wir klären gemeinsam, ob Sie allein, zu zweit oder mit der Familie reisen und wie viel Platz Sie benötigen.</p>
    </article>
    <article class="benefit">
     <figure class="beratung-thumb">
-    <img src="images/beratung-2.png" alt="Budget und Zustand beim Wohnwagenkauf" loading="lazy">
+    <img alt="Budget und Zustand beim Wohnwagenkauf" decoding="async" loading="lazy" src="images/beratung-2.png"/>
     </figure>
     <h3>Budget &amp; Zustand</h3>
     <p>Nennen Sie uns Ihr Budget, das gewünschte Baujahr und den Zustand, den Sie bevorzugen – neu, gepflegt oder gebraucht.</p>
    </article>
    <article class="benefit">
     <figure class="beratung-thumb">
-    <img src="images/beratung-3.png" alt="Ausstattung und Details auswählen" loading="lazy">
+    <img alt="Ausstattung und Details auswählen" decoding="async" loading="lazy" src="images/beratung-3.png"/>
     </figure>
     <h3>Ausstattung &amp; Details</h3>
     <p>Wir besprechen wichtige Ausstattungsdetails wie Schlafplätze, Küche, Bad, Heizung, Vorzelt, Mover oder Fahrradträger.</p>
    </article>
    <article class="benefit">
     <figure class="beratung-thumb">
-    <img src="images/beratung-4.png" alt="Fahrzeugcheck-Termin planen" loading="lazy">
+    <img alt="Fahrzeugcheck-Termin planen" decoding="async" loading="lazy" src="images/beratung-4.png"/>
     </figure>
     <h3>Fahrzeugcheck</h3>
     <p>Bei einem Fahrzeugcheck-Termin können Sie den Wohnwagen in Ruhe anschauen und prüfen, ob er zu Ihren Wünschen passt.</p>
@@ -10090,23 +10215,23 @@
   </div>
   <div class="gallery">
    <div class="gallery-item big">
-   <img class="gallery-img" src="images/idee-sichtschutz.png" alt="Wohnwagen im Familienurlaub" loading="lazy">
+   <img alt="Wohnwagen im Familienurlaub" class="gallery-img" decoding="async" loading="lazy" src="images/idee-sichtschutz.png"/>
    <div class="gallery-label">Familienurlaub<span>Komfortabel unterwegs</span></div>
    </div>
    <div class="gallery-item dark">
-   <img class="gallery-img" src="images/idee-graphit-mauer.png" alt="Caravan für Wochenendtrip" loading="lazy">
+   <img alt="Caravan für Wochenendtrip" class="gallery-img" decoding="async" loading="lazy" src="images/idee-graphit-mauer.png"/>
    <div class="gallery-label">Wochenendtrip<span>Flexibel und unkompliziert</span></div>
    </div>
    <div class="gallery-item warm">
-   <img class="gallery-img" src="images/idee-gartenmauer.png" alt="Caravan auf dem Campingplatz" loading="lazy">
+   <img alt="Caravan auf dem Campingplatz" class="gallery-img" decoding="async" loading="lazy" src="images/idee-gartenmauer.png"/>
    <div class="gallery-label">Campingplatz<span>Ankommen und entspannen</span></div>
    </div>
    <div class="gallery-item">
-   <img class="gallery-img" src="images/idee-einfahrt.png" alt="Wohnwagen für autarke Reise" loading="lazy">
+   <img alt="Wohnwagen für autarke Reise" class="gallery-img" decoding="async" loading="lazy" src="images/idee-einfahrt.png"/>
    <div class="gallery-label">Autarke Reise<span>Freiheit unterwegs</span></div>
    </div>
    <div class="gallery-item dark">
-   <img class="gallery-img" src="images/idee-split-oberflaeche.png" alt="Komfortdetails im Wohnwagen" loading="lazy">
+   <img alt="Komfortdetails im Wohnwagen" class="gallery-img" decoding="async" loading="lazy" src="images/idee-split-oberflaeche.png"/>
    <div class="gallery-label">Komfort unterwegs<span>Ausstattung nach Wunsch</span></div>
    </div>
   </div>
@@ -10129,7 +10254,7 @@
     <div class="team-grid">
       <article class="team-card">
         <div class="team-photo">
-          <img src="images/team-verkaeuferin.png" alt="Verkauf / Assistenz der Geschäftsleitung" loading="lazy">
+          <img alt="Verkauf / Assistenz der Geschäftsleitung" decoding="async" loading="lazy" src="images/team-verkaeuferin.png"/>
         </div>
         <div class="team-body">
           <h3>Verkauf / Assistenz der Geschäftsleitung</h3>
@@ -10138,7 +10263,7 @@
 
       <article class="team-card">
         <div class="team-photo">
-          <img src="images/team-geschaeftsleitung.png" alt="Geschäftsleitung" loading="lazy">
+          <img alt="Geschäftsleitung" decoding="async" loading="lazy" src="images/team-geschaeftsleitung.png"/>
         </div>
         <div class="team-body">
           <h3>Geschäftsleitung</h3>
@@ -10185,7 +10310,7 @@
   <div class="footer-grid">
   <div>
    <div class="logo" style="color:#fff; margin-bottom:12px;">
-   <img class="logo-mark" src="images/logo-mobile-before.png" alt="" aria-hidden="true">
+   <img alt="ANKER Caravan Logo" aria-hidden="true" class="logo-mark" decoding="async" loading="lazy" src="images/logo-mobile-before.png"/>
    <span class="logo-wordmark">
     <span class="logo-text">ANKER</span>
     <small class="logo-tagline">CARAVAN</small>
