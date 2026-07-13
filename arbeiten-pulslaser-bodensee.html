@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Entlackung von KFZ-Teilen mit dem Pulslaser | LASERBEAM.tech</title>
+  <meta name="description" content="Roman demonstriert auf einer Fachmesse am Bodensee die präzise Entlackung von KFZ-Teilen mit dem Pulslaser.">
+  <meta name="theme-color" content="#08090a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#08090a;--panel:#111316;--panel2:#171a1e;--text:#f4f5f6;
+      --muted:#b3bac3;--line:#2b3036;--brand:#ed1c24;--brand2:#ff5a36;
+      --max:1180px;--shadow:0 24px 70px rgba(0,0,0,.4)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"Montserrat",Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .nav-wrap{position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(8,9,10,.88);backdrop-filter:blur(16px)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo img{width:260px;height:auto}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.82rem 1.12rem;border-radius:8px;border:1px solid transparent;text-transform:uppercase;font-weight:800;font-size:.88rem;letter-spacing:.02em;transition:.2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff}
+    .btn-secondary{background:#15181c;border-color:#40464e;color:#fff}
+    .hero{position:relative;padding:110px 0 70px;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#07090b 0%,#0d1013 55%,#08090a 100%)}
+    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to right,#000,transparent 82%)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.92fr) minmax(440px,1.08fr);gap:64px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:18px;color:#ff725d;font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--brand)}
+    h1,h2,h3{margin:0;text-transform:uppercase;font-weight:900;line-height:1.04}
+    h1{max-width:740px;font-size:clamp(2.45rem,5vw,4.7rem);letter-spacing:-.045em}
+    h1 span{color:#ff493f}
+    .lead{max-width:700px;margin:24px 0 0;color:#d8dde3;font-size:clamp(1rem,1.6vw,1.18rem)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .hero-meta span{padding:10px 13px;border:1px solid #343a42;border-radius:999px;background:#111418;color:#e6e9ed;font-size:.82rem;font-weight:700}
+    .video-shell{position:relative;padding:10px;border-radius:20px;border:1px solid #30363e;background:linear-gradient(145deg,#171b20,#0b0d10);box-shadow:var(--shadow)}
+    .video-frame{position:relative;overflow:hidden;border-radius:13px;aspect-ratio:16/9;background:#000}
+    .video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;background:#000}
+    .video-caption{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:15px 8px 5px;color:#aeb5be;font-size:.82rem}
+    .video-caption strong{color:#fff}
+    section{padding:92px 0}
+    .section-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:end;margin-bottom:38px}
+    h2{font-size:clamp(2rem,4vw,3.35rem);letter-spacing:-.035em}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:28px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel2),var(--panel))}
+    .number{display:block;margin-bottom:22px;color:#343a41;font-size:3rem;font-weight:900;line-height:1}
+    .card h3{margin-bottom:12px;font-size:1.2rem}
+    .card p{margin:0;color:#c5cbd2;font-size:.95rem}
+    .detail-band{background:#101215;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+    .quote{margin:0;color:#fff;font-size:clamp(1.5rem,3vw,2.45rem);font-weight:700;line-height:1.35;letter-spacing:-.025em}
+    .check-list{list-style:none;margin:0;padding:0;display:grid;gap:13px}
+    .check-list li{position:relative;padding-left:25px;color:#cbd1d8}
+    .check-list li:before{content:"✓";position:absolute;left:0;color:#ff594b;font-weight:900}
+    .cta{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:44px;border-radius:18px;background:linear-gradient(135deg,#b90f16,#ff432f)}
+    .cta h2{font-size:clamp(1.8rem,3.5vw,3rem)}
+    .cta p{max-width:700px;margin:12px 0 0;color:#ffe2dc}
+    footer{padding:32px 0;border-top:1px solid var(--line);color:#9aa1aa}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .hero-grid,.section-head,.detail-grid{grid-template-columns:1fr}
+      .hero-grid{gap:42px}
+      .work-grid{grid-template-columns:1fr 1fr}
+      .video-shell{max-width:760px}
+    }
+    @media(max-width:620px){
+      .container{width:min(calc(100% - 24px),var(--max))}
+      nav{height:70px}.logo img{width:205px}.nav-actions .btn-secondary{display:none}.nav-actions .btn{min-height:42px;padding:.65rem .75rem;font-size:.72rem}
+      .hero{padding:72px 0 50px}.hero-grid{gap:30px}.eyebrow{font-size:.66rem;letter-spacing:.1em;margin-bottom:14px}.eyebrow:before{width:20px}
+      h1{font-size:clamp(2rem,10.5vw,3rem);line-height:1.07}.lead{margin-top:18px;font-size:.96rem;line-height:1.55}.hero-meta{margin-top:22px;gap:8px}.hero-meta span{padding:8px 10px;font-size:.72rem}
+      .video-shell{padding:6px;border-radius:14px}.video-frame{border-radius:9px}.video-caption{padding:12px 4px 3px;align-items:flex-start;flex-direction:column;gap:2px;font-size:.72rem}
+      section{padding:68px 0}.section-head{gap:15px;margin-bottom:26px}h2{font-size:clamp(1.8rem,9vw,2.65rem)}
+      .work-grid{grid-template-columns:1fr;gap:12px}.card{padding:22px}.number{font-size:2.5rem;margin-bottom:17px}.card h3{font-size:1.08rem}
+      .detail-grid{gap:28px}.quote{font-size:1.4rem}.cta{padding:28px;align-items:flex-start;flex-direction:column}.cta .btn{width:100%}
+      .footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:12px}
+    }
+  </style>
+
+  <!-- LASERBEAM.tech icon and sharing image: one file name only -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LASERBEAM.tech">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://www.laserbeam.tech/arbeiten-pulslaser-bodensee.html">
+  <meta property="og:title" content="Entlackung von KFZ-Teilen mit dem Pulslaser | LASERBEAM.tech">
+  <meta property="og:description" content="Roman demonstriert auf einer Fachmesse am Bodensee die präzise Entlackung von KFZ-Teilen mit dem Pulslaser.">
+  <meta property="og:image" content="https://www.laserbeam.tech/assets/logo.png">
+  <meta property="og:image:secure_url" content="https://www.laserbeam.tech/assets/logo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="LASERBEAM.tech Logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Entlackung von KFZ-Teilen mit dem Pulslaser | LASERBEAM.tech">
+  <meta name="twitter:description" content="Roman demonstriert auf einer Fachmesse am Bodensee die präzise Entlackung von KFZ-Teilen mit dem Pulslaser.">
+  <meta name="twitter:image" content="https://www.laserbeam.tech/assets/logo.png">
+
+</head>
+<body>
+<header class="nav-wrap">
+  <nav class="container" aria-label="Seitennavigation">
+    <a class="logo" href="index-mobile-hero-slide3-balanced.html#top" aria-label="Zur Startseite">
+      <img src="assets/logo.png" alt="LASERBEAM.tech Industrial Laser Cleaning">
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" href="index-mobile-hero-slide3-balanced.html">Zur Startseite</a>
+      <a class="btn btn-primary" href="index.html#kontakt">Projekt anfragen</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Arbeiten · Messevorführung</span>
+        <h1>Entlackung von KFZ-Teilen <span>mit dem Pulslaser</span></h1>
+        <p class="lead">Roman demonstriert die kontrollierte Entlackung von Fahrzeugteilen mit dem Pulslaser auf einer Fachmesse am Bodensee.</p>
+        <div class="hero-meta">
+          <span>Pulslaser</span>
+          <span>KFZ-Teile</span>
+          <span>Fachmesse am Bodensee</span>
+        </div>
+      </div>
+
+      <div class="video-shell">
+        <div class="video-frame" id="videoFrame">
+          <video controls playsinline preload="metadata" aria-label="Roman demonstriert die Entlackung von KFZ-Teilen mit dem Pulslaser">
+            <source src="assets/roman-pulslaser-bodensee.mp4" type="video/mp4">
+            Ihr Browser unterstützt dieses Videoformat nicht.
+          </video>
+        </div>
+        <div class="video-caption">
+          <strong>Praxisvorführung</strong>
+          <span>Entlackung eines KFZ-Bauteils mit präzise eingestelltem Pulslaser</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Im Einsatz</span>
+          <h2>Kontrollierte Bearbeitung statt grober Materialabtrag</h2>
+        </div>
+        <p>Bei der Messevorführung wird sichtbar, wie sich Lackschichten gezielt entfernen lassen. Die Parameter werden passend zum Bauteil eingestellt, damit die Oberfläche kontrolliert bearbeitet und für die nächsten Arbeitsschritte vorbereitet wird.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="card">
+          <span class="number">01</span>
+          <h3>Bauteil prüfen</h3>
+          <p>Material, Beschichtung und gewünschter Zielzustand werden vor Beginn bewertet.</p>
+        </article>
+        <article class="card">
+          <span class="number">02</span>
+          <h3>Laser einstellen</h3>
+          <p>Leistung, Pulsfrequenz und Arbeitsgeschwindigkeit werden auf das KFZ-Teil abgestimmt.</p>
+        </article>
+        <article class="card">
+          <span class="number">03</span>
+          <h3>Schicht abtragen</h3>
+          <p>Die Lackschicht wird präzise entfernt, ohne zusätzliche Strahlmittel einzusetzen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-band">
+    <div class="container detail-grid">
+      <p class="quote">„Die Vorführung zeigt unmittelbar, wie präzise sich selbst kleine und komplexe KFZ-Bauteile bearbeiten lassen.“</p>
+      <ul class="check-list">
+        <li>Gezielte Entfernung von Lack und Beschichtungen</li>
+        <li>Geeignet für Fahrzeugteile, Restaurierung und Vorbereitung</li>
+        <li>Kein Sand, Trockeneis oder zusätzliches Strahlmittel</li>
+        <li>Kontrollierte Bearbeitung von Kanten und komplexen Geometrien</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>Sie möchten KFZ-Teile entlacken lassen?</h2>
+          <p>Senden Sie uns Fotos, Maße und Angaben zur vorhandenen Beschichtung. Wir prüfen, welches Lasersystem und welche Vorgehensweise zu Ihrem Projekt passen.</p>
+        </div>
+        <a class="btn btn-secondary" href="index.html#kontakt">Projekt jetzt anfragen →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> LASERBEAM.tech</div>
+    <div class="footer-links">
+      <a href="index-mobile-hero-slide3-balanced.html">Startseite</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutzerklaerung/">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+
+</body>
+</html>
