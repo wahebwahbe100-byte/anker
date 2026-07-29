@@ -9891,8 +9891,35 @@
 <a href="#ueber-uns">ÜBER UNS</a>
 <a href="kontakt.html">KONTAKT</a>
 </nav>
+<div class="header-tools">
 <div class="nav-actions">
 <a class="btn header-contact" href="kontakt.html"><span aria-hidden="true" class="btn-icon">✉</span> KONTAKTIEREN</a>
+</div>
+<!--
+  LANGUAGE FLAG IMAGES:
+  Put your language icons in the images folder with these names:
+  1) images/de.png
+  2) images/gb.png
+-->
+<div class="language-switcher notranslate" id="languageSwitcher" translate="no">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="language-switcher-button" id="languageSwitcherButton" type="button">
+<img alt="Deutsch" class="language-current-flag" id="languageCurrentFlag" src="images/de.png"/>
+<span class="language-current-code" id="languageCurrentCode">DE</span>
+<span aria-hidden="true" class="language-switcher-chevron">⌄</span>
+</button>
+<div aria-label="Sprache auswählen" class="language-switcher-menu" id="languageSwitcherMenu" role="menu">
+<button class="language-option" data-language="de" role="menuitem" type="button">
+<img alt="Deutsch" class="language-option-flag" src="images/de.png"/>
+<span class="language-option-copy"><strong>Deutsch</strong><small>DE</small></span>
+<span aria-hidden="true" class="language-option-check">✓</span>
+</button>
+<button class="language-option" data-language="en" role="menuitem" type="button">
+<img alt="English" class="language-option-flag" src="images/gb.png"/>
+<span class="language-option-copy"><strong>English</strong><small>EN</small></span>
+<span aria-hidden="true" class="language-option-check">✓</span>
+</button>
+</div>
+</div>
 </div>
 <button aria-controls="menu" aria-expanded="false" aria-label="Menü öffnen" class="mobile-toggle" id="mobileToggle" type="button">
 <span></span><span></span><span></span>
@@ -15963,5 +15990,357 @@ html.translated-rtl body header.site-header .container.nav {
   }
 }
 </style>
+
+<style id="anker-bilingual-language-switcher-styles">
+/* ANKER bilingual language switcher — German / English */
+.header-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  justify-self: end;
+  min-width: 0;
+}
+.language-switcher {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 2147483100;
+  font-family: Montserrat, Inter, Arial, sans-serif;
+}
+.language-switcher-button {
+  min-width: 88px;
+  height: 44px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(8,26,57,.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,.96);
+  color: #081a39;
+  box-shadow: 0 10px 26px rgba(8,26,57,.10);
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.language-switcher-button:hover,
+.language-switcher-button:focus-visible,
+.language-switcher.is-open .language-switcher-button {
+  border-color: rgba(157,133,114,.72);
+  box-shadow: 0 12px 30px rgba(8,26,57,.16);
+  transform: translateY(-1px);
+  outline: none;
+}
+.language-current-flag,
+.language-option-flag {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(8,26,57,.10);
+  filter: saturate(.98);
+}
+.language-option-flag {
+  width: 24px;
+  height: 24px;
+}
+.language-current-code {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.language-switcher-chevron {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.language-switcher.is-open .language-switcher-chevron { transform: rotate(180deg); }
+.language-switcher-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 218px;
+  padding: 8px;
+  display: grid;
+  gap: 5px;
+  border: 1px solid rgba(8,26,57,.12);
+  border-radius: 18px;
+  background: rgba(255,255,255,.99);
+  box-shadow: 0 22px 55px rgba(8,26,57,.20);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(.98);
+  transform-origin: top right;
+  pointer-events: none;
+  transition: opacity .18s ease, visibility .18s ease, transform .18s ease;
+}
+.language-switcher.is-open .language-switcher-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.language-option {
+  width: 100%;
+  min-height: 58px;
+  padding: 9px 11px;
+  display: grid;
+  grid-template-columns: 34px 1fr 22px;
+  gap: 10px;
+  align-items: center;
+  border: 0;
+  border-radius: 13px;
+  background: transparent;
+  color: #081a39;
+  text-align: left;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.language-option:hover,
+.language-option:focus-visible {
+  background: linear-gradient(90deg, rgba(8,26,57,.07), rgba(157,133,114,.12));
+  transform: translateX(2px);
+  outline: none;
+}
+.language-option.is-active { background: rgba(157,133,114,.13); }
+.language-option-copy { display: grid; gap: 2px; }
+.language-option-copy strong { font-size: 14px; font-weight: 900; }
+.language-option-copy small { color: #6b7280; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.language-option-check { color: #9d8572; font-size: 16px; font-weight: 950; opacity: 0; }
+.language-option.is-active .language-option-check { opacity: 1; }
+
+@media (min-width: 1081px) {
+  header.site-header .container.nav { column-gap: clamp(14px, 1.7vw, 24px) !important; }
+}
+
+@media (max-width: 1080px) {
+  header.site-header .header-tools,
+  header.site-header.is-scrolled .header-tools,
+  body.menu-open header.site-header .header-tools {
+    display: flex !important;
+    position: absolute !important;
+    right: 52px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 2147483200 !important;
+  }
+  header.site-header .language-switcher,
+  header.site-header.is-scrolled .language-switcher,
+  body.menu-open header.site-header .language-switcher {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+  header.site-header .language-switcher-button,
+  header.site-header.is-scrolled .language-switcher-button {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+    gap: 0;
+  }
+  .language-current-code,
+  .language-switcher-chevron { display: none; }
+  .language-switcher-menu { right: -44px; top: calc(100% + 12px); }
+}
+
+@media (max-width: 420px) {
+  header.site-header .header-tools,
+  header.site-header.is-scrolled .header-tools,
+  body.menu-open header.site-header .header-tools { right: 46px !important; }
+  header.site-header .language-switcher-button,
+  header.site-header.is-scrolled .language-switcher-button {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+  }
+  .language-current-flag {
+    width: 20px;
+    height: 20px;
+  }
+  .language-switcher-menu { right: -40px; width: min(218px, calc(100vw - 24px)); }
+}
+</style>
+
+<script id="anker-bilingual-language-switcher-script">
+(function () {
+  'use strict';
+
+  const STORAGE_KEY = 'anker_caravan_language_v1';
+  const TEXT_EN = {"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Caravans ansehen →":"View caravans →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","KONTAKTIEREN":"CONTACT US","Wohnwagen mit Vertrauen":"Caravans with confidence","für Reisen, Freiheit und komfortable Auszeiten":"for travel, freedom and comfortable getaways","Wohnwagen ansehen":"View caravans","Ihr passender Caravan":"Your ideal caravan","Ausstattung, Zustand und Budget gemeinsam abgestimmt":"Equipment, condition and budget aligned with you","Anfrage senden":"Send inquiry","Sicher, gepflegt und startklar":"Safe, well-maintained and ready to go","Reisen beginnt mit Vertrauen":"Every journey starts with confidence","Senden Sie uns Ihre Anfrage – wir melden uns mit passenden Optionen":"Send us your inquiry – we’ll get back to you with suitable options","Kontakt aufnehmen":"Get in touch","Zu den Wohnwagen":"View caravans","Sortiment":"Range","Wohnwagen Micro 240":"Micro 240 Caravan","Wendiger Wohnwagen für Wochenendtrips, kleine Stellplätze und spontane Touren – leicht zu handhaben, gemütlich und schnell startklar.":"A nimble caravan for weekend trips, small pitches and spontaneous tours – easy to handle, comfortable and quickly ready to go.","Mehr erfahren →":"Learn more →","Wohnwagen Mini 270":"Mini 270 Caravan","Kompakter Camper Caravan mit flexiblen Schlafplätzen, praktischer Ausstattung und gemütlichem Komfort für kurze und längere Reisen.":"A compact camper caravan with flexible berths, practical equipment and cosy comfort for short and longer journeys.","Wohnwagen Eco 350":"Eco 350 Caravan","Familienfreundlicher Caravan mit mehr Platz, praktischen Schlafplätzen und Ausstattung für flexible Reisen und komfortables Camping.":"A family-friendly caravan with more space, practical berths and equipment for flexible travel and comfortable camping.","WARUM ANKER CARAVAN?":"WHY ANKER CARAVAN?","Vertrauen, Komfort und passend zu Ihrer Reise.":"Confidence, comfort and a perfect fit for your journey.","Wir unterstützen Sie bei der Auswahl eines Wohnwagens, der zu Ihrem Budget, Ihrer Reiseart und Ihren Komfortwünschen passt.":"We help you choose a caravan that suits your budget, travel style and comfort requirements.","Vertrauensvolle Beratung":"Trusted advice","Persönliche Einschätzung, klare Informationen und transparente Antworten vor Ihrer Entscheidung.":"Personal guidance, clear information and transparent answers before you decide.","Komfortable Auswahl":"Comfortable choice","Verschiedene Grundrisse, Schlafplätze und Ausstattungen für entspannte Reisen.":"Different layouts, berths and equipment options for relaxed travel.","Startklar für die Reise":"Ready for the journey","Wir achten auf Ausstattung, Zustand und Details, damit Sie sicher und gut vorbereitet starten.":"We check equipment, condition and details so you can set off safely and well prepared.","Individuelle Anfrage":"Personalised inquiry","Ihre Wünsche werden individuell geprüft – passend zu Reiseplänen, Budget und Ausstattung.":"Your requirements are reviewed individually – matched to your travel plans, budget and preferred equipment.","Alles für Ihre Anfrage":"Everything for your inquiry","Modellwunsch, Budget, Schlafplätze, Ausstattung und Fahrzeugcheck-Termin.":"Preferred model, budget, berths, equipment and vehicle inspection appointment.","Beratung":"Advice","Welcher Wohnwagen passt zu Ihnen?":"Which caravan is right for you?","Senden Sie uns eine kurze Anfragebeschreibung. Wir prüfen, welche Modelle geeignet sind, welche Ausstattung sinnvoll ist und wie der Fahrzeugcheck geplant werden kann.":"Send us a short description of what you need. We will check which models are suitable, which equipment makes sense and how the vehicle inspection can be arranged.","Reiseart & Personen":"Travel style & passengers","Wir klären gemeinsam, ob Sie allein, zu zweit oder mit der Familie reisen und wie viel Platz Sie benötigen.":"Together we clarify whether you travel alone, as a couple or with your family, and how much space you need.","Budget & Zustand":"Budget & condition","Nennen Sie uns Ihr Budget, das gewünschte Baujahr und den Zustand, den Sie bevorzugen – neu, gepflegt oder gebraucht.":"Tell us your budget, preferred model year and condition – new, well maintained or used.","Ausstattung & Details":"Equipment & details","Wir besprechen wichtige Ausstattungsdetails wie Schlafplätze, Küche, Bad, Heizung, Vorzelt, Mover oder Fahrradträger.":"We discuss important equipment details such as berths, kitchen, bathroom, heating, awning, mover or bicycle rack.","Fahrzeugcheck":"Vehicle inspection","Bei einem Fahrzeugcheck-Termin können Sie den Wohnwagen in Ruhe anschauen und prüfen, ob er zu Ihren Wünschen passt.":"At a vehicle inspection appointment, you can take your time viewing the caravan and check whether it meets your requirements.","Ablauf":"Process","Vom Wunsch zum passenden Wohnwagen.":"From your wishes to the right caravan.","Ein einfacher Prozess, damit wir Ihre Anfrage schnell und passend einordnen können.":"A simple process that helps us assess your inquiry quickly and accurately.","Wünsche beschreiben":"Describe your requirements","Senden Sie Reiseart, Personenanzahl, Budget und gewünschte Ausstattung.":"Send us your travel style, number of passengers, budget and preferred equipment.","Modelle prüfen":"Review models","Wir prüfen passende Wohnwagen und Caravan-Optionen.":"We review suitable caravans and available options.","Fahrzeugcheck planen":"Plan the vehicle inspection","Gemeinsam stimmen wir einen Termin zum Fahrzeugcheck oder zur Rücksprache ab.":"Together we arrange an appointment for a vehicle inspection or consultation.","Angebot erhalten":"Receive an offer","Sie bekommen eine individuelle Rückmeldung mit passenden Details.":"You receive a personalised response with suitable details.","Ideen":"Ideas","So kann Ihr Caravan genutzt werden.":"Ways to enjoy your caravan.","Beispiele für typische Reisen, Auszeiten und Camping-Momente.":"Examples of typical journeys, getaways and camping moments.","Familienurlaub":"Family holiday","Komfortabel unterwegs":"Comfort on the road","Wochenendtrip":"Weekend trip","Flexibel und unkompliziert":"Flexible and uncomplicated","Campingplatz":"Campsite","Ankommen und entspannen":"Arrive and relax","Autarke Reise":"Off-grid travel","Freiheit unterwegs":"Freedom on the road","Komfort unterwegs":"Comfort while travelling","Ausstattung nach Wunsch":"Equipment to suit you","Unser Team":"Our team","Persönlich für Sie da.":"Here for you personally.","Kompetente Beratung, klare Antworten und eine zuverlässige Begleitung rund um Ihre Caravan-Anfrage.":"Expert advice, clear answers and reliable support throughout your caravan inquiry.","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Leitung und persönliche Beratung":"Management and personal advice","Über":"About","Wohnwagen mit Vertrauen.":"Caravans with confidence.","steht für ehrliche Beratung, gepflegte Wohnwagen und einen transparenten Ablauf – von der ersten Anfrage bis zum Fahrzeugcheck.":"stands for honest advice, well-maintained caravans and a transparent process – from your first inquiry to the vehicle inspection.","Wir nehmen uns Zeit für Ihre Wünsche, erklären Ausstattung und Möglichkeiten klar verständlich und begleiten Sie zuverlässig bei der Auswahl.":"We take time to understand your wishes, explain equipment and options clearly, and support you reliably throughout your choice.","Persönlich. Transparent. Verlässlich.":"Personal. Transparent. Reliable.","Kontakt":"Contact","Jetzt kontaktieren":"Contact us now","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Auswahl":"Selection","Vorteile":"Benefits","Über uns":"About us","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Willkommen bei ANKER Caravan":"Welcome to ANKER Caravan","Diese Website verwendet nur notwendige Cookies. Sie helfen dabei, die Seite sicher anzuzeigen, Ihre Cookie-Auswahl zu speichern und die Funktionen von ANKER Caravan zuverlässig bereitzustellen.":"This website uses only essential cookies. They help display the site securely, remember your cookie choice and provide ANKER Caravan functions reliably.","Datenschutzerklärung":"Privacy policy","Website-Funktionen anzeigen":"Show website features","Website-Funktionen ausblenden":"Hide website features","Übersicht und Modellseiten für Micro 240, Mini 270 und Eco 350.":"Overview and model pages for the Micro 240, Mini 270 and Eco 350.","Beratung & Fahrzeugcheck":"Advice & vehicle inspection","Informationen zur passenden Caravan-Auswahl, Budget, Ausstattung und Fahrzeugcheck-Termin.":"Information about choosing the right caravan, budget, equipment and the vehicle inspection appointment.","Anfrage & Kontakt":"Inquiry & contact","Kontaktmöglichkeiten und Anfrageformular für Ihren passenden Wohnwagen.":"Contact options and an inquiry form for your ideal caravan.","Technisch notwendig":"Essential","Gespeichert wird nur Ihre Hinweis-Bestätigung, damit diese Meldung nicht bei jedem Besuch erscheint.":"Only your notice confirmation is stored so this message does not appear on every visit.","Verstanden":"Got it","Ihre Auswahl gilt nur für diese Website und kann jederzeit im Footer über „Cookie-Einstellungen“ erneut angezeigt werden.":"Your choice applies only to this website and can be changed at any time via “Cookie settings” in the footer.","Menü öffnen":"Open menu","Menü schließen":"Close menu","Cookie-Einstellungen":"Cookie settings"};
+  const ATTR_EN = {"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","ANKER Caravan Hero Slider":"ANKER Caravan hero slider","Hero Slider Steuerung":"Hero slider controls","Slides auswählen":"Select slides","Slide 1":"Slide 1","Slide 2":"Slide 2","Slide 3":"Slide 3","Vorheriger Slide":"Previous slide","Nächster Slide":"Next slide","Caravan Sortiment mit verlinkten Modellseiten":"Caravan range with linked model pages","Wohnwagen Micro 240 ansehen":"View the Micro 240 caravan","Wohnwagen Micro 240 von ANKER Caravan":"Micro 240 caravan by ANKER Caravan","Wohnwagen Mini 270 ansehen":"View the Mini 270 caravan","Wohnwagen Mini 270 von ANKER Caravan":"Mini 270 caravan by ANKER Caravan","Wohnwagen Eco 350 ansehen":"View the Eco 350 caravan","Wohnwagen Eco 350 von ANKER Caravan":"Eco 350 caravan by ANKER Caravan","Vertrauensvolle Beratung":"Trusted advice","Vertrauensvolle Wohnwagen-Beratung bei ANKER Caravan":"Trusted caravan advice at ANKER Caravan","Komfortable Auswahl":"Comfortable choice","Komfortable Caravan-Auswahl für entspannte Reisen":"Comfortable caravan selection for relaxed travel","Startklar für die Reise":"Ready for the journey","Startklarer Wohnwagen für sichere Reisen":"A road-ready caravan for safe travel","Individuelle Anfrage":"Personalised inquiry","Individuelle Caravan-Anfrage und Beratung":"Personalised caravan inquiry and advice","Wohnwagen-Beratung mit Anfrageunterlagen und Planung":"Caravan advice with inquiry details and planning","Beratung zu Reiseart und Personenanzahl":"Advice on travel style and number of passengers","Budget und Zustand beim Wohnwagenkauf":"Budget and condition when buying a caravan","Ausstattung und Details auswählen":"Choose equipment and details","Fahrzeugcheck-Termin planen":"Plan a vehicle inspection appointment","Wohnwagen im Familienurlaub":"Caravan on a family holiday","Caravan für Wochenendtrip":"Caravan for a weekend trip","Caravan auf dem Campingplatz":"Caravan at a campsite","Wohnwagen für autarke Reise":"Caravan for off-grid travel","Komfortdetails im Wohnwagen":"Comfort features in the caravan","Unser Team":"Our team","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Kontakt zu ANKER Caravan":"Contact ANKER Caravan","Rechtliche Informationen":"Legal information","Sprache ändern":"Change language","Sprache auswählen":"Select language"};
+  const META = {
+    de: {
+      title: 'ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung',
+      description: 'Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden.',
+      keywords: 'Wohnwagen kaufen, Caravan kaufen, Wohnwagen Beratung, Caravan Beratung, Wohnwagen Fahrzeugcheck, Camping Wohnwagen, ANKER Caravan, Wohnwagen Deutschland, Micro 240, Mini 270, Eco 350'
+    },
+    en: {
+      title: 'ANKER Caravan | Buy a caravan & caravan advice',
+      description: 'Buy a caravan from ANKER Caravan: personal advice, vehicle inspections and suitable models such as the Micro 240, Mini 270 and Eco 350. Send your inquiry now.',
+      keywords: 'buy caravan, caravan advice, caravan vehicle inspection, camping caravan, ANKER Caravan, caravans Germany, Micro 240, Mini 270, Eco 350'
+    }
+  };
+
+  function getLanguage() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved === 'en' ? 'en' : 'de';
+    } catch (error) {
+      return 'de';
+    }
+  }
+
+  function setLanguage(language) {
+    try { localStorage.setItem(STORAGE_KEY, language); } catch (error) {}
+    window.location.reload();
+  }
+
+  const currentLanguage = getLanguage();
+  const switcher = document.getElementById('languageSwitcher');
+  const switcherButton = document.getElementById('languageSwitcherButton');
+  const switcherMenu = document.getElementById('languageSwitcherMenu');
+  const currentFlag = document.getElementById('languageCurrentFlag');
+  const currentCode = document.getElementById('languageCurrentCode');
+  const languageOptions = Array.from(document.querySelectorAll('.language-option[data-language]'));
+
+  const LANGUAGE_FLAGS = {
+    de: { src: 'images/de.png', alt: 'Deutsch' },
+    en: { src: 'images/gb.png', alt: 'English' }
+  };
+
+  function updateSwitcher() {
+    if (currentFlag) {
+      currentFlag.src = currentLanguage === 'en' ? LANGUAGE_FLAGS.en.src : LANGUAGE_FLAGS.de.src;
+      currentFlag.alt = currentLanguage === 'en' ? LANGUAGE_FLAGS.en.alt : LANGUAGE_FLAGS.de.alt;
+    }
+    if (currentCode) currentCode.textContent = currentLanguage.toUpperCase();
+    if (switcherButton) {
+      switcherButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Change language' : 'Sprache ändern');
+      switcherButton.setAttribute('title', currentLanguage === 'en' ? 'Change language' : 'Sprache ändern');
+    }
+    if (switcherMenu) switcherMenu.setAttribute('aria-label', currentLanguage === 'en' ? 'Select language' : 'Sprache auswählen');
+    languageOptions.forEach(function (option) {
+      const active = option.dataset.language === currentLanguage;
+      option.classList.toggle('is-active', active);
+      option.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+  }
+
+  function setOpen(open) {
+    if (!switcher || !switcherButton) return;
+    switcher.classList.toggle('is-open', open);
+    switcherButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  if (switcherButton && switcher) {
+    switcherButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      setOpen(!switcher.classList.contains('is-open'));
+    });
+    document.addEventListener('click', function (event) {
+      if (!switcher.contains(event.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  }
+
+  languageOptions.forEach(function (option) {
+    option.addEventListener('click', function () {
+      const nextLanguage = option.dataset.language === 'en' ? 'en' : 'de';
+      if (nextLanguage === currentLanguage) { setOpen(false); return; }
+      setLanguage(nextLanguage);
+    });
+  });
+
+  function replaceTrimmed(value, replacement) {
+    const start = value.search(/\S/);
+    if (start === -1) return value;
+    const end = value.length - value.trimEnd().length;
+    return value.slice(0, start) + replacement + (end ? value.slice(value.length - end) : '');
+  }
+
+  function translateTextNode(node) {
+    if (!node || !node.nodeValue || !node.parentElement) return;
+    const parent = node.parentElement;
+    if (parent.closest('.language-switcher, script, style, noscript, textarea')) return;
+    const key = node.nodeValue.trim();
+    if (key && Object.prototype.hasOwnProperty.call(TEXT_EN, key)) {
+      node.nodeValue = replaceTrimmed(node.nodeValue, TEXT_EN[key]);
+    }
+  }
+
+  function translateAttributes(root) {
+    const elements = [];
+    if (root && root.nodeType === 1) elements.push(root);
+    if (root && root.querySelectorAll) elements.push.apply(elements, root.querySelectorAll('[aria-label], [title], [placeholder], [alt]'));
+    elements.forEach(function (element) {
+      if (element.closest && element.closest('.language-switcher')) return;
+      ['aria-label', 'title', 'placeholder', 'alt'].forEach(function (attribute) {
+        const value = element.getAttribute && element.getAttribute(attribute);
+        if (value && Object.prototype.hasOwnProperty.call(ATTR_EN, value)) element.setAttribute(attribute, ATTR_EN[value]);
+      });
+    });
+  }
+
+  function translateTree(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { translateTextNode(root); return; }
+    if (root.nodeType !== 1 && root.nodeType !== 9 && root.nodeType !== 11) return;
+    if (root.nodeType === 1 && root.closest && root.closest('.language-switcher')) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) translateTextNode(node);
+    translateAttributes(root);
+  }
+
+  function updateMetadata(language) {
+    const meta = META[language] || META.de;
+    document.documentElement.lang = language === 'en' ? 'en-GB' : 'de-DE';
+    document.documentElement.dir = 'ltr';
+    document.title = meta.title;
+
+    const selectors = [
+      ['meta[name="description"]', meta.description],
+      ['meta[name="keywords"]', meta.keywords],
+      ['meta[property="og:title"]', meta.title],
+      ['meta[property="og:description"]', meta.description],
+      ['meta[name="twitter:title"]', meta.title],
+      ['meta[name="twitter:description"]', meta.description],
+      ['meta[property="og:locale"]', language === 'en' ? 'en_GB' : 'de_DE']
+    ];
+    selectors.forEach(function (entry) {
+      const element = document.querySelector(entry[0]);
+      if (element) element.setAttribute('content', entry[1]);
+    });
+  }
+
+  updateSwitcher();
+  updateMetadata(currentLanguage);
+
+  if (currentLanguage === 'en') {
+    translateTree(document.body);
+    if (window.MutationObserver) {
+      const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.type === 'characterData') translateTextNode(mutation.target);
+          if (mutation.type === 'attributes') translateAttributes(mutation.target);
+          mutation.addedNodes.forEach(function (node) { translateTree(node); });
+        });
+      });
+      observer.observe(document.body, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+        attributes: true,
+        attributeFilter: ['aria-label', 'title', 'placeholder', 'alt']
+      });
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
