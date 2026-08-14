@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wohnwagen Eco 350 – ANKER Caravan</title>
+<meta content="Wohnwagen Eco 350 – kompakter und familienfreundlicher Caravan mit praktischer Vollausstattung." name="description"/>
+<style>
+  :root{
+    --warm-white:#fffdf9;
+    --beige:#f7f2e8;
+    --sand:#e9ddc8;
+    --brand:#081a39;
+    --brand-soft:#10264f;
+    --brand-dark:#9d8572;
+    --text:#151922;
+    --muted:#5f6673;
+    --line:rgba(8,26,57,.12);
+    --shadow:0 18px 44px rgba(8,26,57,.13);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(157,133,114,.13), transparent 34%),
+      linear-gradient(180deg,#ffffff 0%,#f7f2e8 100%);
+    color:var(--text);
+    line-height:1.8;
+  }
+
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+
+  header{
+    position:fixed;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 8px 26px rgba(8,26,57,.06);
+  }
+
+  .header-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:76px;
+    padding:10px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+
+  .logo img{
+    width:92px;
+    height:auto;
+  }
+
+  .back{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:999px;
+    background:var(--brand);
+    color:#fff;
+    font-weight:800;
+    box-shadow:0 10px 24px rgba(8,26,57,.2);
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+
+  .back:hover{
+    transform:translateY(-2px);
+    background:var(--brand-dark);
+    box-shadow:0 14px 28px rgba(8,26,57,.24);
+  }
+
+  .hero{
+    padding:42px 18px 28px;
+  }
+
+  .hero-wrap{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:30px;
+    align-items:center;
+  }
+
+  .hero-text{
+    padding:12px 4px;
+  }
+
+  .badge{
+    display:inline-block;
+    margin-bottom:14px;
+    background:rgba(157,133,114,.12);
+    color:var(--brand-dark);
+    border:1px solid rgba(157,133,114,.22);
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:800;
+    font-size:14px;
+  }
+
+  h1{
+    color:var(--brand);
+    font-size:50px;
+    line-height:1.08;
+    margin-bottom:16px;
+  }
+
+  .hero-text p{
+    font-size:20px;
+    color:var(--muted);
+    max-width:660px;
+  }
+
+  .slider-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 22px 50px rgba(8,26,57,.15);
+  }
+
+  .slider{
+    position:relative;
+    height:430px;
+    overflow:hidden;
+    background:#eef0f3;
+  }
+
+  .slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transform:scale(1.015);
+    transition:opacity .45s ease, transform 1.2s ease;
+  }
+
+  .slide.active{
+    opacity:1;
+    transform:scale(1);
+    z-index:2;
+  }
+
+  .slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .thumbs{
+    display:grid;
+    grid-template-columns:repeat(5, minmax(0, 1fr));
+    gap:10px;
+    padding:14px;
+    background:#fff;
+    border-top:1px solid rgba(8,26,57,.08);
+  }
+
+  .thumb{
+    position:relative;
+    height:74px;
+    border:2px solid transparent;
+    border-radius:14px;
+    overflow:hidden;
+    background:#eef0f3;
+    cursor:pointer;
+    padding:0;
+    box-shadow:0 8px 18px rgba(8,26,57,.08);
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .thumb.active{
+    border-color:var(--brand);
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(8,26,57,.16);
+  }
+
+  .content{
+    max-width:1040px;
+    margin:0 auto;
+    padding:20px 18px 48px;
+  }
+
+  .box{
+    background:linear-gradient(180deg,#fffdf9 0%,#f7f2e8 100%);
+    border:1px solid rgba(8,26,57,.12);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+    padding:34px 28px;
+    margin-bottom:26px;
+  }
+
+  .box p{
+    font-size:18px;
+    margin-bottom:16px;
+    color:#4f5663;
+  }
+
+  .box p:last-child{margin-bottom:0}
+
+  .section-title{
+    text-align:center;
+    margin-bottom:22px;
+  }
+
+  .section-title h2{
+    color:var(--brand);
+    font-size:36px;
+    margin-bottom:8px;
+  }
+
+  .section-title p{
+    color:var(--muted);
+    font-size:18px;
+  }
+
+  .features-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:18px;
+    margin-top:22px;
+  }
+
+  .feature-item{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:20px;
+    padding:18px;
+    box-shadow:0 8px 18px rgba(8,26,57,.06);
+    color:#4f5663;
+    font-size:17px;
+  }
+
+  .feature-item strong{color:var(--brand)}
+
+  .package-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:18px;
+    margin-top:22px;
+  }
+
+  .package-card{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 10px 22px rgba(8,26,57,.07);
+  }
+
+  .package-card h3{
+    color:var(--brand);
+    font-size:24px;
+    margin-bottom:12px;
+    line-height:1.2;
+  }
+
+  .package-card p{
+    margin:0 0 12px;
+    color:#4f5663;
+    font-size:16px;
+  }
+
+  .package-card ul{
+    margin:0;
+    padding-left:20px;
+    color:#4f5663;
+    font-size:16px;
+    line-height:1.75;
+  }
+
+  .package-card li{margin-bottom:5px}
+
+  .cta{
+    text-align:center;
+  }
+
+  .cta a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    background:var(--brand);
+    color:#fff;
+    font-weight:800;
+    box-shadow:0 14px 30px rgba(8,26,57,.18);
+  }
+
+
+
+
+  /* Preisübersicht */
+  .price-box{
+    position:relative;
+    overflow:hidden;
+  }
+
+  .price-box::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    right:-110px;
+    top:-120px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(157,133,114,.18),rgba(157,133,114,0) 70%);
+    pointer-events:none;
+  }
+
+  .price-highlight{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);
+    gap:18px;
+    align-items:stretch;
+    margin:24px 0 20px;
+  }
+
+  .price-summary,
+  .price-note{
+    border:1px solid rgba(8,26,57,.10);
+    border-radius:24px;
+    background:#fff;
+    box-shadow:0 10px 24px rgba(8,26,57,.07);
+  }
+
+  .price-summary{
+    padding:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+
+  .price-summary-copy{
+    display:grid;
+    gap:5px;
+  }
+
+  .price-kicker{
+    color:var(--brand-dark);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+  }
+
+  .price-model{
+    color:var(--brand);
+    font-size:25px;
+    font-weight:900;
+    line-height:1.15;
+  }
+
+  .price-subline{
+    color:var(--muted);
+    font-size:15px;
+  }
+
+  .price-amount{
+    flex:0 0 auto;
+    color:var(--brand);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:34px;
+    line-height:1;
+    font-weight:800;
+    font-variant-numeric:tabular-nums lining-nums;
+    font-feature-settings:"tnum" 1, "lnum" 1;
+    letter-spacing:.015em;
+    white-space:nowrap;
+  }
+
+  .price-note{
+    padding:21px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:linear-gradient(135deg,rgba(8,26,57,.98),rgba(16,38,79,.96));
+    color:#fff;
+  }
+
+  .price-note strong{
+    font-size:17px;
+    line-height:1.35;
+  }
+
+  .price-note span{
+    color:rgba(255,255,255,.74);
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .price-table-wrap{
+    overflow-x:auto;
+    border:1px solid rgba(8,26,57,.10);
+    border-radius:22px;
+    background:#fff;
+    box-shadow:0 10px 24px rgba(8,26,57,.06);
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .price-table{
+    width:100%;
+    min-width:760px;
+    border-collapse:collapse;
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .price-table th{
+    padding:15px 16px;
+    text-align:left;
+    color:#fff;
+    background:var(--brand);
+    font-size:14px;
+    letter-spacing:.01em;
+  }
+
+  .price-table th:last-child,
+  .price-table td:last-child{
+    text-align:right;
+    white-space:nowrap;
+  }
+
+  .price-table td{
+    padding:14px 16px;
+    border-bottom:1px solid rgba(8,26,57,.08);
+    color:#4f5663;
+    vertical-align:top;
+  }
+
+  .price-table tbody tr:last-child td{
+    border-bottom:0;
+  }
+
+  .price-table tbody tr:nth-child(even){
+    background:rgba(247,242,232,.55);
+  }
+
+  .price-table td:first-child{
+    color:var(--brand);
+    font-weight:800;
+  }
+
+  .price-table td:last-child{
+    color:var(--brand);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:800;
+    font-variant-numeric:tabular-nums lining-nums;
+    font-feature-settings:"tnum" 1, "lnum" 1;
+    letter-spacing:.01em;
+  }
+
+  .price-footnote{
+    margin-top:14px !important;
+    color:var(--muted) !important;
+    font-size:14px !important;
+    text-align:center;
+  }
+
+  @media (max-width: 760px){
+    .price-highlight{grid-template-columns:1fr}
+    .price-summary{align-items:flex-start}
+    .price-amount{font-size:30px}
+  }
+
+  @media (max-width: 520px){
+    .price-summary{flex-direction:column}
+    .price-summary,.price-note{border-radius:18px;padding:19px}
+    .price-model{font-size:22px}
+    .price-amount{font-size:29px}
+    .price-table th,.price-table td{padding:12px 13px}
+  }
+
+  /* Grundriss section */
+  .grundriss-image-wrap{
+    background:#fff;
+    border:1px solid rgba(8,26,57,.1);
+    border-radius:22px;
+    padding:14px;
+    box-shadow:0 10px 22px rgba(8,26,57,.07);
+    overflow:hidden;
+  }
+
+  .grundriss-image-wrap img{
+    width:100%;
+    height:auto;
+    border-radius:16px;
+    object-fit:contain;
+  }
+
+  @media (max-width: 640px){
+    .grundriss-image-wrap{padding:8px;border-radius:16px}
+    .grundriss-image-wrap img{border-radius:12px}
+  }
+
+  footer{
+    background:var(--brand);
+    color:rgba(255,255,255,.78);
+    padding:28px 18px;
+  }
+
+  .footer-inner{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    font-size:16px;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom{
+    opacity:0;
+    transition:opacity .38s ease, transform .38s ease;
+    will-change:opacity, transform;
+  }
+
+  .reveal{transform:translateY(14px)}
+  .reveal-left{transform:translateX(-14px)}
+  .reveal-right{transform:translateX(14px)}
+  .reveal-zoom{transform:translateY(12px) scale(.985)}
+  .show{opacity:1;transform:none}
+
+  .delay-1{transition-delay:.04s}
+  .delay-2{transition-delay:.08s}
+  .delay-3{transition-delay:.12s}
+  .delay-4{transition-delay:.16s}
+
+  @media (max-width: 900px){
+    .hero-wrap{grid-template-columns:1fr}
+    h1{font-size:38px}
+    .slider{height:320px}
+    .thumb{height:66px}
+    .features-grid,.package-grid{grid-template-columns:1fr}
+    .header-inner{min-height:68px}
+    .logo img{width:80px}
+  }
+
+  @media (max-width: 640px){
+    .hero{padding-top:24px}
+    h1{font-size:31px}
+    .hero-text p,.box p,.section-title p{font-size:17px}
+    .slider{height:250px}
+    .box{padding:24px 18px}
+    .feature-item{font-size:16px}
+    .section-title h2{font-size:28px}
+    .header-inner{gap:12px}
+    .logo img{width:72px}
+    .back{padding:10px 14px;font-size:14px}
+  }
+
+  /* Mobile gallery fix */
+  .slider{
+    aspect-ratio: 16 / 10;
+    height: auto !important;
+    min-height: 360px;
+  }
+
+  .slide{
+    background:#eef0f3;
+  }
+
+  .slide img,
+  .slide video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#eef0f3;
+  }
+
+  .slide.active{
+    pointer-events:auto;
+  }
+
+  .thumbs{
+    display:grid;
+    grid-template-columns:repeat(var(--thumb-count, 4), minmax(0, 1fr));
+    gap:10px;
+    padding:12px;
+    background:#fff;
+    border-top:1px solid rgba(8,26,57,.08);
+  }
+
+  .thumb{
+    width:100%;
+    height:78px;
+    border-radius:14px;
+  }
+
+  .thumb img,
+  .thumb video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  @media (max-width: 900px){
+    .slider{
+      min-height:0;
+      aspect-ratio: 4 / 3;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 86px) !important;
+      overflow-x:auto;
+      justify-content:start;
+      gap:9px;
+      padding:10px;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+    }
+
+    .thumb{
+      height:64px !important;
+      flex:0 0 auto;
+    }
+  }
+
+  @media (max-width: 640px){
+    .slider{
+      aspect-ratio: 1 / 1;
+      border-radius:0;
+    }
+
+    .slider-card{
+      border-radius:22px;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 78px) !important;
+      gap:8px;
+      padding:9px;
+    }
+
+    .thumb{
+      height:58px !important;
+      border-radius:12px;
+    }
+  }
+
+  @media (max-width: 420px){
+    .slider{
+      aspect-ratio: 4 / 5;
+    }
+
+    .thumbs{
+      grid-template-columns:repeat(var(--thumb-count, 4), 70px) !important;
+    }
+
+    .thumb{
+      height:54px !important;
+    }
+  }
+
+
+
+  /* Stable header / scroll bar fix */
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  header{
+    width:100%;
+    left:0;
+    right:0;
+    transform:translateZ(0);
+    -webkit-transform:translateZ(0);
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+
+  .header-inner{
+    width:100%;
+    flex-wrap:nowrap;
+  }
+
+  .logo,
+  .back{
+    flex:0 0 auto;
+  }
+
+  .back{
+    white-space:nowrap;
+  }
+
+  header .reveal,
+  header .reveal-left,
+  header .reveal-right,
+  header .reveal-zoom{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+    will-change:auto !important;
+  }
+
+
+  /* Fixed header: stays visible while scrolling */
+  :root{
+    --fixed-header-height:76px;
+  }
+
+  body{
+    padding-top:var(--fixed-header-height);
+  }
+
+  header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    z-index:9999 !important;
+  }
+
+  @media (max-width: 900px){
+    :root{
+      --fixed-header-height:68px;
+    }
+  }
+
+  /* Keep header/logo/back button always visible, not affected by scroll reveal animation */
+  header,
+  header .header-inner,
+  header .logo,
+  header .back{
+    opacity:1 !important;
+    transform:none !important;
+    visibility:visible !important;
+  }
+
+
+  /* Correct folding header on scroll */
+  header,
+  header .header-inner,
+  header .logo img,
+  header .back{
+    transition:
+      min-height .26s ease,
+      padding .26s ease,
+      width .26s ease,
+      font-size .26s ease,
+      transform .26s ease,
+      box-shadow .26s ease,
+      background .26s ease !important;
+  }
+
+  header.header-folded{
+    transform:translateY(-10px) !important;
+    background:rgba(255,255,255,.985) !important;
+    box-shadow:0 8px 22px rgba(8,26,57,.12) !important;
+  }
+
+  header.header-folded .header-inner{
+    min-height:50px !important;
+    padding-top:4px !important;
+    padding-bottom:4px !important;
+  }
+
+  header.header-folded .logo img{
+    width:58px !important;
+  }
+
+  header.header-folded .back{
+    padding:7px 12px !important;
+    font-size:12px !important;
+  }
+
+  @media (max-width: 900px){
+    header.header-folded{
+      transform:translateY(-8px) !important;
+    }
+
+    header.header-folded .header-inner{
+      min-height:48px !important;
+      padding-top:4px !important;
+      padding-bottom:4px !important;
+    }
+
+    header.header-folded .logo img{
+      width:54px !important;
+    }
+  }
+
+  @media (max-width: 640px){
+    header.header-folded{
+      transform:translateY(-7px) !important;
+    }
+
+    header.header-folded .header-inner{
+      min-height:46px !important;
+      padding-top:3px !important;
+      padding-bottom:3px !important;
+    }
+
+    header.header-folded .logo img{
+      width:50px !important;
+    }
+
+    header.header-folded .back{
+      padding:6px 10px !important;
+      font-size:12px !important;
+    }
+  }
+
+</style>
+
+<style id="anker-language-switcher-styles">
+.anker-header-tools,.anker-model-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+.anker-language-switcher{position:relative;z-index:2147483000;font-family:Montserrat,Inter,Arial,sans-serif;flex:0 0 auto}
+.anker-language-button{min-width:88px;height:44px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(8,26,57,.16);border-radius:999px;background:rgba(255,255,255,.98);color:#081a39;box-shadow:0 10px 26px rgba(8,26,57,.10);cursor:pointer;transition:.2s ease}
+.anker-language-button:hover,.anker-language-button:focus-visible,.anker-language-switcher.is-open .anker-language-button{border-color:rgba(157,133,114,.72);box-shadow:0 12px 30px rgba(8,26,57,.16);transform:translateY(-1px);outline:none}
+.anker-language-flag{display:block;width:22px;height:22px;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1px rgba(8,26,57,.12)}
+.anker-language-code{font-size:13px;font-weight:900;letter-spacing:.08em}
+.anker-language-chevron{font-size:16px;line-height:1;transition:transform .2s ease}
+.anker-language-switcher.is-open .anker-language-chevron{transform:rotate(180deg)}
+.anker-language-menu{position:absolute;top:calc(100% + 10px);right:0;width:218px;padding:8px;display:grid;gap:5px;border:1px solid rgba(8,26,57,.12);border-radius:18px;background:#fff;box-shadow:0 22px 55px rgba(8,26,57,.20);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;pointer-events:none;transition:.18s ease}
+.anker-language-switcher.is-open .anker-language-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto}
+.anker-language-option{width:100%;min-height:58px;padding:9px 11px;display:grid;grid-template-columns:34px 1fr 22px;gap:10px;align-items:center;border:0;border-radius:13px;background:transparent;color:#081a39;text-align:left;cursor:pointer;transition:.18s ease}
+.anker-language-option:hover,.anker-language-option:focus-visible{background:linear-gradient(90deg,rgba(8,26,57,.07),rgba(157,133,114,.12));transform:translateX(2px);outline:none}
+.anker-language-option.is-active{background:rgba(157,133,114,.13)}
+.anker-language-option .anker-language-flag{width:24px;height:24px}
+.anker-language-copy{display:grid;gap:2px}
+.anker-language-copy strong{font-size:14px;font-weight:900}
+.anker-language-copy small{color:#6b7280;font-size:11px;font-weight:800;letter-spacing:.08em}
+.anker-language-check{color:#9d8572;font-size:16px;font-weight:950;opacity:0}
+.anker-language-option.is-active .anker-language-check{opacity:1}
+@media(max-width:1080px){
+  header.site-header .anker-header-tools{position:absolute!important;right:72px!important;top:50%!important;transform:translateY(-50%)!important;z-index:2147483200!important}
+  header.site-header .anker-header-tools .nav-actions{display:none!important}
+  header.site-header .anker-language-button{width:42px;min-width:42px;height:42px;padding:0;gap:0}
+  header.site-header .anker-language-code,header.site-header .anker-language-chevron{display:none}
+  header.site-header .anker-language-menu{right:-8px}
+}
+@media(max-width:640px){
+  header.site-header .anker-header-tools{right:62px!important}
+  header.site-header .anker-language-button{width:38px;min-width:38px;height:38px}
+  header.site-header .anker-language-flag{width:20px;height:20px}
+  .anker-model-header-actions{gap:7px}
+  .anker-model-header-actions .anker-language-button{width:40px;min-width:40px;height:40px;padding:0;gap:0}
+  .anker-model-header-actions .anker-language-code,.anker-model-header-actions .anker-language-chevron{display:none}
+  .anker-model-header-actions .anker-language-menu{right:0;width:min(218px,calc(100vw - 24px))}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<a class="logo reveal-left" href="index.html">
+<img alt="ANKER Caravan" src="images/logo-icon.png"/>
+</a>
+<div class="anker-model-header-actions"><div class="anker-language-switcher notranslate" id="ankerLanguageSwitcher" translate="no">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="anker-language-button" id="ankerLanguageButton" type="button">
+<img alt="Deutsch" class="anker-language-flag" id="ankerLanguageCurrentFlag" src="images/de.png"/>
+<span class="anker-language-code" id="ankerLanguageCode">DE</span>
+<span aria-hidden="true" class="anker-language-chevron">⌄</span>
+</button>
+<div aria-label="Sprache auswählen" class="anker-language-menu" id="ankerLanguageMenu" role="menu">
+<button class="anker-language-option" data-language="de" role="menuitem" type="button">
+<img alt="Deutsch" class="anker-language-flag" src="images/de.png"/>
+<span class="anker-language-copy"><strong>Deutsch</strong><small>DE</small></span>
+<span aria-hidden="true" class="anker-language-check">✓</span>
+</button>
+<button class="anker-language-option" data-language="en" role="menuitem" type="button">
+<img alt="English" class="anker-language-flag" src="images/gb.png"/>
+<span class="anker-language-copy"><strong>English</strong><small>EN</small></span>
+<span aria-hidden="true" class="anker-language-check">✓</span>
+</button>
+</div>
+</div><a class="back reveal-right" href="index.html#produkte">Zurück</a></div>
+</div>
+</header>
+<section class="hero">
+<div class="hero-wrap">
+<div class="hero-text reveal-left">
+<div class="badge">Familienfreundlicher Caravan</div>
+<h1>Wohnwagen Eco 350</h1>
+<p>
+        Der Eco 350 ist kompakt, familienfreundlich und ideal für flexible Reisen – mit gemütlichen Schlafplätzen, praktischem Stauraum und mehr Unabhängigkeit unterwegs.
+      </p>
+</div>
+<div class="slider-card reveal-right">
+<div class="slider" id="ecoSlider">
+<div class="slide active"><img alt="Wohnwagen Eco 350 Bild 1" src="images/eco-350-1.jpeg"/></div>
+<div class="slide"><img alt="Wohnwagen Eco 350 Bild 2" src="images/eco-350-2.jpeg"/></div>
+<div class="slide"><img alt="Wohnwagen Eco 350 Bild 3" src="images/eco-350-4.jpeg"/></div>
+<div class="slide"><img alt="Wohnwagen Eco 350 Bild 4" src="images/eco-350-5.jpeg"/></div>
+<div class="slide"><img alt="Wohnwagen Eco 350 Zusatzbild" src="images/eco-350-6.jpeg"/></div>
+<div class="slide">
+<video aria-label="Wohnwagen Eco 350 Video" controls="" muted="" playsinline="" poster="images/eco-350-video-poster.jpeg" preload="metadata">
+<source src="videos/eco-350-video.mp4" type="video/mp4"/>
+            Ihr Browser unterstützt dieses Videoformat nicht.
+          </video>
+</div>
+</div>
+<div aria-label="Eco 350 Galerie Vorschau" class="thumbs" id="ecoThumbs" style="--thumb-count:6">
+<button aria-label="Bild 1 anzeigen" class="thumb active" type="button"><img alt="Wohnwagen Eco 350 Vorschau 1" src="images/eco-350-1.jpeg"/></button>
+<button aria-label="Bild 2 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Eco 350 Vorschau 2" src="images/eco-350-2.jpeg"/></button>
+<button aria-label="Bild 3 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Eco 350 Vorschau 3" src="images/eco-350-4.jpeg"/></button>
+<button aria-label="Bild 4 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Eco 350 Vorschau 4" src="images/eco-350-5.jpeg"/></button>
+<button aria-label="Zusatzbild anzeigen" class="thumb" type="button"><img alt="Wohnwagen Eco 350 Zusatzbild Vorschau" src="images/eco-350-6.jpeg"/></button>
+<button aria-label="Video anzeigen" class="thumb" type="button">
+<video muted="" playsinline="" poster="images/eco-350-video-poster.jpeg" preload="metadata">
+<source src="videos/eco-350-video.mp4" type="video/mp4"/>
+</video>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="content">
+<div class="box reveal-zoom grundriss-section">
+<div class="section-title">
+<h2>Grundriss</h2>
+<p>Layout-Plan des Wohnwagen Eco 350</p>
+</div>
+<div class="grundriss-image-wrap">
+<img alt="Grundriss Wohnwagen Eco 350" src="images/grundriss-eco-350.png"/>
+</div>
+</div>
+<div class="box reveal">
+<div class="section-title">
+<h2>Technische Daten</h2>
+<p>Wohnwagen Eco 350</p>
+</div>
+<div class="features-grid">
+<div class="feature-item"><strong>Rahmen:</strong> Stahl feuerverzinkt</div>
+<div class="feature-item"><strong>Länge:</strong> 3,50 m</div>
+<div class="feature-item"><strong>Breite:</strong> 2,00 m</div>
+<div class="feature-item"><strong>Höhe:</strong> 2,00 m</div>
+<div class="feature-item"><strong>Stehhöhe:</strong> 1,90 m</div>
+<div class="feature-item"><strong>Länge mit Deichsel:</strong> 5,00 m</div>
+<div class="feature-item"><strong>Leergewicht:</strong> 880 kg, variiert je nach Paket</div>
+<div class="feature-item"><strong>Zulässiges Gesamtgewicht:</strong> 1500 kg</div>
+<div class="feature-item"><strong>Stützlast:</strong> 75–100 kg, je nach Paket</div>
+<div class="feature-item"><strong>Hauptbett:</strong> umbaubare Sitzecke zum Bett, 130 × 194 cm</div>
+<div class="feature-item"><strong>Stockbett:</strong> Bettflächen 60 × 194 cm</div>
+</div>
+</div>
+<div class="box reveal-zoom">
+<div class="section-title">
+<h2>Voll Paket</h2>
+<p>Der Eco 350 ist nur als Voll Paket erhältlich</p>
+</div>
+<div class="package-grid">
+<div class="package-card">
+<h3>Außen &amp; Fahrwerk</h3>
+<ul>
+<li>Alle Fenster mit Aufstellmechanismus, Fliegengitter und Sonnenschutz</li>
+<li>Bugkasten aus GFK</li>
+<li>Heckstoßstange aus GFK</li>
+<li>AL-KO Auflaufeinrichtung</li>
+<li>AL-KO gebremste Achse</li>
+<li>AL-KO Stützrad</li>
+<li>AL-KO Räder und Reifen</li>
+<li>AL-KO Stützen, 4 Stück</li>
+</ul>
+</div>
+<div class="package-card">
+<h3>Wasser &amp; Sanitär</h3>
+<ul>
+<li>100-Liter-Wassertank</li>
+<li>Außenwasseranschluss</li>
+<li>Außendusche</li>
+<li>12-Volt-Wasserpumpe</li>
+<li>WC, Importmodell</li>
+<li>Waschbecken im Bad</li>
+<li>Türfixierung</li>
+</ul>
+</div>
+<div class="package-card">
+<h3>Innenausstattung</h3>
+<ul>
+<li>Elektroinstallation</li>
+<li>Maßgefertigte Möbel</li>
+<li>LED-Signalleuchten</li>
+<li>LED-Innenbeleuchtung</li>
+<li>Außenbeleuchtung</li>
+<li>220-Volt-Stromanschluss und Kabel</li>
+<li>Bodenbelag und Teppich</li>
+<li>Läufer und Platzset</li>
+</ul>
+</div>
+<div class="package-card">
+<h3>Küche &amp; Energie</h3>
+<ul>
+<li>Elektrokocher</li>
+<li>Elektrobackofen</li>
+<li>Spülbecken und Armatur in Chromoptik</li>
+<li>Solaranlage</li>
+<li>12-Volt-Kühlschrank, 90 Liter</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="box reveal">
+<div class="section-title">
+<h2>Extras</h2>
+<p>Optionale Ausstattung kann nach Wunsch ergänzt werden</p>
+</div>
+<div class="package-grid">
+<div class="package-card">
+<h3>Solar &amp; Strom</h3>
+<ul>
+<li>Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1500-W-Wechselrichter</li>
+<li>Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1200-W-Wechselrichter</li>
+<li>Doppel-Solarpanelsystem mit MPPT, 150-Ah-Batterie und 1200-W-Wechselrichter</li>
+<li>Einzel-Solarpanelsystem mit MPPT, 100-Ah-Batterie und 1200-W-Wechselrichter</li>
+</ul>
+</div>
+<div class="package-card">
+<h3>Komfort &amp; Zubehör</h3>
+<ul>
+<li>Kühlschrank 12 Volt, 45 Liter</li>
+<li>Kühlschrank 12 Volt, 90 Liter</li>
+<li>Kühlschrank 12 Volt, 138 Liter</li>
+<li>Kassetten-WC</li>
+<li>Markisenkassette</li>
+<li>Außenkocher</li>
+<li>Backofen</li>
+<li>Dieselheizung </li>
+<li>TV mit Satellitenreceiver</li>
+<li>Stabilisator / Antischlingerkupplung, AL-KO 3-System</li>
+<li>Maxel 100 Isolierung</li>
+<li>Glasset, Berhimi</li>
+<li>Dachhaube Heki Europe</li>
+<li>Warmwasserbereiter, Therme</li>
+<li>Klimaanlage</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="box reveal price-box" id="preise">
+<div class="section-title">
+<h2>Preisübersicht</h2>
+<p>Basismodell und zubuchbare Optionen für den Eco 350</p>
+</div>
+<div class="price-highlight">
+<div class="price-summary">
+<div class="price-summary-copy">
+<span class="price-kicker">Voll Paket</span>
+<strong class="price-model">Eco 350</strong>
+<span class="price-subline">Komplettpaket · Preis inkl. MwSt.</span>
+</div>
+<div class="price-amount">15.000,00 €</div>
+</div>
+<div class="price-note">
+<strong>Nur als Voll Paket erhältlich</strong>
+<span>Die unten aufgeführten Extras können je nach Wunsch zusätzlich gebucht werden.</span>
+</div>
+</div>
+<div class="price-table-wrap" role="region" aria-label="Preisliste Eco 350" tabindex="0">
+<table class="price-table">
+<thead>
+<tr>
+<th scope="col">Option / Extra</th>
+<th scope="col">Beschreibung / Details</th>
+<th scope="col">Aufpreis (brutto)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 200-Ah-Batterie, 1500-W-Wechselrichter</td><td>1.346,00 €</td></tr>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 200-Ah-Batterie, 1200-W-Wechselrichter</td><td>900,00 €</td></tr>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 150-Ah-Batterie, 1200-W-Wechselrichter</td><td>964,00 €</td></tr>
+<tr><td>Einzel-Solarpaneelsystem</td><td>MPPT, 100-Ah-Batterie, 1200-W-Wechselrichter</td><td>785,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (45 Liter)</td><td>369,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (90 Liter)</td><td>589,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (138 Liter)</td><td>695,00 €</td></tr>
+<tr><td>Kassetten-WC</td><td>Standardausführung für Nasszelle</td><td>579,00 €</td></tr>
+<tr><td>Markisenkassette</td><td>Kassettenmarkise für den Außenbereich</td><td>361,00 €</td></tr>
+<tr><td>Außenkocher</td><td>Zusätzliche Kochmöglichkeit außen</td><td>264,00 €</td></tr>
+<tr><td>Backofen</td><td>Integrierter Einbaubackofen</td><td>341,00 €</td></tr>
+<tr><td>Dieselheizung</td><td>Leistungsstarke Standheizung für autarkes Camping</td><td>299,00 €</td></tr>
+<tr><td>TV (Satellitenreceiver)</td><td>Komplettset inklusive Receiver</td><td>300,00 €</td></tr>
+<tr><td>Stabilisator / Antischlingerkupplung</td><td>ALKO (3-System) für maximale Fahrsicherheit</td><td>611,00 €</td></tr>
+<tr><td>Maxel 100 Isolierung</td><td>Optimierte Thermo-Isolierung für kalte Tage</td><td>422,00 €</td></tr>
+<tr><td>Glasset (Berhimi)</td><td>Zusätzlicher Aufpreis für Premium-Verglasung</td><td>611,00 €</td></tr>
+<tr><td>Dachhaube Heki Europe</td><td>Großes Dachfenster für mehr Tageslicht und Belüftung</td><td>300,00 €</td></tr>
+<tr><td>Achse mit Bremse</td><td>Spezialachse für Breiten 2,40 m und 2,70 m</td><td>611,00 €</td></tr>
+<tr><td>Warmwasserbereiter (Therme)</td><td>Zentrale Warmwasserversorgung im Fahrzeug</td><td>522,00 €</td></tr>
+<tr><td>Klimaanlage</td><td>Leistungsstarkes Kühlsystem für den Wohnraum</td><td>996,00 €</td></tr>
+</tbody>
+</table>
+</div>
+<p class="price-footnote">Alle Preise sind Bruttopreise und gelten gemäß der offiziellen Eco-350-Preisliste, Stand 2026.</p>
+</div>
+<div class="box cta reveal">
+<div class="section-title">
+<h2>Anfrage</h2>
+<p>Bei Interesse können Sie uns direkt kontaktieren.</p>
+</div>
+<a href="kontakt.html">Kontakt aufnehmen</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+    © ANKER Caravan
+  </div>
+</footer>
+<script>
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.14 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom').forEach((el, index) => {
+    el.classList.add(`delay-${Math.min(index + 1, 4)}`);
+    revealObserver.observe(el);
+  });
+
+  window.addEventListener('load', () => {
+    const firstView = document.querySelectorAll('.hero-wrap > *');
+    firstView.forEach((el, index) => {
+      setTimeout(() => el.classList.add('show'), 35 * index);
+    });
+  });
+
+  const slides = document.querySelectorAll('#ecoSlider .slide');
+  const thumbs = document.querySelectorAll('#ecoThumbs .thumb');
+  const slider = document.querySelector('#ecoSlider');
+  let index = 0;
+  let autoSlideTimer;
+  let resumeTimer;
+
+  function pauseAutoSlide(){
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+    if (resumeTimer) clearTimeout(resumeTimer);
+
+    autoSlideTimer = null;
+    resumeTimer = setTimeout(() => {
+      startAutoSlide();
+    }, 10000);
+  }
+
+  thumbs.forEach((thumb, thumbIndex) => {
+    thumb.addEventListener('click', () => {
+      pauseAutoSlide();
+      index = thumbIndex;
+      showSlide(index);
+    });
+  });
+
+  if (slider) {
+    slider.addEventListener('click', pauseAutoSlide);
+  }
+
+  function showSlide(i){
+    slides.forEach((slide, sIndex) => {
+      const isActive = sIndex === i;
+      slide.classList.toggle('active', isActive);
+
+      const video = slide.querySelector('video');
+      if (video && !isActive) {
+        video.pause();
+      }
+    });
+
+    thumbs.forEach((thumb, tIndex) => {
+      thumb.classList.toggle('active', tIndex === i);
+    });
+  }
+
+  document.querySelectorAll('#ecoSlider video').forEach((video) => {
+    video.addEventListener('play', pauseAutoSlide);
+    video.addEventListener('ended', () => {
+      startAutoSlide();
+    });
+  });
+
+  function startAutoSlide(){
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 3000);
+  }
+
+  startAutoSlide();
+
+  const pageHeader = document.querySelector('header');
+
+  function updateFoldingHeader(){
+    if (!pageHeader) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    pageHeader.classList.toggle('header-folded', scrollTop > 35);
+  }
+
+  window.addEventListener('scroll', updateFoldingHeader, { passive:true });
+  window.addEventListener('load', updateFoldingHeader);
+  updateFoldingHeader();
+
+</script>
+
+<script id="anker-language-switcher-script">
+(function(){
+'use strict';
+const STORAGE_KEY='anker_caravan_language_v1';
+const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Familienfreundlicher Caravan":"Family-friendly caravan","Wohnwagen Eco 350":"Eco 350 caravan","Der Eco 350 ist kompakt, familienfreundlich und ideal für flexible Reisen – mit gemütlichen Schlafplätzen, praktischem Stauraum und mehr Unabhängigkeit unterwegs.":"The Eco 350 is compact, family-friendly and ideal for flexible travel, with cosy berths, practical storage and greater independence on the road.","Layout-Plan des Wohnwagen Eco 350":"Floor-plan layout of the Eco 350 caravan","880 kg, variiert je nach Paket":"880 kg, depending on package","Hauptbett:":"Main bed:","umbaubare Sitzecke zum Bett, 130 × 194 cm":"convertible seating area forming a 130 × 194 cm bed","Stockbett:":"Bunk bed:","Bettflächen 60 × 194 cm":"bed surfaces measuring 60 × 194 cm","Der Eco 350 ist nur als Voll Paket erhältlich":"The Eco 350 is available only with the Full package","Außen & Fahrwerk":"Exterior & chassis","Alle Fenster mit Aufstellmechanismus, Fliegengitter und Sonnenschutz":"All windows with opening mechanism, fly screen and sunshade","Bugkasten aus GFK":"GRP front storage box","Heckstoßstange aus GFK":"GRP rear bumper","AL-KO Auflaufeinrichtung":"AL-KO overrun system","AL-KO gebremste Achse":"AL-KO braked axle","AL-KO Stützrad":"AL-KO jockey wheel","AL-KO Räder und Reifen":"AL-KO wheels and tyres","AL-KO Stützen, 4 Stück":"Four AL-KO stabiliser legs","Wasser & Sanitär":"Water & sanitation","100-Liter-Wassertank":"100-litre water tank","Außenwasseranschluss":"External water connection","Außendusche":"Outdoor shower","WC, Importmodell":"Toilet, imported model","Waschbecken im Bad":"Bathroom washbasin","Türfixierung":"Door retainer","Innenausstattung":"Interior equipment","Elektroinstallation":"Electrical installation","Maßgefertigte Möbel":"Custom-made furniture","LED-Innenbeleuchtung":"LED interior lighting","Außenbeleuchtung":"Exterior lighting","220-Volt-Stromanschluss und Kabel":"220-volt power connection and cable","Bodenbelag und Teppich":"Floor covering and carpet","Läufer und Platzset":"Runner and placemat","Küche & Energie":"Kitchen & energy","Spülbecken und Armatur in Chromoptik":"Sink and chrome-look tap","12-Volt-Kühlschrank, 90 Liter":"12-volt refrigerator, 90 litres","Extras":"Extras","Optionale Ausstattung kann nach Wunsch ergänzt werden":"Optional equipment can be added on request","Solar & Strom":"Solar & power","Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1500-W-Wechselrichter":"Dual solar-panel system with MPPT, 200 Ah battery and 1500 W inverter","Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1200-W-Wechselrichter":"Dual solar-panel system with MPPT, 200 Ah battery and 1200 W inverter","Doppel-Solarpanelsystem mit MPPT, 150-Ah-Batterie und 1200-W-Wechselrichter":"Dual solar-panel system with MPPT, 150 Ah battery and 1200 W inverter","Einzel-Solarpanelsystem mit MPPT, 100-Ah-Batterie und 1200-W-Wechselrichter":"Single solar-panel system with MPPT, 100 Ah battery and 1200 W inverter","Komfort & Zubehör":"Comfort & accessories","Kühlschrank 12 Volt, 45 Liter":"12-volt refrigerator, 45 litres","Kühlschrank 12 Volt, 90 Liter":"12-volt refrigerator, 90 litres","Kühlschrank 12 Volt, 138 Liter":"12-volt refrigerator, 138 litres","Kassetten-WC":"Cassette toilet","Markisenkassette":"Cassette awning","Außenkocher":"Outdoor cooker","Backofen":"Oven","TV mit Satellitenreceiver":"TV with satellite receiver","Stabilisator / Antischlingerkupplung, AL-KO 3-System":"Stabiliser / anti-sway coupling, AL-KO 3-system","Maxel 100 Isolierung":"Maxel 100 insulation","Glasset, Berhimi":"Glass set, Berhimi","Dachhaube Heki Europe":"Heki Europe rooflight","Warmwasserbereiter, Therme":"Water heater"};
+
+const PRICE_TEXT_EN={
+  "Preisübersicht":"Price overview",
+  "Basismodell und zubuchbare Optionen für den Eco 350":"Base model and optional extras for the Eco 350",
+  "Voll Paket":"Full package",
+  "Komplettpaket · Preis inkl. MwSt.":"Complete package · Price incl. VAT",
+  "Nur als Voll Paket erhältlich":"Available only as the Full package",
+  "Die unten aufgeführten Extras können je nach Wunsch zusätzlich gebucht werden.":"The extras listed below can be added as required.",
+  "Option / Extra":"Option / Extra",
+  "Beschreibung / Details":"Description / Details",
+  "Aufpreis (brutto)":"Additional price (incl. VAT)",
+  "Doppel-Solarpaneelsystem":"Dual solar-panel system",
+  "Einzel-Solarpaneelsystem":"Single solar-panel system",
+  "Kühlschrank (12 Volt)":"Refrigerator (12 volt)",
+  "Standardausführung für Nasszelle":"Standard version for wet room",
+  "Kassettenmarkise für den Außenbereich":"Cassette awning for outdoor use",
+  "Zusätzliche Kochmöglichkeit außen":"Additional outdoor cooking facility",
+  "Integrierter Einbaubackofen":"Integrated built-in oven",
+  "Leistungsstarke Standheizung für autarkes Camping":"Powerful parking heater for off-grid camping",
+  "TV (Satellitenreceiver)":"TV (satellite receiver)",
+  "Komplettset inklusive Receiver":"Complete set including receiver",
+  "Stabilisator / Antischlingerkupplung":"Stabiliser / anti-sway coupling",
+  "ALKO (3-System) für maximale Fahrsicherheit":"ALKO (3-system) for maximum driving safety",
+  "Optimierte Thermo-Isolierung für kalte Tage":"Optimised thermal insulation for cold days",
+  "Glasset (Berhimi)":"Glass set (Berhimi)",
+  "Zusätzlicher Aufpreis für Premium-Verglasung":"Additional charge for premium glazing",
+  "Großes Dachfenster für mehr Tageslicht und Belüftung":"Large roof window for more daylight and ventilation",
+  "Achse mit Bremse":"Braked axle",
+  "Spezialachse für Breiten 2,40 m und 2,70 m":"Special axle for widths of 2.40 m and 2.70 m",
+  "Warmwasserbereiter (Therme)":"Water heater",
+  "Zentrale Warmwasserversorgung im Fahrzeug":"Central hot-water supply in the vehicle",
+  "Leistungsstarkes Kühlsystem für den Wohnraum":"Powerful cooling system for the living area",
+  "Alle Preise sind Bruttopreise und gelten gemäß der offiziellen Eco-350-Preisliste, Stand 2026.":"All prices include VAT and apply according to the official Eco 350 price list, 2026 edition."
+};
+Object.assign(TEXT_EN,PRICE_TEXT_EN);
+
+const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
+
+ATTR_EN["Preisliste Eco 350"]="Eco 350 price list";
+
+const META={"de_title":"Wohnwagen Eco 350 – ANKER Caravan","en_title":"Eco 350 caravan – ANKER Caravan","de_desc":"Wohnwagen Eco 350 – kompakter und familienfreundlicher Caravan mit praktischer Vollausstattung.","en_desc":"Eco 350 caravan – a compact, family-friendly caravan with practical full equipment."};
+const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
+function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
+function saveLanguage(lang){try{localStorage.setItem(STORAGE_KEY,lang)}catch(e){}location.reload()}
+const lang=getLanguage();
+const sw=document.getElementById('ankerLanguageSwitcher');
+const btn=document.getElementById('ankerLanguageButton');
+const menu=document.getElementById('ankerLanguageMenu');
+const flag=document.getElementById('ankerLanguageCurrentFlag');
+const code=document.getElementById('ankerLanguageCode');
+const opts=Array.from(document.querySelectorAll('.anker-language-option[data-language]'));
+function openSwitcher(open){if(!sw||!btn)return;sw.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',open?'true':'false')}
+function updateSwitcher(){
+ if(flag){flag.src=FLAG[lang].src;flag.alt=FLAG[lang].alt}
+ if(code)code.textContent=lang.toUpperCase();
+ if(btn){btn.setAttribute('aria-label',lang==='en'?'Change language':'Sprache ändern');btn.title=lang==='en'?'Change language':'Sprache ändern'}
+ if(menu)menu.setAttribute('aria-label',lang==='en'?'Select language':'Sprache auswählen');
+ opts.forEach(o=>{const active=o.dataset.language===lang;o.classList.toggle('is-active',active);o.setAttribute('aria-current',active?'true':'false')})
+}
+if(btn&&sw){btn.addEventListener('click',e=>{e.stopPropagation();openSwitcher(!sw.classList.contains('is-open'))});document.addEventListener('click',e=>{if(!sw.contains(e.target))openSwitcher(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')openSwitcher(false)})}
+opts.forEach(o=>o.addEventListener('click',()=>{const next=o.dataset.language==='en'?'en':'de';next===lang?openSwitcher(false):saveLanguage(next)}));
+function replaceTrimmed(value,replacement){const start=value.search(/\S/);if(start===-1)return value;const end=value.length-value.trimEnd().length;return value.slice(0,start)+replacement+(end?value.slice(value.length-end):'')}
+function translateText(node){if(!node||!node.nodeValue||!node.parentElement)return;const p=node.parentElement;if(p.closest('.anker-language-switcher,script,style,noscript,textarea'))return;const key=node.nodeValue.trim();if(key&&Object.prototype.hasOwnProperty.call(TEXT_EN,key))node.nodeValue=replaceTrimmed(node.nodeValue,TEXT_EN[key])}
+function translateAttrs(root){
+ const els=[];if(root&&root.nodeType===1)els.push(root);if(root&&root.querySelectorAll)els.push(...root.querySelectorAll('[aria-label],[title],[placeholder],[alt]'));
+ els.forEach(el=>{if(el.closest&&el.closest('.anker-language-switcher'))return;['aria-label','title','placeholder','alt'].forEach(a=>{const v=el.getAttribute&&el.getAttribute(a);if(v&&Object.prototype.hasOwnProperty.call(ATTR_EN,v))el.setAttribute(a,ATTR_EN[v])})})
+}
+function translateRoot(root){
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(translateText);translateAttrs(root)
+}
+function setMeta(){
+ document.documentElement.lang=lang==='en'?'en-GB':'de-DE';
+ document.title=lang==='en'?META.en_title:META.de_title;
+ const d=document.querySelector('meta[name="description"]');if(d)d.content=lang==='en'?META.en_desc:META.de_desc;
+ const ogt=document.querySelector('meta[property="og:title"]');if(ogt)ogt.content=document.title;
+ const ogd=document.querySelector('meta[property="og:description"]');if(ogd)ogd.content=lang==='en'?META.en_desc:META.de_desc;
+ const ogl=document.querySelector('meta[property="og:locale"]');if(ogl)ogl.content=lang==='en'?'en_GB':'de_DE';
+ const twt=document.querySelector('meta[name="twitter:title"]');if(twt)twt.content=document.title;
+ const twd=document.querySelector('meta[name="twitter:description"]');if(twd)twd.content=lang==='en'?META.en_desc:META.de_desc;
+}
+updateSwitcher();setMeta();
+if(lang==='en'){
+ translateRoot(document.body);
+ const observer=new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===3)translateText(n);else if(n.nodeType===1)translateRoot(n)})));
+ observer.observe(document.body,{childList:true,subtree:true});
+}
+})();
+</script>
+</body>
+</html>
