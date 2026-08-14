@@ -319,6 +319,121 @@
 
 
 
+  /* Paketpreise */
+  .package-prices-box{
+    position:relative;
+    overflow:hidden;
+  }
+
+  .package-prices-box::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    right:-125px;
+    top:-135px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(157,133,114,.18),rgba(157,133,114,0) 70%);
+    pointer-events:none;
+  }
+
+  .package-price-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:24px;
+  }
+
+  .package-price-card{
+    position:relative;
+    min-height:168px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:18px;
+    border:1px solid rgba(8,26,57,.10);
+    border-radius:24px;
+    background:linear-gradient(180deg,#ffffff 0%,#fffdf9 100%);
+    box-shadow:0 10px 24px rgba(8,26,57,.07);
+    overflow:hidden;
+  }
+
+  .package-price-card::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-38px;
+    bottom:-42px;
+    border-radius:50%;
+    background:rgba(157,133,114,.09);
+    pointer-events:none;
+  }
+
+  .package-price-card h3{
+    position:relative;
+    z-index:1;
+    margin:0;
+    color:var(--brand);
+    font-size:23px;
+    line-height:1.2;
+  }
+
+  .package-price-bottom{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
+    padding-top:14px;
+    border-top:1px solid rgba(8,26,57,.08);
+  }
+
+  .package-price-label{
+    color:var(--muted);
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+
+  .package-price-amount{
+    color:var(--brand);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:31px;
+    line-height:1;
+    font-weight:800;
+    font-variant-numeric:tabular-nums lining-nums;
+    font-feature-settings:"tnum" 1, "lnum" 1;
+    letter-spacing:.015em;
+    white-space:nowrap;
+  }
+
+  .package-price-footnote{
+    position:relative;
+    z-index:1;
+    margin-top:17px !important;
+    color:var(--muted) !important;
+    font-size:14px !important;
+    text-align:center;
+  }
+
+  @media (max-width: 760px){
+    .package-price-grid{grid-template-columns:1fr}
+    .package-price-card{min-height:148px}
+  }
+
+  @media (max-width: 520px){
+    .package-price-card{padding:20px;border-radius:19px}
+    .package-price-card h3{font-size:21px}
+    .package-price-amount{font-size:28px}
+    .package-price-bottom{align-items:center}
+  }
+
+
   .cta{
     text-align:center;
   }
@@ -671,6 +786,46 @@
     }
   }
 
+
+
+  /* Final price colors aligned with Eco 350 */
+  .package-price-card{
+    padding:0;
+    background:#fff;
+    border:1px solid rgba(8,26,57,.10);
+    box-shadow:0 10px 24px rgba(8,26,57,.07);
+  }
+
+  .package-price-card::after{
+    background:rgba(157,133,114,.10);
+  }
+
+  .package-price-card h3{
+    padding:18px 22px;
+    background:var(--brand);
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .package-price-bottom{
+    padding:20px 22px 22px;
+    border-top:0;
+    background:#fff;
+  }
+
+  .package-price-label{
+    color:var(--brand-dark);
+  }
+
+  .package-price-amount{
+    color:var(--brand);
+  }
+
+  @media (max-width:520px){
+    .package-price-card{padding:0}
+    .package-price-card h3{padding:16px 18px}
+    .package-price-bottom{padding:18px}
+  }
 </style>
 
 <style id="anker-language-switcher-styles">
@@ -863,6 +1018,44 @@
 </div>
 </div>
 </div>
+
+<div class="box reveal package-prices-box" id="preise">
+<div class="section-title">
+<h2>Paketpreise</h2>
+<p>Preisübersicht für den Mini 270</p>
+</div>
+<div class="package-price-grid">
+<div class="package-price-card">
+<h3>Standard Paket</h3>
+<div class="package-price-bottom">
+<span class="package-price-label">Preis</span>
+<strong class="package-price-amount">10.800 €</strong>
+</div>
+</div>
+<div class="package-price-card">
+<h3>Voll Paket</h3>
+<div class="package-price-bottom">
+<span class="package-price-label">Preis</span>
+<strong class="package-price-amount">14.800 €</strong>
+</div>
+</div>
+<div class="package-price-card">
+<h3>Premium Paket</h3>
+<div class="package-price-bottom">
+<span class="package-price-label">Preis</span>
+<strong class="package-price-amount">16.300 €</strong>
+</div>
+</div>
+<div class="package-price-card">
+<h3>Ultra Paket</h3>
+<div class="package-price-bottom">
+<span class="package-price-label">Preis</span>
+<strong class="package-price-amount">16.999 €</strong>
+</div>
+</div>
+</div>
+<p class="package-price-footnote">Messe-Preise gemäß offizieller Mini-270-Preisliste.</p>
+</div>
 <div class="box cta reveal">
 <div class="section-title">
 <h2>Anfrage</h2>
@@ -999,7 +1192,7 @@
 (function(){
 'use strict';
 const STORAGE_KEY='anker_caravan_language_v1';
-const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Kompakter Camper Caravan":"Compact camper caravan","Wohnwagen Mini 270":"Mini 270 caravan","Wohnwagen Mini 270 – ein kompakter Camper Caravan für alle, die flexibel und unkompliziert reisen möchten. Ideal für Wochenendtrips, kleine Stellplätze und spontane Touren mit gemütlichem Komfort.":"The Mini 270 is a compact camper caravan for anyone who wants to travel flexibly and without complications. Ideal for weekend trips, small pitches and spontaneous tours with cosy comfort.","Layout-Plan des Wohnwagen Mini 270":"Floor-plan layout of the Mini 270 caravan","490 kg, variiert je nach Paket":"490 kg, depending on package","Hauptbett:":"Main bed:","umbaubare Sitzecke zum Bett, 145 × 194 cm":"convertible seating area forming a 145 × 194 cm bed","Zusatzbett:":"Additional bed:","klappbares Einzelbett über der Sitzgruppe, 70 × 194 cm":"folding single bed above the seating group, 70 × 194 cm","Tragfähigkeit Zusatzbett:":"Additional-bed load capacity:","maximal 75 kg":"maximum 75 kg","Alle Details zum Modell Mini 270":"All details about the Mini 270 model"};
+const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Kompakter Camper Caravan":"Compact camper caravan","Wohnwagen Mini 270":"Mini 270 caravan","Wohnwagen Mini 270 – ein kompakter Camper Caravan für alle, die flexibel und unkompliziert reisen möchten. Ideal für Wochenendtrips, kleine Stellplätze und spontane Touren mit gemütlichem Komfort.":"The Mini 270 is a compact camper caravan for anyone who wants to travel flexibly and without complications. Ideal for weekend trips, small pitches and spontaneous tours with cosy comfort.","Layout-Plan des Wohnwagen Mini 270":"Floor-plan layout of the Mini 270 caravan","490 kg, variiert je nach Paket":"490 kg, depending on package","Hauptbett:":"Main bed:","umbaubare Sitzecke zum Bett, 145 × 194 cm":"convertible seating area forming a 145 × 194 cm bed","Zusatzbett:":"Additional bed:","klappbares Einzelbett über der Sitzgruppe, 70 × 194 cm":"folding single bed above the seating group, 70 × 194 cm","Tragfähigkeit Zusatzbett:":"Additional-bed load capacity:","maximal 75 kg":"maximum 75 kg","Alle Details zum Modell Mini 270":"All details about the Mini 270 model","Paketpreise":"Package prices","Preisübersicht für den Mini 270":"Price overview for the Mini 270","Preis":"Price","Messe-Preise gemäß offizieller Mini-270-Preisliste.":"Trade-fair prices according to the official Mini 270 price list."};
 const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
 const META={"de_title":"Wohnwagen Mini 270 – ANKER Caravan","en_title":"Mini 270 caravan – ANKER Caravan","de_desc":"Wohnwagen Mini 270 – kompakter Camper Caravan mit flexiblen Schlafplätzen und praktischer Ausstattung.","en_desc":"Mini 270 caravan – a compact camper caravan with flexible berths and practical equipment."};
 const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};

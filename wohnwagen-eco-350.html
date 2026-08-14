@@ -305,6 +305,191 @@
 
 
 
+
+  /* Preisübersicht */
+  .price-box{
+    position:relative;
+    overflow:hidden;
+  }
+
+  .price-box::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    right:-110px;
+    top:-120px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(157,133,114,.18),rgba(157,133,114,0) 70%);
+    pointer-events:none;
+  }
+
+  .price-highlight{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);
+    gap:18px;
+    align-items:stretch;
+    margin:24px 0 20px;
+  }
+
+  .price-summary,
+  .price-note{
+    border:1px solid rgba(8,26,57,.10);
+    border-radius:24px;
+    background:#fff;
+    box-shadow:0 10px 24px rgba(8,26,57,.07);
+  }
+
+  .price-summary{
+    padding:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+
+  .price-summary-copy{
+    display:grid;
+    gap:5px;
+  }
+
+  .price-kicker{
+    color:var(--brand-dark);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+  }
+
+  .price-model{
+    color:var(--brand);
+    font-size:25px;
+    font-weight:900;
+    line-height:1.15;
+  }
+
+  .price-subline{
+    color:var(--muted);
+    font-size:15px;
+  }
+
+  .price-amount{
+    flex:0 0 auto;
+    color:var(--brand);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:34px;
+    line-height:1;
+    font-weight:800;
+    font-variant-numeric:tabular-nums lining-nums;
+    font-feature-settings:"tnum" 1, "lnum" 1;
+    letter-spacing:.015em;
+    white-space:nowrap;
+  }
+
+  .price-note{
+    padding:21px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:linear-gradient(135deg,rgba(8,26,57,.98),rgba(16,38,79,.96));
+    color:#fff;
+  }
+
+  .price-note strong{
+    font-size:17px;
+    line-height:1.35;
+  }
+
+  .price-note span{
+    color:rgba(255,255,255,.74);
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .price-table-wrap{
+    overflow-x:auto;
+    border:1px solid rgba(8,26,57,.10);
+    border-radius:22px;
+    background:#fff;
+    box-shadow:0 10px 24px rgba(8,26,57,.06);
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .price-table{
+    width:100%;
+    min-width:760px;
+    border-collapse:collapse;
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .price-table th{
+    padding:15px 16px;
+    text-align:left;
+    color:#fff;
+    background:var(--brand);
+    font-size:14px;
+    letter-spacing:.01em;
+  }
+
+  .price-table th:last-child,
+  .price-table td:last-child{
+    text-align:right;
+    white-space:nowrap;
+  }
+
+  .price-table td{
+    padding:14px 16px;
+    border-bottom:1px solid rgba(8,26,57,.08);
+    color:#4f5663;
+    vertical-align:top;
+  }
+
+  .price-table tbody tr:last-child td{
+    border-bottom:0;
+  }
+
+  .price-table tbody tr:nth-child(even){
+    background:rgba(247,242,232,.55);
+  }
+
+  .price-table td:first-child{
+    color:var(--brand);
+    font-weight:800;
+  }
+
+  .price-table td:last-child{
+    color:var(--brand);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:800;
+    font-variant-numeric:tabular-nums lining-nums;
+    font-feature-settings:"tnum" 1, "lnum" 1;
+    letter-spacing:.01em;
+  }
+
+  .price-footnote{
+    margin-top:14px !important;
+    color:var(--muted) !important;
+    font-size:14px !important;
+    text-align:center;
+  }
+
+  @media (max-width: 760px){
+    .price-highlight{grid-template-columns:1fr}
+    .price-summary{align-items:flex-start}
+    .price-amount{font-size:30px}
+  }
+
+  @media (max-width: 520px){
+    .price-summary{flex-direction:column}
+    .price-summary,.price-note{border-radius:18px;padding:19px}
+    .price-model{font-size:22px}
+    .price-amount{font-size:29px}
+    .price-table th,.price-table td{padding:12px 13px}
+  }
+
   /* Grundriss section */
   .grundriss-image-wrap{
     background:#fff;
@@ -866,6 +1051,61 @@
 </div>
 </div>
 </div>
+
+<div class="box reveal price-box" id="preise">
+<div class="section-title">
+<h2>Preisübersicht</h2>
+<p>Basismodell und zubuchbare Optionen für den Eco 350</p>
+</div>
+<div class="price-highlight">
+<div class="price-summary">
+<div class="price-summary-copy">
+<span class="price-kicker">Voll Paket</span>
+<strong class="price-model">Eco 350</strong>
+<span class="price-subline">Komplettpaket · Preis inkl. MwSt.</span>
+</div>
+<div class="price-amount">15.000,00 €</div>
+</div>
+<div class="price-note">
+<strong>Nur als Voll Paket erhältlich</strong>
+<span>Die unten aufgeführten Extras können je nach Wunsch zusätzlich gebucht werden.</span>
+</div>
+</div>
+<div class="price-table-wrap" role="region" aria-label="Preisliste Eco 350" tabindex="0">
+<table class="price-table">
+<thead>
+<tr>
+<th scope="col">Option / Extra</th>
+<th scope="col">Beschreibung / Details</th>
+<th scope="col">Aufpreis (brutto)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 200-Ah-Batterie, 1500-W-Wechselrichter</td><td>1.346,00 €</td></tr>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 200-Ah-Batterie, 1200-W-Wechselrichter</td><td>900,00 €</td></tr>
+<tr><td>Doppel-Solarpaneelsystem</td><td>MPPT, 150-Ah-Batterie, 1200-W-Wechselrichter</td><td>964,00 €</td></tr>
+<tr><td>Einzel-Solarpaneelsystem</td><td>MPPT, 100-Ah-Batterie, 1200-W-Wechselrichter</td><td>785,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (45 Liter)</td><td>369,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (90 Liter)</td><td>589,00 €</td></tr>
+<tr><td>Kühlschrank (12 Volt)</td><td>EVACOOL-COOL LIFE (138 Liter)</td><td>695,00 €</td></tr>
+<tr><td>Kassetten-WC</td><td>Standardausführung für Nasszelle</td><td>579,00 €</td></tr>
+<tr><td>Markisenkassette</td><td>Kassettenmarkise für den Außenbereich</td><td>361,00 €</td></tr>
+<tr><td>Außenkocher</td><td>Zusätzliche Kochmöglichkeit außen</td><td>264,00 €</td></tr>
+<tr><td>Backofen</td><td>Integrierter Einbaubackofen</td><td>341,00 €</td></tr>
+<tr><td>Dieselheizung</td><td>Leistungsstarke Standheizung für autarkes Camping</td><td>299,00 €</td></tr>
+<tr><td>TV (Satellitenreceiver)</td><td>Komplettset inklusive Receiver</td><td>300,00 €</td></tr>
+<tr><td>Stabilisator / Antischlingerkupplung</td><td>ALKO (3-System) für maximale Fahrsicherheit</td><td>611,00 €</td></tr>
+<tr><td>Maxel 100 Isolierung</td><td>Optimierte Thermo-Isolierung für kalte Tage</td><td>422,00 €</td></tr>
+<tr><td>Glasset (Berhimi)</td><td>Zusätzlicher Aufpreis für Premium-Verglasung</td><td>611,00 €</td></tr>
+<tr><td>Dachhaube Heki Europe</td><td>Großes Dachfenster für mehr Tageslicht und Belüftung</td><td>300,00 €</td></tr>
+<tr><td>Achse mit Bremse</td><td>Spezialachse für Breiten 2,40 m und 2,70 m</td><td>611,00 €</td></tr>
+<tr><td>Warmwasserbereiter (Therme)</td><td>Zentrale Warmwasserversorgung im Fahrzeug</td><td>522,00 €</td></tr>
+<tr><td>Klimaanlage</td><td>Leistungsstarkes Kühlsystem für den Wohnraum</td><td>996,00 €</td></tr>
+</tbody>
+</table>
+</div>
+<p class="price-footnote">Alle Preise sind Bruttopreise und gelten gemäß der offiziellen Eco-350-Preisliste, Stand 2026.</p>
+</div>
 <div class="box cta reveal">
 <div class="section-title">
 <h2>Anfrage</h2>
@@ -981,7 +1221,46 @@
 'use strict';
 const STORAGE_KEY='anker_caravan_language_v1';
 const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Familienfreundlicher Caravan":"Family-friendly caravan","Wohnwagen Eco 350":"Eco 350 caravan","Der Eco 350 ist kompakt, familienfreundlich und ideal für flexible Reisen – mit gemütlichen Schlafplätzen, praktischem Stauraum und mehr Unabhängigkeit unterwegs.":"The Eco 350 is compact, family-friendly and ideal for flexible travel, with cosy berths, practical storage and greater independence on the road.","Layout-Plan des Wohnwagen Eco 350":"Floor-plan layout of the Eco 350 caravan","880 kg, variiert je nach Paket":"880 kg, depending on package","Hauptbett:":"Main bed:","umbaubare Sitzecke zum Bett, 130 × 194 cm":"convertible seating area forming a 130 × 194 cm bed","Stockbett:":"Bunk bed:","Bettflächen 60 × 194 cm":"bed surfaces measuring 60 × 194 cm","Der Eco 350 ist nur als Voll Paket erhältlich":"The Eco 350 is available only with the Full package","Außen & Fahrwerk":"Exterior & chassis","Alle Fenster mit Aufstellmechanismus, Fliegengitter und Sonnenschutz":"All windows with opening mechanism, fly screen and sunshade","Bugkasten aus GFK":"GRP front storage box","Heckstoßstange aus GFK":"GRP rear bumper","AL-KO Auflaufeinrichtung":"AL-KO overrun system","AL-KO gebremste Achse":"AL-KO braked axle","AL-KO Stützrad":"AL-KO jockey wheel","AL-KO Räder und Reifen":"AL-KO wheels and tyres","AL-KO Stützen, 4 Stück":"Four AL-KO stabiliser legs","Wasser & Sanitär":"Water & sanitation","100-Liter-Wassertank":"100-litre water tank","Außenwasseranschluss":"External water connection","Außendusche":"Outdoor shower","WC, Importmodell":"Toilet, imported model","Waschbecken im Bad":"Bathroom washbasin","Türfixierung":"Door retainer","Innenausstattung":"Interior equipment","Elektroinstallation":"Electrical installation","Maßgefertigte Möbel":"Custom-made furniture","LED-Innenbeleuchtung":"LED interior lighting","Außenbeleuchtung":"Exterior lighting","220-Volt-Stromanschluss und Kabel":"220-volt power connection and cable","Bodenbelag und Teppich":"Floor covering and carpet","Läufer und Platzset":"Runner and placemat","Küche & Energie":"Kitchen & energy","Spülbecken und Armatur in Chromoptik":"Sink and chrome-look tap","12-Volt-Kühlschrank, 90 Liter":"12-volt refrigerator, 90 litres","Extras":"Extras","Optionale Ausstattung kann nach Wunsch ergänzt werden":"Optional equipment can be added on request","Solar & Strom":"Solar & power","Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1500-W-Wechselrichter":"Dual solar-panel system with MPPT, 200 Ah battery and 1500 W inverter","Doppel-Solarpanelsystem mit MPPT, 200-Ah-Batterie und 1200-W-Wechselrichter":"Dual solar-panel system with MPPT, 200 Ah battery and 1200 W inverter","Doppel-Solarpanelsystem mit MPPT, 150-Ah-Batterie und 1200-W-Wechselrichter":"Dual solar-panel system with MPPT, 150 Ah battery and 1200 W inverter","Einzel-Solarpanelsystem mit MPPT, 100-Ah-Batterie und 1200-W-Wechselrichter":"Single solar-panel system with MPPT, 100 Ah battery and 1200 W inverter","Komfort & Zubehör":"Comfort & accessories","Kühlschrank 12 Volt, 45 Liter":"12-volt refrigerator, 45 litres","Kühlschrank 12 Volt, 90 Liter":"12-volt refrigerator, 90 litres","Kühlschrank 12 Volt, 138 Liter":"12-volt refrigerator, 138 litres","Kassetten-WC":"Cassette toilet","Markisenkassette":"Cassette awning","Außenkocher":"Outdoor cooker","Backofen":"Oven","TV mit Satellitenreceiver":"TV with satellite receiver","Stabilisator / Antischlingerkupplung, AL-KO 3-System":"Stabiliser / anti-sway coupling, AL-KO 3-system","Maxel 100 Isolierung":"Maxel 100 insulation","Glasset, Berhimi":"Glass set, Berhimi","Dachhaube Heki Europe":"Heki Europe rooflight","Warmwasserbereiter, Therme":"Water heater"};
+
+const PRICE_TEXT_EN={
+  "Preisübersicht":"Price overview",
+  "Basismodell und zubuchbare Optionen für den Eco 350":"Base model and optional extras for the Eco 350",
+  "Voll Paket":"Full package",
+  "Komplettpaket · Preis inkl. MwSt.":"Complete package · Price incl. VAT",
+  "Nur als Voll Paket erhältlich":"Available only as the Full package",
+  "Die unten aufgeführten Extras können je nach Wunsch zusätzlich gebucht werden.":"The extras listed below can be added as required.",
+  "Option / Extra":"Option / Extra",
+  "Beschreibung / Details":"Description / Details",
+  "Aufpreis (brutto)":"Additional price (incl. VAT)",
+  "Doppel-Solarpaneelsystem":"Dual solar-panel system",
+  "Einzel-Solarpaneelsystem":"Single solar-panel system",
+  "Kühlschrank (12 Volt)":"Refrigerator (12 volt)",
+  "Standardausführung für Nasszelle":"Standard version for wet room",
+  "Kassettenmarkise für den Außenbereich":"Cassette awning for outdoor use",
+  "Zusätzliche Kochmöglichkeit außen":"Additional outdoor cooking facility",
+  "Integrierter Einbaubackofen":"Integrated built-in oven",
+  "Leistungsstarke Standheizung für autarkes Camping":"Powerful parking heater for off-grid camping",
+  "TV (Satellitenreceiver)":"TV (satellite receiver)",
+  "Komplettset inklusive Receiver":"Complete set including receiver",
+  "Stabilisator / Antischlingerkupplung":"Stabiliser / anti-sway coupling",
+  "ALKO (3-System) für maximale Fahrsicherheit":"ALKO (3-system) for maximum driving safety",
+  "Optimierte Thermo-Isolierung für kalte Tage":"Optimised thermal insulation for cold days",
+  "Glasset (Berhimi)":"Glass set (Berhimi)",
+  "Zusätzlicher Aufpreis für Premium-Verglasung":"Additional charge for premium glazing",
+  "Großes Dachfenster für mehr Tageslicht und Belüftung":"Large roof window for more daylight and ventilation",
+  "Achse mit Bremse":"Braked axle",
+  "Spezialachse für Breiten 2,40 m und 2,70 m":"Special axle for widths of 2.40 m and 2.70 m",
+  "Warmwasserbereiter (Therme)":"Water heater",
+  "Zentrale Warmwasserversorgung im Fahrzeug":"Central hot-water supply in the vehicle",
+  "Leistungsstarkes Kühlsystem für den Wohnraum":"Powerful cooling system for the living area",
+  "Alle Preise sind Bruttopreise und gelten gemäß der offiziellen Eco-350-Preisliste, Stand 2026.":"All prices include VAT and apply according to the official Eco 350 price list, 2026 edition."
+};
+Object.assign(TEXT_EN,PRICE_TEXT_EN);
+
 const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
+
+ATTR_EN["Preisliste Eco 350"]="Eco 350 price list";
+
 const META={"de_title":"Wohnwagen Eco 350 – ANKER Caravan","en_title":"Eco 350 caravan – ANKER Caravan","de_desc":"Wohnwagen Eco 350 – kompakter und familienfreundlicher Caravan mit praktischer Vollausstattung.","en_desc":"Eco 350 caravan – a compact, family-friendly caravan with practical full equipment."};
 const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
 function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
