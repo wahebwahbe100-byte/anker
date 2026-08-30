@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impressum | ANKER Caravan</title>
+<meta content="Impressum von ANKER Caravan. Angaben gemäß § 5 DDG und rechtliche Hinweise." name="description"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#081a39" name="theme-color"/>
+<link href="images/logo-icon.png" rel="icon" type="image/png"/>
+<link href="images/logo-icon.png" rel="shortcut icon" type="image/png"/>
+<link href="images/logo-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:ital,wght@1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #0f1115;
+      --bg-soft: #171a21;
+      --bg-card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --light: #f5f6f8;
+      --line: #e5e7eb;
+      --dark-line: rgba(255,255,255,.13);
+      --brand: #081a39;
+      --brand-dark: #9d8572;
+      --brand-soft: rgba(157,133,114,.14);
+      --accent: #2f3542;
+      --radius: 22px;
+      --shadow: 0 22px 60px rgba(15, 17, 21, .12);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Montserrat", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(157,133,114,.09), transparent 34%),
+        linear-gradient(180deg, #fff 0%, #f7f7f8 58%, #fff 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      background: var(--bg);
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .topbar .inner {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar .badges { display: flex; gap: 18px; flex-wrap: wrap; }
+    .topbar strong { color: #fff; font-weight: 800; }
+    .topbar a { font-weight: 800; color: #fff; }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid rgba(157,133,114,.22);
+      box-shadow: 0 18px 48px rgba(6,27,59,.10);
+    }
+    .nav {
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: auto minmax(360px, 1fr) auto;
+      align-items: center;
+      gap: clamp(18px, 3vw, 44px);
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .logo-round {
+      width: 68px;
+      height: 68px;
+      flex: 0 0 68px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: transparent;
+    }
+    .logo-round img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.08);
+    }
+    .logo-wordmark {
+      display: grid;
+      gap: 2px;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .logo-title {
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(26px, 2.3vw, 36px);
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+    .logo-subline {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--brand-dark);
+    }
+    .logo-subline span {
+      height: 1px;
+      flex: 1;
+      background: currentColor;
+      opacity: .75;
+    }
+    .logo-caravan {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .28em;
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 2vw, 26px);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      color: var(--brand);
+    }
+    .menu a {
+      position: relative;
+      padding: 34px 0;
+      white-space: nowrap;
+      transition: color .22s ease;
+    }
+    .menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 25px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .26s ease;
+    }
+    .menu a:hover,
+    .menu a.nav-active { color: var(--brand-dark); }
+    .menu a:hover::after,
+    .menu a.nav-active::after { transform: scaleX(1); }
+
+    .nav-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(8,26,57,.24);
+    }
+    .btn-primary:hover { background: var(--brand-dark); color: #111827; transform: translateY(-2px); }
+    .mobile-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(8,26,57,.12);
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(8,26,57,.10);
+      cursor: pointer;
+      position: relative;
+    }
+    .mobile-toggle span {
+      position: absolute;
+      left: 50%;
+      width: 21px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--brand);
+      transform: translateX(-50%);
+      transition: .24s ease;
+    }
+    .mobile-toggle span:nth-child(1) { top: 15px; }
+    .mobile-toggle span:nth-child(2) { top: 22px; }
+    .mobile-toggle span:nth-child(3) { top: 29px; }
+    .mobile-toggle.is-active span:nth-child(1) { top: 22px; transform: translateX(-50%) rotate(45deg); }
+    .mobile-toggle.is-active span:nth-child(2) { opacity: 0; transform: translateX(-50%) scaleX(0); }
+    .mobile-toggle.is-active span:nth-child(3) { top: 22px; transform: translateX(-50%) rotate(-45deg); }
+
+    .legal-hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(157,133,114,.34), transparent 30%),
+        linear-gradient(135deg, #2f3542 0%, #11161d 56%, #080a0e 100%);
+      padding: clamp(84px, 10vw, 130px) 0 clamp(70px, 9vw, 110px);
+      isolation: isolate;
+    }
+    .legal-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(90deg, #000, transparent 78%);
+      opacity: .8;
+      z-index: -1;
+    }
+    .legal-hero::after {
+      content: "ANKER";
+      position: absolute;
+      right: clamp(-16px, 4vw, 90px);
+      bottom: -28px;
+      font-family: "Cinzel", Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(80px, 17vw, 210px);
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.045);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .legal-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      color: rgba(255,255,255,.88);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .legal-hero .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand-dark);
+      box-shadow: 0 0 0 8px rgba(157,133,114,.16);
+    }
+    .legal-hero h1 {
+      max-width: 850px;
+      font-size: clamp(46px, 7.5vw, 92px);
+      line-height: .95;
+      letter-spacing: -.06em;
+      font-weight: 950;
+      text-shadow: 0 14px 38px rgba(0,0,0,.35);
+    }
+    .legal-hero p.lead {
+      max-width: 760px;
+      margin-top: 18px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(17px, 2vw, 21px);
+      font-weight: 600;
+    }
+
+    .legal-section { padding: 84px 0; }
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .side-card,
+    .content-card {
+      border: 1px solid rgba(8,26,57,.10);
+      border-radius: 30px;
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+    }
+    .side-card {
+      position: sticky;
+      top: 118px;
+      padding: 26px;
+    }
+    .side-card h2,
+    .content-card h2 {
+      color: var(--brand);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+    .side-card h2 {
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+    .side-card ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .side-card a {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      color: #465260;
+      font-size: 14px;
+      font-weight: 850;
+      transition: .22s ease;
+    }
+    .side-card a::after { content: none; display: none; }
+    .side-card a:hover,
+    .side-card a.is-current {
+      background: linear-gradient(90deg, rgba(8,26,57,.08), rgba(157,133,114,.14));
+      color: var(--brand);
+      transform: translateX(3px);
+    }
+    .content-card { padding: clamp(24px, 4vw, 42px); }
+    .block {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(8,26,57,.10);
+      scroll-margin-top: 130px;
+    }
+    .block:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .block h2 {
+      margin-bottom: 18px;
+      font-size: clamp(26px, 3vw, 36px);
+    }
+    .block p { margin: 10px 0; color: #4b5563; }
+    .info-list { display: grid; gap: 0; }
+    .info-row {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px dashed rgba(8,26,57,.16);
+    }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row strong {
+      color: var(--brand);
+      font-weight: 900;
+    }
+    .info-row span { color: #44505e; }
+    .content-card a {
+      color: var(--brand);
+      font-weight: 900;
+      border-bottom: 1px solid rgba(157,133,114,.55);
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--brand-dark);
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(8,26,57,.06), rgba(157,133,114,.10));
+      color: var(--brand);
+      font-weight: 750;
+    }
+
+    footer {
+      background: #090b0f;
+      color: rgba(255,255,255,.65);
+      padding: 46px 0 38px;
+      border-top: 6px solid var(--brand);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, 1fr);
+      gap: 26px;
+      margin-bottom: 28px;
+    }
+    footer .logo { color: #fff; margin-bottom: 12px; }
+    footer .logo-round { width: 58px; height: 58px; flex-basis: 58px; }
+    footer .logo-title { color: #fff; font-size: 27px; }
+    footer .logo-caravan { color: var(--brand-dark); }
+    footer h4 {
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 17px;
+      letter-spacing: -.015em;
+    }
+    footer p,
+    footer a,
+    footer span {
+      color: rgba(255,255,255,.62);
+      font-weight: 650;
+      font-size: 14px;
+    }
+    footer a { display: block; margin-bottom: 9px; transition: color .2s ease; }
+    footer a:hover { color: #fff; }
+    .footer-contact { display: grid; gap: 4px; margin-top: 12px; }
+    .legal-note {
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,.47);
+    }
+
+    @media (max-width: 1080px) {
+      .nav {
+        grid-template-columns: auto auto;
+        min-height: 82px;
+      }
+      .menu {
+        position: absolute;
+        top: 82px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid rgba(8,26,57,.12);
+        border-radius: 20px;
+        background: rgba(255,255,255,.98);
+        box-shadow: 0 18px 48px rgba(6,27,59,.12);
+      }
+      .menu.open { display: flex; }
+      .menu a { padding: 14px; border-radius: 14px; }
+      .menu a::after { display: none; }
+      .menu a:hover,
+      .menu a.nav-active { background: linear-gradient(90deg, rgba(8,26,57,.07), rgba(157,133,114,.12)); }
+      .nav-actions { display: none; }
+      .mobile-toggle { display: block; justify-self: end; }
+      .legal-layout { grid-template-columns: 1fr; }
+      .side-card { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .topbar .inner { flex-direction: column; align-items: flex-start; padding: 10px 0; }
+      .nav { min-height: 78px; }
+      .logo-round { width: 56px; height: 56px; flex-basis: 56px; }
+      .logo-title { font-size: 24px; letter-spacing: .11em; }
+      .logo-caravan { font-size: 7px; letter-spacing: .18em; }
+      .menu { top: 78px; }
+      .legal-hero { padding: 70px 0 64px; }
+      .legal-section { padding: 54px 0; }
+      .content-card,
+      .side-card { border-radius: 24px; }
+      .info-row { grid-template-columns: 1fr; gap: 4px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      footer .logo-title { font-size: 24px; }
+      body, p, span, a, li, h1, h2, h3, h4, h5, h6, strong, small {
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+    /* Remove arrows from Impressum sidebar links */
+    .side-card a::after {
+      content: none !important;
+      display: none !important;
+    }
+
+  </style>
+<style id="match-index-colors-final">
+    /* ============================================================
+      FINAL COLOR MATCH WITH index.html
+      ألوان Impressum الآن مطابقة للوحة index النهائية:
+      deep navy #081a39 / #000f31, warm sand #9d8572,
+      soft ivory #faf8f5.
+      ============================================================ */
+    :root {
+      --brand: #081a39 !important;
+      --brand-dark: #000f31 !important;
+      --brand-2: #12315b !important;
+      --accent: #9d8572 !important;
+      --accent-dark: #7e6757 !important;
+      --accent-soft: #c4b5a8 !important;
+      --sand: #f4f0ed !important;
+      --cream: #faf8f5 !important;
+      --bg: #081a39 !important;
+      --bg-soft: #0f2b52 !important;
+      --bg-card: #ffffff !important;
+      --text: #0a1832 !important;
+      --muted: #6f6871 !important;
+      --light: #f7f3ef !important;
+      --line: #e4d9ce !important;
+      --dark-line: rgba(244,240,237,.16) !important;
+      --shadow: 0 24px 70px rgba(8, 26, 57, .14) !important;
+    }
+
+    body {
+      color: var(--text) !important;
+      background:
+        radial-gradient(circle at 9% 0%, rgba(157,133,114,.14), transparent 33%),
+        linear-gradient(180deg, #fff 0%, var(--cream) 100%) !important;
+      font-family: Montserrat, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, #081a39 0%, #000f31 100%) !important;
+      border-bottom: 1px solid rgba(196,181,168,.20) !important;
+      color: rgba(255,255,255,.82) !important;
+    }
+
+    .topbar strong,
+    .topbar a {
+      color: #fff !important;
+    }
+
+    header.site-header {
+      background: rgba(255,255,255,.985) !important;
+      border-bottom: 1px solid rgba(157,133,114,.28) !important;
+      box-shadow: 0 14px 34px rgba(8,26,57,.10) !important;
+    }
+
+    .logo-title,
+    .menu,
+    .side-card h2,
+    .content-card h2,
+    .info-row strong,
+    .content-card a,
+    .note {
+      color: var(--brand) !important;
+    }
+
+    .logo-subline,
+    .logo-caravan,
+    .menu a:hover,
+    .menu a.nav-active,
+    footer .logo-caravan {
+      color: var(--accent) !important;
+    }
+
+    .logo-round {
+      background: #fff !important;
+      border: 1px solid rgba(157,133,114,.28) !important;
+      box-shadow: 0 10px 26px rgba(8,26,57,.13) !important;
+    }
+
+    .menu a::after {
+      background: linear-gradient(90deg, var(--brand), var(--accent)) !important;
+    }
+
+    .btn-primary {
+      background: var(--brand) !important;
+      color: #fff !important;
+      box-shadow: 0 16px 34px rgba(8,26,57,.24) !important;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent) !important;
+      color: #fff !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .mobile-toggle {
+      border-color: rgba(157,133,114,.28) !important;
+      box-shadow: 0 10px 24px rgba(8,26,57,.10) !important;
+    }
+
+    .mobile-toggle span {
+      background: var(--brand) !important;
+    }
+
+    .legal-hero {
+      background:
+        radial-gradient(circle at 82% 25%, rgba(196,181,168,.24), transparent 28%),
+        linear-gradient(135deg, #0a1d3f 0%, #081a39 45%, #000f31 100%) !important;
+    }
+
+    .legal-hero::before {
+      opacity: .52 !important;
+    }
+
+    .legal-hero .eyebrow {
+      background: rgba(255,255,255,.10) !important;
+      border-color: rgba(196,181,168,.24) !important;
+      color: rgba(255,255,255,.88) !important;
+    }
+
+    .legal-hero .eyebrow::before {
+      background: var(--accent) !important;
+      box-shadow: 0 0 0 8px rgba(157,133,114,.18) !important;
+    }
+
+    .legal-hero h1,
+    .legal-hero p.lead {
+      color: #fff !important;
+      text-shadow: 0 14px 38px rgba(0,0,0,.38) !important;
+    }
+
+    .side-card,
+    .content-card {
+      background: rgba(255,255,255,.94) !important;
+      border-color: var(--line) !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .side-card a {
+      color: rgba(10,24,50,.72) !important;
+    }
+
+    .side-card a:hover,
+    .side-card a.is-current {
+      background: linear-gradient(90deg, rgba(8,26,57,.07), rgba(157,133,114,.14)) !important;
+      color: var(--brand) !important;
+      transform: translateX(3px) !important;
+    }
+
+    .block {
+      border-bottom-color: rgba(157,133,114,.22) !important;
+    }
+
+    .block p,
+    .info-row span {
+      color: var(--muted) !important;
+    }
+
+    .info-row {
+      border-bottom-color: rgba(157,133,114,.24) !important;
+    }
+
+    .content-card a {
+      border-bottom-color: rgba(157,133,114,.58) !important;
+    }
+
+    .note {
+      border-left-color: var(--accent) !important;
+      background: linear-gradient(90deg, rgba(8,26,57,.06), rgba(157,133,114,.12)) !important;
+    }
+
+    footer {
+      background:
+        radial-gradient(circle at 86% 18%, rgba(196,181,168,.16), transparent 34%),
+        linear-gradient(135deg, #081a39 0%, #000f31 100%) !important;
+      border-top: 6px solid var(--accent) !important;
+      color: #fff !important;
+    }
+
+    footer h4,
+    footer .logo-title {
+      color: #fff !important;
+    }
+
+    footer p,
+    footer a,
+    footer span {
+      color: rgba(255,255,255,.62) !important;
+    }
+
+    footer a:hover {
+      color: var(--accent-soft) !important;
+    }
+
+    .legal-note {
+      border-top-color: rgba(196,181,168,.20) !important;
+      color: rgba(255,255,255,.47) !important;
+    }
+
+    @media (max-width: 1080px) {
+      .menu {
+        background: rgba(255,255,255,.98) !important;
+        border-color: rgba(157,133,114,.24) !important;
+        box-shadow: 0 18px 48px rgba(8,26,57,.12) !important;
+      }
+      .menu a:hover,
+      .menu a.nav-active {
+        background: linear-gradient(90deg, rgba(8,26,57,.07), rgba(157,133,114,.12)) !important;
+        color: var(--brand) !important;
+      }
+    }
+    /* Remove arrows from Impressum sidebar links */
+    .side-card a::after {
+      content: none !important;
+      display: none !important;
+    }
+
+  </style>
+<style>
+    /* FONT MATCH: same typography as the provided reference impressum page */
+    :root {
+      --headline: "Playfair Display", Georgia, serif;
+    }
+
+    body,
+    button,
+    .topbar,
+    .menu,
+    .btn,
+    .logo-title,
+    .logo-caravan,
+    .logo-subline,
+    .side-card a,
+    .info-row,
+    .note,
+    footer p,
+    footer a,
+    footer span {
+      font-family: Inter, Arial, sans-serif !important;
+    }
+
+    .legal-hero h1,
+    .side-card h2,
+    .content-card h2,
+    .block h2,
+    footer h4 {
+      font-family: var(--headline) !important;
+      font-style: italic !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 1.08 !important;
+    }
+
+    .legal-hero h1 {
+      font-size: clamp(46px, 7vw, 82px) !important;
+    }
+
+    .side-card h2 {
+      font-size: 28px !important;
+    }
+
+    .block h2 {
+      font-size: clamp(28px, 3vw, 38px) !important;
+    }
+
+    footer h4 {
+      font-size: 22px !important;
+    }
+  </style>
+
+<style id="anker-language-switcher-styles">
+.anker-header-tools,.anker-model-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+.anker-language-switcher{position:relative;z-index:2147483000;font-family:Montserrat,Inter,Arial,sans-serif;flex:0 0 auto}
+.anker-language-button{min-width:88px;height:44px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(8,26,57,.16);border-radius:999px;background:rgba(255,255,255,.98);color:#081a39;box-shadow:0 10px 26px rgba(8,26,57,.10);cursor:pointer;transition:.2s ease}
+.anker-language-button:hover,.anker-language-button:focus-visible,.anker-language-switcher.is-open .anker-language-button{border-color:rgba(157,133,114,.72);box-shadow:0 12px 30px rgba(8,26,57,.16);transform:translateY(-1px);outline:none}
+.anker-language-flag{display:block;width:22px;height:22px;object-fit:cover;border-radius:50%;box-shadow:0 0 0 1px rgba(8,26,57,.12)}
+.anker-language-code{font-size:13px;font-weight:900;letter-spacing:.08em}
+.anker-language-chevron{font-size:16px;line-height:1;transition:transform .2s ease}
+.anker-language-switcher.is-open .anker-language-chevron{transform:rotate(180deg)}
+.anker-language-menu{position:absolute;top:calc(100% + 10px);right:0;width:218px;padding:8px;display:grid;gap:5px;border:1px solid rgba(8,26,57,.12);border-radius:18px;background:#fff;box-shadow:0 22px 55px rgba(8,26,57,.20);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;pointer-events:none;transition:.18s ease}
+.anker-language-switcher.is-open .anker-language-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto}
+.anker-language-option{width:100%;min-height:58px;padding:9px 11px;display:grid;grid-template-columns:34px 1fr 22px;gap:10px;align-items:center;border:0;border-radius:13px;background:transparent;color:#081a39;text-align:left;cursor:pointer;transition:.18s ease}
+.anker-language-option:hover,.anker-language-option:focus-visible{background:linear-gradient(90deg,rgba(8,26,57,.07),rgba(157,133,114,.12));transform:translateX(2px);outline:none}
+.anker-language-option.is-active{background:rgba(157,133,114,.13)}
+.anker-language-option .anker-language-flag{width:24px;height:24px}
+.anker-language-copy{display:grid;gap:2px}
+.anker-language-copy strong{font-size:14px;font-weight:900}
+.anker-language-copy small{color:#6b7280;font-size:11px;font-weight:800;letter-spacing:.08em}
+.anker-language-check{color:#9d8572;font-size:16px;font-weight:950;opacity:0}
+.anker-language-option.is-active .anker-language-check{opacity:1}
+@media(max-width:1080px){
+  header.site-header .anker-header-tools{position:absolute!important;right:72px!important;top:50%!important;transform:translateY(-50%)!important;z-index:2147483200!important}
+  header.site-header .anker-header-tools .nav-actions{display:none!important}
+  header.site-header .anker-language-button{width:42px;min-width:42px;height:42px;padding:0;gap:0}
+  header.site-header .anker-language-code,header.site-header .anker-language-chevron{display:none}
+  header.site-header .anker-language-menu{right:-8px}
+}
+@media(max-width:640px){
+  header.site-header .anker-header-tools{right:62px!important}
+  header.site-header .anker-language-button{width:38px;min-width:38px;height:38px}
+  header.site-header .anker-language-flag{width:20px;height:20px}
+  .anker-model-header-actions{gap:7px}
+  .anker-model-header-actions .anker-language-button{width:40px;min-width:40px;height:40px;padding:0;gap:0}
+  .anker-model-header-actions .anker-language-code,.anker-model-header-actions .anker-language-chevron{display:none}
+  .anker-model-header-actions .anker-language-menu{right:0;width:min(218px,calc(100vw - 24px))}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="container inner">
+<div class="badges">
+<span><strong>Wohnwagen</strong> mit Vertrauen</span>
+<span>Beratung · Fahrzeugcheck · Anfrage</span>
+</div>
+<div><a href="kontakt.html">Kontakt aufnehmen →</a></div>
+</div>
+</div>
+<header class="site-header notranslate" translate="no">
+<div class="container nav">
+<a aria-label="ANKER Caravan Startseite" class="logo" href="index.html#start">
+<span aria-hidden="true" class="logo-round">
+<img alt="" onerror="this.onerror=null;this.src='images/logo-icon.png';" src="images/logo-mobile-before.png"/>
+</span>
+<span class="logo-wordmark">
+<span class="logo-title">ANKER</span>
+<span aria-hidden="true" class="logo-subline"><span></span><small class="logo-caravan">CARAVAN</small><span></span></span>
+</span>
+</a>
+<nav aria-label="Hauptmenü" class="menu" id="menu">
+<a href="index.html#start">STARTSEITE</a>
+<a href="index.html#produkte">WOHNWAGEN</a>
+<a href="index.html#beratung">SERVICE</a>
+<a href="index.html#ueber-uns">ÜBER UNS</a>
+<a href="kontakt.html">KONTAKT</a>
+<a class="nav-active" href="impressum.html">IMPRESSUM</a>
+</nav>
+<div class="anker-header-tools"><div class="nav-actions">
+<a class="btn btn-primary" href="kontakt.html">KONTAKTIEREN</a>
+</div><div class="anker-language-switcher notranslate" id="ankerLanguageSwitcher" translate="no">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="anker-language-button" id="ankerLanguageButton" type="button">
+<img alt="Deutsch" class="anker-language-flag" id="ankerLanguageCurrentFlag" src="images/de.png"/>
+<span class="anker-language-code" id="ankerLanguageCode">DE</span>
+<span aria-hidden="true" class="anker-language-chevron">⌄</span>
+</button>
+<div aria-label="Sprache auswählen" class="anker-language-menu" id="ankerLanguageMenu" role="menu">
+<button class="anker-language-option" data-language="de" role="menuitem" type="button">
+<img alt="Deutsch" class="anker-language-flag" src="images/de.png"/>
+<span class="anker-language-copy"><strong>Deutsch</strong><small>DE</small></span>
+<span aria-hidden="true" class="anker-language-check">✓</span>
+</button>
+<button class="anker-language-option" data-language="en" role="menuitem" type="button">
+<img alt="English" class="anker-language-flag" src="images/gb.png"/>
+<span class="anker-language-copy"><strong>English</strong><small>EN</small></span>
+<span aria-hidden="true" class="anker-language-check">✓</span>
+</button>
+</div>
+</div></div>
+<button aria-controls="menu" aria-expanded="false" aria-label="Menü öffnen" class="mobile-toggle" id="mobileToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<main>
+<section class="legal-hero">
+<div class="container">
+<h1>Impressum</h1>
+<p class="lead">Angaben gemäß § 5 DDG sowie weitere rechtliche Informationen zum Internetauftritt von ANKER Caravan.</p>
+</div>
+</section>
+<section class="legal-section">
+<div class="container legal-layout">
+<aside aria-label="Inhaltsverzeichnis Impressum" class="side-card">
+<h2>Inhalt</h2>
+<ul>
+<li><a class="is-current" href="#anbieter">Anbieter</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+<li><a href="#verantwortlich">Inhaltsverantwortlich</a></li>
+<li><a href="#haftung">Haftung</a></li>
+<li><a href="#streitbeilegung">Streitbeilegung</a></li>
+</ul>
+</aside>
+<article class="content-card">
+<section class="block" id="anbieter">
+<h2>Anbieterkennzeichnung</h2>
+<div class="info-list">
+<div class="info-row"><strong>Unternehmen</strong><span>ANKER Caravan</span></div>
+<div class="info-row"><strong>Inhaber / Vertreten durch</strong><span>Ilker Aktürk</span></div>
+<div class="info-row"><strong>Anschrift</strong><span>Goldhähnchenweg 8<br/>12359 Berlin<br/>Deutschland</span></div>
+</div>
+</section>
+<section class="block" id="kontakt">
+<h2>Kontakt</h2>
+<div class="info-list">
+<div class="info-row"><strong>Telefon</strong><span><a href="tel:+4915255935516">+49 152 55935516</a></span></div>
+<div class="info-row"><strong>E-Mail</strong><span><a href="mailto:ankercaravanberlin@web.de">ankercaravanberlin@web.de</a></span></div>
+<div class="info-row"><strong>Webseite</strong><span>ankercaravanberlin.de</span></div>
+</div>
+</section>
+<section class="block" id="verantwortlich">
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<div class="info-list">
+<div class="info-row"><strong>Name</strong><span>Ilker Aktürk</span></div>
+<div class="info-row"><strong>Anschrift</strong><span>Goldhähnchenweg 8<br/>12359 Berlin<br/>Deutschland</span></div>
+</div>
+</section>
+<section class="block" id="haftung">
+<h2>Haftung für Inhalte und Links</h2>
+<p>Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr.</p>
+<p>Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+</section>
+<section class="block" id="streitbeilegung">
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen, sofern keine gesetzliche Verpflichtung besteht.</p>
+</section>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="logo">
+<span aria-hidden="true" class="logo-round">
+<img alt="" onerror="this.onerror=null;this.src='images/logo-icon.png';" src="images/logo-mobile-before.png"/>
+</span>
+<span class="logo-wordmark">
+<span class="logo-title">ANKER</span>
+<span aria-hidden="true" class="logo-subline"><span></span><small class="logo-caravan">CARAVAN</small><span></span></span>
+</span>
+</div>
+<p>Wohnwagen, Caravan-Beratung und Service.</p>
+<p class="footer-contact">
+<a href="tel:+4915255935516">+49 152 55935516</a>
+<a href="mailto:ankercaravanberlin@web.de">ankercaravanberlin@web.de</a>
+<span>Goldhähnchenweg 8 · 12359 Berlin</span>
+</p>
+</div>
+<div>
+<h4>Wohnwagen</h4>
+<a href="index.html#produkte">Wohnwagen</a>
+<a href="index.html#produkte">Caravans</a>
+<a href="index.html#produkte">Auswahl</a>
+<a href="index.html#beratung">Beratung</a>
+</div>
+<div>
+<h4>Service</h4>
+<a href="index.html#vorteile">Vorteile</a>
+<a href="index.html#beratung">Beratung</a>
+<a href="index.html#ablauf">Ablauf</a>
+<a href="index.html#ueber-uns">Über uns</a>
+<a href="kontakt.html">Kontakt</a>
+</div>
+<div>
+<h4>Rechtliches</h4>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+<p class="legal-note">© <span id="year"></span> ANKER Caravan. Alle Rechte vorbehalten.</p>
+</div>
+</footer>
+<script>
+    (function () {
+      const toggle = document.getElementById('mobileToggle');
+      const menu = document.getElementById('menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('open');
+        toggle.classList.toggle('is-active', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          toggle.classList.remove('is-active');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Menü öffnen');
+        });
+      });
+    })();
+
+    (function () {
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+
+    (function () {
+      const desktopQuery = window.matchMedia('(min-width: 1081px)');
+      const links = Array.from(document.querySelectorAll('.side-card a[href^="#"]'));
+      const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+      if (!links.length || !sections.length) return;
+
+      function setCurrent(id) {
+        links.forEach(link => link.classList.toggle('is-current', link.getAttribute('href') === '#' + id));
+      }
+
+      function updateCurrent() {
+        if (!desktopQuery.matches) return;
+        let current = sections[0];
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top <= 150) current = section;
+        });
+        if (current) setCurrent(current.id);
+      }
+
+      window.addEventListener('scroll', updateCurrent, { passive: true });
+      window.addEventListener('resize', updateCurrent);
+      updateCurrent();
+    })();
+  </script>
+
+<script id="anker-language-switcher-script">
+(function(){
+'use strict';
+const STORAGE_KEY='anker_caravan_language_v1';
+const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Angaben gemäß § 5 DDG sowie weitere rechtliche Informationen zum Internetauftritt von ANKER Caravan.":"Information pursuant to Section 5 DDG and further legal information concerning ANKER Caravan’s website.","Inhalt":"Contents","Anbieter":"Provider","Inhaltsverantwortlich":"Responsible for content","Haftung":"Liability","Streitbeilegung":"Dispute resolution","Anbieterkennzeichnung":"Provider identification","Unternehmen":"Company","Inhaber / Vertreten durch":"Owner / represented by","Anschrift":"Address","Telefon":"Telephone","E-Mail":"Email","Webseite":"Website","Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV":"Responsible for content pursuant to Section 18(2) MStV","Name":"Name","Haftung für Inhalte und Links":"Liability for content and links","Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr.":"The content of this website has been prepared with the greatest care. However, we accept no liability for its accuracy, completeness or currency.","Diese Webseite kann Links zu externen Webseiten Dritter enthalten. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.":"This website may contain links to external third-party websites. We have no influence over their content. The respective provider or operator is always responsible for the content of linked pages.","Verbraucherstreitbeilegung":"Consumer dispute resolution","Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen, sofern keine gesetzliche Verpflichtung besteht.":"We are neither obliged nor willing to participate in dispute-resolution proceedings before a consumer arbitration board unless required by law."};
+const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
+const META={"de_title":"Impressum | ANKER Caravan","en_title":"Legal notice | ANKER Caravan","de_desc":"Impressum von ANKER Caravan. Angaben gemäß § 5 DDG und rechtliche Hinweise.","en_desc":"ANKER Caravan legal notice. Information pursuant to Section 5 DDG and further legal information."};
+const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
+function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
+function saveLanguage(lang){try{localStorage.setItem(STORAGE_KEY,lang)}catch(e){}location.reload()}
+const lang=getLanguage();
+const sw=document.getElementById('ankerLanguageSwitcher');
+const btn=document.getElementById('ankerLanguageButton');
+const menu=document.getElementById('ankerLanguageMenu');
+const flag=document.getElementById('ankerLanguageCurrentFlag');
+const code=document.getElementById('ankerLanguageCode');
+const opts=Array.from(document.querySelectorAll('.anker-language-option[data-language]'));
+function openSwitcher(open){if(!sw||!btn)return;sw.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',open?'true':'false')}
+function updateSwitcher(){
+ if(flag){flag.src=FLAG[lang].src;flag.alt=FLAG[lang].alt}
+ if(code)code.textContent=lang.toUpperCase();
+ if(btn){btn.setAttribute('aria-label',lang==='en'?'Change language':'Sprache ändern');btn.title=lang==='en'?'Change language':'Sprache ändern'}
+ if(menu)menu.setAttribute('aria-label',lang==='en'?'Select language':'Sprache auswählen');
+ opts.forEach(o=>{const active=o.dataset.language===lang;o.classList.toggle('is-active',active);o.setAttribute('aria-current',active?'true':'false')})
+}
+if(btn&&sw){btn.addEventListener('click',e=>{e.stopPropagation();openSwitcher(!sw.classList.contains('is-open'))});document.addEventListener('click',e=>{if(!sw.contains(e.target))openSwitcher(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')openSwitcher(false)})}
+opts.forEach(o=>o.addEventListener('click',()=>{const next=o.dataset.language==='en'?'en':'de';next===lang?openSwitcher(false):saveLanguage(next)}));
+function replaceTrimmed(value,replacement){const start=value.search(/\S/);if(start===-1)return value;const end=value.length-value.trimEnd().length;return value.slice(0,start)+replacement+(end?value.slice(value.length-end):'')}
+function translateText(node){if(!node||!node.nodeValue||!node.parentElement)return;const p=node.parentElement;if(p.closest('.anker-language-switcher,script,style,noscript,textarea'))return;const key=node.nodeValue.trim();if(key&&Object.prototype.hasOwnProperty.call(TEXT_EN,key))node.nodeValue=replaceTrimmed(node.nodeValue,TEXT_EN[key])}
+function translateAttrs(root){
+ const els=[];if(root&&root.nodeType===1)els.push(root);if(root&&root.querySelectorAll)els.push(...root.querySelectorAll('[aria-label],[title],[placeholder],[alt]'));
+ els.forEach(el=>{if(el.closest&&el.closest('.anker-language-switcher'))return;['aria-label','title','placeholder','alt'].forEach(a=>{const v=el.getAttribute&&el.getAttribute(a);if(v&&Object.prototype.hasOwnProperty.call(ATTR_EN,v))el.setAttribute(a,ATTR_EN[v])})})
+}
+function translateRoot(root){
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(translateText);translateAttrs(root)
+}
+function setMeta(){
+ document.documentElement.lang=lang==='en'?'en-GB':'de-DE';
+ document.title=lang==='en'?META.en_title:META.de_title;
+ const d=document.querySelector('meta[name="description"]');if(d)d.content=lang==='en'?META.en_desc:META.de_desc;
+ const ogt=document.querySelector('meta[property="og:title"]');if(ogt)ogt.content=document.title;
+ const ogd=document.querySelector('meta[property="og:description"]');if(ogd)ogd.content=lang==='en'?META.en_desc:META.de_desc;
+ const ogl=document.querySelector('meta[property="og:locale"]');if(ogl)ogl.content=lang==='en'?'en_GB':'de_DE';
+ const twt=document.querySelector('meta[name="twitter:title"]');if(twt)twt.content=document.title;
+ const twd=document.querySelector('meta[name="twitter:description"]');if(twd)twd.content=lang==='en'?META.en_desc:META.de_desc;
+}
+updateSwitcher();setMeta();
+if(lang==='en'){
+ translateRoot(document.body);
+ const observer=new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===3)translateText(n);else if(n.nodeType===1)translateRoot(n)})));
+ observer.observe(document.body,{childList:true,subtree:true});
+}
+})();
+</script>
+</body>
+</html>
