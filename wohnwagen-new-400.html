@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Wohnwagen Micro 240 – ANKER Caravan</title>
-<meta content="Wohnwagen Micro 240 – kompaktes Micro-Modell für kurze Reisen und flexible Stellplätze." name="description"/>
+<title>Wohnwagen New 400 – ANKER Caravan</title>
+<meta content="Wohnwagen New 400 mit zwei Schlafvarianten, Autark-Paket und umfangreicher Serienausstattung." name="description"/>
 <!-- SEARCH / SOCIAL THUMBNAIL METADATA -->
-<link href="https://ankercaravanberlin.de/wohnwagen-micro-240.html" rel="canonical"/>
+<link href="https://ankercaravanberlin.de/wohnwagen-new-400.html" rel="canonical"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="googlebot"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="bingbot"/>
@@ -17,16 +17,16 @@
 <meta content="de_DE" property="og:locale"/>
 <meta content="website" property="og:type"/>
 <meta content="ANKER Caravan" property="og:site_name"/>
-<meta content="Wohnwagen Micro 240 – ANKER Caravan" property="og:title"/>
-<meta content="Wohnwagen Micro 240 – kompaktes Micro-Modell für kurze Reisen und flexible Stellplätze." property="og:description"/>
-<meta content="https://ankercaravanberlin.de/wohnwagen-micro-240.html" property="og:url"/>
-<meta content="https://ankercaravanberlin.de/images/logo-icon.png" property="og:image"/>
-<meta content="https://ankercaravanberlin.de/images/logo-icon.png" property="og:image:secure_url"/>
-<meta content="ANKER Caravan Logo" property="og:image:alt"/>
+<meta content="Wohnwagen New 400 – ANKER Caravan" property="og:title"/>
+<meta content="Wohnwagen New 400 mit zwei Schlafvarianten, Autark-Paket und umfangreicher Serienausstattung." property="og:description"/>
+<meta content="https://ankercaravanberlin.de/wohnwagen-new-400.html" property="og:url"/>
+<meta content="https://ankercaravanberlin.de/images/new-400-exterior-side.jpeg" property="og:image"/>
+<meta content="https://ankercaravanberlin.de/images/new-400-exterior-side.jpeg" property="og:image:secure_url"/>
+<meta content="Wohnwagen New 400 von ANKER Caravan" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Wohnwagen Micro 240 – ANKER Caravan" name="twitter:title"/>
-<meta content="Wohnwagen Micro 240 – kompaktes Micro-Modell für kurze Reisen und flexible Stellplätze." name="twitter:description"/>
-<meta content="https://ankercaravanberlin.de/images/logo-icon.png" name="twitter:image"/>
+<meta content="Wohnwagen New 400 – ANKER Caravan" name="twitter:title"/>
+<meta content="Wohnwagen New 400 mit zwei Schlafvarianten, Autark-Paket und umfangreicher Serienausstattung." name="twitter:description"/>
+<meta content="https://ankercaravanberlin.de/images/new-400-exterior-side.jpeg" name="twitter:image"/>
 <!-- END SEARCH / SOCIAL THUMBNAIL METADATA -->
 
 <style>
@@ -176,19 +176,26 @@
     pointer-events:none;
   }
 
-  .video-slide.active{
-    z-index:3;
-  }
-
-  .slide img{
+  .slide img,
+  .slide video{
     width:100%;
     height:100%;
     object-fit:cover;
   }
 
+  .slide video{
+    display:block;
+    background:#101827;
+    cursor:pointer;
+  }
+
+  .video-slide.active{
+    z-index:3;
+  }
+
   .thumbs{
     display:grid;
-    grid-template-columns:repeat(4, minmax(0, 1fr));
+    grid-template-columns:repeat(5, minmax(0, 1fr));
     gap:10px;
     padding:14px;
     background:#fff;
@@ -208,7 +215,8 @@
     transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
 
-  .thumb img{
+  .thumb img,
+  .thumb video{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -219,6 +227,19 @@
     border-color:var(--brand);
     transform:translateY(-2px);
     box-shadow:0 12px 24px rgba(8,26,57,.16);
+  }
+
+  .thumb-video::after{
+    content:"▶";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    background:rgba(8,26,57,.34);
+    color:#fff;
+    font-size:28px;
+    font-weight:900;
+    text-shadow:0 3px 8px rgba(0,0,0,.4);
   }
 
   .content{
@@ -279,7 +300,6 @@
 
   .feature-item strong{color:var(--brand)}
 
-
   .package-grid{
     display:grid;
     grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -318,22 +338,6 @@
 
   .package-card li{margin-bottom:5px}
 
-  .cta{
-    text-align:center;
-  }
-
-  .cta a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:8px;
-    padding:14px 24px;
-    border-radius:999px;
-    background:var(--brand);
-    color:#fff;
-    font-weight:800;
-    box-shadow:0 14px 30px rgba(8,26,57,.18);
-  }
 
 
 
@@ -451,6 +455,25 @@
     .package-price-amount{font-size:28px}
     .package-price-bottom{align-items:center}
   }
+
+
+  .cta{
+    text-align:center;
+  }
+
+  .cta a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    background:var(--brand);
+    color:#fff;
+    font-weight:800;
+    box-shadow:0 14px 30px rgba(8,26,57,.18);
+  }
+
 
   /* Grundriss section */
   .grundriss-image-wrap{
@@ -573,21 +596,6 @@
     width:100%;
     height:100%;
     object-fit:cover;
-  }
-
-  .thumb.video-thumb::after{
-    content:"▶";
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(8,26,57,.28);
-    color:#fff;
-    font-size:24px;
-    line-height:1;
-    text-shadow:0 2px 8px rgba(0,0,0,.35);
-    pointer-events:none;
   }
 
   @media (max-width: 900px){
@@ -809,11 +817,12 @@
 }
 </style>
 <link href="model-site-bars.css" rel="stylesheet"/>
+<link href="new-400.css" rel="stylesheet"/>
 <link href="model-hero-caravan.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="nav-scroll-layout.css" rel="stylesheet"/>
 </head>
-<body class="model-has-caravan-visual">
+<body class="new400-page model-has-caravan-visual">
 <header class="model-site-header">
 <div class="header-inner">
 <a class="logo reveal-left" href="index.html#start" aria-label="ANKER Caravan – Startseite">
@@ -861,180 +870,111 @@
 </div>
 </div>
 </header>
+<main>
 <section class="hero">
 <div class="hero-wrap">
 <div class="hero-text reveal-left">
-<div class="badge">Kompakter Wohnwagen</div>
-<h1>Wohnwagen Micro 240</h1>
-<p>
-        Ein besonders wendiges Micro-Modell mit kompakter Bauweise, flexiblen Schlafmöglichkeiten und praktischer Ausstattung für kurze Reisen und unkomplizierte Touren.
-      </p>
-<figure class="hero-caravan-visual"><img src="images/bild-01-card.png" alt="Wohnwagen Micro 240, Seitenansicht" loading="eager" decoding="async"/></figure>
+<div class="badge">Zwei Schlafvarianten · Autark-Paket</div>
+<h1>Wohnwagen New 400</h1>
+<p>Der New 400 bietet auf 4,00 m Aufbaulänge zwei wählbare Schlafvarianten, eine umfangreiche Serienausstattung und Komfort für unabhängige Reisen.</p>
+<figure class="hero-caravan-visual"><img src="images/new-400.png" alt="Wohnwagen New 400, Seitenansicht" loading="eager" decoding="async"/></figure>
 </div>
 <div class="slider-card reveal-right">
-<div class="slider" id="microSlider">
-<div class="slide active"><img alt="Wohnwagen Micro 240 Bild 1" src="images/micro-240-1.jpeg"/></div>
-<div class="slide"><img alt="Wohnwagen Micro 240 Bild 2" src="images/micro-240-2.jpeg"/></div>
-<div class="slide"><img alt="Wohnwagen Micro 240 Bild 3" src="images/micro-240-3.jpeg"/></div>
-<div class="slide"><img alt="Wohnwagen Micro 240 Bild 4" src="images/micro-240-4.jpeg"/></div>
-<div class="slide video-slide">
-<video controls="" playsinline="" poster="images/micro-240-1.jpeg" preload="metadata">
-<source src="videos/micro-240-video.mp4" type="video/mp4"/>
-            Ihr Browser unterstützt dieses Video nicht.
-          </video>
+<div class="slider" id="new400Slider" aria-label="New 400 Bildergalerie">
+<div class="slide active"><img src="images/new-400-exterior-side.jpeg" alt="New 400, Seitenansicht vor dem ANKARAVAN Gebäude" fetchpriority="high"/></div>
+<div class="slide"><img src="images/new-400-exterior-angle.jpeg" alt="New 400, Ansicht von vorne und von der Seite" loading="lazy"/></div>
+<div class="slide"><img src="images/new-400-interior-seating.jpeg" alt="New 400, Sitzgruppe und Innenraum" loading="lazy"/></div>
+<div class="slide"><img src="images/new-400-interior-kitchen.jpeg" alt="New 400, Küche und Schlafbereich" loading="lazy"/></div>
+<div class="slide"><img src="images/new-400-interior-storage.jpeg" alt="New 400, Stauraum und Kühlschrank" loading="lazy"/></div>
 </div>
-</div>
-<div aria-label="Micro 240 Galerie Vorschau" class="thumbs" id="microThumbs" style="--thumb-count:5">
-<button aria-label="Bild 1 anzeigen" class="thumb active" type="button"><img alt="Wohnwagen Micro 240 Vorschau 1" src="images/micro-240-1.jpeg"/></button>
-<button aria-label="Bild 2 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Micro 240 Vorschau 2" src="images/micro-240-2.jpeg"/></button>
-<button aria-label="Bild 3 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Micro 240 Vorschau 3" src="images/micro-240-3.jpeg"/></button>
-<button aria-label="Bild 4 anzeigen" class="thumb" type="button"><img alt="Wohnwagen Micro 240 Vorschau 4" src="images/micro-240-4.jpeg"/></button>
-<button aria-label="Video anzeigen" class="thumb video-thumb" type="button">
-<video muted="" playsinline="" preload="metadata">
-<source src="videos/micro-240-video.mp4" type="video/mp4"/>
-</video>
-</button>
+<div class="thumbs" id="new400Thumbs" aria-label="New 400 Galerie Vorschau">
+<button class="thumb active" type="button" aria-label="Bild 1 anzeigen" aria-pressed="true"><img src="images/new-400-exterior-side.jpeg" alt="" loading="lazy"/></button>
+<button class="thumb" type="button" aria-label="Bild 2 anzeigen" aria-pressed="false"><img src="images/new-400-exterior-angle.jpeg" alt="" loading="lazy"/></button>
+<button class="thumb" type="button" aria-label="Bild 3 anzeigen" aria-pressed="false"><img src="images/new-400-interior-seating.jpeg" alt="" loading="lazy"/></button>
+<button class="thumb" type="button" aria-label="Bild 4 anzeigen" aria-pressed="false"><img src="images/new-400-interior-kitchen.jpeg" alt="" loading="lazy"/></button>
+<button class="thumb" type="button" aria-label="Bild 5 anzeigen" aria-pressed="false"><img src="images/new-400-interior-storage.jpeg" alt="" loading="lazy"/></button>
 </div>
 </div>
 </div>
 </section>
-<section class="content">
-<div class="box reveal-zoom grundriss-section">
-<div class="section-title">
-<h2>Grundriss</h2>
-<p>Layout-Plan des Wohnwagen Micro 240</p>
+<section class="content" aria-label="New 400 Modellinformationen">
+<div class="box reveal-zoom grundriss-section" id="grundriss">
+<div class="section-title"><h2>Grundriss</h2><p>Layout-Beispiel mit Stockbett</p></div>
+<div class="grundriss-image-wrap"><img src="images/new-400-layout.jpeg" alt="Grundriss des New 400 mit Sitzgruppe, Küche, Dusche und Stockbett" loading="lazy"/></div>
 </div>
-<div class="grundriss-image-wrap">
-<img alt="Grundriss Wohnwagen Micro 240" src="images/grundriss-micro-240.png"/>
-</div>
-</div>
-<div class="box reveal">
-<div class="section-title">
-<h2>Technische Daten</h2>
-<p>Wohnwagen Micro 240</p>
-</div>
+<div class="box reveal" id="technische-daten">
+<div class="section-title"><h2>Technische Daten</h2><p>Wohnwagen New 400</p></div>
 <div class="features-grid">
-<div class="feature-item"><strong>Rahmen:</strong> Stahl feuerverzinkt</div>
-<div class="feature-item"><strong>Länge:</strong> 2,40 m</div>
+<div class="feature-item"><strong>Länge:</strong> 4,00 m</div>
+<div class="feature-item"><strong>Länge mit Deichsel:</strong> 6,10 m</div>
 <div class="feature-item"><strong>Breite:</strong> 2,00 m</div>
 <div class="feature-item"><strong>Höhe:</strong> 2,45 m</div>
 <div class="feature-item"><strong>Stehhöhe:</strong> 1,90 m</div>
-<div class="feature-item"><strong>Länge mit Deichsel:</strong> 3,90 m</div>
-<div class="feature-item"><strong>Leergewicht:</strong> 440 kg, variiert je nach Paket</div>
-<div class="feature-item"><strong>Zulässiges Gesamtgewicht:</strong> 750 kg</div>
-<div class="feature-item"><strong>Stützlast:</strong> 75–100 kg, je nach Paket</div>
-<div class="feature-item"><strong>Bettfläche:</strong> umbaubare Sitzecke zum Bett, 130 × 194 cm</div>
+<div class="feature-item"><strong>Technisch zulässiges Gesamtgewicht:</strong> 1.100–1.500 kg</div>
 </div>
 </div>
-<div class="box reveal-zoom">
-<div class="section-title">
-<h2>Ausstattungspakete</h2>
-<p>Alle Details zum Modell Micro 240</p>
+<div class="box reveal-zoom" id="schlafvarianten">
+<div class="section-title"><h2>Schlafvarianten</h2><p>Wählen Sie den Grundriss, der zu Ihrer Reise passt.</p></div>
+<div class="option-grid">
+<div class="package-card"><h3>Option 1: Festbett</h3><ul>
+<li>Umbaubare Tisch-/Bettfläche: 110 × 194 cm</li>
+<li>Festes Bett: 140 × 194 cm</li>
+</ul></div>
+<div class="package-card"><h3>Option 2: Stockbett</h3><ul>
+<li>Umbaubare Sitzgruppe/Bettfläche: 155 × 194 cm</li>
+<li>Stockbetten: 65 × 195 cm</li>
+</ul></div>
 </div>
-<div class="package-grid">
-<div class="package-card">
-<h3>Standard Paket</h3>
-<ul>
+</div>
+<div class="box reveal-zoom" id="serienausstattung">
+<div class="section-title"><h2>Umfangreiche Serienausstattung</h2><p>Der New 400 wird bereits ab Werk mit einer umfangreichen Grundausstattung geliefert.</p></div>
+<div class="package-grid equipment-grid">
+<div class="package-card"><h3>Energie &amp; Komfort</h3><ul>
+<li>2-kW-Diesel-Standheizung</li>
+<li>Autark-Paket: Solaranlage mit 150-Ah-Gelbatterie, MPPT-Laderegler und Wechselrichter bis 1.200 W (Lithium gegen Aufpreis)</li>
+<li>Außenkocher mit Gas oder Strom</li>
+<li>90-Liter-Kühlschrank, 12 V</li>
+<li>Markise</li>
+</ul></div>
+<div class="package-card"><h3>Außen &amp; Fahrwerk</h3><ul>
 <li>Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos</li>
 <li>Front-Stauraumbox und Heckstoßfänger aus Fiberglas</li>
-<li>ALKO-Drehstabachse ungebremst, gebremst optional</li>
-<li>ALKO-Kupplung ungebremst, gebremst optional</li>
-<li>4 ALKO-Stützfüße</li>
+<li>Gebremste AL-KO-Achsen</li>
+<li>AL-KO-Auflaufbremse</li>
+<li>AL-KO-Antischlingerkupplung</li>
+<li>Vier Stützfüße</li>
+</ul></div>
+<div class="package-card"><h3>Innenraum &amp; Küche</h3><ul>
 <li>Maßgefertigte Möbel in moderner Optik</li>
-<li>LED-Signalleuchten</li>
 <li>Innen- und Außenbeleuchtung</li>
 <li>220-Volt-Stromanschluss inklusive Kabel</li>
 <li>Chromspüle mit Wasserhahn</li>
-<li>12-Volt-Wasserpumpe</li>
-<li>55-Liter-Frischwassertank mit Außenbefüllung</li>
-<li>Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen</li>
-<li>Importierte Toilette</li>
-<li>Elektrokocher</li>
+<li>Elektro-Doppel-Einbaukocher</li>
 <li>Teppiche, Läufer und Platzsets</li>
+</ul></div>
+<div class="package-card"><h3>Wasser &amp; Sanitär</h3><ul>
+<li>12-Volt-Wasserpumpe</li>
+<li>100-Liter-Frischwassertank mit Außenbefüllung</li>
+<li>Außendusche</li>
+<li>Waschbecken im Bad mit ausziehbarem Wasserhahn zum Duschen und Duschtasse mit Wasserablauf</li>
+<li>Mobile Campingtoilette (Kassettentoilette gegen Aufpreis)</li>
+</ul></div>
+</div>
+</div>
+<div class="box reveal" id="sicherheit">
+<div class="section-title"><h2>Sicherheit und Zulassung</h2></div>
+<ul class="safety-list">
+<li>TÜV-Abnahme und deutsche Fahrzeugpapiere</li>
+<li>Fertigung nach deutschen und europäischen Standards</li>
+<li>Zulassungsservice auf Wunsch möglich</li>
 </ul>
-</div>
-<div class="package-card">
-<h3>Voll Paket</h3>
-<p>Zusätzlich zur Standardausstattung:</p>
-<ul>
-<li>Solaranlage</li>
-<li>12-Volt-Kühlschrank, 50 Liter</li>
-<li>Auflaufbremse, AL-KO</li>
-<li>Gebremste Achse, AL-KO</li>
-<li>Markise</li>
-<li>Dieselheizung</li>
-<li>Spezialisolierung Maxel 100</li>
-</ul>
-</div>
-<div class="package-card">
-<h3>Premium Paket</h3>
-<p>Zusätzlich zum Standard und Voll Paket:</p>
-<ul>
-<li>Elektrobackofen</li>
-<li>Fernseher</li>
-<li>Dachverkleidung</li>
-<li>Klimaanlage</li>
-<li>12-Volt-Kühlschrank, 138 Liter</li>
-</ul>
-</div>
-<div class="package-card">
-<h3>Ultra Paket</h3>
-<p>Zusätzlich zum Standard, Voll und Premium Paket:</p>
-<ul>
-<li>Wechselrichter</li>
-<li>Lithium-Batterie</li>
-<li>Kassettentoilette</li>
-<li>Warmwasseraufbereiter</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="box reveal package-prices-box" id="preise">
-<div class="section-title">
-<h2>Paketpreise</h2>
-<p>Preisübersicht für den Micro 240</p>
-</div>
-<div class="package-price-grid">
-<div class="package-price-card">
-<h3>Standard Paket</h3>
-<div class="package-price-bottom">
-<span class="package-price-label">Preis</span>
-<strong class="package-price-amount">10.000,00 €</strong>
-</div>
-</div>
-<div class="package-price-card">
-<h3>Voll Paket</h3>
-<div class="package-price-bottom">
-<span class="package-price-label">Preis</span>
-<strong class="package-price-amount">14.000,00 €</strong>
-</div>
-</div>
-<div class="package-price-card">
-<h3>Premium Paket</h3>
-<div class="package-price-bottom">
-<span class="package-price-label">Preis</span>
-<strong class="package-price-amount">15.500,00 €</strong>
-</div>
-</div>
-<div class="package-price-card">
-<h3>Ultra Paket</h3>
-<div class="package-price-bottom">
-<span class="package-price-label">Preis</span>
-<strong class="package-price-amount">16.000,00 €</strong>
-</div>
-</div>
-</div>
-<p class="package-price-footnote">Messe-Preise gemäß offizieller Micro-240-Preisliste.</p>
 </div>
 <div class="box cta reveal">
-<div class="section-title">
-<h2>Anfrage</h2>
-<p>Bei Interesse können Sie uns direkt kontaktieren.</p>
-</div>
+<div class="section-title"><h2>Anfrage</h2><p>Bei Interesse können Sie uns direkt kontaktieren.</p></div>
 <a href="kontakt.html">Kontakt aufnehmen</a>
 </div>
 </section>
+</main>
 <footer class="index-style-footer">
 <div class="container">
 <div class="footer-grid">
@@ -1079,168 +1019,7 @@
 <p class="developer-credit" style="margin:8px 0 0;text-align:center;font-size:11px;color:rgba(255,255,255,.38);">Entwickelt von <a href="https://waheb-site.de/" style="display:inline;margin:0;color:inherit;text-decoration:none;" title="Webdesign Deutschland | SEO &amp; moderne Websites | Waheb Site">Webdesign Deutschland | SEO &amp; moderne Websites.</a></p>
 </div>
 </footer>
-<script>document.querySelectorAll('.model-footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
-<script>
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.14 });
-
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom').forEach((el, index) => {
-    el.classList.add(`delay-${Math.min(index + 1, 4)}`);
-    revealObserver.observe(el);
-  });
-
-  window.addEventListener('load', () => {
-    const firstView = document.querySelectorAll('.hero-wrap > *');
-    firstView.forEach((el, index) => {
-      setTimeout(() => el.classList.add('show'), 40 * index);
-    });
-  });
-
-  const slides = document.querySelectorAll('#microSlider .slide');
-  const thumbs = document.querySelectorAll('#microThumbs .thumb');
-  const slider = document.querySelector('#microSlider');
-  let index = 0;
-  let autoSlideTimer;
-  let resumeTimer;
-
-  function stopAutoSlide(){
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-    if (resumeTimer) clearTimeout(resumeTimer);
-    autoSlideTimer = null;
-    resumeTimer = null;
-  }
-
-  function pauseAutoSlide(){
-    stopAutoSlide();
-
-    const activeVideo = slides[index]?.querySelector('video');
-    if (activeVideo) return;
-
-    resumeTimer = setTimeout(() => {
-      startAutoSlide();
-    }, 10000);
-  }
-
-  thumbs.forEach((thumb, thumbIndex) => {
-    thumb.addEventListener('click', () => {
-      stopAutoSlide();
-      index = thumbIndex;
-      showSlide(index);
-
-      const selectedVideo = slides[index]?.querySelector('video');
-      if (!selectedVideo) {
-        pauseAutoSlide();
-      }
-    });
-  });
-
-  if (slider) {
-    slider.addEventListener('click', pauseAutoSlide);
-  }
-
-  slides.forEach((slide) => {
-    const video = slide.querySelector('video');
-    if (video) {
-      video.addEventListener('play', stopAutoSlide);
-      video.addEventListener('ended', () => {
-        pauseAutoSlide();
-      });
-    }
-  });
-
-  function showSlide(i){
-    slides.forEach((slide, sIndex) => {
-      const isActive = sIndex === i;
-      slide.classList.toggle('active', isActive);
-
-      const video = slide.querySelector('video');
-      if (video && !isActive) {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-    thumbs.forEach((thumb, tIndex) => {
-      thumb.classList.toggle('active', tIndex === i);
-    });
-  }
-
-  function startAutoSlide(){
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-    autoSlideTimer = setInterval(() => {
-      const activeVideo = slides[index]?.querySelector('video');
-      if (activeVideo) return;
-
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }, 3000);
-  }
-
-  startAutoSlide();
-
-
-
-</script>
-
-<script id="anker-language-switcher-script">
-(function(){
-'use strict';
-const STORAGE_KEY='anker_caravan_language_v1';
-const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Kompakter Wohnwagen":"Compact caravan","Wohnwagen Micro 240":"Micro 240 caravan","Ein besonders wendiges Micro-Modell mit kompakter Bauweise, flexiblen Schlafmöglichkeiten und praktischer Ausstattung für kurze Reisen und unkomplizierte Touren.":"An especially agile micro model with a compact design, flexible sleeping options and practical equipment for short trips and uncomplicated touring.","Layout-Plan des Wohnwagen Micro 240":"Floor-plan layout of the Micro 240 caravan","440 kg, variiert je nach Paket":"440 kg, depending on package","Bettfläche:":"Bed area:","umbaubare Sitzecke zum Bett, 130 × 194 cm":"convertible seating area forming a 130 × 194 cm bed","Alle Details zum Modell Micro 240":"All details about the Micro 240 model","Paketpreise":"Package prices","Preisübersicht für den Micro 240":"Price overview for the Micro 240","Preis":"Price","Messe-Preise gemäß offizieller Micro-240-Preisliste.":"Trade-fair prices according to the official Micro 240 price list."};
-const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
-ATTR_EN["Wohnwagen Micro 240, Seitenansicht"] = "Side view of the Micro 240 caravan";
-const META={"de_title":"Wohnwagen Micro 240 – ANKER Caravan","en_title":"Micro 240 caravan – ANKER Caravan","de_desc":"Wohnwagen Micro 240 – kompaktes Micro-Modell für kurze Reisen und flexible Stellplätze.","en_desc":"Micro 240 caravan – a compact micro model for short trips and flexible pitches."};
-const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
-function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
-function saveLanguage(lang){try{localStorage.setItem(STORAGE_KEY,lang)}catch(e){}location.reload()}
-const lang=getLanguage();
-const sw=document.getElementById('ankerLanguageSwitcher');
-const btn=document.getElementById('ankerLanguageButton');
-const menu=document.getElementById('ankerLanguageMenu');
-const flag=document.getElementById('ankerLanguageCurrentFlag');
-const code=document.getElementById('ankerLanguageCode');
-const opts=Array.from(document.querySelectorAll('.anker-language-option[data-language]'));
-function openSwitcher(open){if(!sw||!btn)return;sw.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',open?'true':'false')}
-function updateSwitcher(){
- if(flag){flag.src=FLAG[lang].src;flag.alt=FLAG[lang].alt}
- if(code)code.textContent=lang.toUpperCase();
- if(btn){btn.setAttribute('aria-label',lang==='en'?'Change language':'Sprache ändern');btn.title=lang==='en'?'Change language':'Sprache ändern'}
- if(menu)menu.setAttribute('aria-label',lang==='en'?'Select language':'Sprache auswählen');
- opts.forEach(o=>{const active=o.dataset.language===lang;o.classList.toggle('is-active',active);o.setAttribute('aria-current',active?'true':'false')})
-}
-if(btn&&sw){btn.addEventListener('click',e=>{e.stopPropagation();openSwitcher(!sw.classList.contains('is-open'))});document.addEventListener('click',e=>{if(!sw.contains(e.target))openSwitcher(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')openSwitcher(false)})}
-opts.forEach(o=>o.addEventListener('click',()=>{const next=o.dataset.language==='en'?'en':'de';next===lang?openSwitcher(false):saveLanguage(next)}));
-function replaceTrimmed(value,replacement){const start=value.search(/\S/);if(start===-1)return value;const end=value.length-value.trimEnd().length;return value.slice(0,start)+replacement+(end?value.slice(value.length-end):'')}
-function translateText(node){if(!node||!node.nodeValue||!node.parentElement)return;const p=node.parentElement;if(p.closest('.anker-language-switcher,script,style,noscript,textarea'))return;const key=node.nodeValue.trim();if(key&&Object.prototype.hasOwnProperty.call(TEXT_EN,key))node.nodeValue=replaceTrimmed(node.nodeValue,TEXT_EN[key])}
-function translateAttrs(root){
- const els=[];if(root&&root.nodeType===1)els.push(root);if(root&&root.querySelectorAll)els.push(...root.querySelectorAll('[aria-label],[title],[placeholder],[alt]'));
- els.forEach(el=>{if(el.closest&&el.closest('.anker-language-switcher'))return;['aria-label','title','placeholder','alt'].forEach(a=>{const v=el.getAttribute&&el.getAttribute(a);if(v&&Object.prototype.hasOwnProperty.call(ATTR_EN,v))el.setAttribute(a,ATTR_EN[v])})})
-}
-function translateRoot(root){
- const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(translateText);translateAttrs(root)
-}
-function setMeta(){
- document.documentElement.lang=lang==='en'?'en-GB':'de-DE';
- document.title=lang==='en'?META.en_title:META.de_title;
- const d=document.querySelector('meta[name="description"]');if(d)d.content=lang==='en'?META.en_desc:META.de_desc;
- const ogt=document.querySelector('meta[property="og:title"]');if(ogt)ogt.content=document.title;
- const ogd=document.querySelector('meta[property="og:description"]');if(ogd)ogd.content=lang==='en'?META.en_desc:META.de_desc;
- const ogl=document.querySelector('meta[property="og:locale"]');if(ogl)ogl.content=lang==='en'?'en_GB':'de_DE';
- const twt=document.querySelector('meta[name="twitter:title"]');if(twt)twt.content=document.title;
- const twd=document.querySelector('meta[name="twitter:description"]');if(twd)twd.content=lang==='en'?META.en_desc:META.de_desc;
-}
-updateSwitcher();setMeta();
-if(lang==='en'){
- translateRoot(document.body);
- const observer=new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===3)translateText(n);else if(n.nodeType===1)translateRoot(n)})));
- observer.observe(document.body,{childList:true,subtree:true});
-}
-})();
-</script>
+<script src="new-400.js" defer></script>
 
 <script id="gallery-lightbox-enhancement-script">
 (function(){

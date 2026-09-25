@@ -25,16 +25,17 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link as="image" fetchpriority="high" href="images/logo-icon.png" rel="preload"/>
+<link as="image" fetchpriority="high" href="images/logo.png" rel="preload"/>
 <link as="image" fetchpriority="high" href="images/logo-mobile-before.png" rel="preload"/>
 <link as="image" fetchpriority="high" href="images/hero-1.jpg" rel="preload"/>
 <link as="image" href="images/hero-2.jpg" rel="preload"/>
 <link as="image" href="images/hero-3.jpg" rel="preload"/>
-<link as="image" href="images/hero-4.png" rel="preload"/>
 <link as="image" href="images/mobilehero-1.png" media="(max-width: 760px)" rel="preload"/>
 <link as="image" href="images/mobilehero-2.png" media="(max-width: 760px)" rel="preload"/>
 <link as="image" href="images/mobilehero-3.png" media="(max-width: 760px)" rel="preload"/>
-<link as="image" href="images/Sortiment-mobile.png" media="(max-width: 760px)" rel="preload"/>
+<link as="image" href="images/1.png" media="(max-width: 760px)" rel="preload"/>
+<link as="image" href="images/2.png" media="(max-width: 760px)" rel="preload"/>
+<link as="image" href="images/3.png" media="(max-width: 760px)" rel="preload"/>
 <meta content="de_DE" property="og:locale"/>
 <meta content="website" property="og:type"/>
 <meta content="ANKER Caravan" property="og:site_name"/>
@@ -164,12 +165,6 @@
           "position": 3,
           "url": "https://ankercaravanberlin.de/wohnwagen-eco-350.html",
           "name": "Wohnwagen Eco 350"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "url": "https://ankercaravanberlin.de/wohnwagen-new-400.html",
-          "name": "Wohnwagen New 400"
         }
       ]
     },
@@ -1321,7 +1316,6 @@
  .hero-slide.slide-1 { background-image: url("images/hero-1.jpg"); }
  .hero-slide.slide-2 { background-image: url("images/hero-2.jpg"); }
  .hero-slide.slide-3 { background-image: url("images/hero-3.jpg"); }
- .hero-slide.slide-4 { background-image: url("images/hero-4.png"); }
 
  .hero-slide::before {
   background:
@@ -1418,7 +1412,6 @@
  .hero-kaiser .slide-1 .hero-bg { background-image: url("images/hero-1.jpg"); }
  .hero-kaiser .slide-2 .hero-bg { background-image: url("images/hero-2.jpg"); }
  .hero-kaiser .slide-3 .hero-bg { background-image: url("images/hero-3.jpg"); }
-.hero-kaiser .slide-4 .hero-bg { background-image: url("images/hero-4.png"); background-position: center center; }
  .hero-kaiser .hero-slide.active .hero-bg {
   animation: heroSlowZoom 6.2s ease-out forwards;
  }
@@ -1591,8 +1584,7 @@
  }
  .hero-kaiser .hero-slide.slide-1,
  .hero-kaiser .hero-slide.slide-2,
- .hero-kaiser .hero-slide.slide-3,
-.hero-kaiser .hero-slide.slide-4 {
+ .hero-kaiser .hero-slide.slide-3 {
   background-image: none !important;
  }
  .hero-kaiser .hero-bg {
@@ -1858,7 +1850,7 @@
   width: 252px !important;
   height: 68px !important;
   border-radius: 0 !important;
-  background: url("images/logo-icon.png") left center / contain no-repeat !important;
+  background: url("images/logo.png") left center / contain no-repeat !important;
   box-shadow: none !important;
  }
 
@@ -1910,7 +1902,7 @@
   bottom: clamp(70px, 12vw, 150px);
   width: min(42vw, 520px);
   height: 260px;
-  background: url("images/logo-icon.png") center / contain no-repeat;
+  background: url("images/logo.png") center / contain no-repeat;
   opacity: .12;
   pointer-events: none;
   z-index: 0;
@@ -5042,7 +5034,7 @@
  }
 
  .hero-kaiser::after {
-  background: url("images/logo-icon.png") center / contain no-repeat !important;
+  background: url("images/logo.png") center / contain no-repeat !important;
   opacity: .11 !important;
   filter: saturate(.95) !important;
  }
@@ -10055,53 +10047,6 @@
   .language-switcher-menu { right: -40px; width: min(218px, calc(100vw - 24px)); }
 }
 </style>
-
-<style id="mobile-no-horizontal-scroll-final">
-/* Mobile only: prevent any horizontal page/section movement. Desktop is untouched. */
-@media (max-width: 760px) {
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  #produkte.dark-section,
-  html.produkte-non100-zoom #produkte.dark-section {
-    overflow-x: clip !important;
-  }
-
-  #produkte.dark-section > .container,
-  html.produkte-non100-zoom #produkte.dark-section > .container {
-    width: min(var(--max), calc(100% - 32px)) !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-}
-</style>
-
-<style id="mobile-caravan-date-dash-fix">
-@media (max-width: 760px) {
-  #produkte .caravan-salon-date .caravan-salon-date-text {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    width: 100% !important;
-    white-space: normal !important;
-    line-height: 1.05 !important;
-    text-align: center !important;
-    transform: none !important;
-  }
-  #produkte .caravan-salon-date .caravan-salon-date-text > span {
-    display: block !important;
-    white-space: nowrap !important;
-  }
-  #produkte .caravan-salon-date .caravan-salon-date-sep {
-    display: none !important;
-  }
-}
-</style>
 </head>
 <body>
 <div class="topbar">
@@ -10231,25 +10176,11 @@
 </div>
 </div>
 </article>
-<article class="hero-slide slide-4" data-slide="3">
-<div aria-hidden="true" class="hero-bg"></div>
-<div class="container hero-slide-inner">
-<div class="hero-copy">
-<p class="kaiser-pretitle">ANKER Caravan</p>
-<h1>Komfort, der mitreist</h1>
-<p class="kaiser-subtitle">Kompakter Wohnwagen mit modernem Design, heller Ausstattung und Komfort für stilvolle Reisen</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#produkte">Wohnwagen ansehen</a>
-</div>
-</div>
-</div>
-</article>
 <div aria-label="Hero Slider Steuerung" class="hero-controls">
 <div aria-label="Slides auswählen" class="hero-dots" role="tablist">
 <button aria-label="Slide 1" class="hero-dot active" type="button"><span></span></button>
 <button aria-label="Slide 2" class="hero-dot" type="button"><span></span></button>
 <button aria-label="Slide 3" class="hero-dot" type="button"><span></span></button>
-<button aria-label="Slide 4" class="hero-dot" type="button"><span></span></button>
 </div>
 <div class="hero-arrows">
 <button aria-label="Vorheriger Slide" class="hero-arrow" id="heroPrev" type="button">‹</button>
@@ -10268,14 +10199,12 @@
 </article>
 <div class="section-head caravans-showcase-heading">
 <div>
-<div class="caravans-title-row">
-<p class="caravans-trust-kicker">Wohnwagen mit Vertrauen</p>
-<h2 class="caravans-main-title"><span>ENTDECKE FREIHEIT</span> <span>AUF RÄDERN!</span></h2>
+<h2 class="salon-wels-heading">
+<span class="salon-wels-dates">14.10.2026 –<br/>18.10.2026</span>
+<span aria-hidden="true" class="salon-wels-rule"></span>
+<span class="salon-wels-location">MESSE WELS<br/>ÖSTERREICH</span>
+</h2>
 </div>
-</div>
-</div>
-<div class="caravans-location-thumb" aria-label="Halle 20, Stand C45">
-<img src="images/halle20-stand-c45.png" alt="Halle 20, Stand C45" decoding="async" loading="eager"/>
 </div>
 </div>
 
@@ -10285,7 +10214,7 @@
 <div class="sortiment-product-grid">
 <a aria-label="Wohnwagen Micro 240 ansehen" class="sortiment-product-card" href="wohnwagen-micro-240.html">
 <div class="sortiment-product-image">
-<img alt="Wohnwagen Micro 240 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-01-card.png"/>
+<img alt="Wohnwagen Micro 240 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-01.png"/>
 </div>
 <div class="sortiment-product-body">
 <h3>Wohnwagen Micro 240</h3>
@@ -10295,7 +10224,7 @@
 </a>
 <a aria-label="Wohnwagen Mini 270 ansehen" class="sortiment-product-card" href="wohnwagen-mini-270.html">
 <div class="sortiment-product-image">
-<img alt="Wohnwagen Mini 270 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-02-card.png"/>
+<img alt="Wohnwagen Mini 270 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-02.png"/>
 </div>
 <div class="sortiment-product-body">
 <h3>Wohnwagen Mini 270</h3>
@@ -10305,7 +10234,7 @@
 </a>
 <a aria-label="Wohnwagen Eco 350 ansehen" class="sortiment-product-card" href="wohnwagen-eco-350.html">
 <div class="sortiment-product-image">
-<img alt="Wohnwagen Eco 350 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-03-card.png"/>
+<img alt="Wohnwagen Eco 350 von ANKER Caravan" decoding="async" loading="lazy" src="images/bild-03.png"/>
 </div>
 <div class="sortiment-product-body">
 <h3>Wohnwagen Eco 350</h3>
@@ -10313,14 +10242,14 @@
 <span class="sortiment-product-more">Mehr erfahren →</span>
 </div>
 </a>
-<a aria-label="New 400 ansehen" class="sortiment-product-card" data-model="new-400" href="wohnwagen-new-400.html">
+<a aria-label="New 400 ansehen" class="sortiment-product-card" data-model="new-400" href="kontakt.html">
 <div class="sortiment-product-image">
 <img alt="New 400 Caravan von ANKER Caravan" decoding="async" loading="lazy" src="images/new-400.png"/>
 </div>
 <div class="sortiment-product-body">
 <h3>New 400</h3>
-<p>Der New 400 bietet zwei Schlafvarianten, eine umfangreiche Serienausstattung, Küche und Bad sowie ein Autark-Paket für unabhängige Reisen.</p>
-<span class="sortiment-product-more">Mehr erfahren →</span>
+<p>Der 4,0 New verbindet modernes Design mit innovativer Ausstattung. Mit integriertem Küchen- und Toilettensystem bietet er hohen Komfort und ist ideal für längere Campingaufenthalte.</p>
+<span class="sortiment-product-more">Anfrage senden →</span>
 </div>
 </a>
 </div>
@@ -10335,8 +10264,8 @@
       </svg>
     </span>
     <span class="caravan-salon-copy">
-      <strong class="caravan-salon-date-text"><span>14.10.2026</span><span class="caravan-salon-date-sep" aria-hidden="true"> – </span><span>18.10.2026</span></strong>
-      <small>MESSE WELS<br/>ÖSTERREICH</small>
+      <strong>28.08.2026 – 06.09.2026</strong>
+      <small>MESSE DÜSSELDORF</small>
     </span>
   </div>
 
@@ -10347,7 +10276,7 @@
     </span>
   </div>
 
-  <div class="caravan-salon-info-item caravan-salon-location" aria-label="Halle 20 Stand C45">
+  <div class="caravan-salon-info-item caravan-salon-location" aria-label="Halle 11 Stand C10">
     <span class="caravan-salon-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"/>
@@ -10355,8 +10284,8 @@
       </svg>
     </span>
     <span class="caravan-salon-copy">
-      <strong>Halle 20</strong>
-      <small>Stand C45</small>
+      <strong>Halle 11</strong>
+      <small>Stand C10</small>
     </span>
   </div>
 </div>
@@ -10619,7 +10548,6 @@
 <p class="developer-credit" style="margin:8px 0 0;text-align:center;font-size:11px;color:rgba(255,255,255,.38);">Entwickelt von <a href="https://waheb-site.de/" style="display:inline;margin:0;color:inherit;text-decoration:none;" title="Webdesign Deutschland | SEO &amp; moderne Websites | Waheb Site">Webdesign Deutschland | SEO &amp; moderne Websites.</a></p>
 </div>
 </footer>
-<script>document.querySelectorAll('.model-footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
 <div aria-describedby="cookieConsentText" aria-labelledby="cookieConsentTitle" aria-modal="false" class="cookie-consent" hidden="" id="cookieConsent" role="dialog">
 <div class="cookie-consent-card">
 <div class="cookie-consent-inner">
@@ -10805,7 +10733,7 @@
   });
 
   window.addEventListener('resize', () => {
-  if (window.innerWidth > 1360) setMobileMenu(false);
+  if (window.innerWidth > 1080) setMobileMenu(false);
   });
  }
 
@@ -10998,21 +10926,15 @@
   if (!header) return;
 
   function updateHeaderState() {
-   const isPhone = window.matchMedia('(max-width: 760px)').matches;
-   const shouldFold = isPhone
-    ? window.scrollY > 40
-    : (window.scrollY > 40 || window.matchMedia('(max-width: 1179.98px)').matches);
-
-   if (shouldFold) {
-    header.classList.add("is-scrolled");
-   } else {
-    header.classList.remove("is-scrolled");
-   }
+  if (window.scrollY > 40) {
+   header.classList.add("is-scrolled");
+  } else {
+   header.classList.remove("is-scrolled");
+  }
   }
 
   updateHeaderState();
   window.addEventListener("scroll", updateHeaderState, { passive: true });
-  window.addEventListener("resize", updateHeaderState, { passive: true });
  })();
  </script>
 <script>
@@ -16667,35 +16589,10 @@ html.translated-rtl body header.site-header .container.nav {
   'use strict';
 
   const STORAGE_KEY = 'anker_caravan_language_v1';
-  const TEXT_EN = {"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Caravans ansehen →":"View caravans →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","KONTAKTIEREN":"CONTACT US","Wohnwagen mit Vertrauen":"Caravans with confidence","ENTDECKE FREIHEIT":"DISCOVER FREEDOM","AUF RÄDERN!":"ON WHEELS!","für Reisen, Freiheit und komfortable Auszeiten":"for travel, freedom and comfortable getaways","Wohnwagen ansehen":"View caravans","Ihr passender Caravan":"Your ideal caravan","Ausstattung, Zustand und Budget gemeinsam abgestimmt":"Equipment, condition and budget aligned with you","Anfrage senden":"Send inquiry","Sicher, gepflegt und startklar":"Safe, well-maintained and ready to go","Reisen beginnt mit Vertrauen":"Every journey starts with confidence","Senden Sie uns Ihre Anfrage – wir melden uns mit passenden Optionen":"Send us your inquiry – we’ll get back to you with suitable options","Kontakt aufnehmen":"Get in touch","Zu den Wohnwagen":"View caravans","Sortiment":"Range","Wohnwagen Micro 240":"Micro 240 Caravan","Wendiger Wohnwagen für Wochenendtrips, kleine Stellplätze und spontane Touren – leicht zu handhaben, gemütlich und schnell startklar.":"A nimble caravan for weekend trips, small pitches and spontaneous tours – easy to handle, comfortable and quickly ready to go.","Mehr erfahren →":"Learn more →","Wohnwagen Mini 270":"Mini 270 Caravan","Kompakter Camper Caravan mit flexiblen Schlafplätzen, praktischer Ausstattung und gemütlichem Komfort für kurze und längere Reisen.":"A compact camper caravan with flexible berths, practical equipment and cosy comfort for short and longer journeys.","Wohnwagen Eco 350":"Eco 350 Caravan","Familienfreundlicher Caravan mit mehr Platz, praktischen Schlafplätzen und Ausstattung für flexible Reisen und komfortables Camping.":"A family-friendly caravan with more space, practical berths and equipment for flexible travel and comfortable camping.","WARUM ANKER CARAVAN?":"WHY ANKER CARAVAN?","Vertrauen, Komfort und passend zu Ihrer Reise.":"Confidence, comfort and a perfect fit for your journey.","Wir unterstützen Sie bei der Auswahl eines Wohnwagens, der zu Ihrem Budget, Ihrer Reiseart und Ihren Komfortwünschen passt.":"We help you choose a caravan that suits your budget, travel style and comfort requirements.","Vertrauensvolle Beratung":"Trusted advice","Persönliche Einschätzung, klare Informationen und transparente Antworten vor Ihrer Entscheidung.":"Personal guidance, clear information and transparent answers before you decide.","Komfortable Auswahl":"Comfortable choice","Verschiedene Grundrisse, Schlafplätze und Ausstattungen für entspannte Reisen.":"Different layouts, berths and equipment options for relaxed travel.","Startklar für die Reise":"Ready for the journey","Wir achten auf Ausstattung, Zustand und Details, damit Sie sicher und gut vorbereitet starten.":"We check equipment, condition and details so you can set off safely and well prepared.","Individuelle Anfrage":"Personalised inquiry","Ihre Wünsche werden individuell geprüft – passend zu Reiseplänen, Budget und Ausstattung.":"Your requirements are reviewed individually – matched to your travel plans, budget and preferred equipment.","Alles für Ihre Anfrage":"Everything for your inquiry","Modellwunsch, Budget, Schlafplätze, Ausstattung und Fahrzeugcheck-Termin.":"Preferred model, budget, berths, equipment and vehicle inspection appointment.","Beratung":"Advice","Welcher Wohnwagen passt zu Ihnen?":"Which caravan is right for you?","Senden Sie uns eine kurze Anfragebeschreibung. Wir prüfen, welche Modelle geeignet sind, welche Ausstattung sinnvoll ist und wie der Fahrzeugcheck geplant werden kann.":"Send us a short description of what you need. We will check which models are suitable, which equipment makes sense and how the vehicle inspection can be arranged.","Reiseart & Personen":"Travel style & passengers","Wir klären gemeinsam, ob Sie allein, zu zweit oder mit der Familie reisen und wie viel Platz Sie benötigen.":"Together we clarify whether you travel alone, as a couple or with your family, and how much space you need.","Budget & Zustand":"Budget & condition","Nennen Sie uns Ihr Budget, das gewünschte Baujahr und den Zustand, den Sie bevorzugen – neu, gepflegt oder gebraucht.":"Tell us your budget, preferred model year and condition – new, well maintained or used.","Ausstattung & Details":"Equipment & details","Wir besprechen wichtige Ausstattungsdetails wie Schlafplätze, Küche, Bad, Heizung, Vorzelt, Mover oder Fahrradträger.":"We discuss important equipment details such as berths, kitchen, bathroom, heating, awning, mover or bicycle rack.","Fahrzeugcheck":"Vehicle inspection","Bei einem Fahrzeugcheck-Termin können Sie den Wohnwagen in Ruhe anschauen und prüfen, ob er zu Ihren Wünschen passt.":"At a vehicle inspection appointment, you can take your time viewing the caravan and check whether it meets your requirements.","Ablauf":"Process","Vom Wunsch zum passenden Wohnwagen.":"From your wishes to the right caravan.","Ein einfacher Prozess, damit wir Ihre Anfrage schnell und passend einordnen können.":"A simple process that helps us assess your inquiry quickly and accurately.","Wünsche beschreiben":"Describe your requirements","Senden Sie Reiseart, Personenanzahl, Budget und gewünschte Ausstattung.":"Send us your travel style, number of passengers, budget and preferred equipment.","Modelle prüfen":"Review models","Wir prüfen passende Wohnwagen und Caravan-Optionen.":"We review suitable caravans and available options.","Fahrzeugcheck planen":"Plan the vehicle inspection","Gemeinsam stimmen wir einen Termin zum Fahrzeugcheck oder zur Rücksprache ab.":"Together we arrange an appointment for a vehicle inspection or consultation.","Angebot erhalten":"Receive an offer","Sie bekommen eine individuelle Rückmeldung mit passenden Details.":"You receive a personalised response with suitable details.","Ideen":"Ideas","So kann Ihr Caravan genutzt werden.":"Ways to enjoy your caravan.","Beispiele für typische Reisen, Auszeiten und Camping-Momente.":"Examples of typical journeys, getaways and camping moments.","Familienurlaub":"Family holiday","Komfortabel unterwegs":"Comfort on the road","Wochenendtrip":"Weekend trip","Flexibel und unkompliziert":"Flexible and uncomplicated","Campingplatz":"Campsite","Ankommen und entspannen":"Arrive and relax","Autarke Reise":"Off-grid travel","Freiheit unterwegs":"Freedom on the road","Komfort unterwegs":"Comfort while travelling","Ausstattung nach Wunsch":"Equipment to suit you","Unser Team":"Our team","Persönlich für Sie da.":"Here for you personally.","Kompetente Beratung, klare Antworten und eine zuverlässige Begleitung rund um Ihre Caravan-Anfrage.":"Expert advice, clear answers and reliable support throughout your caravan inquiry.","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Leitung und persönliche Beratung":"Management and personal advice","Über":"About","Wohnwagen mit Vertrauen.":"Caravans with confidence.","steht für ehrliche Beratung, gepflegte Wohnwagen und einen transparenten Ablauf – von der ersten Anfrage bis zum Fahrzeugcheck.":"stands for honest advice, well-maintained caravans and a transparent process – from your first inquiry to the vehicle inspection.","Wir nehmen uns Zeit für Ihre Wünsche, erklären Ausstattung und Möglichkeiten klar verständlich und begleiten Sie zuverlässig bei der Auswahl.":"We take time to understand your wishes, explain equipment and options clearly, and support you reliably throughout your choice.","Persönlich. Transparent. Verlässlich.":"Personal. Transparent. Reliable.","Kontakt":"Contact","Jetzt kontaktieren":"Contact us now","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Auswahl":"Selection","Vorteile":"Benefits","Über uns":"About us","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Willkommen bei ANKER Caravan":"Welcome to ANKER Caravan","Diese Website verwendet nur notwendige Cookies. Sie helfen dabei, die Seite sicher anzuzeigen, Ihre Cookie-Auswahl zu speichern und die Funktionen von ANKER Caravan zuverlässig bereitzustellen.":"This website uses only essential cookies. They help display the site securely, remember your cookie choice and provide ANKER Caravan functions reliably.","Datenschutzerklärung":"Privacy policy","Website-Funktionen anzeigen":"Show website features","Website-Funktionen ausblenden":"Hide website features","Übersicht und Modellseiten für Micro 240, Mini 270 und Eco 350.":"Overview and model pages for the Micro 240, Mini 270 and Eco 350.","Beratung & Fahrzeugcheck":"Advice & vehicle inspection","Informationen zur passenden Caravan-Auswahl, Budget, Ausstattung und Fahrzeugcheck-Termin.":"Information about choosing the right caravan, budget, equipment and the vehicle inspection appointment.","Anfrage & Kontakt":"Inquiry & contact","Kontaktmöglichkeiten und Anfrageformular für Ihren passenden Wohnwagen.":"Contact options and an inquiry form for your ideal caravan.","Technisch notwendig":"Essential","Gespeichert wird nur Ihre Hinweis-Bestätigung, damit diese Meldung nicht bei jedem Besuch erscheint.":"Only your notice confirmation is stored so this message does not appear on every visit.","Verstanden":"Got it","Ihre Auswahl gilt nur für diese Website und kann jederzeit im Footer über „Cookie-Einstellungen“ erneut angezeigt werden.":"Your choice applies only to this website and can be changed at any time via “Cookie settings” in the footer.","Menü öffnen":"Open menu","Menü schließen":"Close menu","Cookie-Einstellungen":"Cookie settings"};
-  const ATTR_EN = {"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","ANKER Caravan Hero Slider":"ANKER Caravan hero slider","Hero Slider Steuerung":"Hero slider controls","Slides auswählen":"Select slides","Slide 1":"Slide 1","Slide 2":"Slide 2","Slide 3":"Slide 3","Slide 4":"Slide 4","Vorheriger Slide":"Previous slide","Nächster Slide":"Next slide","Caravan Sortiment mit verlinkten Modellseiten":"Caravan range with linked model pages","Wohnwagen Micro 240 ansehen":"View the Micro 240 caravan","Wohnwagen Micro 240 von ANKER Caravan":"Micro 240 caravan by ANKER Caravan","Wohnwagen Mini 270 ansehen":"View the Mini 270 caravan","Wohnwagen Mini 270 von ANKER Caravan":"Mini 270 caravan by ANKER Caravan","Wohnwagen Eco 350 ansehen":"View the Eco 350 caravan","Wohnwagen Eco 350 von ANKER Caravan":"Eco 350 caravan by ANKER Caravan","Vertrauensvolle Beratung":"Trusted advice","Vertrauensvolle Wohnwagen-Beratung bei ANKER Caravan":"Trusted caravan advice at ANKER Caravan","Komfortable Auswahl":"Comfortable choice","Komfortable Caravan-Auswahl für entspannte Reisen":"Comfortable caravan selection for relaxed travel","Startklar für die Reise":"Ready for the journey","Startklarer Wohnwagen für sichere Reisen":"A road-ready caravan for safe travel","Individuelle Anfrage":"Personalised inquiry","Individuelle Caravan-Anfrage und Beratung":"Personalised caravan inquiry and advice","Wohnwagen-Beratung mit Anfrageunterlagen und Planung":"Caravan advice with inquiry details and planning","Beratung zu Reiseart und Personenanzahl":"Advice on travel style and number of passengers","Budget und Zustand beim Wohnwagenkauf":"Budget and condition when buying a caravan","Ausstattung und Details auswählen":"Choose equipment and details","Fahrzeugcheck-Termin planen":"Plan a vehicle inspection appointment","Wohnwagen im Familienurlaub":"Caravan on a family holiday","Caravan für Wochenendtrip":"Caravan for a weekend trip","Caravan auf dem Campingplatz":"Caravan at a campsite","Wohnwagen für autarke Reise":"Caravan for off-grid travel","Komfortdetails im Wohnwagen":"Comfort features in the caravan","Unser Team":"Our team","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Kontakt zu ANKER Caravan":"Contact ANKER Caravan","Rechtliche Informationen":"Legal information","Sprache ändern":"Change language","Sprache auswählen":"Select language"};
-
-  // Latest Hero/Event translations
-  Object.assign(TEXT_EN, {
-    "Komfort, der mitreist": "Comfort that travels with you",
-    "Kompakter Wohnwagen mit modernem Design, heller Ausstattung und Komfort für stilvolle Reisen": "A compact caravan with modern design, bright interior features and comfort for stylish journeys",
-    "MESSE WELS": "WELS TRADE FAIR",
-    "ÖSTERREICH": "AUSTRIA",
-    "Halle 20": "Hall 20",
-    "Stand C45": "Stand C45",
-    "CARAVAN SALON": "CARAVAN SALON",
-    "— Austria": "— Austria",
-    "KOMPAKT &": "COMPACT &",
-    "FLEXIBEL": "FLEXIBLE",
-    "QUALITÄT": "QUALITY",
-    "MIT VERTRAUEN": "WITH CONFIDENCE",
-    "NATUR": "NATURE",
-    "ENTDECKEN": "DISCOVER",
-    "PERSÖNLICH": "PERSONAL",
-    "FÜR DICH DA": "HERE FOR YOU"
-  });
-  Object.assign(ATTR_EN, {
-    "Caravan Salon Austria Veranstaltungsinformationen": "Caravan Salon Austria event information",
-    "Halle 20 Stand C45": "Hall 20 Stand C45",
-    "Caravan Salon Vorteile": "Caravan Salon benefits"
-  });
+  const TEXT_EN = {"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Caravans ansehen →":"View caravans →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","KONTAKTIEREN":"CONTACT US","Wohnwagen mit Vertrauen":"Caravans with confidence","für Reisen, Freiheit und komfortable Auszeiten":"for travel, freedom and comfortable getaways","Wohnwagen ansehen":"View caravans","Ihr passender Caravan":"Your ideal caravan","Ausstattung, Zustand und Budget gemeinsam abgestimmt":"Equipment, condition and budget aligned with you","Anfrage senden":"Send inquiry","Sicher, gepflegt und startklar":"Safe, well-maintained and ready to go","Reisen beginnt mit Vertrauen":"Every journey starts with confidence","Senden Sie uns Ihre Anfrage – wir melden uns mit passenden Optionen":"Send us your inquiry – we’ll get back to you with suitable options","Kontakt aufnehmen":"Get in touch","Zu den Wohnwagen":"View caravans","Sortiment":"Range","Wohnwagen Micro 240":"Micro 240 Caravan","Wendiger Wohnwagen für Wochenendtrips, kleine Stellplätze und spontane Touren – leicht zu handhaben, gemütlich und schnell startklar.":"A nimble caravan for weekend trips, small pitches and spontaneous tours – easy to handle, comfortable and quickly ready to go.","Mehr erfahren →":"Learn more →","Wohnwagen Mini 270":"Mini 270 Caravan","Kompakter Camper Caravan mit flexiblen Schlafplätzen, praktischer Ausstattung und gemütlichem Komfort für kurze und längere Reisen.":"A compact camper caravan with flexible berths, practical equipment and cosy comfort for short and longer journeys.","Wohnwagen Eco 350":"Eco 350 Caravan","Familienfreundlicher Caravan mit mehr Platz, praktischen Schlafplätzen und Ausstattung für flexible Reisen und komfortables Camping.":"A family-friendly caravan with more space, practical berths and equipment for flexible travel and comfortable camping.","WARUM ANKER CARAVAN?":"WHY ANKER CARAVAN?","Vertrauen, Komfort und passend zu Ihrer Reise.":"Confidence, comfort and a perfect fit for your journey.","Wir unterstützen Sie bei der Auswahl eines Wohnwagens, der zu Ihrem Budget, Ihrer Reiseart und Ihren Komfortwünschen passt.":"We help you choose a caravan that suits your budget, travel style and comfort requirements.","Vertrauensvolle Beratung":"Trusted advice","Persönliche Einschätzung, klare Informationen und transparente Antworten vor Ihrer Entscheidung.":"Personal guidance, clear information and transparent answers before you decide.","Komfortable Auswahl":"Comfortable choice","Verschiedene Grundrisse, Schlafplätze und Ausstattungen für entspannte Reisen.":"Different layouts, berths and equipment options for relaxed travel.","Startklar für die Reise":"Ready for the journey","Wir achten auf Ausstattung, Zustand und Details, damit Sie sicher und gut vorbereitet starten.":"We check equipment, condition and details so you can set off safely and well prepared.","Individuelle Anfrage":"Personalised inquiry","Ihre Wünsche werden individuell geprüft – passend zu Reiseplänen, Budget und Ausstattung.":"Your requirements are reviewed individually – matched to your travel plans, budget and preferred equipment.","Alles für Ihre Anfrage":"Everything for your inquiry","Modellwunsch, Budget, Schlafplätze, Ausstattung und Fahrzeugcheck-Termin.":"Preferred model, budget, berths, equipment and vehicle inspection appointment.","Beratung":"Advice","Welcher Wohnwagen passt zu Ihnen?":"Which caravan is right for you?","Senden Sie uns eine kurze Anfragebeschreibung. Wir prüfen, welche Modelle geeignet sind, welche Ausstattung sinnvoll ist und wie der Fahrzeugcheck geplant werden kann.":"Send us a short description of what you need. We will check which models are suitable, which equipment makes sense and how the vehicle inspection can be arranged.","Reiseart & Personen":"Travel style & passengers","Wir klären gemeinsam, ob Sie allein, zu zweit oder mit der Familie reisen und wie viel Platz Sie benötigen.":"Together we clarify whether you travel alone, as a couple or with your family, and how much space you need.","Budget & Zustand":"Budget & condition","Nennen Sie uns Ihr Budget, das gewünschte Baujahr und den Zustand, den Sie bevorzugen – neu, gepflegt oder gebraucht.":"Tell us your budget, preferred model year and condition – new, well maintained or used.","Ausstattung & Details":"Equipment & details","Wir besprechen wichtige Ausstattungsdetails wie Schlafplätze, Küche, Bad, Heizung, Vorzelt, Mover oder Fahrradträger.":"We discuss important equipment details such as berths, kitchen, bathroom, heating, awning, mover or bicycle rack.","Fahrzeugcheck":"Vehicle inspection","Bei einem Fahrzeugcheck-Termin können Sie den Wohnwagen in Ruhe anschauen und prüfen, ob er zu Ihren Wünschen passt.":"At a vehicle inspection appointment, you can take your time viewing the caravan and check whether it meets your requirements.","Ablauf":"Process","Vom Wunsch zum passenden Wohnwagen.":"From your wishes to the right caravan.","Ein einfacher Prozess, damit wir Ihre Anfrage schnell und passend einordnen können.":"A simple process that helps us assess your inquiry quickly and accurately.","Wünsche beschreiben":"Describe your requirements","Senden Sie Reiseart, Personenanzahl, Budget und gewünschte Ausstattung.":"Send us your travel style, number of passengers, budget and preferred equipment.","Modelle prüfen":"Review models","Wir prüfen passende Wohnwagen und Caravan-Optionen.":"We review suitable caravans and available options.","Fahrzeugcheck planen":"Plan the vehicle inspection","Gemeinsam stimmen wir einen Termin zum Fahrzeugcheck oder zur Rücksprache ab.":"Together we arrange an appointment for a vehicle inspection or consultation.","Angebot erhalten":"Receive an offer","Sie bekommen eine individuelle Rückmeldung mit passenden Details.":"You receive a personalised response with suitable details.","Ideen":"Ideas","So kann Ihr Caravan genutzt werden.":"Ways to enjoy your caravan.","Beispiele für typische Reisen, Auszeiten und Camping-Momente.":"Examples of typical journeys, getaways and camping moments.","Familienurlaub":"Family holiday","Komfortabel unterwegs":"Comfort on the road","Wochenendtrip":"Weekend trip","Flexibel und unkompliziert":"Flexible and uncomplicated","Campingplatz":"Campsite","Ankommen und entspannen":"Arrive and relax","Autarke Reise":"Off-grid travel","Freiheit unterwegs":"Freedom on the road","Komfort unterwegs":"Comfort while travelling","Ausstattung nach Wunsch":"Equipment to suit you","Unser Team":"Our team","Persönlich für Sie da.":"Here for you personally.","Kompetente Beratung, klare Antworten und eine zuverlässige Begleitung rund um Ihre Caravan-Anfrage.":"Expert advice, clear answers and reliable support throughout your caravan inquiry.","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Leitung und persönliche Beratung":"Management and personal advice","Über":"About","Wohnwagen mit Vertrauen.":"Caravans with confidence.","steht für ehrliche Beratung, gepflegte Wohnwagen und einen transparenten Ablauf – von der ersten Anfrage bis zum Fahrzeugcheck.":"stands for honest advice, well-maintained caravans and a transparent process – from your first inquiry to the vehicle inspection.","Wir nehmen uns Zeit für Ihre Wünsche, erklären Ausstattung und Möglichkeiten klar verständlich und begleiten Sie zuverlässig bei der Auswahl.":"We take time to understand your wishes, explain equipment and options clearly, and support you reliably throughout your choice.","Persönlich. Transparent. Verlässlich.":"Personal. Transparent. Reliable.","Kontakt":"Contact","Jetzt kontaktieren":"Contact us now","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Auswahl":"Selection","Vorteile":"Benefits","Über uns":"About us","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Willkommen bei ANKER Caravan":"Welcome to ANKER Caravan","Diese Website verwendet nur notwendige Cookies. Sie helfen dabei, die Seite sicher anzuzeigen, Ihre Cookie-Auswahl zu speichern und die Funktionen von ANKER Caravan zuverlässig bereitzustellen.":"This website uses only essential cookies. They help display the site securely, remember your cookie choice and provide ANKER Caravan functions reliably.","Datenschutzerklärung":"Privacy policy","Website-Funktionen anzeigen":"Show website features","Website-Funktionen ausblenden":"Hide website features","Übersicht und Modellseiten für Micro 240, Mini 270 und Eco 350.":"Overview and model pages for the Micro 240, Mini 270 and Eco 350.","Beratung & Fahrzeugcheck":"Advice & vehicle inspection","Informationen zur passenden Caravan-Auswahl, Budget, Ausstattung und Fahrzeugcheck-Termin.":"Information about choosing the right caravan, budget, equipment and the vehicle inspection appointment.","Anfrage & Kontakt":"Inquiry & contact","Kontaktmöglichkeiten und Anfrageformular für Ihren passenden Wohnwagen.":"Contact options and an inquiry form for your ideal caravan.","Technisch notwendig":"Essential","Gespeichert wird nur Ihre Hinweis-Bestätigung, damit diese Meldung nicht bei jedem Besuch erscheint.":"Only your notice confirmation is stored so this message does not appear on every visit.","Verstanden":"Got it","Ihre Auswahl gilt nur für diese Website und kann jederzeit im Footer über „Cookie-Einstellungen“ erneut angezeigt werden.":"Your choice applies only to this website and can be changed at any time via “Cookie settings” in the footer.","Menü öffnen":"Open menu","Menü schließen":"Close menu","Cookie-Einstellungen":"Cookie settings"};
+  const ATTR_EN = {"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","ANKER Caravan Hero Slider":"ANKER Caravan hero slider","Hero Slider Steuerung":"Hero slider controls","Slides auswählen":"Select slides","Slide 1":"Slide 1","Slide 2":"Slide 2","Slide 3":"Slide 3","Vorheriger Slide":"Previous slide","Nächster Slide":"Next slide","Caravan Sortiment mit verlinkten Modellseiten":"Caravan range with linked model pages","Wohnwagen Micro 240 ansehen":"View the Micro 240 caravan","Wohnwagen Micro 240 von ANKER Caravan":"Micro 240 caravan by ANKER Caravan","Wohnwagen Mini 270 ansehen":"View the Mini 270 caravan","Wohnwagen Mini 270 von ANKER Caravan":"Mini 270 caravan by ANKER Caravan","Wohnwagen Eco 350 ansehen":"View the Eco 350 caravan","Wohnwagen Eco 350 von ANKER Caravan":"Eco 350 caravan by ANKER Caravan","Vertrauensvolle Beratung":"Trusted advice","Vertrauensvolle Wohnwagen-Beratung bei ANKER Caravan":"Trusted caravan advice at ANKER Caravan","Komfortable Auswahl":"Comfortable choice","Komfortable Caravan-Auswahl für entspannte Reisen":"Comfortable caravan selection for relaxed travel","Startklar für die Reise":"Ready for the journey","Startklarer Wohnwagen für sichere Reisen":"A road-ready caravan for safe travel","Individuelle Anfrage":"Personalised inquiry","Individuelle Caravan-Anfrage und Beratung":"Personalised caravan inquiry and advice","Wohnwagen-Beratung mit Anfrageunterlagen und Planung":"Caravan advice with inquiry details and planning","Beratung zu Reiseart und Personenanzahl":"Advice on travel style and number of passengers","Budget und Zustand beim Wohnwagenkauf":"Budget and condition when buying a caravan","Ausstattung und Details auswählen":"Choose equipment and details","Fahrzeugcheck-Termin planen":"Plan a vehicle inspection appointment","Wohnwagen im Familienurlaub":"Caravan on a family holiday","Caravan für Wochenendtrip":"Caravan for a weekend trip","Caravan auf dem Campingplatz":"Caravan at a campsite","Wohnwagen für autarke Reise":"Caravan for off-grid travel","Komfortdetails im Wohnwagen":"Comfort features in the caravan","Unser Team":"Our team","Verkauf / Assistenz der Geschäftsleitung":"Sales / Executive assistant","Geschäftsleitung":"Management","Kontakt zu ANKER Caravan":"Contact ANKER Caravan","Rechtliche Informationen":"Legal information","Sprache ändern":"Change language","Sprache auswählen":"Select language"};
   TEXT_EN["New 400"] = "New 400";
-  TEXT_EN["Der New 400 bietet zwei Schlafvarianten, eine umfangreiche Serienausstattung, Küche und Bad sowie ein Autark-Paket für unabhängige Reisen."] = "The New 400 offers two sleeping layouts, extensive standard equipment, a kitchen and bathroom, and an off-grid package for independent travel.";
+  TEXT_EN["Der 4,0 New verbindet modernes Design mit innovativer Ausstattung. Mit integriertem Küchen- und Toilettensystem bietet er hohen Komfort und ist ideal für längere Campingaufenthalte."] = "The New 4.0 combines modern design with innovative equipment. With an integrated kitchen and toilet system, it offers a high level of comfort and is ideal for longer camping stays.";
   TEXT_EN["Anfrage senden →"] = "Send inquiry →";
   ATTR_EN["New 400 ansehen"] = "View the New 400 caravan";
   ATTR_EN["New 400 Caravan von ANKER Caravan"] = "New 400 caravan by ANKER Caravan";
@@ -16703,13 +16600,13 @@ html.translated-rtl body header.site-header .container.nav {
   const META = {
     de: {
       title: 'ANKER Caravan | Wohnwagen kaufen & Caravan-Beratung',
-      description: 'Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und Modelle wie Micro 240, Mini 270, Eco 350 und New 400. Jetzt Anfrage senden.',
-      keywords: 'Wohnwagen kaufen, Caravan kaufen, Wohnwagen Beratung, Caravan Beratung, Wohnwagen Fahrzeugcheck, Camping Wohnwagen, ANKER Caravan, Wohnwagen Deutschland, Micro 240, Mini 270, Eco 350, New 400'
+      description: 'Wohnwagen kaufen bei ANKER Caravan: persönliche Caravan-Beratung, Fahrzeugcheck und passende Modelle wie Micro 240, Mini 270 und Eco 350. Jetzt Anfrage senden.',
+      keywords: 'Wohnwagen kaufen, Caravan kaufen, Wohnwagen Beratung, Caravan Beratung, Wohnwagen Fahrzeugcheck, Camping Wohnwagen, ANKER Caravan, Wohnwagen Deutschland, Micro 240, Mini 270, Eco 350'
     },
     en: {
       title: 'ANKER Caravan | Buy a caravan & caravan advice',
-      description: 'Buy a caravan from ANKER Caravan: personal advice, vehicle inspections and models such as the Micro 240, Mini 270, Eco 350 and New 400. Send your inquiry now.',
-      keywords: 'buy caravan, caravan advice, caravan vehicle inspection, camping caravan, ANKER Caravan, caravans Germany, Micro 240, Mini 270, Eco 350, New 400'
+      description: 'Buy a caravan from ANKER Caravan: personal advice, vehicle inspections and suitable models such as the Micro 240, Mini 270 and Eco 350. Send your inquiry now.',
+      keywords: 'buy caravan, caravan advice, caravan vehicle inspection, camping caravan, ANKER Caravan, caravans Germany, Micro 240, Mini 270, Eco 350'
     }
   };
 
@@ -16881,8 +16778,8 @@ html.translated-rtl body header.site-header .container.nav {
   background-image:
     linear-gradient(135deg, rgba(8, 26, 57, .52) 0%, rgba(8, 26, 57, .38) 48%, rgba(8, 10, 14, .58) 100%),
     url("images/Sortiment.png") !important;
-  background-position: center center, center center !important;
-  background-size: 100% 100%, contain !important;
+  background-position: center center, center top !important;
+  background-size: 100% 100%, auto 108% !important;
   background-repeat: no-repeat, no-repeat !important;
   background-attachment: scroll, scroll !important;
   position: relative !important;
@@ -16897,7 +16794,7 @@ html.translated-rtl body header.site-header .container.nav {
 @media (max-width: 760px) {
   #produkte.dark-section {
     background-position: center center, center top !important;
-    background-size: 100% 100%, contain !important;
+    background-size: 100% 100%, auto 104% !important;
   }
 }
 </style>
@@ -17204,7 +17101,6 @@ html.translated-rtl body header.site-header .container.nav {
 }
 
 #produkte .caravans-main-title {
-  grid-column: 2;
   margin: 0 !important;
   display: grid;
   justify-items: center;
@@ -17983,52 +17879,155 @@ html.translated-rtl body header.site-header .container.nav {
 
 
 <style id="sortiment-background-ground-alignment">
-/* Desktop: move the section background slightly downward so the heading sits more on the sky area. */
+/* Desktop: move the complete section-2 background upward so the caravans align with the floor. */
 @media (min-width: 761px) {
   #produkte.dark-section {
-    background-position: center center, center -95px !important;
+    background-position: center center, center -190px !important;
   }
 }
 </style>
 
 
-<style id="sortiment-mobile-wels-background">
-/* Repeat the portrait behind the heading and caravan photos only. */
+<style id="sortiment-mobile-background-separate-image">
+/* Mobile only: three background images, each aligned to its matching product card.
+   2.png ends exactly at the Mini 270 card, and 3.png starts/ends exactly with the Eco 350 card. */
 @media (max-width: 760px) {
   #produkte.dark-section {
     background: #081a39 !important;
-    position: relative !important;
-    isolation: isolate !important;
+    isolation: isolate;
+  }
+
+  #produkte.dark-section > .sortiment-mobile-bg-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #produkte.dark-section > .sortiment-mobile-bg-1 {
+    background-image:
+      linear-gradient(135deg, rgba(8, 26, 57, .52), rgba(8, 10, 14, .58)),
+      url("images/1.png");
+  }
+
+  #produkte.dark-section > .sortiment-mobile-bg-2 {
+    background-image:
+      linear-gradient(135deg, rgba(8, 26, 57, .52), rgba(8, 10, 14, .58)),
+      url("images/2.png");
+  }
+
+  #produkte.dark-section > .sortiment-mobile-bg-3 {
+    background-image:
+      linear-gradient(135deg, rgba(8, 26, 57, .52), rgba(8, 10, 14, .58)),
+      url("images/3.png");
   }
 
   #produkte.dark-section::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    inset: 0 0 auto !important;
-    height: var(--mobile-sortiment-photo-height, 100%) !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
-    background-image:
-      linear-gradient(to bottom, #081a39 0%, rgba(8, 26, 57, .52) 10%, rgba(8, 26, 57, .24) 24%, rgba(8, 26, 57, .25) 68%, rgba(8, 26, 57, .64) 88%, #081a39 100%),
-      url("images/Sortiment-mobile.png") !important;
-    background-position: center top, center top !important;
-    background-size: 100% 177.7vw, 100% auto !important;
-    background-repeat: repeat-y, repeat-y !important;
-    background-attachment: scroll, scroll !important;
+    z-index: 1;
   }
 
   #produkte.dark-section > .container {
-    position: relative !important;
-    z-index: 1 !important;
+    position: relative;
+    z-index: 2;
   }
+}
 
-  #produkte .caravan-salon-merged-banner {
-    background-color: #071a38 !important;
-    background-image: none !important;
+@media (min-width: 761px) {
+  #produkte.dark-section > .sortiment-mobile-bg-layer {
+    display: none !important;
   }
 }
 </style>
+
+<script id="sortiment-mobile-background-boundaries-script">
+(function () {
+  'use strict';
+
+  const MOBILE_QUERY = window.matchMedia('(max-width: 760px)');
+  const section = document.querySelector('#produkte.dark-section');
+  if (!section) return;
+
+  const microCard = section.querySelector('.sortiment-product-card[href="wohnwagen-micro-240.html"]');
+  const miniCard = section.querySelector('.sortiment-product-card[href="wohnwagen-mini-270.html"]');
+  const ecoCard = section.querySelector('.sortiment-product-card[href="wohnwagen-eco-350.html"]');
+  const new400Card = section.querySelector('.sortiment-product-card[data-model="new-400"]');
+  if (!microCard || !miniCard || !ecoCard || !new400Card) return;
+
+  const trackedCards = [microCard, miniCard, ecoCard, new400Card];
+
+  const layers = [1, 2, 3].map(function (number) {
+    let layer = section.querySelector('.sortiment-mobile-bg-' + number);
+    if (!layer) {
+      layer = document.createElement('div');
+      layer.className = 'sortiment-mobile-bg-layer sortiment-mobile-bg-' + number;
+      layer.setAttribute('aria-hidden', 'true');
+      section.insertBefore(layer, section.firstChild);
+    }
+    return layer;
+  });
+
+  function setLayer(layer, top, height) {
+    layer.style.top = Math.max(0, top) + 'px';
+    layer.style.height = Math.max(0, height) + 'px';
+  }
+
+  function getCardBounds(card, sectionRect, sectionHeight) {
+    const rect = card.getBoundingClientRect();
+    const top = Math.max(0, rect.top - sectionRect.top);
+    const bottom = Math.min(sectionHeight, rect.bottom - sectionRect.top);
+    return { top: top, bottom: bottom, height: Math.max(0, bottom - top) };
+  }
+
+  function updateBackgroundBoundaries() {
+    if (!MOBILE_QUERY.matches) {
+      layers.forEach(function (layer) {
+        layer.removeAttribute('style');
+      });
+      return;
+    }
+
+    const sectionRect = section.getBoundingClientRect();
+    const sectionHeight = section.offsetHeight;
+    const microBounds = getCardBounds(microCard, sectionRect, sectionHeight);
+    const miniBounds = getCardBounds(miniCard, sectionRect, sectionHeight);
+    const ecoBounds = getCardBounds(ecoCard, sectionRect, sectionHeight);
+    const new400Bounds = getCardBounds(new400Card, sectionRect, sectionHeight);
+
+    setLayer(layers[0], 0, microBounds.bottom);
+    setLayer(layers[1], miniBounds.top, miniBounds.height);
+    setLayer(layers[2], ecoBounds.top, Math.max(0, new400Bounds.bottom - ecoBounds.top));
+  }
+
+  let frame = 0;
+  function scheduleUpdate() {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(updateBackgroundBoundaries);
+  }
+
+  window.addEventListener('load', scheduleUpdate, { once: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  window.addEventListener('orientationchange', scheduleUpdate, { passive: true });
+  MOBILE_QUERY.addEventListener?.('change', scheduleUpdate);
+
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(scheduleUpdate);
+    observer.observe(section);
+    trackedCards.forEach(function (card) {
+      observer.observe(card);
+    });
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleUpdate);
+  }
+
+  scheduleUpdate();
+}());
+</script>
 
 
 <style id="caravan-salon-desktop-background-merge-final">
@@ -18833,2881 +18832,6 @@ html.translated-rtl body header.site-header .container.nav {
   }
 }
 </style>
-
-
-
-<style id="caravans-heading-visibility-fix">
-/* Improve heading readability over the bright hero image without changing the original text layout. */
-#produkte .caravans-showcase-heading {
-  position: relative !important;
-  z-index: 4 !important;
-}
-
-#produkte .caravans-showcase-heading > div,
-#produkte .caravans-title-row,
-#produkte .caravans-main-title,
-#produkte .caravans-main-title span,
-#produkte .caravans-trust-kicker {
-  position: relative !important;
-  z-index: 5 !important;
-}
-
-#produkte .caravans-trust-kicker {
-  color: #ffffff !important;
-  text-shadow:
-    0 2px 5px rgba(0, 0, 0, .95),
-    0 0 14px rgba(0, 0, 0, .78),
-    0 0 26px rgba(0, 0, 0, .48) !important;
-}
-
-#produkte .caravans-main-title,
-#produkte .caravans-main-title span {
-  color: #ffffff !important;
-  text-shadow:
-    0 3px 7px rgba(0, 0, 0, .88),
-    0 8px 24px rgba(0, 0, 0, .42) !important;
-}
-
-/* A very soft local contrast layer behind the heading only; the hero image remains visible. */
-#produkte .caravans-showcase-heading::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 46%;
-  width: min(78vw, 980px);
-  height: 150%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  background: radial-gradient(ellipse at center,
-    rgba(4, 18, 40, .30) 0%,
-    rgba(4, 18, 40, .16) 48%,
-    rgba(4, 18, 40, 0) 76%);
-}
-
-@media (max-width: 760px) {
-  #produkte .caravans-showcase-heading::before {
-    width: 112%;
-    height: 145%;
-  }
-
-  #produkte .caravans-trust-kicker {
-    text-shadow:
-      0 2px 4px rgba(0, 0, 0, .98),
-      0 0 12px rgba(0, 0, 0, .82) !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-cards-ground-placement">
-/* Desktop: lower the product cards slightly so they visually sit on the ground line. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-preview {
-    position: relative !important;
-    margin-top: 34px !important;
-  }
-
-  #produkte .sortiment-product-grid {
-    align-items: end !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-caravans-ground-alignment-final">
-/* Desktop: lower the caravan cutouts so the wheels sit on the floor more naturally. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-image {
-    height: 272px !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-    overflow: visible !important;
-  }
-
-  #produkte .sortiment-product-card img,
-  #produkte .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-    width: 92% !important;
-    height: 92% !important;
-    max-width: 92% !important;
-    max-height: 92% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:hover img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(26px) !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-visible-caravan-size-match-final">
-/* Desktop: cropped card assets remove transparent margins so the first 3 caravans visually match New 400. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-    width: 92% !important;
-    max-width: 92% !important;
-    height: 92% !important;
-    max-height: 92% !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    margin: 0 auto !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:hover img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(26px) !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-image-heights-match-new400-final">
-/* Desktop: raise visible heights of the first three caravan images to match the New 400 image height. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img {
-    width: auto !important;
-    height: 104% !important;
-    max-width: 118% !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img {
-    width: auto !important;
-    height: 104% !important;
-    max-width: 118% !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img {
-    width: auto !important;
-    height: 118% !important;
-    max-width: 126% !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-    width: auto !important;
-    height: 92% !important;
-    max-width: 100% !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:hover img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(26px) !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-uniform-new400-image-frame-final">
-/* Final reset: all four caravan images use the same frame logic as New 400. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-image {
-    height: 272px !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-    overflow: visible !important;
-  }
-
-  #produkte .sortiment-product-card img,
-  #produkte .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-    width: 92% !important;
-    height: auto !important;
-    max-width: 92% !important;
-    max-height: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    object-fit: contain !important;
-    object-position: center bottom !important;
-    transform: translateY(26px) !important;
-  }
-
-  #produkte .sortiment-product-card:hover img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(26px) !important;
-  }
-}
-</style>
-
-
-<style id="sortiment-caravans-raised-slightly-final">
-/* Raise the caravan images slightly inside the cards. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-card img,
-  #produkte .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img,
-  #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-    transform: translateY(10px) !important;
-  }
-
-  #produkte .sortiment-product-card:hover img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(10px) !important;
-  }
-}
-</style>
-
-
-<style id="new400-restore-lower-position-final">
-/* Restore New 400 to its previous lower position; keep the first three slightly raised. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(26px) !important;
-  }
-}
-</style>
-
-
-<style id="new400-drop-to-ground-final">
-/* New 400: compensate for the transparent lower area inside its PNG so the visible wheels/supports sit on the ground line. */
-@media (min-width: 761px) {
-  #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img,
-  #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-    transform: translateY(42px) !important;
-  }
-}
-</style>
-
-
-<style id="produkte-non100-zoom-lock-v4">
-/*
-  IMPORTANT:
-  - At true 100% browser zoom this class is NOT present, so the approved design is untouched.
-  - Only at browser zoom != 100% do we freeze the desktop Produkte geometry to its 100% values.
-  - This prevents responsive media queries from reshaping/repositioning the caravans and cards.
-*/
-html.produkte-non100-zoom #produkte.dark-section {
-  overflow-x: auto !important;
-  overflow-y: visible !important;
-}
-
-html.produkte-non100-zoom #produkte.dark-section > .container {
-  box-sizing: border-box !important;
-  width: 1280px !important;
-  min-width: 1280px !important;
-  max-width: 1280px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Approved desktop heading composition */
-html.produkte-non100-zoom #produkte .salon-section-opening {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  min-height: 150px !important;
-  margin: 0 0 42px !important;
-  padding: 0 !important;
-}
-
-html.produkte-non100-zoom #produkte .salon-section-opening::before {
-  display: none !important;
-  content: none !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-showcase-heading {
-  position: relative !important;
-  z-index: 2 !important;
-  display: flex !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-showcase-heading > div {
-  width: 100% !important;
-  max-width: 920px !important;
-  margin: 0 auto !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-trust-kicker {
-  display: block !important;
-  width: 100% !important;
-  margin: 0 0 12px !important;
-  padding: 0 !important;
-  font-size: 18px !important;
-  line-height: 1.2 !important;
-  letter-spacing: .09em !important;
-  text-align: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-title-row {
-  display: block !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  text-align: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-main-title {
-  display: block !important;
-  width: max-content !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  font-size: 54px !important;
-  line-height: .98 !important;
-  letter-spacing: -.045em !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-main-title span {
-  display: block !important;
-  text-align: center !important;
-}
-
-html.produkte-non100-zoom #produkte .salon-event-card,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled.is-visible,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready.is-visible {
-  position: absolute !important;
-  left: -22px !important;
-  top: 0 !important;
-  width: 260px !important;
-  max-width: 260px !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-  z-index: 3 !important;
-}
-
-/* Approved four-card desktop geometry */
-html.produkte-non100-zoom #produkte .sortiment-product-preview {
-  position: relative !important;
-  width: 1280px !important;
-  min-width: 1280px !important;
-  max-width: 1280px !important;
-  margin-top: 34px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  transform: none !important;
-  overflow: visible !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  width: 1280px !important;
-  min-width: 1280px !important;
-  max-width: 1280px !important;
-  gap: 18px !important;
-  align-items: end !important;
-  overflow: visible !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card {
-  box-sizing: border-box !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  border-radius: 24px !important;
-  overflow: hidden !important;
-  transform: none !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card:hover {
-  transform: none !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-image {
-  box-sizing: border-box !important;
-  position: relative !important;
-  width: 100% !important;
-  height: 272px !important;
-  min-height: 272px !important;
-  max-height: 272px !important;
-  aspect-ratio: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: center !important;
-  overflow: visible !important;
-  background: transparent !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-image::after {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: 34% !important;
-  background: linear-gradient(to bottom, rgba(8,26,57,0), rgba(8,26,57,.24)) !important;
-  pointer-events: none !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-body {
-  min-height: 286px !important;
-  padding: 30px !important;
-}
-
-/* Exact accepted caravan placement: first 3 slightly raised, New 400 lower on the ground. */
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(1) .sortiment-product-image img,
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(2) .sortiment-product-image img,
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(3) .sortiment-product-image img {
-  display: block !important;
-  width: 92% !important;
-  height: auto !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: 92% !important;
-  max-height: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  object-fit: contain !important;
-  object-position: center bottom !important;
-  transform: translateY(10px) !important;
-  transform-origin: center bottom !important;
-  filter: none !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card[data-model="new-400"] .sortiment-product-image img {
-  display: block !important;
-  width: 92% !important;
-  height: auto !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  max-width: 92% !important;
-  max-height: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  object-fit: contain !important;
-  object-position: center bottom !important;
-  transform: translateY(42px) !important;
-  transform-origin: center bottom !important;
-  filter: none !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(1):hover .sortiment-product-image img,
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(2):hover .sortiment-product-image img,
-html.produkte-non100-zoom #produkte .sortiment-product-card:nth-child(3):hover .sortiment-product-image img {
-  transform: translateY(10px) !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card[data-model="new-400"]:hover .sortiment-product-image img {
-  transform: translateY(42px) !important;
-}
-</style>
-
-
-<script id="produkte-non100-zoom-lock-script-v4">
-(function () {
-  var root = document.documentElement;
-
-  function getBrowserZoomRatio() {
-    var outer = window.outerWidth || 0;
-    var inner = window.innerWidth || 0;
-    if (!outer || !inner) return 1;
-    return outer / inner;
-  }
-
-  function isDesktopDevice() {
-    var sw = Math.max(
-      window.screen && window.screen.width || 0,
-      window.screen && window.screen.availWidth || 0
-    );
-    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-    return window.innerWidth >= 761 && !coarse && sw >= 1000;
-  }
-
-  function applyProdukteZoomLock() {
-    if (!isDesktopDevice()) {
-      root.classList.remove('produkte-non100-zoom');
-      return;
-    }
-
-    var ratio = getBrowserZoomRatio();
-    /* Browser chrome/borders can make true 100% a few percent away from 1. */
-    var at100 = ratio >= 0.96 && ratio <= 1.04;
-    root.classList.toggle('produkte-non100-zoom', !at100);
-  }
-
-  applyProdukteZoomLock();
-  window.addEventListener('resize', applyProdukteZoomLock, { passive: true });
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', applyProdukteZoomLock, { passive: true });
-  }
-})();
-</script>
-
-
-<style id="produkte-non100-zoom-lock-v4-exact100">
-/* Exact 100% desktop geometry snapshot, active only when browser zoom != 100%. */
-html.produkte-non100-zoom #produkte .salon-section-opening {
-  height: 202.5625px !important;
-  min-height: 202.5625px !important;
-  max-height: 202.5625px !important;
-  margin: 0 0 42px !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-showcase-heading {
-  height: 202.5625px !important;
-  min-height: 202.5625px !important;
-  max-height: 202.5625px !important;
-  padding: 58px 0 0 !important;
-  box-sizing: border-box !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-showcase-heading > div {
-  width: 920px !important;
-  max-width: 920px !important;
-  height: 144.5625px !important;
-  min-height: 144.5625px !important;
-  max-height: 144.5625px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-trust-kicker {
-  width: 470px !important;
-  height: 23.75px !important;
-  margin: 0 0 15px !important;
-  font-size: 19px !important;
-  line-height: 23.75px !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-title-row {
-  display: grid !important;
-  grid-template-columns: minmax(30px,1fr) minmax(0,auto) minmax(30px,1fr) !important;
-  gap: 22px !important;
-  width: 920px !important;
-  height: 105.8125px !important;
-  margin: 0 !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-html.produkte-non100-zoom #produkte .caravans-main-title {
-  display: grid !important;
-  width: 516.734375px !important;
-  max-width: 516.734375px !important;
-  height: 105.8125px !important;
-  margin: 0 !important;
-  font-size: 54px !important;
-  line-height: 52.92px !important;
-  letter-spacing: -2.43px !important;
-  white-space: nowrap !important;
-}
-
-html.produkte-non100-zoom #produkte .salon-event-card,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled.is-visible,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready.is-visible {
-  width: 256px !important;
-  max-width: 256px !important;
-  height: 102.46875px !important;
-  left: -22px !important;
-  top: 0 !important;
-  transform: none !important;
-}
-
-html.produkte-non100-zoom #produkte .salon-event-panel,
-html.produkte-non100-zoom #produkte .salon-event-image {
-  width: 256px !important;
-  max-width: 256px !important;
-  height: 102.46875px !important;
-  max-height: 102.46875px !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-preview,
-html.produkte-non100-zoom #produkte .sortiment-product-grid {
-  height: 560px !important;
-  min-height: 560px !important;
-  max-height: 560px !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-card {
-  height: 560px !important;
-  min-height: 560px !important;
-  max-height: 560px !important;
-  border-radius: 30px !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-body {
-  box-sizing: border-box !important;
-  height: 286px !important;
-  min-height: 286px !important;
-  max-height: 286px !important;
-  padding: 18px 18px 20px !important;
-  gap: 10px !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-body h3 {
-  margin: 0 !important;
-  font-size: 20px !important;
-  line-height: 23px !important;
-  letter-spacing: normal !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-body p {
-  margin: 0 !important;
-  font-size: 14px !important;
-  line-height: 21px !important;
-}
-
-html.produkte-non100-zoom #produkte .sortiment-product-more {
-  box-sizing: border-box !important;
-  width: 100% !important;
-  height: 60px !important;
-  min-height: 60px !important;
-  max-height: 60px !important;
-  margin-top: auto !important;
-  padding: 14px 16px !important;
-  border-radius: 18px !important;
-  font-size: 14px !important;
-  line-height: 21.7px !important;
-  gap: 12px !important;
-}
-</style>
-
-<style id="produkte-background-fixed-like-hero">
-/* Keep Sortiment.png visible at every desktop zoom level. The image uses the
-   same full-bleed cover behavior as the Hero instead of a limited pseudo-layer
-   that can disappear when the browser viewport becomes wider than 100%. */
-@media (min-width: 761px) {
-  #produkte.dark-section {
-    background-color: #081a39 !important;
-    background-image:
-      linear-gradient(135deg, rgba(8, 26, 57, .52) 0%, rgba(8, 26, 57, .38) 48%, rgba(8, 10, 14, .58) 100%),
-      url("images/Sortiment.png") !important;
-    background-position: center center, center center !important;
-    background-size: 100% 100%, cover !important;
-    background-repeat: no-repeat, no-repeat !important;
-    background-attachment: scroll, fixed !important;
-    position: relative !important;
-    isolation: isolate !important;
-  }
-
-  #produkte.dark-section > .container {
-    position: relative !important;
-    z-index: 1 !important;
-  }
-}
-</style>
-
-<style id="salon-logo-desktop-slightly-larger-final">
-/* Give the small left-side Caravan Salon logo a little more presence on
-   desktop without changing the centered heading or the mobile layout. */
-@media (min-width: 981px) {
-  #produkte .salon-section-opening {
-    --salon-logo-width: clamp(240px, 18vw, 300px) !important;
-  }
-}
-
-/* Keep the enlarged logo consistent while the desktop zoom lock is active. */
-html.produkte-non100-zoom #produkte .salon-event-card,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled.is-visible,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready,
-html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready.is-visible {
-  width: 286px !important;
-  max-width: 286px !important;
-}
-
-html.produkte-non100-zoom #produkte .salon-event-panel,
-html.produkte-non100-zoom #produkte .salon-event-image {
-  width: 286px !important;
-  max-width: 286px !important;
-  height: 114.5px !important;
-  max-height: 114.5px !important;
-}
-</style>
-
-<style id="caravans-location-thumb-right-final">
-/* Event stand thumbnail: keep it compact and visually the SAME size as the Salon logo on the left. */
-#produkte .salon-section-opening {
-  position: relative !important;
-}
-
-/* Desktop: use the same outer box width as the left logo, but the same logo-box aspect ratio
-   so the taller HALLE/STAND artwork scales down instead of looking oversized. */
-#produkte .caravans-location-thumb {
-  position: absolute !important;
-  z-index: 6 !important;
-  right: 0 !important;
-  top: 50% !important;
-  width: var(--salon-logo-width, clamp(240px, 18vw, 300px)) !important;
-  max-width: var(--salon-logo-width, 300px) !important;
-  aspect-ratio: 1981 / 793 !important;
-  transform: translateY(-50%) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  pointer-events: none !important;
-}
-
-#produkte .caravans-location-thumb img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .20));
-}
-
-/* Phones/tablets: match the compact size used by the left Salon image. */
-@media (max-width: 760px) {
-  #produkte .salon-section-opening {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  #produkte .caravans-location-thumb {
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
-    width: min(50vw, 190px) !important;
-    max-width: min(50vw, 190px) !important;
-    aspect-ratio: 1981 / 793 !important;
-    margin: 10px auto 0 !important;
-    transform: none !important;
-  }
-}
-
-/* Match the site's desktop zoom-lock dimensions exactly. */
-html.produkte-non100-zoom #produkte .caravans-location-thumb {
-  position: absolute !important;
-  z-index: 6 !important;
-  right: 0 !important;
-  top: 50% !important;
-  width: 286px !important;
-  max-width: 286px !important;
-  aspect-ratio: 1981 / 793 !important;
-  margin: 0 !important;
-  transform: translateY(-50%) !important;
-}
-</style>
-
-
-<style id="caravans-heading-center-final">
-/* Final requested alignment: center the trust line and main caravan heading. */
-#produkte .caravans-showcase-heading {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-#produkte .caravans-showcase-heading > div {
-  width: 100% !important;
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-  align-items: center !important;
-}
-
-#produkte .caravans-trust-kicker,
-#produkte .caravans-title-row,
-#produkte .caravans-main-title,
-#produkte .caravans-main-title span {
-  text-align: center !important;
-}
-
-#produkte .caravans-trust-kicker,
-#produkte .caravans-title-row {
-  width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-#produkte .caravans-main-title {
-  width: max-content !important;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-#produkte .caravans-main-title span {
-  display: block !important;
-}
-
-@media (max-width: 760px) {
-  #produkte .caravans-showcase-heading,
-  #produkte .caravans-showcase-heading > div,
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    text-align: center !important;
-  }
-
-  #produkte .caravans-main-title {
-    width: 100% !important;
-  }
-}
-</style>
-
-
-
-<style id="salon-opening-three-column-correct-final">
-/* FINAL CORRECTION:
-   left = small Caravan Salon logo
-   center = trust line + ENTDECKE FREIHEIT / AUF RÄDERN!
-   right = small HALLE 20 / STAND C45 badge
-   The center column is geometrically centered by using equal side tracks. */
-@media (min-width: 761px) {
-  #produkte .salon-section-opening {
-    --side-track: clamp(235px, 18vw, 300px) !important;
-    --left-logo-width: clamp(235px, 18vw, 300px) !important;
-    --right-badge-width: clamp(142px, 10.9vw, 182px) !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    display: grid !important;
-    grid-template-columns: var(--side-track) minmax(0, 1fr) var(--side-track) !important;
-    grid-template-areas: "salon-left salon-center salon-right" !important;
-    column-gap: clamp(18px, 2vw, 34px) !important;
-    align-items: center !important;
-    width: 100% !important;
-    min-height: 150px !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-  }
-
-  #produkte .salon-section-opening::before,
-  #produkte .salon-section-opening::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible,
-  html.produkte-non100-zoom #produkte .salon-event-card,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled.is-visible,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready.is-visible {
-    grid-area: salon-left !important;
-    position: relative !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    justify-self: start !important;
-    align-self: center !important;
-    width: var(--left-logo-width) !important;
-    max-width: var(--left-logo-width) !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-
-  #produkte .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready:not(.is-visible) .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready.is-visible .salon-event-panel,
-  html.produkte-non100-zoom #produkte .salon-event-panel {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  #produkte .salon-event-image,
-  html.produkte-non100-zoom #produkte .salon-event-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    object-fit: contain !important;
-    object-position: left center !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-showcase-heading {
-    grid-area: salon-center !important;
-    position: relative !important;
-    inset: auto !important;
-    z-index: 4 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-showcase-heading > div {
-    width: 100% !important;
-    max-width: 820px !important;
-    min-width: 0 !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    margin: 0 0 12px !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-title-row {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-main-title {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    white-space: normal !important;
-  }
-
-  #produkte .caravans-main-title span {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-  }
-
-  #produkte .caravans-location-thumb,
-  html.produkte-non100-zoom #produkte .caravans-location-thumb {
-    grid-area: salon-right !important;
-    position: relative !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    z-index: 4 !important;
-    justify-self: end !important;
-    align-self: center !important;
-    display: block !important;
-    width: var(--right-badge-width) !important;
-    max-width: var(--right-badge-width) !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    pointer-events: none !important;
-  }
-
-  #produkte .caravans-location-thumb img,
-  html.produkte-non100-zoom #produkte .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    object-fit: contain !important;
-    object-position: right center !important;
-    transform: none !important;
-  }
-}
-
-/* Tablet / phone: keep the text centered and put the two compact graphics
-   on one row below it so neither image dominates the heading. */
-@media (max-width: 760px) {
-  #produkte .salon-section-opening {
-    box-sizing: border-box !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-areas:
-      "salon-center salon-center"
-      "salon-left salon-right" !important;
-    column-gap: 16px !important;
-    row-gap: 14px !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-  }
-
-  #produkte .caravans-showcase-heading {
-    grid-area: salon-center !important;
-    position: relative !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-showcase-heading > div,
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-  }
-
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible {
-    grid-area: salon-left !important;
-    position: relative !important;
-    inset: auto !important;
-    justify-self: end !important;
-    width: min(42vw, 220px) !important;
-    max-width: min(42vw, 220px) !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-location-thumb {
-    grid-area: salon-right !important;
-    position: relative !important;
-    inset: auto !important;
-    justify-self: start !important;
-    width: min(25.5vw, 133px) !important;
-    max-width: min(25.5vw, 133px) !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-location-thumb img,
-  #produkte .salon-event-image {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    object-fit: contain !important;
-  }
-}
-</style>
-
-
-<style id="user-final-layout-fix-v3">
-/* Final layout: left logo stays left, headline is centered, location badge is small and fixed on the right. */
-#produkte .salon-section-opening { position: relative !important; }
-
-@media (min-width: 981px) {
-  #produkte .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: clamp(240px, 20vw, 310px) minmax(0, 1fr) clamp(190px, 15vw, 235px) !important;
-    grid-template-areas: "left center right" !important;
-    column-gap: clamp(18px, 2vw, 30px) !important;
-    align-items: center !important;
-    width: 100% !important;
-    min-height: 150px !important;
-  }
-
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible {
-    grid-area: left !important;
-    justify-self: start !important;
-    align-self: center !important;
-    width: 100% !important;
-    max-width: 310px !important;
-    margin: 0 !important;
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-  }
-
-  #produkte .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready:not(.is-visible) .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready.is-visible .salon-event-panel {
-    width: 100% !important;
-    height: auto !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    clip-path: none !important;
-    border-radius: 0 !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  #produkte .salon-event-panel::before,
-  #produkte .salon-event-panel::after { display: none !important; content: none !important; }
-
-  #produkte .salon-event-image {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    object-position: left center !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  /* The heading is the middle grid item. */
-  #produkte .caravans-showcase-heading {
-    grid-area: center !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: static !important;
-    display: block !important;
-    text-align: center !important;
-    transform: none !important;
-    z-index: 5 !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child {
-    width: 100% !important;
-    max-width: 620px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker { text-align: center !important; }
-
-  #produkte .caravans-title-row {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  #produkte .caravans-main-title {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-    font-size: clamp(34px, 3.6vw, 56px) !important;
-    line-height: .96 !important;
-  }
-
-  #produkte .caravans-main-title span {
-    display: block !important;
-    width: 100% !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-  }
-
-  /* This element is nested inside the heading in the existing HTML, so position it from the section, not as a grid child. */
-  #produkte .caravans-showcase-heading .caravans-location-thumb {
-    position: absolute !important;
-    right: 0 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: clamp(180px, 11vw, 195px) !important;
-    max-width: 195px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    z-index: 6 !important;
-    pointer-events: none !important;
-  }
-
-  #produkte .caravans-showcase-heading .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-}
-
-@media (min-width: 761px) and (max-width: 980px) {
-  #produkte .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: 220px minmax(0,1fr) 180px !important;
-    grid-template-areas: "left center right" !important;
-    column-gap: 16px !important;
-    align-items: center !important;
-  }
-  #produkte .salon-event-card { grid-area:left !important; width:100% !important; margin:0 !important; }
-  #produkte .salon-event-panel { background:transparent !important; box-shadow:none !important; clip-path:none !important; }
-  #produkte .salon-event-panel::before,#produkte .salon-event-panel::after { display:none !important; content:none !important; }
-  #produkte .salon-event-image { width:100% !important; height:auto !important; object-fit:contain !important; }
-  #produkte .caravans-showcase-heading { grid-area:center !important; position:static !important; width:100% !important; margin:0 !important; text-align:center !important; }
-  #produkte .caravans-showcase-heading > div:first-child { max-width:100% !important; margin:0 auto !important; }
-  #produkte .caravans-title-row { display:block !important; }
-  #produkte .caravans-main-title { font-size:clamp(28px,4vw,46px) !important; text-align:center !important; }
-  #produkte .caravans-main-title span { white-space:nowrap !important; text-align:center !important; }
-  #produkte .caravans-showcase-heading .caravans-location-thumb { position:absolute !important; right:0 !important; top:50% !important; transform:translateY(-50%) !important; width:170px !important; margin:0 !important; }
-  #produkte .caravans-showcase-heading .caravans-location-thumb img { width:100% !important; height:auto !important; }
-}
-
-@media (max-width: 760px) {
-  #produkte .salon-section-opening {
-    display:grid !important;
-    grid-template-columns:1fr 1fr !important;
-    grid-template-areas:"center center" "left right" !important;
-    gap:14px !important;
-    align-items:center !important;
-  }
-  #produkte .caravans-showcase-heading { grid-area:center !important; position:static !important; width:100% !important; margin:0 !important; text-align:center !important; }
-  #produkte .caravans-showcase-heading > div:first-child { max-width:100% !important; margin:0 auto !important; }
-  #produkte .caravans-main-title { font-size:clamp(26px,8vw,40px) !important; text-align:center !important; }
-  #produkte .caravans-main-title span { white-space:normal !important; text-align:center !important; }
-  #produkte .salon-event-card { grid-area:left !important; justify-self:end !important; width:min(100%,210px) !important; margin:0 !important; }
-  #produkte .salon-event-panel { background:transparent !important; box-shadow:none !important; clip-path:none !important; }
-  #produkte .salon-event-panel::before,#produkte .salon-event-panel::after { display:none !important; content:none !important; }
-  #produkte .salon-event-image { width:100% !important; height:auto !important; object-fit:contain !important; }
-  #produkte .caravans-showcase-heading .caravans-location-thumb { position:static !important; transform:none !important; grid-area:right !important; width:min(100%,150px) !important; margin:0 !important; justify-self:start !important; }
-  #produkte .caravans-showcase-heading .caravans-location-thumb img { width:100% !important; height:auto !important; }
-}
-</style>
-
-
-
-<style id="clean-final-caravan-salon-layout">
-/* CLEAN FINAL LAYOUT: left logo | centered heading | small badge on the right */
-#produkte .salon-section-opening{
-  position:relative !important;
-}
-
-@media (min-width: 981px){
-  #produkte .salon-section-opening{
-    display:grid !important;
-    grid-template-columns: 350px minmax(0,1fr) 230px !important;
-    grid-template-areas: "left center right" !important;
-    column-gap: 28px !important;
-    align-items:start !important;
-    width:100% !important;
-    min-height:150px !important;
-    margin:0 !important;
-    padding:0 !important;
-    box-sizing:border-box !important;
-  }
-
-  /* LEFT IMAGE — keep it on the left, top aligned */
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible{
-    grid-area:left !important;
-    justify-self:start !important;
-    align-self:start !important;
-    width:350px !important;
-    max-width:350px !important;
-    height:auto !important;
-    margin:0 !important;
-    position:relative !important;
-    inset:auto !important;
-    transform:none !important;
-  }
-
-  #produkte .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready:not(.is-visible) .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready.is-visible .salon-event-panel{
-    width:350px !important;
-    max-width:350px !important;
-    height:auto !important;
-    aspect-ratio:1981 / 793 !important;
-    display:flex !important;
-    align-items:flex-start !important;
-    justify-content:flex-start !important;
-    margin:0 !important;
-    padding:0 !important;
-    background:transparent !important;
-    box-shadow:none !important;
-    border-radius:0 !important;
-    clip-path:none !important;
-    transform:none !important;
-    opacity:1 !important;
-  }
-
-  #produkte .salon-event-panel::before,
-  #produkte .salon-event-panel::after{
-    display:none !important;
-    content:none !important;
-  }
-
-  #produkte .salon-event-image{
-    display:block !important;
-    width:350px !important;
-    max-width:350px !important;
-    height:auto !important;
-    max-height:none !important;
-    object-fit:contain !important;
-    object-position:left top !important;
-    margin:0 !important;
-    transform:none !important;
-  }
-
-  /* CENTER — the heading stays genuinely centered between the two side items */
-  #produkte .caravans-showcase-heading{
-    grid-area:center !important;
-    position:relative !important;
-    width:100% !important;
-    max-width:none !important;
-    min-width:0 !important;
-    margin:0 !important;
-    padding:0 !important;
-    align-self:start !important;
-    justify-self:stretch !important;
-    text-align:center !important;
-    transform:none !important;
-    z-index:2 !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child{
-    width:100% !important;
-    max-width:760px !important;
-    margin:0 auto !important;
-    text-align:center !important;
-  }
-
-  #produkte .caravans-trust-kicker{
-    text-align:center !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-  }
-
-  #produkte .caravans-title-row{
-    width:100% !important;
-    margin:0 auto !important;
-    display:block !important;
-  }
-
-  #produkte .caravans-main-title{
-    width:100% !important;
-    margin:0 auto !important;
-    display:block !important;
-    text-align:center !important;
-    font-size:clamp(34px,3.8vw,58px) !important;
-    line-height:.96 !important;
-  }
-
-  #produkte .caravans-main-title span{
-    display:block !important;
-    width:100% !important;
-    white-space:nowrap !important;
-    text-align:center !important;
-  }
-
-  /* RIGHT THUMB — top aligned with the left image, small, and outside the title */
-  #produkte .caravans-location-thumb{
-    grid-area:right !important;
-    position:relative !important;
-    right:auto !important;
-    left:auto !important;
-    top:auto !important;
-    bottom:auto !important;
-    justify-self:end !important;
-    align-self:start !important;
-    width:210px !important;
-    max-width:210px !important;
-    height:auto !important;
-    margin:0 !important;
-    padding:0 !important;
-    transform:none !important;
-    z-index:3 !important;
-    pointer-events:none !important;
-  }
-
-  #produkte .caravans-location-thumb img{
-    display:block !important;
-    width:210px !important;
-    max-width:210px !important;
-    height:auto !important;
-    max-height:none !important;
-    object-fit:contain !important;
-    object-position:right top !important;
-    margin:0 !important;
-    transform:none !important;
-  }
-}
-
-@media (min-width:761px) and (max-width:980px){
-  #produkte .salon-section-opening{
-    display:grid !important;
-    grid-template-columns:240px minmax(0,1fr) 180px !important;
-    grid-template-areas:"left center right" !important;
-    column-gap:16px !important;
-    align-items:start !important;
-  }
-  #produkte .salon-event-card{grid-area:left !important;width:240px !important;max-width:240px !important;margin:0 !important;}
-  #produkte .salon-event-panel{width:240px !important;height:auto !important;background:transparent !important;box-shadow:none !important;clip-path:none !important;}
-  #produkte .salon-event-panel::before,#produkte .salon-event-panel::after{display:none !important;content:none !important;}
-  #produkte .salon-event-image{width:240px !important;height:auto !important;object-fit:contain !important;}
-  #produkte .caravans-showcase-heading{grid-area:center !important;position:relative !important;width:100% !important;margin:0 !important;text-align:center !important;}
-  #produkte .caravans-showcase-heading > div:first-child{width:100% !important;max-width:100% !important;margin:0 auto !important;}
-  #produkte .caravans-main-title{font-size:clamp(28px,4vw,46px) !important;text-align:center !important;}
-  #produkte .caravans-main-title span{white-space:nowrap !important;text-align:center !important;}
-  #produkte .caravans-location-thumb{grid-area:right !important;position:relative !important;right:auto !important;top:auto !important;width:160px !important;max-width:160px !important;margin:0 !important;justify-self:end !important;}
-  #produkte .caravans-location-thumb img{width:160px !important;height:auto !important;}
-}
-
-@media (max-width:760px){
-  #produkte .salon-section-opening{
-    display:grid !important;
-    grid-template-columns:1fr 1fr !important;
-    grid-template-areas:"center center" "left right" !important;
-    gap:14px !important;
-    align-items:center !important;
-  }
-  #produkte .caravans-showcase-heading{grid-area:center !important;width:100% !important;margin:0 !important;text-align:center !important;}
-  #produkte .caravans-showcase-heading > div:first-child{width:100% !important;max-width:100% !important;margin:0 auto !important;}
-  #produkte .caravans-main-title{text-align:center !important;font-size:clamp(26px,8vw,40px) !important;}
-  #produkte .caravans-main-title span{white-space:normal !important;text-align:center !important;}
-  #produkte .salon-event-card{grid-area:left !important;justify-self:end !important;width:min(42vw,220px) !important;max-width:min(42vw,220px) !important;margin:0 !important;}
-  #produkte .salon-event-panel{background:transparent !important;box-shadow:none !important;clip-path:none !important;}
-  #produkte .salon-event-panel::before,#produkte .salon-event-panel::after{display:none !important;content:none !important;}
-  #produkte .salon-event-image{width:100% !important;height:auto !important;object-fit:contain !important;}
-  #produkte .caravans-location-thumb{grid-area:right !important;position:relative !important;right:auto !important;top:auto !important;width:min(30vw,145px) !important;max-width:min(30vw,145px) !important;margin:0 !important;justify-self:start !important;}
-  #produkte .caravans-location-thumb img{width:100% !important;height:auto !important;}
-}
-</style>
-
-
-<style id="final-user-request-top-right-thumb">
-/* FINAL CLEAN ALIGNMENT
-   Left Caravan Salon logo and right Halle/Stand thumbnail sit on the SAME TOP ROW.
-   The center heading stays centered below/between them. */
-#produkte .salon-section-opening {
-  position: relative !important;
-}
-
-@media (min-width: 981px) {
-  /* Keep the existing left logo exactly where it is, and only move the right badge up. */
-  #produkte .caravans-location-thumb,
-  html.produkte-non100-zoom #produkte .caravans-location-thumb {
-    position: absolute !important;
-    z-index: 8 !important;
-    right: 0 !important;
-    top: 8px !important;
-    width: clamp(170px, 10vw, 190px) !important;
-    max-width: clamp(170px, 10vw, 190px) !important;
-    height: auto !important;
-    aspect-ratio: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    display: block !important;
-  }
-
-  #produkte .caravans-location-thumb img,
-  html.produkte-non100-zoom #produkte .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  /* Center the text in the available middle area and keep it below the top badges. */
-  #produkte .caravans-showcase-heading {
-    position: relative !important;
-    z-index: 4 !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding-top: clamp(72px, 5vw, 88px) !important;
-    display: flex !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-showcase-heading > div {
-    width: min(100%, 900px) !important;
-    max-width: 900px !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    text-align: center !important;
-  }
-}
-
-@media (min-width: 761px) and (max-width: 980px) {
-  #produkte .caravans-location-thumb {
-    position: absolute !important;
-    right: 0 !important;
-    top: 8px !important;
-    width: 175px !important;
-    max-width: 175px !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-location-thumb img {
-    width: 100% !important;
-    height: auto !important;
-  }
-}
-
-@media (max-width: 760px) {
-  /* Mobile: keep the two event graphics together above the centered heading. */
-  #produkte .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-areas:
-      "left right"
-      "center center" !important;
-    align-items: start !important;
-    column-gap: 12px !important;
-    row-gap: 10px !important;
-  }
-
-  #produkte .salon-event-card {
-    grid-area: left !important;
-    justify-self: start !important;
-    width: min(100%, 210px) !important;
-    margin: 0 !important;
-  }
-
-  #produkte .caravans-location-thumb {
-    grid-area: right !important;
-    position: static !important;
-    justify-self: end !important;
-    width: min(100%, 150px) !important;
-    max-width: 150px !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  #produkte .caravans-location-thumb img {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  #produkte .caravans-showcase-heading {
-    grid-area: center !important;
-    padding-top: 0 !important;
-    margin: 0 !important;
-    text-align: center !important;
-  }
-}
-</style>
-
-
-
-
-
-<style id="exact-centered-heading-final">
-/* Final exact layout: logo left, text exactly centered, badge small at top-right. */
-@media (min-width: 981px) {
-  #produkte .salon-section-opening {
-    position: relative !important;
-  }
-
-  /* Text is centered against the full section, not the remaining grid column. */
-  #produkte .caravans-showcase-heading {
-    position: absolute !important;
-    left: 50% !important;
-    top: 0 !important;
-    transform: translateX(-50%) !important;
-    width: min(760px, 44vw) !important;
-    max-width: 760px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    z-index: 10 !important;
-    display: block !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    text-align: center !important;
-  }
-
-  #produkte .caravans-main-title span {
-    white-space: nowrap !important;
-  }
-
-  /* Badge is a sibling of the heading: keep it small, high, and fully on the right. */
-  #produkte .caravans-location-thumb {
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-    left: auto !important;
-    width: clamp(170px, 10vw, 190px) !important;
-    max-width: 190px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    z-index: 11 !important;
-    pointer-events: none !important;
-  }
-
-  #produkte .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    margin: 0 !important;
-  }
-}
-</style>
-
-
-<style id="user-exact-text-center-final">
-/* ONLY center the requested heading block. Do not move either event image. */
-@media (min-width: 981px) {
-  #produkte .caravans-showcase-heading {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    top: 0 !important;
-    bottom: auto !important;
-    width: min(820px, 50vw) !important;
-    max-width: 820px !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    text-align: center !important;
-    z-index: 20 !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-title-row {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-main-title {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-main-title span {
-    display: block !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-  }
-}
-
-@media (max-width: 980px) {
-  #produkte .caravans-showcase-heading,
-  #produkte .caravans-showcase-heading > div:first-child,
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    text-align: center !important;
-  }
-}
-</style>
-
-
-<style id="shrink-left-image-only-final">
-/* User request: keep the heading exactly where it is; only make the left Caravan Salon image slightly smaller. */
-@media (min-width: 981px) {
-  #produkte .salon-section-opening {
-    --left-logo-width: clamp(180px, 12.5vw, 215px) !important;
-  }
-
-  html.produkte-non100-zoom #produkte .salon-event-card,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-enabled.is-visible,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready,
-  html.produkte-non100-zoom #produkte .salon-event-card.curtain-ready.is-visible {
-    width: 215px !important;
-    max-width: 215px !important;
-  }
-
-  /* Explicitly preserve the heading position and centering. */
-  #produkte .caravans-showcase-heading {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
-    text-align: center !important;
-  }
-}
-</style>
-
-<style id="final-only-left-image-size">
-/* Final user request: ONLY shrink the existing left image. Do not move the text. */
-@media (min-width: 981px) {
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible {
-    width: 215px !important;
-    max-width: 215px !important;
-  }
-  #produkte .salon-event-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  /* Preserve the current text position exactly; no positional shift. */
-  #produkte .caravans-showcase-heading {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-}
-</style>
-
-<style id="user-stable-centered-heading-and-smaller-left-final">
-/* USER FINAL: keep heading fixed in place, centered; slightly smaller left image; no reveal motion. */
-@media (min-width: 981px) {
-  #produkte .salon-section-opening {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    min-height: 155px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* LEFT: original Caravan Salon Austria image, slightly smaller, locked in place. */
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: 215px !important;
-    max-width: 215px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    z-index: 3 !important;
-  }
-
-  #produkte .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready:not(.is-visible) .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready.is-visible .salon-event-panel,
-  #produkte .salon-event-card.curtain-enabled.is-visible .salon-event-panel {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    will-change: auto !important;
-  }
-
-  #produkte .salon-event-image {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    transform: none !important;
-    transition: none !important;
-    object-fit: contain !important;
-    object-position: left top !important;
-  }
-
-  /* CENTER: absolute against the whole section so it cannot shift with the side images. */
-  #produkte .caravans-showcase-heading {
-    position: absolute !important;
-    left: 50% !important;
-    top: 0 !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
-    width: min(820px, calc(100% - 470px)) !important;
-    max-width: 820px !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    text-align: center !important;
-    z-index: 5 !important;
-    transition: none !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker,
-  #produkte .caravans-title-row,
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    text-align: center !important;
-  }
-
-  #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  #produkte .caravans-title-row {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-  }
-
-  #produkte .caravans-main-title {
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    white-space: normal !important;
-  }
-
-  #produkte .caravans-main-title span {
-    display: block !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    white-space: nowrap !important;
-  }
-
-  /* RIGHT: small Halle 20 / Stand C45 image, same top row, separated from the text. */
-  #produkte .caravans-location-thumb {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    left: auto !important;
-    bottom: auto !important;
-    width: 150px !important;
-    max-width: 150px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-    z-index: 4 !important;
-    pointer-events: none !important;
-  }
-
-  #produkte .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    transform: none !important;
-    transition: none !important;
-    object-fit: contain !important;
-    object-position: right top !important;
-  }
-}
-
-@media (max-width: 980px) {
-  /* No entrance movement at tablet/phone sizes either. */
-  #produkte .salon-event-card,
-  #produkte .salon-event-card.curtain-enabled,
-  #produkte .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-event-card.curtain-ready,
-  #produkte .salon-event-card.curtain-ready.is-visible,
-  #produkte .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready:not(.is-visible) .salon-event-panel,
-  #produkte .salon-event-card.curtain-ready.is-visible .salon-event-panel,
-  #produkte .salon-event-card.curtain-enabled.is-visible .salon-event-panel,
-  #produkte .salon-event-image,
-  #produkte .caravans-showcase-heading {
-    transition: none !important;
-  }
-
-  #produkte .salon-event-panel {
-    opacity: 1 !important;
-    transform: none !important;
-    will-change: auto !important;
-  }
-}
-</style>
-
-
-<style id="user-heading-smaller-and-higher-final">
-/* Show both centered lines together near the top of the graphics. */
-@media (min-width: 981px) {
-  #produkte .caravans-showcase-heading {
-    top: 12px !important;
-    padding: 0 !important;
-    transform: translateX(-50%) !important;
-    transition: none !important;
-  }
-
-  #produkte .caravans-trust-kicker {
-    font-size: clamp(13px, 1.15vw, 17px) !important;
-    line-height: 1.15 !important;
-    margin-bottom: 6px !important;
-  }
-
-  #produkte .caravans-main-title {
-    font-size: clamp(27px, 3vw, 44px) !important;
-    line-height: 1 !important;
-  }
-}
-
-@media (min-width: 761px) and (max-width: 980px) {
-  #produkte .caravans-main-title {
-    font-size: clamp(24px, 3vw, 31px) !important;
-  }
-}
-
-/* The browser zoom layout has older fixed dimensions that otherwise lower the text. */
-@media (min-width: 981px) {
-  html.produkte-non100-zoom #produkte .caravans-showcase-heading {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    top: 12px !important;
-    transform: translateX(-50%) !important;
-    width: min(820px, calc(100% - 470px)) !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  html.produkte-non100-zoom #produkte .caravans-showcase-heading > div,
-  html.produkte-non100-zoom #produkte .caravans-title-row,
-  html.produkte-non100-zoom #produkte .caravans-main-title {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-  html.produkte-non100-zoom #produkte .caravans-title-row,
-  html.produkte-non100-zoom #produkte .caravans-main-title {
-    display: block !important;
-  }
-  html.produkte-non100-zoom #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    height: auto !important;
-    margin-bottom: 6px !important;
-    font-size: clamp(13px, 1.15vw, 17px) !important;
-    line-height: 1.15 !important;
-  }
-  html.produkte-non100-zoom #produkte .caravans-main-title {
-    font-size: clamp(27px, 3vw, 44px) !important;
-    line-height: 1 !important;
-  }
-}
-</style>
-
-
-<style id="mobile-section-two-stack-final">
-/* Mobile: keep Section 2 in a clean vertical reading order. */
-@media (max-width: 760px) {
-  #produkte .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-areas: "center" "left" "right" !important;
-    row-gap: 18px !important;
-    column-gap: 0 !important;
-    align-items: center !important;
-    justify-items: center !important;
-  }
-
-  #produkte .salon-section-opening::before,
-  #produkte .salon-section-opening::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  #produkte .caravans-showcase-heading {
-    grid-area: center !important;
-    position: static !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  #produkte .caravans-showcase-heading > div:first-child {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  #produkte .caravans-main-title,
-  #produkte .caravans-main-title span {
-    width: 100% !important;
-    white-space: normal !important;
-  }
-
-  #produkte .salon-section-opening > .salon-event-card,
-  #produkte .salon-section-opening > .salon-event-card.curtain-enabled,
-  #produkte .salon-section-opening > .salon-event-card.curtain-enabled.is-visible,
-  #produkte .salon-section-opening > .salon-event-card.curtain-ready,
-  #produkte .salon-section-opening > .salon-event-card.curtain-ready.is-visible,
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card,
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card.curtain-enabled,
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card.curtain-enabled.is-visible,
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card.curtain-ready,
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card.curtain-ready.is-visible {
-    grid-area: left !important;
-    justify-self: center !important;
-    width: min(100%, 220px) !important;
-    max-width: 220px !important;
-    margin: 0 !important;
-  }
-
-  #produkte .caravans-location-thumb {
-    grid-area: right !important;
-    position: static !important;
-    justify-self: center !important;
-    width: min(100%, 150px) !important;
-    max-width: 150px !important;
-    margin: 0 !important;
-  }
-
-  #produkte .sortiment-product-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  #produkte .sortiment-product-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-}
-</style>
-
-<style id="produkte-opening-consistent-at-browser-zoom">
-/* One layout for the opening at regular and non-default browser zoom. */
-@media (min-width: 761px) {
-  html.produkte-non100-zoom #produkte.dark-section {
-    overflow-x: clip !important;
-  }
-
-  html.produkte-non100-zoom #produkte.dark-section > .container {
-    width: min(1280px, calc(100% - 40px)) !important;
-    min-width: 0 !important;
-    max-width: 1280px !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .salon-section-opening {
-    position: relative !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr) !important;
-    column-gap: clamp(8px, 1.2vw, 18px) !important;
-    align-items: start !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 155px !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .salon-section-opening > :is(
-    .salon-event-card,
-    .salon-event-card.curtain-enabled.is-visible,
-    .salon-event-card.curtain-ready.is-visible
-  ) {
-    grid-area: 1 / 1 !important;
-    position: relative !important;
-    inset: auto !important;
-    align-self: start !important;
-    justify-self: start !important;
-    width: min(100%, 215px) !important;
-    max-width: 215px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .salon-event-card .salon-event-panel,
-  :is(html, html.produkte-non100-zoom) #produkte .salon-event-card .salon-event-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-showcase-heading {
-    grid-area: 1 / 2 !important;
-    position: relative !important;
-    inset: auto !important;
-    align-self: start !important;
-    justify-self: stretch !important;
-    display: block !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 8px 0 0 !important;
-    text-align: center !important;
-    transform: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-showcase-heading > div:first-child,
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-title-row {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 6px !important;
-    font-size: clamp(13px, 1.15vw, 17px) !important;
-    line-height: 1.15 !important;
-    text-align: center !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-main-title {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 !important;
-    font-size: clamp(23px, 3vw, 44px) !important;
-    line-height: 1 !important;
-    text-align: center !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-main-title span {
-    display: block !important;
-    width: 100% !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-location-thumb {
-    grid-area: 1 / 3 !important;
-    position: relative !important;
-    inset: auto !important;
-    align-self: start !important;
-    justify-self: end !important;
-    width: min(100%, 150px) !important;
-    max-width: 150px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .sortiment-product-preview,
-  html.produkte-non100-zoom #produkte .sortiment-product-grid {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-}
-
-@media (min-width: 761px) and (max-width: 980px) {
-  html.produkte-non100-zoom #produkte .sortiment-product-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-  html.produkte-non100-zoom #produkte .sortiment-product-preview,
-  html.produkte-non100-zoom #produkte .sortiment-product-card,
-  html.produkte-non100-zoom #produkte .sortiment-product-body {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-}
-
-@media (max-width: 760px) {
-  html.produkte-non100-zoom #produkte.dark-section > .container,
-  html.produkte-non100-zoom #produkte .sortiment-product-preview,
-  html.produkte-non100-zoom #produkte .sortiment-product-grid {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  html.produkte-non100-zoom #produkte .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-areas: "center" "left" "right" !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 !important;
-  }
-
-  html.produkte-non100-zoom #produkte .caravans-showcase-heading {
-    grid-area: center !important;
-    position: static !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .caravans-showcase-heading > div:first-child,
-  html.produkte-non100-zoom #produkte .caravans-title-row,
-  html.produkte-non100-zoom #produkte .caravans-main-title,
-  html.produkte-non100-zoom #produkte .caravans-trust-kicker {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  html.produkte-non100-zoom #produkte .caravans-main-title {
-    font-size: clamp(26px, 8vw, 40px) !important;
-    line-height: 1 !important;
-  }
-
-  html.produkte-non100-zoom #produkte .caravans-main-title span {
-    white-space: normal !important;
-  }
-
-  html.produkte-non100-zoom #produkte .salon-section-opening > .salon-event-card {
-    grid-area: left !important;
-    position: static !important;
-    width: min(100%, 220px) !important;
-    max-width: 220px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    transform: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .salon-event-panel,
-  html.produkte-non100-zoom #produkte .salon-event-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .caravans-location-thumb {
-    grid-area: right !important;
-    position: static !important;
-    width: min(100%, 150px) !important;
-    max-width: 150px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    transform: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .sortiment-product-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-
-  html.produkte-non100-zoom #produkte .sortiment-product-preview,
-  html.produkte-non100-zoom #produkte .sortiment-product-card,
-  html.produkte-non100-zoom #produkte .sortiment-product-body {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-}
-</style>
-
-<style id="caravans-kicker-center-with-title">
-/* Keep the small line in the exact same centering context as the large title. */
-:is(html, html.produkte-non100-zoom) #produkte .caravans-title-row {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-  grid-template-columns: none !important;
-  gap: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-
-:is(html, html.produkte-non100-zoom) #produkte .caravans-title-row > .caravans-trust-kicker {
-  display: block !important;
-  flex: none !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 0 0 6px !important;
-  padding: 0 !important;
-  text-align: center !important;
-}
-
-:is(html, html.produkte-non100-zoom) #produkte .caravans-title-row > .caravans-main-title {
-  flex: none !important;
-  grid-column: auto !important;
-  align-self: stretch !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  margin: 0 !important;
-  text-align: center !important;
-}
-</style>
-
-<style id="mobile-caravans-match-new400-image-display">
-@media (max-width: 760px) {
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-preview,
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-grid,
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-card {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-body {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-card:is(
-    :nth-child(1), :nth-child(2), :nth-child(3), [data-model="new-400"]
-  ) .sortiment-product-image {
-    box-sizing: border-box !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    aspect-ratio: 4 / 3 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    background: transparent !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-card:is(
-    :nth-child(1), :nth-child(2), :nth-child(3), [data-model="new-400"]
-  ) .sortiment-product-image img,
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-card:is(
-    :nth-child(1), :nth-child(2), :nth-child(3), [data-model="new-400"]
-  ):hover .sortiment-product-image img {
-    display: block !important;
-    flex: none !important;
-    width: 92% !important;
-    height: 92% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: 92% !important;
-    max-height: 92% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    transform: none !important;
-    filter: none !important;
-  }
-}
-
-@media (max-width: 420px) {
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-card:is(
-    :nth-child(1), :nth-child(2), :nth-child(3), [data-model="new-400"]
-  ) .sortiment-product-image {
-    aspect-ratio: 1.18 / 1 !important;
-  }
-}
-</style>
-
-<style id="mobile-mini270-and-later-shared-wels-backdrop">
-/* Keep the same Messe Wels framing behind Mini 270 and every model below it. */
-@media (max-width: 760px) {
-  :is(html, html.produkte-non100-zoom) #produkte .sortiment-product-grid > .sortiment-product-card:nth-child(n+2) .sortiment-product-image {
-    background-color: #081a39 !important;
-    background-image:
-      linear-gradient(to bottom, rgba(8, 26, 57, .12), rgba(8, 26, 57, .31)),
-      url("images/Sortiment-mobile.png") !important;
-    background-position: center center, center center !important;
-    background-size: 100% 100%, 100% auto !important;
-    background-repeat: no-repeat, no-repeat !important;
-  }
-}
-</style>
-
-<style id="mobile-salon-graphics-side-by-side">
-/* Put the event logo on the left and the hall badge on the right below the heading. */
-@media (max-width: 760px) {
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .salon-section-opening {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
-    grid-template-areas: "center center" "left right" !important;
-    column-gap: clamp(8px, 2.5vw, 16px) !important;
-    row-gap: clamp(12px, 3vw, 20px) !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .salon-section-opening > .caravans-showcase-heading {
-    grid-area: center !important;
-    width: 100% !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .salon-section-opening > :is(
-    .salon-event-card,
-    .salon-event-card.curtain-enabled.is-visible,
-    .salon-event-card.curtain-ready.is-visible,
-    .salon-event-card.curtain-ready:not(.is-visible)
-  ) {
-    grid-area: left !important;
-    position: relative !important;
-    inset: auto !important;
-    justify-self: start !important;
-    align-self: center !important;
-    box-sizing: border-box !important;
-    width: min(100%, 220px) !important;
-    max-width: 220px !important;
-    height: auto !important;
-    margin: 0 !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .salon-section-opening > .caravans-location-thumb {
-    grid-area: right !important;
-    position: relative !important;
-    inset: auto !important;
-    justify-self: end !important;
-    align-self: center !important;
-    box-sizing: border-box !important;
-    width: min(100%, 150px) !important;
-    max-width: 150px !important;
-    height: auto !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .salon-section-opening > .caravans-location-thumb img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-}
-</style>
-
-<style id="mobile-opaque-caravan-copy-and-matched-ground">
-@media (max-width: 760px) {
-  /* Keep the model descriptions solid navy, with no photograph showing through. */
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .sortiment-product-grid > .sortiment-product-card .sortiment-product-body {
-    background: #081a39 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  /* Use one ground position for Mini 270, Eco 350 and New 400. */
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .sortiment-product-grid > .sortiment-product-card:nth-child(n+2) .sortiment-product-image {
-    background-position: center center, center calc(50% - 10px) !important;
-  }
-
-  /* Align each wheel line with New 400 despite the assets' different aspect ratios. */
-  #produkte.dark-section .sortiment-product-card:nth-child(2) {
-    --mobile-card-ground-offset: calc(18px - 1vw);
-  }
-
-  #produkte.dark-section .sortiment-product-card:nth-child(3) {
-    --mobile-card-ground-offset: calc(18px + 6vw);
-  }
-
-  #produkte.dark-section .sortiment-product-card[data-model="new-400"] {
-    --mobile-card-ground-offset: 18px;
-  }
-
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .sortiment-product-grid > .sortiment-product-card:nth-child(n+2) .sortiment-product-image img,
-  :is(html, html.produkte-non100-zoom) #produkte.dark-section .sortiment-product-grid > .sortiment-product-card:nth-child(n+2):hover .sortiment-product-image img {
-    transform: translateY(var(--mobile-card-ground-offset)) !important;
-  }
-}
-</style>
-
-<script id="sortiment-mobile-photo-boundary">
-(function () {
-  const section = document.querySelector('#produkte.dark-section');
-  const photoEnd = section && section.querySelector('.sortiment-product-card[data-model="new-400"] .sortiment-product-body');
-  if (!photoEnd) return;
-
-  function update() {
-    if (!window.matchMedia('(max-width: 760px)').matches) {
-      section.style.removeProperty('--mobile-sortiment-photo-height');
-      return;
-    }
-    const top = Math.max(0, photoEnd.getBoundingClientRect().top - section.getBoundingClientRect().top);
-    const value = Math.ceil(top) + 'px';
-    if (section.style.getPropertyValue('--mobile-sortiment-photo-height') !== value) {
-      section.style.setProperty('--mobile-sortiment-photo-height', value);
-    }
-  }
-
-  let frame = 0;
-  function schedule() {
-    cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(update);
-  }
-
-  window.addEventListener('load', schedule);
-  window.addEventListener('resize', schedule, { passive: true });
-  window.addEventListener('orientationchange', schedule, { passive: true });
-  document.fonts?.ready.then(schedule);
-  if ('ResizeObserver' in window) {
-    const observer = new ResizeObserver(schedule);
-    observer.observe(section);
-    const preview = section.querySelector('.sortiment-product-preview');
-    if (preview) observer.observe(preview);
-    observer.observe(photoEnd);
-  }
-  update();
-}());
-</script>
-
-
-<link href="nav-responsive.css" media="(min-width: 761px)" rel="stylesheet"/>
-<link href="nav-scroll-layout.css" media="(min-width: 761px)" rel="stylesheet"/>
-
-<style id="showcase-heading-entry-animations-final">
-/* Desktop/mobile entry animation for the two side images around
-   "Wohnwagen mit Vertrauen / ENTDECKE FREIHEIT AUF RÄDERN!"
-   Animate inner visual elements so layout positioning stays intact. */
-#produkte .salon-section-opening.showcase-animate-ready > .salon-event-card .salon-event-panel {
-  opacity: 0 !important;
-  transform: translate3d(0, -56px, 0) scaleY(.88) !important;
-  transform-origin: top center !important;
-  filter: saturate(.96);
-  transition:
-    transform .95s cubic-bezier(.2,.78,.2,1),
-    opacity .72s ease,
-    filter .95s ease !important;
-  will-change: transform, opacity;
-}
-
-#produkte .salon-section-opening.showcase-animate-ready > .caravans-location-thumb img {
-  opacity: 0 !important;
-  transform: translate3d(92px, 0, 0) !important;
-  transition:
-    transform 1.35s cubic-bezier(.18,.82,.2,1),
-    opacity .95s ease !important;
-  will-change: transform, opacity;
-}
-
-#produkte .salon-section-opening.showcase-visible > .salon-event-card .salon-event-panel {
-  opacity: 1 !important;
-  transform: translate3d(0, 0, 0) scaleY(1) !important;
-  filter: none;
-}
-
-#produkte .salon-section-opening.showcase-visible > .caravans-location-thumb img {
-  opacity: 1 !important;
-  transform: translate3d(0, 0, 0) !important;
-}
-
-@media (max-width: 760px) {
-  #produkte .salon-section-opening.showcase-animate-ready > .salon-event-card .salon-event-panel {
-    transform: translate3d(0, -38px, 0) scaleY(.9) !important;
-  }
-
-  #produkte .salon-section-opening.showcase-animate-ready > .caravans-location-thumb img {
-    transform: translate3d(52px, 0, 0) !important;
-    transition-delay: 0s !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #produkte .salon-section-opening.showcase-animate-ready > .salon-event-card .salon-event-panel,
-  #produkte .salon-section-opening.showcase-animate-ready > .caravans-location-thumb img {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-}
-</style>
-
-<script id="showcase-heading-entry-observer-final">
-(function(){
-  const opening = document.querySelector('#produkte .salon-section-opening');
-  if (!opening) return;
-
-  opening.classList.add('showcase-animate-ready');
-
-  const reveal = () => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        opening.classList.add('showcase-visible');
-      });
-    });
-  };
-
-  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    reveal();
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        reveal();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.28, rootMargin: '0px 0px -8% 0px' });
-
-  observer.observe(opening);
-})();
-</script>
-
-
-
-
-
-
-
-
-<style id="showcase-mobile-restore-desktop-animation-only">
-/* Mobile stays exactly static as before; section-2 entrance animation is desktop-only. */
-@media (max-width: 760px) {
-  #produkte .salon-section-opening > .salon-event-card .salon-event-panel,
-  #produkte .salon-section-opening.showcase-animate-ready > .salon-event-card .salon-event-panel,
-  #produkte .salon-section-opening.showcase-visible > .salon-event-card .salon-event-panel,
-  #produkte .salon-section-opening > .caravans-location-thumb img,
-  #produkte .salon-section-opening.showcase-animate-ready > .caravans-location-thumb img,
-  #produkte .salon-section-opening.showcase-visible > .caravans-location-thumb img {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-    filter: none !important;
-  }
-}
-</style>
-
-
-<style id="showcase-right-image-desktop-sequencer-style">
-/* Desktop only: keep left image as before. Right image stays hidden first,
-   then after 2 seconds slides in from right to left slowly. */
-@media (min-width: 761px) {
-  #produkte .salon-section-opening.showcase-right-pending > .caravans-location-thumb img,
-  #produkte .salon-section-opening.showcase-right-pending.showcase-visible > .caravans-location-thumb img {
-    opacity: 0 !important;
-    transform: translate3d(92px, 0, 0) !important;
-    transition: none !important;
-    animation: none !important;
-  }
-
-  #produkte .salon-section-opening.showcase-right-animate > .caravans-location-thumb img,
-  #produkte .salon-section-opening.showcase-right-animate.showcase-visible > .caravans-location-thumb img {
-    opacity: 1 !important;
-    transform: translate3d(0, 0, 0) !important;
-    transition:
-      transform 1.6s cubic-bezier(.18,.82,.2,1),
-      opacity 1.1s ease !important;
-    animation: none !important;
-  }
-}
-</style>
-
-<script id="showcase-right-image-desktop-sequencer">
-(function(){
-  const opening = document.querySelector('#produkte .salon-section-opening');
-  if (!opening) return;
-  const desktopQuery = window.matchMedia('(min-width: 761px)');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!desktopQuery.matches || reducedMotion) return;
-
-  opening.classList.add('showcase-right-pending');
-
-  let triggered = false;
-  const triggerRightImage = () => {
-    if (triggered) return;
-    triggered = true;
-    window.setTimeout(() => {
-      opening.classList.add('showcase-right-animate');
-      opening.classList.remove('showcase-right-pending');
-    }, 1000);
-  };
-
-  if (!('IntersectionObserver' in window)) {
-    triggerRightImage();
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        triggerRightImage();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.28, rootMargin: '0px 0px -8% 0px' });
-
-  observer.observe(opening);
-})();
-</script>
 
 </body>
 </html>

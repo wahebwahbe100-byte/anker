@@ -6,4 +6,21 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://ankercaravanberlin.de/wohnwagen-micro-240.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ankercaravanberlin.de/wohnwagen-mini-270.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ankercaravanberlin.de/wohnwagen-eco-350.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ankercaravanberlin.de/wohnwagen-new-400.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

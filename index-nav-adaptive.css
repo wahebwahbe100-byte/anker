@@ -1,0 +1,101 @@
+/*
+  INDEX ONLY — adaptive menu behavior without changing the original header design.
+  The normal/wide header keeps its existing styles exactly as they are.
+  Only when JS detects that the links no longer fit do we switch to the
+  existing compact/hamburger layout.
+*/
+
+/* Keep the original wide-screen helper exactly as it was. */
+@media (min-width: 1481px) {
+  body header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav {
+    grid-template-columns: minmax(240px, auto) minmax(0, 1fr) auto !important;
+    column-gap: clamp(14px, 1.6vw, 24px) !important;
+  }
+
+  body header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .menu {
+    gap: clamp(10px, 1vw, 16px) !important;
+    white-space: nowrap !important;
+  }
+}
+
+/*
+  Compact desktop mode.
+  IMPORTANT: these rules do nothing unless JS adds .index-nav-compact.
+*/
+@media (min-width: 1081px) {
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .logo {
+    flex: 0 1 auto !important;
+    margin-right: auto !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .header-tools,
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .anker-header-tools {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > button.mobile-toggle {
+    position: relative !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0 !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .menu {
+    display: none !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .menu.open {
+    position: absolute !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 3px !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(340px, calc(100vw - 32px)) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 130px) !important;
+    max-height: calc(100dvh - 130px) !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+    border: 1px solid rgba(157, 133, 114, .25) !important;
+    border-radius: 0 0 18px 18px !important;
+    background: #fff !important;
+    box-shadow: 0 20px 45px rgba(8, 26, 57, .18) !important;
+    z-index: 10010 !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .menu.open > a {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: flex-start !important;
+    padding: 13px 15px !important;
+    border-radius: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  body.index-nav-compact header.site-header:is(.is-scrolled, :not(.is-scrolled)) .container.nav > .menu.open > a::after {
+    display: none !important;
+  }
+}

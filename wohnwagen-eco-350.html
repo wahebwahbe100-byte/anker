@@ -837,78 +837,6 @@
   }
 
 
-  /* Correct folding header on scroll */
-  header,
-  header .header-inner,
-  header .logo img,
-  header .back{
-    transition:
-      min-height .26s ease,
-      padding .26s ease,
-      width .26s ease,
-      font-size .26s ease,
-      transform .26s ease,
-      box-shadow .26s ease,
-      background .26s ease !important;
-  }
-
-  header.header-folded{
-    transform:translateY(-10px) !important;
-    background:rgba(255,255,255,.985) !important;
-    box-shadow:0 8px 22px rgba(8,26,57,.12) !important;
-  }
-
-  header.header-folded .header-inner{
-    min-height:50px !important;
-    padding-top:4px !important;
-    padding-bottom:4px !important;
-  }
-
-  header.header-folded .logo img{
-    width:58px !important;
-  }
-
-  header.header-folded .back{
-    padding:7px 12px !important;
-    font-size:12px !important;
-  }
-
-  @media (max-width: 900px){
-    header.header-folded{
-      transform:translateY(-8px) !important;
-    }
-
-    header.header-folded .header-inner{
-      min-height:48px !important;
-      padding-top:4px !important;
-      padding-bottom:4px !important;
-    }
-
-    header.header-folded .logo img{
-      width:54px !important;
-    }
-  }
-
-  @media (max-width: 640px){
-    header.header-folded{
-      transform:translateY(-7px) !important;
-    }
-
-    header.header-folded .header-inner{
-      min-height:46px !important;
-      padding-top:3px !important;
-      padding-bottom:3px !important;
-    }
-
-    header.header-folded .logo img{
-      width:50px !important;
-    }
-
-    header.header-folded .back{
-      padding:6px 10px !important;
-      font-size:12px !important;
-    }
-  }
 
 </style>
 
@@ -949,13 +877,26 @@
   .anker-model-header-actions .anker-language-menu{right:0;width:min(218px,calc(100vw - 24px))}
 }
 </style>
+<link href="model-site-bars.css" rel="stylesheet"/>
+<link href="model-hero-caravan.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="nav-scroll-layout.css" rel="stylesheet"/>
 </head>
-<body>
-<header>
+<body class="model-has-caravan-visual">
+<header class="model-site-header">
 <div class="header-inner">
-<a class="logo reveal-left" href="index.html">
-<img alt="ANKER Caravan" src="images/logo-icon.png"/>
+<a class="logo reveal-left" href="index.html#start" aria-label="ANKER Caravan – Startseite">
+<img class="model-header-logo" src="images/logo-icon.png" alt="ANKER Caravan Logo"/>
+<span class="model-brand-name"><strong>ANKER</strong><small>CARAVAN</small></span>
 </a>
+<nav aria-label="Hauptmenü" class="model-desktop-nav">
+<a href="index.html#start">STARTSEITE</a>
+<a href="index.html#produkte">WOHNWAGEN</a>
+<a href="index.html#beratung">SERVICE</a>
+<a href="index.html#team">TEAM</a>
+<a href="index.html#ueber-uns">ÜBER UNS</a>
+<a href="kontakt.html">KONTAKT</a>
+</nav>
 <div class="anker-model-header-actions"><div class="anker-language-switcher notranslate" id="ankerLanguageSwitcher" translate="no">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="anker-language-button" id="ankerLanguageButton" type="button">
 <img alt="Deutsch" class="anker-language-flag" id="ankerLanguageCurrentFlag" src="images/de.png"/>
@@ -974,7 +915,19 @@
 <span aria-hidden="true" class="anker-language-check">✓</span>
 </button>
 </div>
-</div><a class="back reveal-right" href="index.html#produkte">Zurück</a></div>
+</div><a class="back reveal-right" href="index.html#produkte">Zurück</a>
+<details class="model-mobile-menu">
+<summary aria-label="Hauptmenü">☰</summary>
+<nav aria-label="Hauptmenü" class="model-mobile-nav">
+<a href="index.html#start">STARTSEITE</a>
+<a href="index.html#produkte">WOHNWAGEN</a>
+<a href="index.html#beratung">SERVICE</a>
+<a href="index.html#team">TEAM</a>
+<a href="index.html#ueber-uns">ÜBER UNS</a>
+<a href="kontakt.html">KONTAKT</a>
+</nav>
+</details>
+</div>
 </div>
 </header>
 <section class="hero">
@@ -985,6 +938,7 @@
 <p>
         Der Eco 350 ist kompakt, familienfreundlich und ideal für flexible Reisen – mit gemütlichen Schlafplätzen, praktischem Stauraum und mehr Unabhängigkeit unterwegs.
       </p>
+<figure class="hero-caravan-visual"><img src="images/bild-03-card.png" alt="Wohnwagen Eco 350, Seitenansicht" loading="eager" decoding="async"/></figure>
 </div>
 <div class="slider-card reveal-right">
 <div class="slider" id="ecoSlider">
@@ -1343,11 +1297,51 @@
 <a href="kontakt.html">Kontakt aufnehmen</a>
 </div>
 </section>
-<footer>
-<div class="footer-inner">
-    © ANKER Caravan
-  </div>
+<footer class="index-style-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="logo" style="color:#fff; margin-bottom:12px;">
+<img alt="ANKER Caravan Logo" aria-hidden="true" class="logo-mark" decoding="async" loading="lazy" src="images/logo-mobile-before.png"/>
+<span class="logo-wordmark">
+<span class="logo-text">ANKER</span>
+<small class="logo-tagline">CARAVAN</small>
+</span>
+</div>
+<p>Wohnwagen, Caravan-Beratung und Service.</p>
+<p class="footer-contact">
+<a href="tel:+4915255935516">+49 1525 5935516</a>
+<span>Deutschland</span>
+</p>
+</div>
+<div>
+<h4>Wohnwagen</h4>
+<a href="index.html#produkte">Wohnwagen</a>
+<a href="index.html#produkte">Caravans</a>
+<a href="index.html#produkte">Auswahl</a>
+<a href="index.html#beratung">Beratung</a>
+</div>
+<div>
+<h4>Service</h4>
+<a href="index.html#vorteile">Vorteile</a>
+<a href="index.html#beratung">Beratung</a>
+<a href="index.html#ablauf">Ablauf</a>
+<a href="index.html#referenzen">Ideen</a>
+<a href="index.html#team">Team</a>
+<a href="index.html#ueber-uns">Über uns</a>
+<a href="kontakt.html">Kontakt</a>
+</div>
+<div>
+<h4>Rechtliches</h4>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+<p class="legal-note">© <span id="year"></span> ANKER Caravan. Alle Rechte vorbehalten.</p>
+<p class="developer-credit" style="margin:8px 0 0;text-align:center;font-size:11px;color:rgba(255,255,255,.38);">Entwickelt von <a href="https://waheb-site.de/" style="display:inline;margin:0;color:inherit;text-decoration:none;" title="Webdesign Deutschland | SEO &amp; moderne Websites | Waheb Site">Webdesign Deutschland | SEO &amp; moderne Websites.</a></p>
+</div>
 </footer>
+<script>document.querySelectorAll('.model-footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
 <script>
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -1431,17 +1425,7 @@
 
   startAutoSlide();
 
-  const pageHeader = document.querySelector('header');
 
-  function updateFoldingHeader(){
-    if (!pageHeader) return;
-    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    pageHeader.classList.toggle('header-folded', scrollTop > 35);
-  }
-
-  window.addEventListener('scroll', updateFoldingHeader, { passive:true });
-  window.addEventListener('load', updateFoldingHeader);
-  updateFoldingHeader();
 
 </script>
 
@@ -1492,6 +1476,7 @@ const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü"
 ATTR_EN["Preisliste Eco 350"]="Eco 350 price list";
 ATTR_EN["Preisliste Eco 350 mobil"]="Eco 350 price list mobile";
 
+ATTR_EN["Wohnwagen Eco 350, Seitenansicht"] = "Side view of the Eco 350 caravan";
 const META={"de_title":"Wohnwagen Eco 350 – ANKER Caravan","en_title":"Eco 350 caravan – ANKER Caravan","de_desc":"Wohnwagen Eco 350 – kompakter und familienfreundlicher Caravan mit praktischer Vollausstattung.","en_desc":"Eco 350 caravan – a compact, family-friendly caravan with practical full equipment."};
 const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
 function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
@@ -1540,5 +1525,162 @@ if(lang==='en'){
 }
 })();
 </script>
+
+<script id="gallery-lightbox-enhancement-script">
+(function(){
+  const sliderCard = document.querySelector('.slider-card');
+  if (!sliderCard) return;
+  const slider = sliderCard.querySelector('.slider');
+  const slides = Array.from(sliderCard.querySelectorAll('.slider .slide'));
+  if (!slider || !slides.length) return;
+
+  const expandSvg = `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 4H4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 20H4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 20h4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'gallery-expand-button';
+  button.setAttribute('aria-label', 'Bilder groß anzeigen');
+  button.innerHTML = `<span class="gallery-expand-icon">${expandSvg}</span><span class="gallery-expand-label">Bilder groß anzeigen</span>`;
+  sliderCard.appendChild(button);
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'gallery-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Bildergalerie vergrößert');
+  lightbox.innerHTML = `
+    <div class="gallery-lightbox__dialog">
+      <div class="gallery-lightbox__toolbar">
+        <div>
+          <div class="gallery-lightbox__title"></div>
+          <div class="gallery-lightbox__counter"></div>
+        </div>
+        <button type="button" class="gallery-lightbox__close" aria-label="Schließen">×</button>
+      </div>
+      <div class="gallery-lightbox__stage">
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" aria-label="Vorheriges Bild">‹</button>
+        <div class="gallery-lightbox__media"></div>
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" aria-label="Nächstes Bild">›</button>
+      </div>
+      <div class="gallery-lightbox__thumbs"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const mediaWrap = lightbox.querySelector('.gallery-lightbox__media');
+  const titleEl = lightbox.querySelector('.gallery-lightbox__title');
+  const counterEl = lightbox.querySelector('.gallery-lightbox__counter');
+  const thumbsWrap = lightbox.querySelector('.gallery-lightbox__thumbs');
+  const closeBtn = lightbox.querySelector('.gallery-lightbox__close');
+  const prevBtn = lightbox.querySelector('.gallery-lightbox__nav--prev');
+  const nextBtn = lightbox.querySelector('.gallery-lightbox__nav--next');
+  let currentIndex = 0;
+
+  const getActiveIndex = () => {
+    const active = slides.findIndex(slide => slide.classList.contains('active'));
+    return active >= 0 ? active : 0;
+  };
+
+  const getSlideLabel = (slide, index) => {
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    return img?.alt || video?.getAttribute('aria-label') || `Bild ${index + 1}`;
+  };
+
+  const renderMedia = (index) => {
+    currentIndex = (index + slides.length) % slides.length;
+    const slide = slides[currentIndex];
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    mediaWrap.innerHTML = '';
+
+    let node;
+    if (video) {
+      node = video.cloneNode(true);
+      node.controls = true;
+      node.autoplay = false;
+      node.muted = false;
+      node.playsInline = true;
+    } else if (img) {
+      node = img.cloneNode(true);
+      node.loading = 'eager';
+      node.decoding = 'async';
+    }
+
+    if (node) mediaWrap.appendChild(node);
+    titleEl.textContent = getSlideLabel(slide, currentIndex);
+    counterEl.textContent = `${currentIndex + 1} / ${slides.length}`;
+
+    thumbsWrap.querySelectorAll('.gallery-lightbox__thumb').forEach((thumb, thumbIndex) => {
+      thumb.classList.toggle('is-active', thumbIndex === currentIndex);
+      thumb.setAttribute('aria-current', thumbIndex === currentIndex ? 'true' : 'false');
+    });
+  };
+
+  slides.forEach((slide, index) => {
+    const thumbButton = document.createElement('button');
+    thumbButton.type = 'button';
+    thumbButton.className = 'gallery-lightbox__thumb';
+    thumbButton.setAttribute('aria-label', `Bild ${index + 1} anzeigen`);
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    if (img) {
+      const preview = img.cloneNode(true);
+      preview.alt = '';
+      preview.loading = 'lazy';
+      thumbButton.appendChild(preview);
+    } else if (video) {
+      const preview = video.cloneNode(true);
+      preview.muted = true;
+      preview.controls = false;
+      preview.preload = 'metadata';
+      thumbButton.appendChild(preview);
+    }
+    thumbButton.addEventListener('click', () => renderMedia(index));
+    thumbsWrap.appendChild(thumbButton);
+  });
+
+  const openLightbox = (index = getActiveIndex()) => {
+    renderMedia(index);
+    lightbox.classList.add('is-open');
+    document.body.classList.add('gallery-lightbox-open');
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('gallery-lightbox-open');
+    mediaWrap.querySelectorAll('video').forEach(video => video.pause());
+  };
+
+  button.addEventListener('click', () => openLightbox(getActiveIndex()));
+  slides.forEach((slide, index) => {
+    const image = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    if (image) image.addEventListener('click', () => openLightbox(index));
+    if (video) video.addEventListener('dblclick', () => openLightbox(index));
+  });
+
+  prevBtn.addEventListener('click', () => renderMedia(currentIndex - 1));
+  nextBtn.addEventListener('click', () => renderMedia(currentIndex + 1));
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') renderMedia(currentIndex - 1);
+    if (event.key === 'ArrowRight') renderMedia(currentIndex + 1);
+  });
+})();
+</script>
+
 </body>
 </html>

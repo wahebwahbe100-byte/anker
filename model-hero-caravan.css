@@ -1,0 +1,51 @@
+/* The text and model cutout share the left column on desktop. */
+.hero-caravan-visual { display: none; }
+
+@media (min-width: 1101px) {
+  body.model-has-caravan-visual .hero-wrap {
+    align-items: center;
+    gap: clamp(28px, 3vw, 48px);
+  }
+
+  body.model-has-caravan-visual .slider-card {
+    min-width: 0;
+  }
+
+  body.model-has-caravan-visual .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding: 10px 4px;
+  }
+
+  body.model-has-caravan-visual .hero-caravan-visual {
+    display: block;
+    width: min(100%, 490px);
+    height: clamp(230px, 23vw, 300px);
+    margin: clamp(12px, 1.4vw, 20px) 0 0;
+    overflow: hidden;
+  }
+
+  body.model-has-caravan-visual .hero-caravan-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    padding: 0 6px 14px;
+    filter: drop-shadow(0 8px 8px rgba(8,26,57,.12));
+  }
+
+  body.new400-page.model-has-caravan-visual .hero-caravan-visual {
+    width: min(100%, 42vw, 540px);
+    height: clamp(240px, 22vw, 290px);
+  }
+
+  /* The New 400 PNG has extra transparent pixels above the caravan. */
+  body.new400-page.model-has-caravan-visual .hero-caravan-visual img {
+    object-fit: cover;
+    object-position: center bottom;
+  }
+}

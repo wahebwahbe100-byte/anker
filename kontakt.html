@@ -10189,7 +10189,7 @@ body.kontakt-body .legal-note {
 <div aria-hidden="true" class="topbar">
 <div class="container inner"></div>
 </div>
-<header class="site-header">
+<header class="site-header inner-site-header is-static-header">
 <div class="container nav">
 <a aria-label="ANKER Caravan Startseite" class="logo" href="index.html#start">
 <span aria-hidden="true" class="logo-round">
@@ -10396,7 +10396,7 @@ body.kontakt-body .legal-note {
   });
 
   window.addEventListener('resize', () => {
-  if (window.innerWidth > 1080) setMobileMenu(false);
+  if (window.innerWidth > 1360) setMobileMenu(false);
   });
  }
 
@@ -10585,19 +10585,12 @@ body.kontakt-body .legal-note {
  </script>
 <script>
  (function () {
-  const header = document.querySelector("header");
+  const header = document.querySelector("header.site-header");
   if (!header) return;
 
-  function updateHeaderState() {
-  if (window.scrollY > 40) {
-   header.classList.add("is-scrolled");
-  } else {
-   header.classList.remove("is-scrolled");
-  }
-  }
-
-  updateHeaderState();
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
+  // Kontakt: keep the header permanently in the original/static layout.
+  header.classList.remove("is-scrolled");
+  header.classList.add("is-static-header");
  })();
  </script>
 <script>
@@ -14322,5 +14315,8 @@ if(lang==='en'){
 }
 })();
 </script>
+
+<link href="nav-responsive.css" rel="stylesheet"/>
+<link href="nav-scroll-layout.css" rel="stylesheet"/>
 </body>
 </html>

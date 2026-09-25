@@ -736,78 +736,6 @@
   }
 
 
-  /* Correct folding header on scroll */
-  header,
-  header .header-inner,
-  header .logo img,
-  header .back{
-    transition:
-      min-height .26s ease,
-      padding .26s ease,
-      width .26s ease,
-      font-size .26s ease,
-      transform .26s ease,
-      box-shadow .26s ease,
-      background .26s ease !important;
-  }
-
-  header.header-folded{
-    transform:translateY(-10px) !important;
-    background:rgba(255,255,255,.985) !important;
-    box-shadow:0 8px 22px rgba(8,26,57,.12) !important;
-  }
-
-  header.header-folded .header-inner{
-    min-height:50px !important;
-    padding-top:4px !important;
-    padding-bottom:4px !important;
-  }
-
-  header.header-folded .logo img{
-    width:58px !important;
-  }
-
-  header.header-folded .back{
-    padding:7px 12px !important;
-    font-size:12px !important;
-  }
-
-  @media (max-width: 900px){
-    header.header-folded{
-      transform:translateY(-8px) !important;
-    }
-
-    header.header-folded .header-inner{
-      min-height:48px !important;
-      padding-top:4px !important;
-      padding-bottom:4px !important;
-    }
-
-    header.header-folded .logo img{
-      width:54px !important;
-    }
-  }
-
-  @media (max-width: 640px){
-    header.header-folded{
-      transform:translateY(-7px) !important;
-    }
-
-    header.header-folded .header-inner{
-      min-height:46px !important;
-      padding-top:3px !important;
-      padding-bottom:3px !important;
-    }
-
-    header.header-folded .logo img{
-      width:50px !important;
-    }
-
-    header.header-folded .back{
-      padding:6px 10px !important;
-      font-size:12px !important;
-    }
-  }
 
 
 
@@ -888,13 +816,26 @@
   .anker-model-header-actions .anker-language-menu{right:0;width:min(218px,calc(100vw - 24px))}
 }
 </style>
+<link href="model-site-bars.css" rel="stylesheet"/>
+<link href="model-hero-caravan.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="nav-scroll-layout.css" rel="stylesheet"/>
 </head>
-<body>
-<header>
+<body class="model-has-caravan-visual">
+<header class="model-site-header">
 <div class="header-inner">
-<a class="logo reveal-left" href="index.html">
-<img alt="ANKER Caravan" src="images/logo-icon.png"/>
+<a class="logo reveal-left" href="index.html#start" aria-label="ANKER Caravan – Startseite">
+<img class="model-header-logo" src="images/logo-icon.png" alt="ANKER Caravan Logo"/>
+<span class="model-brand-name"><strong>ANKER</strong><small>CARAVAN</small></span>
 </a>
+<nav aria-label="Hauptmenü" class="model-desktop-nav">
+<a href="index.html#start">STARTSEITE</a>
+<a href="index.html#produkte">WOHNWAGEN</a>
+<a href="index.html#beratung">SERVICE</a>
+<a href="index.html#team">TEAM</a>
+<a href="index.html#ueber-uns">ÜBER UNS</a>
+<a href="kontakt.html">KONTAKT</a>
+</nav>
 <div class="anker-model-header-actions"><div class="anker-language-switcher notranslate" id="ankerLanguageSwitcher" translate="no">
 <button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="anker-language-button" id="ankerLanguageButton" type="button">
 <img alt="Deutsch" class="anker-language-flag" id="ankerLanguageCurrentFlag" src="images/de.png"/>
@@ -913,7 +854,19 @@
 <span aria-hidden="true" class="anker-language-check">✓</span>
 </button>
 </div>
-</div><a class="back reveal-right" href="index.html#produkte">Zurück</a></div>
+</div><a class="back reveal-right" href="index.html#produkte">Zurück</a>
+<details class="model-mobile-menu">
+<summary aria-label="Hauptmenü">☰</summary>
+<nav aria-label="Hauptmenü" class="model-mobile-nav">
+<a href="index.html#start">STARTSEITE</a>
+<a href="index.html#produkte">WOHNWAGEN</a>
+<a href="index.html#beratung">SERVICE</a>
+<a href="index.html#team">TEAM</a>
+<a href="index.html#ueber-uns">ÜBER UNS</a>
+<a href="kontakt.html">KONTAKT</a>
+</nav>
+</details>
+</div>
 </div>
 </header>
 <section class="hero">
@@ -924,6 +877,7 @@
 <p>
         Wohnwagen Mini 270 – ein kompakter Camper Caravan für alle, die flexibel und unkompliziert reisen möchten. Ideal für Wochenendtrips, kleine Stellplätze und spontane Touren mit gemütlichem Komfort.
       </p>
+<figure class="hero-caravan-visual"><img src="images/bild-02-card.png" alt="Wohnwagen Mini 270, Seitenansicht" loading="eager" decoding="async"/></figure>
 </div>
 <div class="slider-card reveal-right">
 <div class="slider" id="miniSlider">
@@ -1087,11 +1041,51 @@
 <a href="kontakt.html">Kontakt aufnehmen</a>
 </div>
 </section>
-<footer>
-<div class="footer-inner">
-    © ANKER Caravan
-  </div>
+<footer class="index-style-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="logo" style="color:#fff; margin-bottom:12px;">
+<img alt="ANKER Caravan Logo" aria-hidden="true" class="logo-mark" decoding="async" loading="lazy" src="images/logo-mobile-before.png"/>
+<span class="logo-wordmark">
+<span class="logo-text">ANKER</span>
+<small class="logo-tagline">CARAVAN</small>
+</span>
+</div>
+<p>Wohnwagen, Caravan-Beratung und Service.</p>
+<p class="footer-contact">
+<a href="tel:+4915255935516">+49 1525 5935516</a>
+<span>Deutschland</span>
+</p>
+</div>
+<div>
+<h4>Wohnwagen</h4>
+<a href="index.html#produkte">Wohnwagen</a>
+<a href="index.html#produkte">Caravans</a>
+<a href="index.html#produkte">Auswahl</a>
+<a href="index.html#beratung">Beratung</a>
+</div>
+<div>
+<h4>Service</h4>
+<a href="index.html#vorteile">Vorteile</a>
+<a href="index.html#beratung">Beratung</a>
+<a href="index.html#ablauf">Ablauf</a>
+<a href="index.html#referenzen">Ideen</a>
+<a href="index.html#team">Team</a>
+<a href="index.html#ueber-uns">Über uns</a>
+<a href="kontakt.html">Kontakt</a>
+</div>
+<div>
+<h4>Rechtliches</h4>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+<p class="legal-note">© <span id="year"></span> ANKER Caravan. Alle Rechte vorbehalten.</p>
+<p class="developer-credit" style="margin:8px 0 0;text-align:center;font-size:11px;color:rgba(255,255,255,.38);">Entwickelt von <a href="https://waheb-site.de/" style="display:inline;margin:0;color:inherit;text-decoration:none;" title="Webdesign Deutschland | SEO &amp; moderne Websites | Waheb Site">Webdesign Deutschland | SEO &amp; moderne Websites.</a></p>
+</div>
 </footer>
+<script>document.querySelectorAll('.model-footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
 <script>
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -1197,17 +1191,7 @@
 
   startAutoSlide();
 
-  const pageHeader = document.querySelector('header');
 
-  function updateFoldingHeader(){
-    if (!pageHeader) return;
-    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    pageHeader.classList.toggle('header-folded', scrollTop > 35);
-  }
-
-  window.addEventListener('scroll', updateFoldingHeader, { passive:true });
-  window.addEventListener('load', updateFoldingHeader);
-  updateFoldingHeader();
 
 </script>
 
@@ -1217,6 +1201,7 @@
 const STORAGE_KEY='anker_caravan_language_v1';
 const TEXT_EN={"Wohnwagen":"Caravans","mit Vertrauen":"with confidence","Beratung · Fahrzeugcheck · Anfrage":"Advice · Vehicle inspection · Inquiry","Kontakt aufnehmen →":"Get in touch →","STARTSEITE":"HOME","WOHNWAGEN":"CARAVANS","SERVICE":"SERVICE","ÜBER UNS":"ABOUT US","KONTAKT":"CONTACT","DATENSCHUTZ":"PRIVACY","IMPRESSUM":"LEGAL NOTICE","KONTAKTIEREN":"CONTACT US","Wohnwagen, Caravan-Beratung und Service.":"Caravans, caravan advice and service.","Deutschland":"Germany","Caravans":"Caravans","Auswahl":"Selection","Beratung":"Advice","Service":"Service","Vorteile":"Benefits","Ablauf":"Process","Ideen":"Ideas","Über uns":"About us","Kontakt":"Contact","Rechtliches":"Legal","Impressum":"Legal notice","Datenschutz":"Privacy","ANKER Caravan. Alle Rechte vorbehalten.":"ANKER Caravan. All rights reserved.","Zurück":"Back","Anfrage":"Inquiry","Bei Interesse können Sie uns direkt kontaktieren.":"Contact us directly if you are interested.","Kontakt aufnehmen":"Get in touch","Technische Daten":"Technical specifications","Grundriss":"Floor plan","Rahmen:":"Frame:","Stahl feuerverzinkt":"Hot-dip galvanised steel","Länge:":"Length:","Breite:":"Width:","Höhe:":"Height:","Stehhöhe:":"Interior standing height:","Länge mit Deichsel:":"Length including drawbar:","Leergewicht:":"Unladen weight:","Zulässiges Gesamtgewicht:":"Permissible gross weight:","Stützlast:":"Nose weight:","75–100 kg, je nach Paket":"75–100 kg, depending on package","variiert je nach Paket":"varies depending on package","Ihr Browser unterstützt dieses Videoformat nicht.":"Your browser does not support this video format.","Ihr Browser unterstützt dieses Video nicht.":"Your browser does not support this video.","Ausstattungspakete":"Equipment packages","Standard Paket":"Standard package","Voll Paket":"Full package","Premium Paket":"Premium package","Ultra Paket":"Ultra package","Zusätzlich zur Standardausstattung:":"In addition to the standard equipment:","Zusätzlich zum Standard und Voll Paket:":"In addition to the Standard and Full packages:","Zusätzlich zum Standard, Voll und Premium Paket:":"In addition to the Standard, Full and Premium packages:","Solaranlage":"Solar system","Elektrobackofen":"Electric oven","Fernseher":"Television","Dachverkleidung":"Roof lining","Klimaanlage":"Air conditioning","Wechselrichter":"Inverter","Lithium-Batterie":"Lithium battery","Kassettentoilette":"Cassette toilet","Warmwasseraufbereiter":"Water heater","Markise":"Awning","Dieselheizung":"Diesel heater","LED-Signalleuchten":"LED signal lights","Elektrokocher":"Electric hob","Maßgefertigte Möbel in moderner Optik":"Custom-made furniture with a modern look","Innen- und Außenbeleuchtung":"Interior and exterior lighting","220-Volt-Stromanschluss inklusive Kabel":"220-volt power connection including cable","Chromspüle mit Wasserhahn":"Chrome sink with tap","12-Volt-Wasserpumpe":"12-volt water pump","55-Liter-Frischwassertank mit Außenbefüllung":"55-litre fresh-water tank with external filling point","Außendusche und ausziehbarer Waschbeckenkopf im Bad zum Duschen":"Outdoor shower and pull-out washbasin spray head for showering in the bathroom","Importierte Toilette":"Imported toilet","Teppiche, Läufer und Platzsets":"Carpets, runners and placemats","12-Volt-Kühlschrank, 50 Liter":"12-volt refrigerator, 50 litres","12-Volt-Kühlschrank, 138 Liter":"12-volt refrigerator, 138 litres","Auflaufbremse, AL-KO":"Overrun brake, AL-KO","Gebremste Achse, AL-KO":"Braked axle, AL-KO","Spezialisolierung Maxel 100":"Maxel 100 special insulation","Alle Fenster mit Ausstellmechanismus, Fliegengittern und Verdunklungsrollos":"All windows with opening mechanism, fly screens and blackout blinds","Front-Stauraumbox und Heckstoßfänger aus Fiberglas":"Front storage box and rear bumper made of fibreglass","ALKO-Drehstabachse ungebremst, gebremst optional":"AL-KO torsion axle, unbraked; braked version optional","ALKO-Kupplung ungebremst, gebremst optional":"AL-KO coupling, unbraked; braked version optional","4 ALKO-Stützfüße":"Four AL-KO stabiliser legs","Kompakter Camper Caravan":"Compact camper caravan","Wohnwagen Mini 270":"Mini 270 caravan","Wohnwagen Mini 270 – ein kompakter Camper Caravan für alle, die flexibel und unkompliziert reisen möchten. Ideal für Wochenendtrips, kleine Stellplätze und spontane Touren mit gemütlichem Komfort.":"The Mini 270 is a compact camper caravan for anyone who wants to travel flexibly and without complications. Ideal for weekend trips, small pitches and spontaneous tours with cosy comfort.","Layout-Plan des Wohnwagen Mini 270":"Floor-plan layout of the Mini 270 caravan","490 kg, variiert je nach Paket":"490 kg, depending on package","Hauptbett:":"Main bed:","umbaubare Sitzecke zum Bett, 145 × 194 cm":"convertible seating area forming a 145 × 194 cm bed","Zusatzbett:":"Additional bed:","klappbares Einzelbett über der Sitzgruppe, 70 × 194 cm":"folding single bed above the seating group, 70 × 194 cm","Tragfähigkeit Zusatzbett:":"Additional-bed load capacity:","maximal 75 kg":"maximum 75 kg","Alle Details zum Modell Mini 270":"All details about the Mini 270 model","Paketpreise":"Package prices","Preisübersicht für den Mini 270":"Price overview for the Mini 270","Preis":"Price","Messe-Preise gemäß offizieller Mini-270-Preisliste.":"Trade-fair prices according to the official Mini 270 price list."};
 const ATTR_EN={"ANKER Caravan Startseite":"ANKER Caravan home page","Hauptmenü":"Main menu","Menü öffnen":"Open menu","Menü schließen":"Close menu","Inhaltsverzeichnis Datenschutz":"Privacy-policy contents","Inhaltsverzeichnis Impressum":"Legal-notice contents","Direkte Kontaktdaten":"Direct contact details","Kontakt ANKER Caravan":"Contact ANKER Caravan","Kontaktformular":"Contact form","Ihr Name":"Your name","E-Mail Adresse":"Email address","Telefonnummer":"Telephone number","Firma / Geschäft (optional)":"Company / business (optional)","Ihre Nachricht":"Your message","Bild 1 anzeigen":"Show image 1","Bild 2 anzeigen":"Show image 2","Bild 3 anzeigen":"Show image 3","Bild 4 anzeigen":"Show image 4","Video anzeigen":"Show video","Zusatzbild anzeigen":"Show additional image","Eco 350 Galerie Vorschau":"Eco 350 gallery thumbnails","Micro 240 Galerie Vorschau":"Micro 240 gallery thumbnails","Mini 270 Galerie Vorschau":"Mini 270 gallery thumbnails","Wohnwagen Eco 350 Video":"Eco 350 caravan video","Grundriss Wohnwagen Eco 350":"Eco 350 caravan floor plan","Grundriss Wohnwagen Micro 240":"Micro 240 caravan floor plan","Grundriss Wohnwagen Mini 270":"Mini 270 caravan floor plan","Wohnwagen Eco 350 Bild 1":"Eco 350 caravan image 1","Wohnwagen Eco 350 Vorschau 1":"Eco 350 caravan thumbnail 1","Wohnwagen Eco 350 Bild 2":"Eco 350 caravan image 2","Wohnwagen Eco 350 Vorschau 2":"Eco 350 caravan thumbnail 2","Wohnwagen Eco 350 Bild 3":"Eco 350 caravan image 3","Wohnwagen Eco 350 Vorschau 3":"Eco 350 caravan thumbnail 3","Wohnwagen Eco 350 Bild 4":"Eco 350 caravan image 4","Wohnwagen Eco 350 Vorschau 4":"Eco 350 caravan thumbnail 4","Wohnwagen Micro 240 Bild 1":"Micro 240 caravan image 1","Wohnwagen Micro 240 Vorschau 1":"Micro 240 caravan thumbnail 1","Wohnwagen Micro 240 Bild 2":"Micro 240 caravan image 2","Wohnwagen Micro 240 Vorschau 2":"Micro 240 caravan thumbnail 2","Wohnwagen Micro 240 Bild 3":"Micro 240 caravan image 3","Wohnwagen Micro 240 Vorschau 3":"Micro 240 caravan thumbnail 3","Wohnwagen Micro 240 Bild 4":"Micro 240 caravan image 4","Wohnwagen Micro 240 Vorschau 4":"Micro 240 caravan thumbnail 4","Wohnwagen Mini 270 Bild 1":"Mini 270 caravan image 1","Wohnwagen Mini 270 Vorschau 1":"Mini 270 caravan thumbnail 1","Wohnwagen Mini 270 Bild 2":"Mini 270 caravan image 2","Wohnwagen Mini 270 Vorschau 2":"Mini 270 caravan thumbnail 2","Wohnwagen Mini 270 Bild 3":"Mini 270 caravan image 3","Wohnwagen Mini 270 Vorschau 3":"Mini 270 caravan thumbnail 3","Wohnwagen Mini 270 Bild 4":"Mini 270 caravan image 4","Wohnwagen Mini 270 Vorschau 4":"Mini 270 caravan thumbnail 4","Wohnwagen Eco 350 Zusatzbild":"Eco 350 additional image","Wohnwagen Eco 350 Zusatzbild Vorschau":"Eco 350 additional-image thumbnail"};
+ATTR_EN["Wohnwagen Mini 270, Seitenansicht"] = "Side view of the Mini 270 caravan";
 const META={"de_title":"Wohnwagen Mini 270 – ANKER Caravan","en_title":"Mini 270 caravan – ANKER Caravan","de_desc":"Wohnwagen Mini 270 – kompakter Camper Caravan mit flexiblen Schlafplätzen und praktischer Ausstattung.","en_desc":"Mini 270 caravan – a compact camper caravan with flexible berths and practical equipment."};
 const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'English'}};
 function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
@@ -1265,5 +1250,162 @@ if(lang==='en'){
 }
 })();
 </script>
+
+<script id="gallery-lightbox-enhancement-script">
+(function(){
+  const sliderCard = document.querySelector('.slider-card');
+  if (!sliderCard) return;
+  const slider = sliderCard.querySelector('.slider');
+  const slides = Array.from(sliderCard.querySelectorAll('.slider .slide'));
+  if (!slider || !slides.length) return;
+
+  const expandSvg = `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 4H4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 20H4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 20h4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'gallery-expand-button';
+  button.setAttribute('aria-label', 'Bilder groß anzeigen');
+  button.innerHTML = `<span class="gallery-expand-icon">${expandSvg}</span><span class="gallery-expand-label">Bilder groß anzeigen</span>`;
+  sliderCard.appendChild(button);
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'gallery-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Bildergalerie vergrößert');
+  lightbox.innerHTML = `
+    <div class="gallery-lightbox__dialog">
+      <div class="gallery-lightbox__toolbar">
+        <div>
+          <div class="gallery-lightbox__title"></div>
+          <div class="gallery-lightbox__counter"></div>
+        </div>
+        <button type="button" class="gallery-lightbox__close" aria-label="Schließen">×</button>
+      </div>
+      <div class="gallery-lightbox__stage">
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" aria-label="Vorheriges Bild">‹</button>
+        <div class="gallery-lightbox__media"></div>
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" aria-label="Nächstes Bild">›</button>
+      </div>
+      <div class="gallery-lightbox__thumbs"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const mediaWrap = lightbox.querySelector('.gallery-lightbox__media');
+  const titleEl = lightbox.querySelector('.gallery-lightbox__title');
+  const counterEl = lightbox.querySelector('.gallery-lightbox__counter');
+  const thumbsWrap = lightbox.querySelector('.gallery-lightbox__thumbs');
+  const closeBtn = lightbox.querySelector('.gallery-lightbox__close');
+  const prevBtn = lightbox.querySelector('.gallery-lightbox__nav--prev');
+  const nextBtn = lightbox.querySelector('.gallery-lightbox__nav--next');
+  let currentIndex = 0;
+
+  const getActiveIndex = () => {
+    const active = slides.findIndex(slide => slide.classList.contains('active'));
+    return active >= 0 ? active : 0;
+  };
+
+  const getSlideLabel = (slide, index) => {
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    return img?.alt || video?.getAttribute('aria-label') || `Bild ${index + 1}`;
+  };
+
+  const renderMedia = (index) => {
+    currentIndex = (index + slides.length) % slides.length;
+    const slide = slides[currentIndex];
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    mediaWrap.innerHTML = '';
+
+    let node;
+    if (video) {
+      node = video.cloneNode(true);
+      node.controls = true;
+      node.autoplay = false;
+      node.muted = false;
+      node.playsInline = true;
+    } else if (img) {
+      node = img.cloneNode(true);
+      node.loading = 'eager';
+      node.decoding = 'async';
+    }
+
+    if (node) mediaWrap.appendChild(node);
+    titleEl.textContent = getSlideLabel(slide, currentIndex);
+    counterEl.textContent = `${currentIndex + 1} / ${slides.length}`;
+
+    thumbsWrap.querySelectorAll('.gallery-lightbox__thumb').forEach((thumb, thumbIndex) => {
+      thumb.classList.toggle('is-active', thumbIndex === currentIndex);
+      thumb.setAttribute('aria-current', thumbIndex === currentIndex ? 'true' : 'false');
+    });
+  };
+
+  slides.forEach((slide, index) => {
+    const thumbButton = document.createElement('button');
+    thumbButton.type = 'button';
+    thumbButton.className = 'gallery-lightbox__thumb';
+    thumbButton.setAttribute('aria-label', `Bild ${index + 1} anzeigen`);
+    const img = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    if (img) {
+      const preview = img.cloneNode(true);
+      preview.alt = '';
+      preview.loading = 'lazy';
+      thumbButton.appendChild(preview);
+    } else if (video) {
+      const preview = video.cloneNode(true);
+      preview.muted = true;
+      preview.controls = false;
+      preview.preload = 'metadata';
+      thumbButton.appendChild(preview);
+    }
+    thumbButton.addEventListener('click', () => renderMedia(index));
+    thumbsWrap.appendChild(thumbButton);
+  });
+
+  const openLightbox = (index = getActiveIndex()) => {
+    renderMedia(index);
+    lightbox.classList.add('is-open');
+    document.body.classList.add('gallery-lightbox-open');
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('gallery-lightbox-open');
+    mediaWrap.querySelectorAll('video').forEach(video => video.pause());
+  };
+
+  button.addEventListener('click', () => openLightbox(getActiveIndex()));
+  slides.forEach((slide, index) => {
+    const image = slide.querySelector('img');
+    const video = slide.querySelector('video');
+    if (image) image.addEventListener('click', () => openLightbox(index));
+    if (video) video.addEventListener('dblclick', () => openLightbox(index));
+  });
+
+  prevBtn.addEventListener('click', () => renderMedia(currentIndex - 1));
+  nextBtn.addEventListener('click', () => renderMedia(currentIndex + 1));
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') renderMedia(currentIndex - 1);
+    if (event.key === 'ArrowRight') renderMedia(currentIndex + 1);
+  });
+})();
+</script>
+
 </body>
 </html>

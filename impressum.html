@@ -783,6 +783,8 @@
   .anker-model-header-actions .anker-language-menu{right:0;width:min(218px,calc(100vw - 24px))}
 }
 </style>
+
+<link href="nav-responsive.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="topbar">
@@ -794,7 +796,7 @@
 <div><a href="kontakt.html">Kontakt aufnehmen →</a></div>
 </div>
 </div>
-<header class="site-header notranslate" translate="no">
+<header class="site-header inner-site-header notranslate" translate="no">
 <div class="container nav">
 <a aria-label="ANKER Caravan Startseite" class="logo" href="index.html#start">
 <span aria-hidden="true" class="logo-round">
@@ -1046,5 +1048,18 @@ if(lang==='en'){
 }
 })();
 </script>
+
+<script id="anker-header-scroll-fold">
+(function () {
+  const header = document.querySelector('header.site-header');
+  if (!header) return;
+  function updateHeaderFold() {
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
+  updateHeaderFold();
+  window.addEventListener('scroll', updateHeaderFold, { passive: true });
+})();
+</script>
+<link href="nav-scroll-layout.css" rel="stylesheet"/>
 </body>
 </html>

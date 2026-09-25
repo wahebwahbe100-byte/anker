@@ -1,0 +1,623 @@
+/* ============================================================
+   ANKER – responsive header, original proportions restored
+   ------------------------------------------------------------
+   Goals
+   1) Keep the original navbar height (92px) on desktop.
+   2) Fold smoothly to the original compact height (68px) on scroll.
+   3) Show the full text navigation only while there is enough room.
+   4) Switch to the hamburger layout on narrower computers/tablets.
+   5) Leave the carefully tuned phone header (<=760px) untouched.
+   ============================================================ */
+
+/* Shared hardening */
+header.site-header,
+header.site-header.is-scrolled {
+  overflow: visible !important;
+  transition: background .28s ease, box-shadow .28s ease, border-color .28s ease !important;
+}
+
+header.site-header .container.nav,
+header.site-header .logo,
+header.site-header .logo-round,
+header.site-header .logo-title,
+header.site-header .logo-subline,
+header.site-header .logo-caravan,
+header.site-header .menu,
+header.site-header .header-contact,
+header.site-header .nav-actions,
+header.site-header .header-tools,
+header.site-header .anker-header-tools,
+header.site-header .language-switcher-button,
+header.site-header .anker-language-button,
+header.site-header .mobile-toggle {
+  box-sizing: border-box !important;
+  transition:
+    height .34s cubic-bezier(.22,.61,.36,1),
+    min-height .34s cubic-bezier(.22,.61,.36,1),
+    width .34s cubic-bezier(.22,.61,.36,1),
+    flex-basis .34s cubic-bezier(.22,.61,.36,1),
+    gap .34s cubic-bezier(.22,.61,.36,1),
+    padding .34s cubic-bezier(.22,.61,.36,1),
+    font-size .34s cubic-bezier(.22,.61,.36,1),
+    opacity .28s ease,
+    transform .34s cubic-bezier(.22,.61,.36,1) !important;
+}
+
+header.site-header .logo,
+header.site-header .logo-wordmark,
+header.site-header .menu,
+header.site-header .header-tools,
+header.site-header .anker-header-tools {
+  min-width: 0 !important;
+}
+
+/* ============================================================
+   FULL DESKTOP NAVIGATION
+   ============================================================ */
+@media (min-width: 1180px) {
+  header.site-header,
+  body.kontakt-body header.site-header {
+    --anker-nav-h: 92px;
+  }
+
+  header.site-header.is-scrolled,
+  body.kontakt-body header.site-header.is-scrolled {
+    --anker-nav-h: 68px;
+  }
+
+  header.site-header .container.nav,
+  body.kontakt-body header.site-header .container.nav {
+    width: min(1460px, calc(100% - 48px)) !important;
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+    max-height: var(--anker-nav-h) !important;
+    display: grid !important;
+    grid-template-columns: minmax(248px, auto) minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    column-gap: clamp(14px, 1.45vw, 24px) !important;
+    margin-inline: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .logo {
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+    max-height: var(--anker-nav-h) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-self: start !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+
+  /* Original desktop logo scale before/after folding. */
+  header.site-header:not(.is-scrolled) .logo-round {
+    width: 92px !important;
+    height: 92px !important;
+    min-width: 92px !important;
+    flex: 0 0 92px !important;
+  }
+
+  header.site-header.is-scrolled .logo-round {
+    width: 68px !important;
+    height: 68px !important;
+    min-width: 68px !important;
+    flex: 0 0 68px !important;
+  }
+
+  header.site-header .logo-round img,
+  header.site-header.is-scrolled .logo-round img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-title {
+    font-size: 28px !important;
+    line-height: .9 !important;
+    letter-spacing: .13em !important;
+    padding-left: .13em !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header.is-scrolled .logo-title {
+    font-size: 22px !important;
+    line-height: .92 !important;
+    letter-spacing: .11em !important;
+    padding-left: .11em !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-subline {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    max-height: 24px !important;
+    margin-top: 5px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: hidden !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-subline > span {
+    width: 18px !important;
+    height: 1px !important;
+    flex: 0 0 18px !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-caravan {
+    display: inline-block !important;
+    max-height: 18px !important;
+    font-size: 8px !important;
+    letter-spacing: .22em !important;
+    padding-left: .22em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    white-space: nowrap !important;
+  }
+
+  /* The old desktop behaviour: the secondary logo line folds away on scroll. */
+  header.site-header.is-scrolled .logo-subline,
+  header.site-header.is-scrolled .logo-caravan {
+    max-height: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
+  }
+
+  header.site-header .menu,
+  body.kontakt-body header.site-header .menu {
+    position: static !important;
+    inset: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+    max-height: var(--anker-nav-h) !important;
+    gap: clamp(10px, 1.15vw, 18px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    letter-spacing: .03em !important;
+  }
+
+  header.site-header.is-scrolled .menu,
+  body.kontakt-body header.site-header.is-scrolled .menu {
+    gap: clamp(9px, 1vw, 16px) !important;
+    font-size: 13px !important;
+  }
+
+  header.site-header .menu > a,
+  header.site-header.is-scrolled .menu > a {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    min-height: 36px !important;
+    height: auto !important;
+    padding-inline: 2px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+  }
+
+  header.site-header .header-tools,
+  header.site-header .anker-header-tools,
+  body.kontakt-body header.site-header .anker-header-tools {
+    position: static !important;
+    inset: auto !important;
+    justify-self: end !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  header.site-header .nav-actions,
+  header.site-header .anker-header-tools .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+  }
+
+  header.site-header:not(.is-scrolled) .header-contact,
+  header.site-header:not(.is-scrolled) .nav-actions .btn-primary {
+    min-width: 176px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    padding: 0 18px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header.is-scrolled .header-contact,
+  header.site-header.is-scrolled .nav-actions .btn-primary {
+    min-width: 160px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    padding: 0 16px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header:not(.is-scrolled) .language-switcher-button,
+  header.site-header:not(.is-scrolled) .anker-language-button {
+    min-width: 88px !important;
+    width: auto !important;
+    height: 48px !important;
+    padding-inline: 10px !important;
+    gap: 7px !important;
+  }
+
+  header.site-header.is-scrolled .language-switcher-button,
+  header.site-header.is-scrolled .anker-language-button {
+    min-width: 78px !important;
+    width: auto !important;
+    height: 42px !important;
+    padding-inline: 9px !important;
+    gap: 6px !important;
+  }
+
+  header.site-header .language-current-code,
+  header.site-header .language-switcher-chevron,
+  header.site-header .anker-language-code,
+  header.site-header .anker-language-chevron {
+    display: inline !important;
+  }
+
+  header.site-header .mobile-toggle,
+  header.site-header.is-scrolled .mobile-toggle {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   COMPACT COMPUTER / TABLET
+   Full text is replaced with the menu button before it can collide.
+   ============================================================ */
+@media (min-width: 761px) and (max-width: 1179.98px) {
+  header.site-header,
+  body.kontakt-body header.site-header {
+    --anker-nav-h: 92px;
+  }
+
+  header.site-header.is-scrolled,
+  body.kontakt-body header.site-header.is-scrolled {
+    --anker-nav-h: 68px;
+  }
+
+  header.site-header .container.nav,
+  body.kontakt-body header.site-header .container.nav {
+    position: relative !important;
+    width: calc(100% - 32px) !important;
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+    max-height: var(--anker-nav-h) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    margin-inline: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  header.site-header .logo {
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+    max-height: var(--anker-nav-h) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    flex: 0 1 auto !important;
+    margin: 0 auto 0 0 !important;
+    transform: none !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-round {
+    width: 92px !important;
+    height: 92px !important;
+    min-width: 92px !important;
+    flex: 0 0 92px !important;
+  }
+
+  header.site-header.is-scrolled .logo-round {
+    width: 68px !important;
+    height: 68px !important;
+    min-width: 68px !important;
+    flex: 0 0 68px !important;
+  }
+
+  header.site-header .logo-round img,
+  header.site-header.is-scrolled .logo-round img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-title {
+    font-size: 26px !important;
+    letter-spacing: .12em !important;
+    padding-left: .12em !important;
+  }
+
+  header.site-header.is-scrolled .logo-title {
+    font-size: 21px !important;
+    letter-spacing: .10em !important;
+    padding-left: .10em !important;
+  }
+
+  header.site-header.is-scrolled .logo-subline,
+  header.site-header.is-scrolled .logo-caravan {
+    max-height: 0 !important;
+    margin-top: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    overflow: hidden !important;
+  }
+
+  header.site-header .header-tools,
+  header.site-header .anker-header-tools,
+  body.kontakt-body header.site-header .anker-header-tools {
+    position: static !important;
+    inset: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  header.site-header .nav-actions,
+  header.site-header .anker-header-tools .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    height: var(--anker-nav-h) !important;
+    min-height: var(--anker-nav-h) !important;
+  }
+
+  header.site-header:not(.is-scrolled) .header-contact,
+  header.site-header:not(.is-scrolled) .nav-actions .btn-primary {
+    min-width: 154px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    padding: 0 14px !important;
+    font-size: 11.5px !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header.is-scrolled .header-contact,
+  header.site-header.is-scrolled .nav-actions .btn-primary {
+    min-width: 144px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 13px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header .language-switcher-button,
+  header.site-header .anker-language-button {
+    width: 72px !important;
+    min-width: 72px !important;
+    height: 44px !important;
+    padding-inline: 9px !important;
+    gap: 6px !important;
+  }
+
+  header.site-header.is-scrolled .language-switcher-button,
+  header.site-header.is-scrolled .anker-language-button {
+    height: 40px !important;
+  }
+
+  header.site-header .language-current-code,
+  header.site-header .anker-language-code {
+    display: inline !important;
+  }
+
+  header.site-header .language-switcher-chevron,
+  header.site-header .anker-language-chevron {
+    display: none !important;
+  }
+
+  header.site-header .mobile-toggle,
+  header.site-header.is-scrolled .mobile-toggle {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 999px !important;
+    z-index: 2147483201 !important;
+  }
+
+  header.site-header.is-scrolled .mobile-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    flex-basis: 44px !important;
+  }
+
+  header.site-header .mobile-toggle span,
+  header.site-header.is-scrolled .mobile-toggle span {
+    position: absolute !important;
+    left: 50% !important;
+    width: 22px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    border-radius: 99px !important;
+    background: #081a39 !important;
+    transform-origin: center !important;
+  }
+
+  header.site-header .mobile-toggle span:nth-child(1) { top: 16px !important; transform: translateX(-50%) !important; }
+  header.site-header .mobile-toggle span:nth-child(2) { top: 23px !important; transform: translateX(-50%) !important; }
+  header.site-header .mobile-toggle span:nth-child(3) { top: 30px !important; transform: translateX(-50%) !important; }
+  header.site-header .mobile-toggle.is-active span:nth-child(1) { top: 23px !important; transform: translateX(-50%) rotate(45deg) !important; }
+  header.site-header .mobile-toggle.is-active span:nth-child(2) { opacity: 0 !important; }
+  header.site-header .mobile-toggle.is-active span:nth-child(3) { top: 23px !important; transform: translateX(-50%) rotate(-45deg) !important; }
+
+  header.site-header .menu,
+  header.site-header.is-scrolled .menu,
+  body.kontakt-body header.site-header .menu,
+  body.kontakt-body header.site-header.is-scrolled .menu {
+    display: none !important;
+  }
+
+  header.site-header .menu.open,
+  header.site-header.is-scrolled .menu.open,
+  body.kontakt-body header.site-header .menu.open,
+  body.kontakt-body header.site-header.is-scrolled .menu.open {
+    position: fixed !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    top: var(--anker-nav-h) !important;
+    left: 16px !important;
+    right: 16px !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(100dvh - var(--anker-nav-h) - 14px) !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    border: 1px solid rgba(157,133,114,.25) !important;
+    border-top: 0 !important;
+    border-radius: 0 0 18px 18px !important;
+    background: #fff !important;
+    box-shadow: 0 20px 45px rgba(8,26,57,.18) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    z-index: 2147483199 !important;
+  }
+
+  header.site-header .menu.open > a,
+  header.site-header.is-scrolled .menu.open > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    padding: 0 14px !important;
+    border-radius: 10px !important;
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+  }
+
+  header.site-header .menu.open > a::before,
+  header.site-header .menu.open > a::after,
+  header.site-header.is-scrolled .menu.open > a::before,
+  header.site-header.is-scrolled .menu.open > a::after {
+    display: none !important;
+  }
+}
+
+/* Original narrower-computer proportions. */
+@media (min-width: 761px) and (max-width: 1080px) {
+  header.site-header,
+  body.kontakt-body header.site-header { --anker-nav-h: 82px; }
+
+  header.site-header.is-scrolled,
+  body.kontakt-body header.site-header.is-scrolled { --anker-nav-h: 64px; }
+
+  header.site-header:not(.is-scrolled) .logo-round {
+    width: 74px !important;
+    height: 74px !important;
+    min-width: 74px !important;
+    flex-basis: 74px !important;
+  }
+
+  header.site-header.is-scrolled .logo-round {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    flex-basis: 58px !important;
+  }
+
+  header.site-header:not(.is-scrolled) .logo-title { font-size: 23px !important; }
+  header.site-header.is-scrolled .logo-title { font-size: 20px !important; }
+}
+
+/* On narrower tablets, remove the contact pill first; language + menu remain. */
+@media (min-width: 761px) and (max-width: 900px) {
+  header.site-header .nav-actions,
+  header.site-header.is-scrolled .nav-actions,
+  header.site-header .anker-header-tools .nav-actions,
+  header.site-header.is-scrolled .anker-header-tools .nav-actions {
+    display: none !important;
+  }
+
+  header.site-header .language-switcher-button,
+  header.site-header .anker-language-button {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+  }
+
+  header.site-header .language-current-code,
+  header.site-header .language-switcher-chevron,
+  header.site-header .anker-language-code,
+  header.site-header .anker-language-chevron {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   PHONE
+   The existing site already has carefully tuned mobile logo/menu rules.
+   Only keep the menu layer safe; do not resize the phone header here.
+   ============================================================ */
+@media (max-width: 760px) {
+  header.site-header .menu:not(.open),
+  header.site-header.is-scrolled .menu:not(.open) {
+    display: none !important;
+  }
+
+  header.site-header .menu.open,
+  header.site-header.is-scrolled .menu.open {
+    z-index: 2147483199 !important;
+  }
+}

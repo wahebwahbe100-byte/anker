@@ -1,0 +1,50 @@
+/* The New 400 uses the same cards and navigation as the other model pages. */
+body.new400-page .hero-wrap { max-width: 1280px; }
+body.new400-page .hero-text { align-self: center; }
+body.new400-page .hero-text p { max-width: 540px; }
+body.new400-page .slider {
+  height: 500px !important;
+  min-height: 0;
+  aspect-ratio: auto;
+  background: linear-gradient(135deg, #e9edf1, #f8f3ec);
+}
+body.new400-page .slide img { object-fit: contain; object-position: center; }
+body.new400-page .thumbs { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding: 10px; }
+body.new400-page .thumb { height: 72px; }
+body.new400-page .thumb img { object-fit: cover; }
+body.new400-page .slide { transform: none; }
+body.new400-page .slide.active { transform: none; }
+
+.new400-page .option-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.new400-page .option-grid .package-card { border-top: 4px solid var(--brand-dark); }
+.new400-page .option-grid ul,
+.new400-page .equipment-grid ul,
+.new400-page .safety-list { list-style: none; padding: 0; margin: 0; }
+.new400-page .option-grid li,
+.new400-page .equipment-grid li,
+.new400-page .safety-list li { position: relative; padding-left: 26px; margin-bottom: 10px; line-height: 1.55; overflow-wrap: anywhere; }
+.new400-page .option-grid li::before,
+.new400-page .equipment-grid li::before,
+.new400-page .safety-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--brand-dark); font-weight: 900; }
+.new400-page .equipment-grid .package-card { min-width: 0; }
+.new400-page .equipment-grid h3 { font-size: 22px; }
+.new400-page .safety-list { max-width: 770px; margin-inline: auto; color: #4f5663; font-size: 17px; }
+.new400-page .grundriss-image-wrap { background: #f2f5fa; }
+.new400-page .grundriss-image-wrap img { max-height: 540px; object-fit: contain; }
+.new400-page .ground-plan-note { text-align: center; font-size: 15px; margin: 14px 0 0; }
+.new400-page .section-title h2 { line-height: 1.2; }
+
+@media (max-width: 900px) {
+  body.new400-page .slider { height: 440px !important; }
+}
+@media (max-width: 640px) {
+  body.new400-page .slider { height: clamp(305px, 105vw, 425px) !important; }
+  body.new400-page .thumbs { gap: 5px; padding: 8px; }
+  body.new400-page .thumb { height: 58px; border-radius: 9px; }
+  .new400-page .option-grid { grid-template-columns: 1fr; }
+  .new400-page .equipment-grid h3 { font-size: 20px; }
+  .new400-page .safety-list { font-size: 16px; }
+}
+@media (max-width: 340px) {
+  body.new400-page .thumb { height: 46px; }
+}
