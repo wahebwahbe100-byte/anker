@@ -926,17 +926,24 @@
 
 <link href="nav-responsive.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style id="anker-legal-header-stability-fix">
+/* Prevent the obsolete announcement strip from briefly flashing above the navigation.
+   Keep the same fixed header position as the homepage during loading and scrolling. */
+body.legal-header-synced > .topbar { display: none !important; }
+body.legal-header-synced > header.site-header {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  z-index: 9999 !important;
+}
+</style>
 </head>
 <body class="legal-header-synced">
-<div class="topbar">
-<div class="container inner">
-<div class="badges">
-<span><strong>Wohnwagen</strong> mit Vertrauen</span>
-<span>Beratung · Fahrzeugcheck · Anfrage</span>
-</div>
-<div><a href="kontakt.html">Kontakt aufnehmen →</a></div>
-</div>
-</div>
 <header class="site-header notranslate" translate="no">
 <div class="container nav">
 <a aria-label="ANKER Caravan Startseite" class="logo" href="index.html#start">
