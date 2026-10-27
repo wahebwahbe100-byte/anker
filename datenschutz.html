@@ -1182,5 +1182,29 @@ if(lang==='en'){
 
 </script>
 <link rel="stylesheet" href="legal-header-index.css"/>
+
+<!-- Keep the CARAVAN wordmark visible beside the logo on desktop after scrolling, as on index.html. -->
+<style id="desktop-scrolled-caravan-visible">
+@media (min-width: 761px) {
+  body header.site-header.is-scrolled .logo-subline {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-height: 24px !important;
+    min-height: 0 !important;
+    margin-top: 5px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+  body header.site-header.is-scrolled .logo-caravan {
+    display: inline-block !important;
+    max-height: 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+}
+</style>
 </body>
 </html>

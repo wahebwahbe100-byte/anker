@@ -14318,5 +14318,240 @@ if(lang==='en'){
 
 <link href="nav-responsive.css" rel="stylesheet"/>
 <link href="nav-scroll-layout.css" rel="stylesheet"/>
+
+<!-- Kontakt header sizing matches the index page at desktop and mobile breakpoints. -->
+<style id="kontakt-header-size-match-index-2026">
+/* Keep the contact page design, but use the same navbar dimensions as index. */
+body.kontakt-body { padding-top: 93px !important; }
+body.kontakt-body header.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  height: 93px !important;
+  min-height: 93px !important;
+  max-height: 93px !important;
+  transform: none !important;
+}
+body.kontakt-body header.site-header .container.nav {
+  width: calc(100% - 48px) !important;
+  height: 92px !important;
+  min-height: 92px !important;
+  max-height: 92px !important;
+  gap: clamp(18px, 1.45vw, 24px) !important;
+  grid-template-columns: minmax(248px,auto) 1fr minmax(245px,auto) !important;
+  align-items: center !important;
+}
+body.kontakt-body header.site-header .logo {
+  height: 92px !important;
+  min-height: 92px !important;
+  max-height: 92px !important;
+  gap: 10px !important;
+}
+body.kontakt-body header.site-header .logo-round,
+body.kontakt-body header.site-header .logo-round img {
+  width: 92px !important;
+  height: 92px !important;
+  min-width: 92px !important;
+  min-height: 92px !important;
+  max-width: 92px !important;
+  max-height: 92px !important;
+  flex-basis: 92px !important;
+}
+body.kontakt-body header.site-header .logo-wordmark {
+  gap: 2px !important;
+}
+body.kontakt-body header.site-header .logo-title {
+  font-size: 28px !important;
+  line-height: 1 !important;
+  letter-spacing: .16em !important;
+}
+body.kontakt-body header.site-header .logo-caravan {
+  font-size: 8px !important;
+  letter-spacing: .14em !important;
+}
+body.kontakt-body header.site-header .logo-subline {
+  justify-content: center !important;
+  gap: 5px !important;
+}
+body.kontakt-body header.site-header .menu {
+  height: 92px !important;
+  align-items: center !important;
+}
+body.kontakt-body header.site-header.is-scrolled {
+  height: 77px !important;
+  min-height: 77px !important;
+  max-height: 77px !important;
+}
+body.kontakt-body header.site-header.is-scrolled .container.nav,
+body.kontakt-body header.site-header.is-scrolled .logo {
+  height: 76px !important;
+  min-height: 76px !important;
+  max-height: 76px !important;
+}
+body.kontakt-body header.site-header.is-scrolled .container.nav {
+  width: calc(100% - 48px) !important;
+  grid-template-columns: minmax(220px,auto) 1fr minmax(245px,auto) !important;
+}
+body.kontakt-body header.site-header.is-scrolled .logo-round,
+body.kontakt-body header.site-header.is-scrolled .logo-round img {
+  width: 68px !important;
+  height: 68px !important;
+  min-width: 68px !important;
+  min-height: 68px !important;
+  max-width: 68px !important;
+  max-height: 68px !important;
+  flex-basis: 68px !important;
+}
+body.kontakt-body header.site-header.is-scrolled .logo-title { font-size: 27px !important; }
+body.kontakt-body header.site-header.is-scrolled .logo-caravan {
+  font-size: 9px !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+body.kontakt-body header.site-header.is-scrolled .logo-subline {
+  max-height: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+body.kontakt-body header.site-header.is-scrolled .menu { height: 76px !important; }
+
+@media (max-width: 1080px) {
+  body.kontakt-body { padding-top: 83px !important; }
+  body.kontakt-body header.site-header {
+    height: 83px !important;
+    min-height: 83px !important;
+    max-height: 83px !important;
+  }
+  body.kontakt-body header.site-header .container.nav,
+  body.kontakt-body header.site-header .logo {
+    height: 82px !important;
+    min-height: 82px !important;
+    max-height: 82px !important;
+  }
+  body.kontakt-body header.site-header .container.nav {
+    width: calc(100% - 32px) !important;
+    display: flex !important;
+    gap: 10px !important;
+    grid-template-columns: none !important;
+  }
+  body.kontakt-body header.site-header .logo { gap: 9px !important; }
+  body.kontakt-body header.site-header .logo-round,
+  body.kontakt-body header.site-header .logo-round img {
+    width: 74px !important;
+    height: 74px !important;
+    min-width: 74px !important;
+    min-height: 74px !important;
+    max-width: 74px !important;
+    max-height: 74px !important;
+    flex-basis: 74px !important;
+  }
+  body.kontakt-body header.site-header .logo-title { font-size: 23px !important; }
+  body.kontakt-body header.site-header .logo-caravan { font-size: 7px !important; }
+  body.kontakt-body header.site-header .menu.open { top: 83px !important; }
+  body.kontakt-body header.site-header.is-scrolled {
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .container.nav,
+  body.kontakt-body header.site-header.is-scrolled .logo {
+    height: 71px !important;
+    min-height: 71px !important;
+    max-height: 71px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .logo-round,
+  body.kontakt-body header.site-header.is-scrolled .logo-round img {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
+    max-width: 58px !important;
+    max-height: 58px !important;
+    flex-basis: 58px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .logo-title { font-size: 26px !important; }
+  body.kontakt-body header.site-header.is-scrolled .menu.open { top: 76px !important; }
+}
+@media (max-width: 760px) {
+  body.kontakt-body { padding-top: 90px !important; }
+  body.kontakt-body header.site-header {
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+  }
+  body.kontakt-body header.site-header .container.nav {
+    width: 100% !important;
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+    padding: 0 10px !important;
+  }
+  body.kontakt-body header.site-header .logo {
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+    gap: 9px !important;
+  }
+  body.kontakt-body header.site-header .logo-round,
+  body.kontakt-body header.site-header .logo-round img {
+    width: 82px !important;
+    height: 82px !important;
+    min-width: 82px !important;
+    min-height: 82px !important;
+    max-width: 82px !important;
+    max-height: 82px !important;
+    flex-basis: 82px !important;
+  }
+  body.kontakt-body header.site-header .logo-title { font-size: 27px !important; }
+  body.kontakt-body header.site-header .logo-caravan { font-size: 7.2px !important; }
+  body.kontakt-body header.site-header .menu.open { top: 90px !important; }
+  body.kontakt-body header.site-header.is-scrolled {
+    height: 65px !important;
+    min-height: 65px !important;
+    max-height: 65px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .container.nav {
+    width: calc(100% - 20px) !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    padding: 0 !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .logo {
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .logo-round,
+  body.kontakt-body header.site-header.is-scrolled .logo-round img {
+    width: 66px !important;
+    height: 66px !important;
+    min-width: 66px !important;
+    min-height: 66px !important;
+    max-width: 66px !important;
+    max-height: 66px !important;
+    flex-basis: 66px !important;
+  }
+  body.kontakt-body header.site-header.is-scrolled .logo-title { font-size: 23px !important; }
+  body.kontakt-body header.site-header.is-scrolled .logo-caravan { font-size: 7.8px !important; }
+  body.kontakt-body header.site-header.is-scrolled .menu.open { top: 65px !important; }
+}
+</style>
+<script id="kontakt-header-scroll-match-index-2026">
+(function () {
+  var header = document.querySelector('body.kontakt-body header.site-header');
+  if (!header) return;
+  header.classList.remove('is-static-header');
+  function updateKontaktHeader() {
+    var phone = window.matchMedia('(max-width: 760px)').matches;
+    var folded = phone ? window.scrollY > 40 :
+      (window.scrollY > 40 || window.matchMedia('(max-width: 1179.98px)').matches);
+    header.classList.toggle('is-scrolled', folded);
+  }
+  updateKontaktHeader();
+  window.addEventListener('scroll', updateKontaktHeader, {passive:true});
+  window.addEventListener('resize', updateKontaktHeader, {passive:true});
+})();
+</script>
 </body>
 </html>
