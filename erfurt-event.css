@@ -1,0 +1,83 @@
+/* Erfurt event update. Scoped to the existing second section. */
+/* Use the original logo and hall-image slots, including their responsive layout. */
+#produkte .erfurt-logo-art,
+#produkte .erfurt-stand-art {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#produkte .erfurt-event-date {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 12px;
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0 0;
+  color: #fff;
+  font-size: clamp(13px, 1.35vw, 18px);
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 15, 35, .65);
+}
+
+#produkte .erfurt-event-date > span {
+  white-space: nowrap;
+}
+
+#produkte .erfurt-event-date > span:last-child {
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: #c91720;
+  color: #fff;
+  font-size: .8em;
+  letter-spacing: .06em;
+  text-shadow: none;
+}
+
+:is(html, html.produkte-non100-zoom) #produkte .caravan-salon-merged-banner .caravan-salon-name .caravan-salon-copy strong {
+  font-size: clamp(16px, 2vw, 28px) !important;
+  white-space: normal !important;
+  overflow-wrap: normal;
+}
+
+#produkte .erfurt-event-welcome {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding: 21px 28px;
+  border-top: 2px solid #dd2029;
+  background: rgba(5, 22, 44, .94);
+  color: #fff;
+}
+
+#produkte .erfurt-event-welcome p {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(21px, 2.2vw, 30px);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+#produkte .erfurt-event-welcome > span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  #produkte .erfurt-event-date { margin-top: 13px; font-size: 15px; }
+  #produkte .erfurt-event-date > span:last-child { flex-basis: auto; }
+  #produkte .erfurt-event-welcome { justify-content: center; padding: 22px 15px; text-align: center; }
+  #produkte .erfurt-event-welcome p { width: 100%; }
+}
+

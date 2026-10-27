@@ -812,8 +812,9 @@
 </style>
 
 <link href="nav-responsive.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 </head>
-<body>
+<body class="legal-header-synced">
 <div class="topbar">
 <div class="container inner">
 <div class="badges">
@@ -823,11 +824,17 @@
 <div><a href="kontakt.html">Kontakt aufnehmen →</a></div>
 </div>
 </div>
-<header class="site-header inner-site-header notranslate" translate="no">
+<header class="site-header notranslate" translate="no">
 <div class="container nav">
 <a aria-label="ANKER Caravan Startseite" class="logo" href="index.html#start">
 <span aria-hidden="true" class="logo-round">
-<img alt="" onerror="this.onerror=null;this.src='images/logo-icon.png';" src="images/logo-mobile-before.png"/>
+<!--
+    Mobile logo images:
+    قبل الطي/التصغير على الجوال: images/logo-mobile-before.png
+    بعد الطي/التصغير على الجوال: images/logo-mobile-after.png
+    Desktop fallback: images/logo-icon.png
+   -->
+<img alt="ANKER Caravan Logo" data-logo-desktop="images/logo-mobile-before.png" data-logo-mobile-after="images/logo-mobile-after.png" data-logo-mobile-before="images/logo-mobile-before.png" decoding="async" fetchpriority="high" id="siteHeaderLogoImage" src="images/logo-mobile-before.png"/>
 </span>
 <span class="logo-wordmark">
 <span class="logo-title">ANKER</span>
@@ -835,34 +842,43 @@
 </span>
 </a>
 <nav aria-label="Hauptmenü" class="menu" id="menu">
-<a href="index.html#start">STARTSEITE</a>
+<a class="" href="index.html#start">STARTSEITE</a>
 <a href="index.html#produkte">WOHNWAGEN</a>
 <a href="index.html#beratung">SERVICE</a>
+<a href="index.html#team">TEAM</a>
 <a href="index.html#ueber-uns">ÜBER UNS</a>
 <a href="kontakt.html">KONTAKT</a>
-<a class="nav-active" href="datenschutz.html">DATENSCHUTZ</a>
 </nav>
-<div class="anker-header-tools"><div class="nav-actions">
-<a class="btn btn-primary" href="kontakt.html">KONTAKTIEREN</a>
-</div><div class="anker-language-switcher notranslate" id="ankerLanguageSwitcher" translate="no">
-<button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="anker-language-button" id="ankerLanguageButton" type="button">
-<img alt="Deutsch" class="anker-language-flag" id="ankerLanguageCurrentFlag" src="images/de.png"/>
-<span class="anker-language-code" id="ankerLanguageCode">DE</span>
-<span aria-hidden="true" class="anker-language-chevron">⌄</span>
+<div class="header-tools">
+<div class="nav-actions">
+<a class="btn header-contact" href="kontakt.html"><span aria-hidden="true" class="btn-icon">✉</span> KONTAKTIEREN</a>
+</div>
+<!--
+  LANGUAGE FLAG IMAGES:
+  Put your language icons in the images folder with these names:
+  1) images/de.png
+  2) images/gb.png
+-->
+<div class="language-switcher notranslate" id="languageSwitcher" translate="no">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Sprache ändern" class="language-switcher-button" id="languageSwitcherButton" type="button">
+<img alt="Deutsch" class="language-current-flag" height="22" id="languageCurrentFlag" src="images/de.png" width="22"/>
+<span class="language-current-code" id="languageCurrentCode">DE</span>
+<span aria-hidden="true" class="language-switcher-chevron">⌄</span>
 </button>
-<div aria-label="Sprache auswählen" class="anker-language-menu" id="ankerLanguageMenu" role="menu">
-<button class="anker-language-option" data-language="de" role="menuitem" type="button">
-<img alt="Deutsch" class="anker-language-flag" src="images/de.png"/>
-<span class="anker-language-copy"><strong>Deutsch</strong><small>DE</small></span>
-<span aria-hidden="true" class="anker-language-check">✓</span>
+<div aria-label="Sprache auswählen" class="language-switcher-menu" id="languageSwitcherMenu" role="menu">
+<button class="language-option" data-language="de" role="menuitem" type="button">
+<img alt="Deutsch" class="language-option-flag" height="24" src="images/de.png" width="24"/>
+<span class="language-option-copy"><strong>Deutsch</strong><small>DE</small></span>
+<span aria-hidden="true" class="language-option-check">✓</span>
 </button>
-<button class="anker-language-option" data-language="en" role="menuitem" type="button">
-<img alt="English" class="anker-language-flag" src="images/gb.png"/>
-<span class="anker-language-copy"><strong>English</strong><small>EN</small></span>
-<span aria-hidden="true" class="anker-language-check">✓</span>
+<button class="language-option" data-language="en" role="menuitem" type="button">
+<img alt="English" class="language-option-flag" height="24" src="images/gb.png" width="24"/>
+<span class="language-option-copy"><strong>English</strong><small>EN</small></span>
+<span aria-hidden="true" class="language-option-check">✓</span>
 </button>
 </div>
-</div></div>
+</div>
+</div>
 <button aria-controls="menu" aria-expanded="false" aria-label="Menü öffnen" class="mobile-toggle" id="mobileToggle" type="button">
 <span></span><span></span><span></span>
 </button>
@@ -1056,12 +1072,12 @@ const FLAG={de:{src:'images/de.png',alt:'Deutsch'},en:{src:'images/gb.png',alt:'
 function getLanguage(){try{return localStorage.getItem(STORAGE_KEY)==='en'?'en':'de'}catch(e){return'de'}}
 function saveLanguage(lang){try{localStorage.setItem(STORAGE_KEY,lang)}catch(e){}location.reload()}
 const lang=getLanguage();
-const sw=document.getElementById('ankerLanguageSwitcher');
-const btn=document.getElementById('ankerLanguageButton');
-const menu=document.getElementById('ankerLanguageMenu');
-const flag=document.getElementById('ankerLanguageCurrentFlag');
-const code=document.getElementById('ankerLanguageCode');
-const opts=Array.from(document.querySelectorAll('.anker-language-option[data-language]'));
+const sw=document.getElementById('languageSwitcher');
+const btn=document.getElementById('languageSwitcherButton');
+const menu=document.getElementById('languageSwitcherMenu');
+const flag=document.getElementById('languageCurrentFlag');
+const code=document.getElementById('languageCurrentCode');
+const opts=Array.from(document.querySelectorAll('.language-option[data-language]'));
 function openSwitcher(open){if(!sw||!btn)return;sw.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',open?'true':'false')}
 function updateSwitcher(){
  if(flag){flag.src=FLAG[lang].src;flag.alt=FLAG[lang].alt}
@@ -1073,10 +1089,10 @@ function updateSwitcher(){
 if(btn&&sw){btn.addEventListener('click',e=>{e.stopPropagation();openSwitcher(!sw.classList.contains('is-open'))});document.addEventListener('click',e=>{if(!sw.contains(e.target))openSwitcher(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')openSwitcher(false)})}
 opts.forEach(o=>o.addEventListener('click',()=>{const next=o.dataset.language==='en'?'en':'de';next===lang?openSwitcher(false):saveLanguage(next)}));
 function replaceTrimmed(value,replacement){const start=value.search(/\S/);if(start===-1)return value;const end=value.length-value.trimEnd().length;return value.slice(0,start)+replacement+(end?value.slice(value.length-end):'')}
-function translateText(node){if(!node||!node.nodeValue||!node.parentElement)return;const p=node.parentElement;if(p.closest('.anker-language-switcher,script,style,noscript,textarea'))return;const key=node.nodeValue.trim();if(key&&Object.prototype.hasOwnProperty.call(TEXT_EN,key))node.nodeValue=replaceTrimmed(node.nodeValue,TEXT_EN[key])}
+function translateText(node){if(!node||!node.nodeValue||!node.parentElement)return;const p=node.parentElement;if(p.closest('.language-switcher,script,style,noscript,textarea'))return;const key=node.nodeValue.trim();if(key&&Object.prototype.hasOwnProperty.call(TEXT_EN,key))node.nodeValue=replaceTrimmed(node.nodeValue,TEXT_EN[key])}
 function translateAttrs(root){
  const els=[];if(root&&root.nodeType===1)els.push(root);if(root&&root.querySelectorAll)els.push(...root.querySelectorAll('[aria-label],[title],[placeholder],[alt]'));
- els.forEach(el=>{if(el.closest&&el.closest('.anker-language-switcher'))return;['aria-label','title','placeholder','alt'].forEach(a=>{const v=el.getAttribute&&el.getAttribute(a);if(v&&Object.prototype.hasOwnProperty.call(ATTR_EN,v))el.setAttribute(a,ATTR_EN[v])})})
+ els.forEach(el=>{if(el.closest&&el.closest('.language-switcher'))return;['aria-label','title','placeholder','alt'].forEach(a=>{const v=el.getAttribute&&el.getAttribute(a);if(v&&Object.prototype.hasOwnProperty.call(ATTR_EN,v))el.setAttribute(a,ATTR_EN[v])})})
 }
 function translateRoot(root){
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(translateText);translateAttrs(root)
@@ -1105,12 +1121,66 @@ if(lang==='en'){
   const header = document.querySelector('header.site-header');
   if (!header) return;
   function updateHeaderFold() {
-    header.classList.toggle('is-scrolled', window.scrollY > 40);
+    const isPhone = window.matchMedia('(max-width: 760px)').matches;
+    const folded = isPhone ? window.scrollY > 40 : (window.scrollY > 40 || window.matchMedia('(max-width: 1179.98px)').matches);
+    header.classList.toggle('is-scrolled', folded);
   }
   updateHeaderFold();
   window.addEventListener('scroll', updateHeaderFold, { passive: true });
 })();
 </script>
 <link href="nav-scroll-layout.css" rel="stylesheet"/>
+<script>
+
+/* ============================================================
+   MOBILE BEFORE/AFTER SCROLL LOGO SWITCH
+   المطلوب: اسم صورة مختلف قبل الطي/التصغير وبعد الطي/التصغير.
+   - قبل الطي على الجوال: images/logo-mobile-before.png
+   - بعد الطي على الجوال: images/logo-mobile-after.png
+   - سطح المكتب يبقى: images/logo-icon.png
+   ============================================================ */
+(function () {
+  const header = document.querySelector('header.site-header');
+  const logoImg = document.querySelector('header.site-header .logo-round img');
+  if (!header || !logoImg) return;
+
+  const desktopLogo = logoImg.getAttribute('data-logo-desktop') || 'images/logo-icon.png';
+  const mobileBeforeLogo = logoImg.getAttribute('data-logo-mobile-before') || desktopLogo;
+  const mobileAfterLogo = logoImg.getAttribute('data-logo-mobile-after') || mobileBeforeLogo;
+  const mobileQuery = window.matchMedia('(max-width: 760px)');
+
+  function wantedLogo() {
+    if (!mobileQuery.matches) return desktopLogo;
+    return header.classList.contains('is-scrolled') ? mobileAfterLogo : mobileBeforeLogo;
+  }
+
+  function setLogo() {
+    const nextLogo = wantedLogo();
+    if (logoImg.getAttribute('src') !== nextLogo) {
+      logoImg.setAttribute('src', nextLogo);
+    }
+  }
+
+  /* إذا لم تكن الصورة الجديدة موجودة في مجلد images، يرجع للوجو القديم بدل ظهور صورة مكسورة. */
+  logoImg.addEventListener('error', function () {
+    if (logoImg.getAttribute('src') !== desktopLogo) {
+      logoImg.setAttribute('src', desktopLogo);
+    }
+  });
+
+  setLogo();
+  window.addEventListener('scroll', setLogo, { passive: true });
+  window.addEventListener('resize', setLogo, { passive: true });
+
+  if (window.MutationObserver) {
+    new MutationObserver(setLogo).observe(header, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+})();
+
+</script>
+<link rel="stylesheet" href="legal-header-index.css"/>
 </body>
 </html>
